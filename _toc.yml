@@ -1,0 +1,18 @@
+# The introduction file is mandatory
+- file: 0-conteudo
+- part: Python para computação científica
+  numbered: True
+  chapters:
+  - file: 01a-introducao
+  - file: 01b-fundamentos-python
+#
+# MODEL: 
+# - file: intro
+#- part: Get started
+#  chapters:
+#  - file: start/overview
+#  - file: start/build
+#  - file: start/publish
+#    sections:
+#      - file: publish/gh-pages
+#      - file: publish/netlify
