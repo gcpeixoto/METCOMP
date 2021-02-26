@@ -244,22 +244,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">a'</span> <span class="pre">=</span> <span class="pre">0.79a</span></code> (comprimento do semi-eixo maior de <span class="math notranslate nohighlight">\(E_2\)</span>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">b'</span> <span class="pre">=</span> <span class="pre">0.31a</span></code> (comprimento do semi-eixo menor de <span class="math notranslate nohighlight">\(E_2\)</span>)</p></li>
 </ul>
-<!--
-import sympy as sy
-a0 = 0.125 m
-a,b,phi,theta = sy.symbols('a b \phi \theta')
-e = sy.sqrt(a**2 - b**2)/a # excentricidade
-f = sy.sqrt(1 - e**2*sy.sin(phi)**2) # comprimento de arco
-
-# angulo tomado de (0,b) eixo menor para ponto (x/a,0); theta
-d1 = a0*sy.integrate(f, (phi, sy.pi/18, 7*sy.pi/20)).subs({a:a0,b:b0}).evalf() 
-d2 = a1*sy.integrate(f, (phi, 0, 15/36*sy.pi)).subs({a:a1,b:b1}).evalf()
-
-# integrando genericamente => elliptic integral of the second kind.
-# (https://bit.ly/3bDDPup)
-sy.integrate(f, (phi, 0, theta)) # with max(theta) = pi/2
-
-Resposta: R<span>&#36;</span>5873.71--></div>
+</div>
 
     <script type="text/x-thebe-config">
     {
