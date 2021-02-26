@@ -22,3 +22,12 @@ Programa para semestre 2020/02 (atualização semanal)
 01a-introducao
 01b-fundamentos-python
 ```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Laboratório Computacional
+
+lab-01
+```
