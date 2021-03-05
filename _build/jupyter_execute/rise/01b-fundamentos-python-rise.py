@@ -47,7 +47,7 @@ Parênteses não pareados (abrir, mas não fechar) produzirão um erro.
 **Exemplo:** Calcule o valor de 
 $$2 + 3$$
 
-2 + 3
+2 + 3 
 
 **Exemplo:** Calcule o valor de 
 $$2,0 + 3$$
@@ -93,7 +93,7 @@ Quando quisermos quociente inteiro, utilizamos o símbolo `//` (divisão inteira
 
 **Exemplo:** calcule o valor de $$5/2$$
 
-5/2 
+5/2
 
 **Exemplo:** calcule o valor da **divisão inteira** $$5/2$$
 
@@ -245,7 +245,7 @@ Isto aqui é
 um comentário em bloco e
 será ignorado pelo 
 interpretador se vier 
-seguido de outra instruções.
+seguido de outras instruções.
 """
 
 ### Omitindo impressão 
