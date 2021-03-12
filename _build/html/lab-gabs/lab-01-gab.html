@@ -45,8 +45,6 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -54,6 +52,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -110,6 +110,14 @@
    para Computação Científica
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -120,6 +128,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lab-01.html">
    Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-02.html">
+   Laboratório 2
   </a>
  </li>
 </ul>
@@ -235,11 +248,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.274604135170044
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Problema 2:</strong> A fórmula de Heron para calcular a área de um triângulo qualquer com lados medindo <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> e <span class="math notranslate nohighlight">\(x_3\)</span> é dada por <span class="math notranslate nohighlight">\(A = \sqrt{p(p - x_1)(p - x_2)(p - x_3)}\)</span>, onde <span class="math notranslate nohighlight">\(p\)</span> é o semiperímetro do triângulo. Assumindo que <span class="math notranslate nohighlight">\(x_1=a\)</span>, <span class="math notranslate nohighlight">\(x_2=b\)</span> e <span class="math notranslate nohighlight">\(x_3=c\)</span>, para <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> e <span class="math notranslate nohighlight">\(c\)</span> encontrados pelo Problema 1, calcule <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><em>Resolução:</em></p>
@@ -252,11 +260,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>126.49118755677388
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Problema 3:</strong> Suponha que <span class="math notranslate nohighlight">\(b\)</span> seja a altura do triângulo retângulo do Problema 1. Calcule a área <span class="math notranslate nohighlight">\(A_2\)</span> do triângulo retângulo pela fórmula tradicional. Qual é o valor de <span class="math notranslate nohighlight">\(|A - A_2|\)</span>, sendo <span class="math notranslate nohighlight">\(A\)</span> o valor obtido no Problema 2?</p>
 <p><em>Resolução:</em></p>
@@ -264,11 +267,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A2</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span>
 <span class="nb">abs</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">A2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -330,11 +328,6 @@ Resposta: R<span>&#36;</span>583919.91--><p><em>Resolução:</em></p>
 <span class="c1"># nota: 2 faróis por carro</span>
 <span class="n">C</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">P</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">2000</span><span class="o">*</span><span class="mf">0.75</span><span class="o">*</span><span class="mf">2.35</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">C</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>583919.91
 </pre></div>
 </div>
 </div>

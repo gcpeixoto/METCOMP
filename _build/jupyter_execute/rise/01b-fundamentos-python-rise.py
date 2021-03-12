@@ -578,7 +578,7 @@ mt.e
 
 O valor de $\pi$ pode ser obtido como: 
 
-mt.pi 
+mt.pi
 
 >$e$ e $\pi$ são números irracionais. No computador, eles possuem um número finito de casas decimais!
 
@@ -597,7 +597,7 @@ mt.sqrt(16) # 16 é 'int', mas o resultado é 'float'
 
 **Exemplo:** calcule o valor de $\sqrt{ \sqrt{\pi} + e + \left( \frac{3}{2} \right)^y }$, para $y = 2.1$.
 
-mt.sqrt( mt.sqrt( mt.pi ) + mt.e + 3/2**2.1 ) # espaços dão legibilidade
+mt.sqrt( mt.sqrt( mt.pi ) + mt.e + 3/2**2.1 ) # espaços dão legibilidade  
 
 O logaritmo de um número $b$ na base $a$ é dado por $\log_a \, b$, com $a > 0$, $b > 0$ e $a \neq 1$. 
 
@@ -621,7 +621,7 @@ Vejamos alguns exemplos:
 
 mt.log(2) # isto é ln(2) 
 
-mt.log10(2) # isto é log(2) na base 10   
+mt.log10(2) # isto é log(2) na base 10    
 
 mt.log(2,10) # isto é o mesmo que a anterior
 
@@ -637,7 +637,7 @@ x = mt.pi # reatribuição do valor de x
 
 fpi = ( mt.log(x + 4) + mt.log(x,3) ) / ( mt.log10(x) ) # f(pi)
 
-print('O valor é', fe + fpi)  
+print('O valor é', fe + fpi)   
 
 No exemplo anterior, espaços foram acrescentados para tornar os comandos mais legíveis.
 
@@ -681,7 +681,7 @@ print('O valor da hipotenusa é:', c, 'm')
 
 ang_graus = 270 # valor em graus
 ang_rad = ang_graus/180*mt.pi # valor em radianos
-print(ang_rad)
+print(ang_rad) 
 
 Note que em 
 
@@ -695,7 +695,7 @@ Poderíamos chegar ao mesmo resultado diretamente com a função `radians` do m�
 
 mt.radians?
 
-mt.radians(ang_graus) 
+mt.radians(ang_graus)    
 
 ### Arredondamento de números fracionários para inteiros
 
@@ -738,7 +738,7 @@ type(3 - 2j) # o número é um complex
 
 4J # J (maiúsculo)
 
-type(4j)
+type(4j) 
 
 > Se `j` ou `J` são colocados isoladamente, significarão uma variável. Caso a variável não esteja definida, um erro de indefinição resultará.
 
@@ -787,8 +787,8 @@ x,& \text{se } x \geq 0 \\
 \end{cases}
 $$
 
-help(abs)
+help(abs)  
 
 abs(-3.1)
 
-abs(-mt.e)
+abs(-mt.e)  

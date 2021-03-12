@@ -45,8 +45,6 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -54,6 +52,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -110,6 +110,14 @@
    para Computação Científica
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -120,6 +128,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lab-01.html">
    Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-02.html">
+   Laboratório 2
   </a>
  </li>
 </ul>
@@ -1775,11 +1788,6 @@ oo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.123233995736766e-17
-</pre></div>
-</div>
-</div>
 </div>
 <p>O número neperiano (ou número de Euler) <span class="math notranslate nohighlight">\(e\)</span> é obtido como:</p>
 <div class="cell docutils container">
@@ -1797,7 +1805,7 @@ oo
 <p>O valor de <span class="math notranslate nohighlight">\(\pi\)</span> pode ser obtido como:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">pi</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">pi</span>
 </pre></div>
 </div>
 </div>
@@ -1854,7 +1862,7 @@ oo
 <p><strong>Exemplo:</strong> calcule o valor de <span class="math notranslate nohighlight">\(\sqrt{ \sqrt{\pi} + e + \left( \frac{3}{2} \right)^y }\)</span>, para <span class="math notranslate nohighlight">\(y = 2.1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">mt</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">mt</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="o">+</span> <span class="n">mt</span><span class="o">.</span><span class="n">e</span> <span class="o">+</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="mf">2.1</span> <span class="p">)</span> <span class="c1"># espaços dão legibilidade</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">mt</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">mt</span><span class="o">.</span><span class="n">pi</span> <span class="p">)</span> <span class="o">+</span> <span class="n">mt</span><span class="o">.</span><span class="n">e</span> <span class="o">+</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="mf">2.1</span> <span class="p">)</span> <span class="c1"># espaços dão legibilidade  </span>
 </pre></div>
 </div>
 </div>
@@ -1892,7 +1900,7 @@ oo
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># isto é log(2) na base 10   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># isto é log(2) na base 10    </span>
 </pre></div>
 </div>
 </div>
@@ -1937,7 +1945,7 @@ oo
 
 <span class="n">fpi</span> <span class="o">=</span> <span class="p">(</span> <span class="n">mt</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">mt</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">mt</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># f(pi)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;O valor é&#39;</span><span class="p">,</span> <span class="n">fe</span> <span class="o">+</span> <span class="n">fpi</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;O valor é&#39;</span><span class="p">,</span> <span class="n">fe</span> <span class="o">+</span> <span class="n">fpi</span><span class="p">)</span>   
 </pre></div>
 </div>
 </div>
@@ -2092,7 +2100,7 @@ pow(x, y, /)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ang_graus</span> <span class="o">=</span> <span class="mi">270</span> <span class="c1"># valor em graus</span>
 <span class="n">ang_rad</span> <span class="o">=</span> <span class="n">ang_graus</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">mt</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># valor em radianos</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ang_rad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ang_rad</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -2117,7 +2125,7 @@ pow(x, y, /)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">ang_graus</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">ang_graus</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
@@ -2242,7 +2250,7 @@ pow(x, y, /)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">4</span><span class="n">j</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">4</span><span class="n">j</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -2264,7 +2272,7 @@ pow(x, y, /)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">113</span><span class="o">-</span><span class="mi">3</span><span class="n">eedd8854d1e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">61</span><span class="o">-</span><span class="mi">3</span><span class="n">eedd8854d1e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">j</span>
 
 <span class="ne">NameError</span>: name &#39;j&#39; is not defined
@@ -2370,7 +2378,7 @@ x,&amp; \text{se } x \geq 0 \\
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -2397,7 +2405,7 @@ abs(x, /)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="n">mt</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="n">mt</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
