@@ -3,14 +3,14 @@
 **Resolva todos os problemas por computação.**
 <hr>
 
-**Problema 1:** Calcule a hipotenusa $c$ para um triângulo retângulo com catetos medindo $a = \frac{e^{1.2}}{\pi}\sqrt{111.4}$ e $b = 4!\textrm{sen}(65\pi/51 - 2.1)$.
+**Problema 1:** Calcule a hipotenusa $c$ para um triângulo retângulo com catetos medindo $a = \frac{e^{1.2}}{\pi}\sqrt{111.4}$ e $b = 4!\textrm{sen}(65\pi/51 - 210)$.
 
 _Resolução:_
 
 from math import exp,pi,sqrt,hypot,factorial,sin
 
 a = (exp(1.2)/pi)*sqrt(111.4)
-b = factorial(4)*sin(65/51*pi - 2.1)
+b = factorial(4)*sin(65*pi/51 - 210)
 c = hypot(a,b)
 c
 
@@ -28,6 +28,7 @@ A
 _Resolução:_
 
 A2 = a*b/2
+A2
 abs(A-A2)
 
 **Problema 4:** A tampa superior do farol do automóvel _Mercedes-Benz 203 series C-Class Sports Coupés_ pode ser modelada aproximadamente pela união de duas elipses $E_1$ e $E_2$, centradas em $C_1$ e $C_2$, respectivamente, excluindo-se uma vez a área hachurada que se obtém pela intersecção (superposição) das duas elipses (vide figura abaixo). O arco entre os pontos $P$ e $Q$ da elipse $E_1$ (cor vermelha) possui comprimento $d_1 = 9.45 \, cm$, enquanto que o segundo arco (cor azul) entre os mesmos pontos, pertencente à elipse $E_2$, possui comprimento $d_2 = 10.25 \, cm$.

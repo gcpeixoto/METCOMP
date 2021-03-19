@@ -3,7 +3,7 @@
 **Resolva todos os problemas por computação.**
 <hr>
 
-**Problema 1:** Calcule a hipotenusa $c$ para um triângulo retângulo com catetos medindo $a = \frac{e^{1.2}}{\pi}\sqrt{111.4}$ e $b = 4!\textrm{sen}(65\pi/51 + 2.1)$.
+**Problema 1:** Calcule a hipotenusa $c$ para um triângulo retângulo com catetos medindo $a = \frac{e^{1.2}}{\pi}\sqrt{111.4}$ e $b = 4!\textrm{sen}(65\pi/51 + 210)$.
 
 **Problema 2:** A fórmula de Heron para calcular a área de um triângulo qualquer com lados medindo $x_1$, $x_2$ e $x_3$ é dada por $A = \sqrt{p(p - x_1)(p - x_2)(p - x_3)}$, onde $p$ é o semiperímetro do triângulo. Assumindo que $x_1=a$, $x_2=b$ e $x_3=c$, para $a$, $b$ e $c$ encontrados pelo Problema 1, calcule $A$.
 

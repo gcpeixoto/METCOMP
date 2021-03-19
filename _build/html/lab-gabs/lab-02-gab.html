@@ -25,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -40,11 +40,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -52,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -152,21 +153,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -184,16 +185,16 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -220,11 +221,12 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -252,10 +254,6 @@
 <span class="n">sym</span><span class="o">.</span><span class="n">solveset</span><span class="p">(</span><span class="n">yr</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span><span class="n">alpha</span> <span class="p">,</span><span class="n">domain</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left[\log{\left(36 \right)}, \infty\right)\]</div>
 </div>
 </div>
 <p><strong>Problema 2:</strong> Considere os seguintes polinômios:</p>
@@ -292,20 +290,12 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle - 2.0 \pi^{4} x^{13} - 2.66666666666667 x^{13} + 13.3333333333333 \pi^{8} x^{13} + 18.6666666666667 \pi^{22} x^{13} - 4.5 \pi^{4} x^{5} - 6 x^{5} + 30 \pi^{8} x^{5} + 42 \pi^{22} x^{5} - 28 \pi^{22} x - 20 \pi^{8} x + 4 x + 3.0 \pi^{4} x - 14 \pi^{22} - 10 \pi^{8} + 2 + 1.5 \pi^{4}\]</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">30</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">22</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">3.14</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 3634.83\]</div>
 </div>
 </div>
 <p><strong>Problema 4:</strong> Utilizando a mesma substituição de coeficientes apresentada no Problema 2, determine todas as raízes reais do polinômio <span class="math notranslate nohighlight">\(R(x)\)</span> com aproximação de 3 casas decimais.</p>
@@ -314,10 +304,6 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">solveset</span><span class="p">(</span><span class="n">Rn</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">sym</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left\{0.944467145247248\right\}\]</div>
 </div>
 </div>
 <p><strong>Problema 5:</strong> Uma fórmula usada para modelar o crescimento populacional é a função exponencial <span class="math notranslate nohighlight">\(P(t) = Ce^{rt}\)</span>, onde <span class="math notranslate nohighlight">\(C\)</span> é a população inicial, <span class="math notranslate nohighlight">\(r\)</span> a <em>taxa de crescimento</em> e <span class="math notranslate nohighlight">\(t\)</span> o tempo decorrido. De acordo com o <a class="reference external" href="https://cidades.ibge.gov.br/brasil/pb">[IBGE]</a>, a população estimada no estado da Paraíba no último censo em 2010 era de 3.766.528 pessoas. Em 2019, este numéro saltou para 4.018.127 pessoas. Diante disso, crie um modelo simbólico para responder os itens a seguir:</p>
@@ -349,13 +335,13 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
