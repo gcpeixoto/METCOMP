@@ -1,6 +1,9 @@
 html:
 	jupyter-book build .
 
+push:
+	ghp-import -n -p -f _build/html
+
 latex:
 	jupyter-book build . --builder pdflatex
 
