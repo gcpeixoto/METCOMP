@@ -7,9 +7,9 @@
 
 **Problema 2:** Considere os seguintes polinômios:
 
-$$P(x) = a_0 + a_1x + a_5x^5 + a_13x^{13}$$
+$$P(x) = a_0 + a_1x + a_5x^5 + a_{13}x^{13}$$
 
-$$Q(x) = b_0 + b_4x^4 + b_8x^8 + b_22x^{22}$$
+$$Q(x) = b_0 + b_4x^4 + b_8x^8 + b_{22}x^{22}$$
 
 Compute a expressão algébrica de $R(x) = P(x)Q(x)$ em $x = \pi$.
 
