@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laboratório 2 &#8212; Métodos Computacionais</title>
+    <title>Laboratório 3 &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,8 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Laboratório 3" href="lab-03.html" />
-    <link rel="prev" title="Laboratório 1" href="lab-01.html" />
+    <link rel="prev" title="Laboratório 2" href="lab-02.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -138,13 +137,13 @@
    Laboratório 1
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-02.html">
    Laboratório 2
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab-03.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Laboratório 3
   </a>
  </li>
@@ -188,7 +187,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/lab-02.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/lab-03.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -213,7 +212,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lab-02.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lab-03.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -221,7 +220,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lab-02.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lab-03.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -246,23 +245,115 @@
         
               <div>
                 
-  <div class="section" id="laboratorio-2">
-<h1>Laboratório 2<a class="headerlink" href="#laboratorio-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="laboratorio-3">
+<h1>Laboratório 3<a class="headerlink" href="#laboratorio-3" title="Permalink to this headline">¶</a></h1>
 <p><strong>Resolva todos os problemas por computação.</strong></p>
-<hr><p><strong>Problema 1</strong>: Considere <span class="math notranslate nohighlight">\(f(x) = b + \sqrt{e^{\alpha} - (x - a)^2}\)</span> e <span class="math notranslate nohighlight">\(g(x) = x^2\cos(x) - 4\)</span>. Calcule <span class="math notranslate nohighlight">\(y = f(g(x=0))\)</span> para <span class="math notranslate nohighlight">\(a = 2\)</span> e <span class="math notranslate nohighlight">\(b = -2\)</span>. Quais são os valores aceitáveis de <span class="math notranslate nohighlight">\(\alpha\)</span> para que <span class="math notranslate nohighlight">\(y \in \mathbb{R}\)</span>?</p>
-<p><strong>Problema 2:</strong> Considere os seguintes polinômios:</p>
+<hr><p><strong>Problema 1</strong>: A Evona Inc. é uma empresa que fabrica microcomponentes para <em>cockpits</em> de aeronaves. Em seu novo catálogo, implementado após uma mudança da gestão operacional, cada microcomponente passou a ser guardado no estoque em pequenas caixas endereçadas por um número natural
+e unicamente identificado por um código formado por 4 caracteres que obedece à seguinte regra:</p>
 <div class="math notranslate nohighlight">
-\[P(x) = a_0 + a_1x + a_5x^5 + a_{13}x^{13}\]</div>
-<div class="math notranslate nohighlight">
-\[Q(x) = b_0 + b_4x^4 + b_8x^8 + b_{22}x^{22}\]</div>
-<p>Compute a expressão algébrica de <span class="math notranslate nohighlight">\(R(x) = P(x)Q(x)\)</span> em <span class="math notranslate nohighlight">\(x = \pi\)</span>.</p>
-<p><strong>Problema 3:</strong> Considere o polinômio <span class="math notranslate nohighlight">\(R(x)\)</span> obtido no Problema 1. Se <span class="math notranslate nohighlight">\(a_0 = -2\)</span>, <span class="math notranslate nohighlight">\(a_1 = -4\)</span>, <span class="math notranslate nohighlight">\(a_5 = 6\)</span>, <span class="math notranslate nohighlight">\(a_{13} = 8/3\)</span>, <span class="math notranslate nohighlight">\(b_0 = -1\)</span>, <span class="math notranslate nohighlight">\(b_4 = -3/4\)</span>, <span class="math notranslate nohighlight">\(b_8 = 5\)</span> e <span class="math notranslate nohighlight">\(b_{22} = 7\)</span>, determine o valor da soma dos coeficientes do termo <span class="math notranslate nohighlight">\(x^5\)</span>. Considere <span class="math notranslate nohighlight">\(\pi = 3.14\)</span>.</p>
-<p><strong>Problema 4:</strong> Utilizando a mesma substituição de coeficientes apresentada no Problema 2, determine todas as raízes reais do polinômio <span class="math notranslate nohighlight">\(R(x)\)</span> com aproximação de 3 casas decimais.</p>
-<p><strong>Problema 5:</strong> Uma fórmula usada para modelar o crescimento populacional é a função exponencial <span class="math notranslate nohighlight">\(P(t) = Ce^{rt}\)</span>, onde <span class="math notranslate nohighlight">\(C\)</span> é a população inicial, <span class="math notranslate nohighlight">\(r\)</span> a <em>taxa de crescimento</em> e <span class="math notranslate nohighlight">\(t\)</span> o tempo decorrido. De acordo com o <a class="reference external" href="https://cidades.ibge.gov.br/brasil/pb">[IBGE]</a>, a população estimada no estado da Paraíba no último censo em 2010 era de 3.766.528 pessoas. Em 2019, este numéro saltou para 4.018.127 pessoas. Diante disso, crie um modelo simbólico para responder os itens a seguir:</p>
+\[v: \underline{c_1} \, \underline{c_2} \, \underline{c_3} \, \underline{c_4}\]</div>
 <ul class="simple">
-<li><p>considerando o interstício de 2010 a 2019, qual foi a taxa de crescimento <span class="math notranslate nohighlight">\(r\)</span> do estado?</p></li>
-<li><p>supondo que a população cresça na mesma taxa encontrada no item anterior, qual será a população do estado em 2037? E em 2055?</p></li>
+<li><p>O valor <code class="docutils literal notranslate"><span class="pre">v</span></code> é o índice do código na sequencia ordenada crescente;</p></li>
+<li><p>O caracter <span class="math notranslate nohighlight">\(c_1\)</span> deve assumir o valor <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, <code class="docutils literal notranslate"><span class="pre">'B'</span></code> ou <code class="docutils literal notranslate"><span class="pre">'C'</span></code>;</p></li>
+<li><p>O caracter <span class="math notranslate nohighlight">\(c_2\)</span> deve ser um número ímpar;</p></li>
+<li><p>Os caracteres <span class="math notranslate nohighlight">\(c_3\)</span> e <span class="math notranslate nohighlight">\(c_4\)</span> devem assumir valores entre 0 e 9, podendo ser repetidos.</p></li>
 </ul>
+<p>Assim, o primeiro código possível é <code class="docutils literal notranslate"><span class="pre">'A100'</span></code> e o último é <code class="docutils literal notranslate"><span class="pre">'C999'</span></code>.</p>
+<p>Você foi incumbido de organizar o catálogo e criar um mecanismo de busca onde um usuário qualquer pode localizar rapidamente o endereço da caixa a partir do código de 4 caracteres. Diante disso:</p>
+<ul class="simple">
+<li><p>Crie uma função chamada <code class="docutils literal notranslate"><span class="pre">lst_cod_4</span></code> para gerar todos os códigos possíveis;</p></li>
+<li><p>Crie uma segunda função chamada <code class="docutils literal notranslate"><span class="pre">loc_cod</span></code> para determinar o endereço do microcomponente a partir de seu código;</p></li>
+<li><p>Determine os endereços no estoque para os códigos <code class="docutils literal notranslate"><span class="pre">'A385'</span></code>, <code class="docutils literal notranslate"><span class="pre">'B743'</span></code> e <code class="docutils literal notranslate"><span class="pre">'C109'</span></code>.</p></li>
+</ul>
+<p><strong>Problema 2:</strong> Borrachas sintéticas são obtidas por processos químicos de polimerização pela adição de compostos diênicos. A borracha vulcanizada, por exemplo, foi descoberta em 1839, por Charles Goodyear, cujo sobrenome deu origem à fabricante de pneus <em>Goodyear</em>. Outros tipos de borracha sintética, tais como a siliconada, fluorada e nitrílica, são utilizados para fabricar correias, revestimentos, mangueiras, vedantes.</p>
+<p>Alguns elementos comuns que constituem as fórmulas químicas das borrachas sintéticas são: carbono, hidrogênio, nitrogênio e oxigênio. Suponha que você está trabalhando em um projeto na indústria química onde lhe foi pedido para fazer um levantamento das seguintes informações a respeito dos elementos químicos consoante a tabela periódica: símbolo (<span class="math notranslate nohighlight">\(s\)</span>), número atômico (<span class="math notranslate nohighlight">\(Z\)</span>), massa atômica (<span class="math notranslate nohighlight">\(m\)</span>) e configuração eletrônica (<span class="math notranslate nohighlight">\(e\)</span>).</p>
+<p>As tarefas atribuídas a você são as seguintes:</p>
+<ul class="simple">
+<li><p>organizar em uma lista <code class="docutils literal notranslate"><span class="pre">T</span></code> todas as ênuplas do tipo <code class="docutils literal notranslate"><span class="pre">(s,Z,m,e)</span></code> para cada um dos 4 elementos;</p></li>
+<li><p>escrever uma expressão computacional que forme, por indexações e concatenações, a fórmula do metano, i.e. <code class="docutils literal notranslate"><span class="pre">'CH4'</span></code>, cujo tipo de dado deve ser <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+</ul>
+<p>Notas:</p>
+<ul class="simple">
+<li><p>A lista <code class="docutils literal notranslate"><span class="pre">T</span></code> deve ser algo como <code class="docutils literal notranslate"><span class="pre">[(s1,Z1,m1,e1),...,(s4,Z4,m4,e4)]</span></code>.</p></li>
+<li><p>A expressão deve usar apenas indexações e um casting de <code class="docutils literal notranslate"><span class="pre">str</span></code> (p.ex. <code class="docutils literal notranslate"><span class="pre">T[2][2]</span> <span class="pre">+</span> <span class="pre">str(T[3][1])</span> <span class="pre">...</span></code>, bem como números acessados na própria tabela. Isto é, expressões do tipo <code class="docutils literal notranslate"><span class="pre">T[2][2]</span> <span class="pre">+</span> <span class="pre">1</span></code> ou <code class="docutils literal notranslate"><span class="pre">T[1][2]</span> <span class="pre">-</span> <span class="pre">6</span></code> não são permitidas porque 1 e 6 são inteiros isolados.</p></li>
+</ul>
+<p><strong>Problema 3:</strong> <em>Alcanos</em> são hidrocarbonetos parafínicos constituídos exclusivamente por carbono e hidrogênio cuja fórmula geral é dada por:</p>
+<div class="math notranslate nohighlight">
+\[C_nH_{2n+2}\]</div>
+<p>Para <span class="math notranslate nohighlight">\(n = 1,2,\ldots,10\)</span>, os alcanos recebem nomes especiais da seguinte forma: <code class="docutils literal notranslate"><span class="pre">prefixo</span></code> + <code class="docutils literal notranslate"><span class="pre">-ano</span></code>. Os prefixos são:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head"><p>prefixo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>met-</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>et-</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>prop-</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>but-</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>pent-</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>hex-</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>hept-</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>oct-</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>non-</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>dec-</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Use a fórmula e os prefixos dados para imprimir na tela uma tabela do tipo:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head"><p>fórmula</p></th>
+<th class="head"><p>alcano</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>C1H4</p></td>
+<td><p>metano</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Problema 4</strong>: Uma esteira rolante de bagagens especiais de um aeroporto brasileiro possui 3 slots de transporte sendo capaz de comportar no máximo 3 objetos (1 em cada slot) suportando uma carga máxima total de 5 kg. Suponha que os objetos sejam denominados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> e <span class="math notranslate nohighlight">\(c\)</span>. Exceto a configuração de nenhum objeto transportado,</p>
+<ol class="simple">
+<li><p>Determine todas as configurações possíveis transportáveis como ternas do tipo (<span class="math notranslate nohighlight">\(p_a\)</span>,<span class="math notranslate nohighlight">\(p_b\)</span>,<span class="math notranslate nohighlight">\(p_c\)</span>), onde <span class="math notranslate nohighlight">\(p_a\)</span>, <span class="math notranslate nohighlight">\(p_b\)</span> e <span class="math notranslate nohighlight">\(p_c\)</span> são os pesos individuais dos objetos.</p></li>
+<li><p>Quantas combinações são possíveis de modo que <span class="math notranslate nohighlight">\(p_a + p_b + p_c = 10\)</span>?</p></li>
+</ol>
+<p>Notas:</p>
+<ul class="simple">
+<li><p>Para resolver 1, observe que será necessário encontrar todas as soluções inteiras não-negativas como ternas (<span class="math notranslate nohighlight">\(p_a\)</span>,<span class="math notranslate nohighlight">\(p_b\)</span>,<span class="math notranslate nohighlight">\(p_c\)</span>) tais que <span class="math notranslate nohighlight">\(p_a + p_b + p_c \leq 5\)</span>.</p></li>
+<li><p>Para resolver 2, considere o seguinte resultado:</p></li>
+</ul>
+<blockquote>
+<div><p>Se <span class="math notranslate nohighlight">\(x_1 + x_2 + \ldots + x_n = b\)</span>, então <span class="math notranslate nohighlight">\(N = \frac{(n + b -1)!}{b!(n-1)!}\)</span> é o número de soluções não-negativas da equação linear.</p>
+</div></blockquote>
 </div>
 
     <script type="text/x-thebe-config">
@@ -290,8 +381,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="lab-01.html" title="previous page">Laboratório 1</a>
-    <a class='right-next' id="next-link" href="lab-03.html" title="next page">Laboratório 3</a>
+    <a class='left-prev' id="prev-link" href="lab-02.html" title="previous page">Laboratório 2</a>
 
         </div>
         
