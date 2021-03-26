@@ -6,11 +6,13 @@
   - file: 01a-introducao
   - file: 01b-fundamentos-python
   - file: 02a-computacao-simbolica
+  - file: 03a-matematica-discreta
 - part: Laboratório Computacional
   numbered: False
   chapters:
   - file: lab-01
   - file: lab-02
+  - file: lab-03
 #
 # MODEL: 
 # - file: intro

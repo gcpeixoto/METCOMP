@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório 3 &#8212; Métodos Computacionais</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Métodos Computacionais</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0-conteudo.html">
+   METCOMP - Métodos Computacionais
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python para computação científica
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01a-introducao.html">
+   1. Ferramentas computacionais do curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01b-fundamentos-python.html">
+   2. Fundamentos de
+   <em>
+    Python
+   </em>
+   para Computação Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03a-matematica-discreta.html">
+   4. Fundamentos de Matemática Discreta com Python
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Laboratório Computacional
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-01.html">
+   Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-02.html">
+   Laboratório 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-03.html">
+   Laboratório 3
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lab-gabs/lab-03-gab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lab-gabs/lab-03-gab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lab-gabs/lab-03-gab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="laboratorio-3">
+<h1>Laboratório 3<a class="headerlink" href="#laboratorio-3" title="Permalink to this headline">¶</a></h1>
+<p><strong>Resolva todos os problemas por computação.</strong></p>
+<hr><p><strong>Problema 1</strong>: A Evona Inc. é uma empresa que fabrica microcomponentes para <em>cockpits</em> de aeronaves. Em seu novo catálogo, implementado após uma mudança da gestão operacional, cada microcomponente passou a ser guardado no estoque em pequenas caixas endereçadas por um número natural
+e unicamente identificado por um código formado por 4 caracteres que obedece à seguinte regra:</p>
+<div class="math notranslate nohighlight">
+\[v: \underline{c_1} \, \underline{c_2} \, \underline{c_3} \, \underline{c_4}\]</div>
+<ul class="simple">
+<li><p>O valor <code class="docutils literal notranslate"><span class="pre">v</span></code> é o índice do código na sequencia ordenada crescente;</p></li>
+<li><p>O caracter <span class="math notranslate nohighlight">\(c_1\)</span> deve assumir o valor <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, <code class="docutils literal notranslate"><span class="pre">'B'</span></code> ou <code class="docutils literal notranslate"><span class="pre">'C'</span></code>;</p></li>
+<li><p>O caracter <span class="math notranslate nohighlight">\(c_2\)</span> deve ser um número ímpar;</p></li>
+<li><p>Os caracteres <span class="math notranslate nohighlight">\(c_3\)</span> e <span class="math notranslate nohighlight">\(c_4\)</span> devem assumir valores entre 0 e 9, podendo ser repetidos.</p></li>
+</ul>
+<p>Assim, o primeiro código possível é <code class="docutils literal notranslate"><span class="pre">'A100'</span></code> e o último é <code class="docutils literal notranslate"><span class="pre">'C999'</span></code>.</p>
+<p>Você foi incumbido de organizar o catálogo e criar um mecanismo de busca onde um usuário qualquer pode localizar rapidamente o endereço da caixa a partir do código de 4 caracteres. Diante disso:</p>
+<ul class="simple">
+<li><p>Crie uma função chamada <code class="docutils literal notranslate"><span class="pre">lst_cod_4</span></code> para gerar todos os códigos possíveis;</p></li>
+<li><p>Crie uma segunda função chamada <code class="docutils literal notranslate"><span class="pre">loc_cod</span></code> para determinar o endereço do microcomponente a partir de seu código;</p></li>
+<li><p>Determine os endereços no estoque para os códigos <code class="docutils literal notranslate"><span class="pre">'A385'</span></code>, <code class="docutils literal notranslate"><span class="pre">'B743'</span></code> e <code class="docutils literal notranslate"><span class="pre">'C109'</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cria lista de códigos com 4 caracteres</span>
+<span class="k">def</span> <span class="nf">lst_cod_4</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c4</span><span class="p">):</span>
+    <span class="n">codigos</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_1</span> <span class="ow">in</span> <span class="n">c1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_2</span> <span class="ow">in</span> <span class="n">c2</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_3</span> <span class="ow">in</span> <span class="n">c3</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">_4</span> <span class="ow">in</span> <span class="n">c3</span><span class="p">:</span>
+                    <span class="n">c</span> <span class="o">=</span> <span class="n">_1</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_3</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_4</span><span class="p">)</span>
+                    <span class="n">codigos</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+                    <span class="n">v</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">codigos</span>
+
+<span class="c1"># localiza codigo desejado</span>
+<span class="k">def</span> <span class="nf">loc_cod</span><span class="p">(</span><span class="n">cod</span><span class="p">):</span>                
+    <span class="k">for</span> <span class="n">pos</span><span class="p">,</span><span class="n">val</span> <span class="ow">in</span> <span class="n">codigos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">cod</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pos</span>
+
+<span class="c1"># possibilidades </span>
+<span class="n">c1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># impares</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># 0...9</span>
+
+<span class="c1"># todos os codigos</span>
+<span class="n">codigos</span> <span class="o">=</span> <span class="n">lst_cod_4</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c3</span><span class="p">)</span>
+        
+<span class="c1"># busca de box correspondente para códigos-alvo        </span>
+<span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A385&#39;</span><span class="p">,</span><span class="s1">&#39;B743&#39;</span><span class="p">,</span><span class="s1">&#39;C109&#39;</span><span class="p">]</span>        
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">loc_cod</span><span class="p">,</span><span class="n">target</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[186, 844, 1010]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problema 2:</strong> Borrachas sintéticas são obtidas por processos químicos de polimerização pela adição de compostos diênicos. A borracha vulcanizada, por exemplo, foi descoberta em 1839, por Charles Goodyear, cujo sobrenome deu origem à fabricante de pneus <em>Goodyear</em>. Outros tipos de borracha sintética, tais como a siliconada, fluorada e nitrílica, são utilizados para fabricar correias, revestimentos, mangueiras, vedantes.</p>
+<p>Alguns elementos comuns que constituem as fórmulas químicas das borrachas sintéticas são: carbono, hidrogênio, nitrogênio e oxigênio. Suponha que você está trabalhando em um projeto na indústria química onde lhe foi pedido para fazer um levantamento das seguintes informações a respeito dos elementos químicos consoante a tabela periódica: símbolo (<span class="math notranslate nohighlight">\(s\)</span>), número atômico (<span class="math notranslate nohighlight">\(Z\)</span>), massa atômica (<span class="math notranslate nohighlight">\(m\)</span>) e configuração eletrônica (<span class="math notranslate nohighlight">\(e\)</span>).</p>
+<p>As tarefas atribuídas a você são as seguintes:</p>
+<ul class="simple">
+<li><p>organizar em uma lista <code class="docutils literal notranslate"><span class="pre">T</span></code> todas as ênuplas do tipo <code class="docutils literal notranslate"><span class="pre">(s,Z,m,e)</span></code> para cada um dos 4 elementos;</p></li>
+<li><p>escrever uma expressão computacional que forme, por indexações e concatenações, a fórmula do metano, i.e. <code class="docutils literal notranslate"><span class="pre">'CH4'</span></code>, cujo tipo de dado deve ser <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+</ul>
+<p>Notas:</p>
+<ul class="simple">
+<li><p>A lista <code class="docutils literal notranslate"><span class="pre">T</span></code> deve ser algo como <code class="docutils literal notranslate"><span class="pre">[(s1,Z1,m1,e1),...,(s4,Z4,m4,e4)]</span></code>.</p></li>
+<li><p>A expressão deve usar apenas indexações e um casting de <code class="docutils literal notranslate"><span class="pre">str</span></code> (p.ex. <code class="docutils literal notranslate"><span class="pre">T[2][2]</span> <span class="pre">+</span> <span class="pre">str(T[3][1])</span> <span class="pre">...</span></code>, bem como números acessados na própria tabela. Isto é, expressões do tipo <code class="docutils literal notranslate"><span class="pre">T[2][2]</span> <span class="pre">+</span> <span class="pre">1</span></code> ou <code class="docutils literal notranslate"><span class="pre">T[1][2]</span> <span class="pre">-</span> <span class="pre">6</span></code> não são permitidas porque 1 e 6 são inteiros isolados.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">]</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">ma</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.011</span><span class="p">,</span><span class="mf">1.008</span><span class="p">,</span><span class="mf">14.007</span><span class="p">,</span><span class="mf">15.999</span><span class="p">]</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1s2|2s2|2p2&#39;</span><span class="p">,</span><span class="s1">&#39;1s1&#39;</span><span class="p">,</span><span class="s1">&#39;1s2|2s2|2p3&#39;</span><span class="p">,</span><span class="s1">&#39;1s2|2s2|2p4&#39;</span><span class="p">]</span>
+    
+<span class="n">T</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">ma</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
+<span class="n">cadeia</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> \
+         <span class="nb">str</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">T</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A cadeia </span><span class="si">{</span><span class="n">cadeia</span><span class="si">}</span><span class="s1"> é um metano.&#39;</span><span class="p">)</span>
+<span class="c1"># https://www.todamateria.com.br/tabela-periodica/        </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A cadeia CH4 é um metano.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problema 3:</strong> <em>Alcanos</em> são hidrocarbonetos parafínicos constituídos exclusivamente por carbono e hidrogênio cuja fórmula geral é dada por:</p>
+<div class="math notranslate nohighlight">
+\[C_nH_{2n+2}\]</div>
+<p>Para <span class="math notranslate nohighlight">\(n = 1,2,\ldots,10\)</span>, os alcanos recebem nomes especiais da seguinte forma: <code class="docutils literal notranslate"><span class="pre">prefixo</span></code> + <code class="docutils literal notranslate"><span class="pre">-ano</span></code>. Os prefixos são:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head"><p>prefixo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>met-</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>et-</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>prop-</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>but-</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>pent-</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>hex-</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>hept-</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>oct-</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>non-</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>dec-</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Use a fórmula e os prefixos dados para imprimir na tela uma tabela do tipo:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head"><p>fórmula</p></th>
+<th class="head"><p>alcano</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>C1H4</p></td>
+<td><p>metano</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;met&#39;</span><span class="p">,</span><span class="s1">&#39;et&#39;</span><span class="p">,</span><span class="s1">&#39;prop&#39;</span><span class="p">,</span><span class="s1">&#39;but&#39;</span><span class="p">,</span><span class="s1">&#39;pent&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;hex&#39;</span><span class="p">,</span><span class="s1">&#39;hept&#39;</span><span class="p">,</span><span class="s1">&#39;oct&#39;</span><span class="p">,</span><span class="s1">&#39;non&#39;</span><span class="p">,</span><span class="s1">&#39;dec&#39;</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span><span class="n">pre</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">expr</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;H&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">nome</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="s1">&#39;ano&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="n">expr</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
+    <span class="c1">#print(&#39;|&#39; + str(n) + &#39;|&#39; + v + &#39;-|&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|1|C1H4|metano|
+|2|C2H6|etano|
+|3|C3H8|propano|
+|4|C4H10|butano|
+|5|C5H12|pentano|
+|6|C6H14|hexano|
+|7|C7H16|heptano|
+|8|C8H18|octano|
+|9|C9H20|nonano|
+|10|C10H22|decano|
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problema 4</strong>: Uma esteira rolante de bagagens especiais de um aeroporto brasileiro possui 3 slots de transporte sendo capaz de comportar no máximo 3 objetos (1 em cada slot) suportando uma carga máxima total de 5 kg. Suponha que os objetos sejam denominados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> e <span class="math notranslate nohighlight">\(c\)</span>. Exceto a configuração de nenhum objeto transportado,</p>
+<ol class="simple">
+<li><p>Determine todas as configurações possíveis transportáveis como ternas do tipo (<span class="math notranslate nohighlight">\(p_a\)</span>,<span class="math notranslate nohighlight">\(p_b\)</span>,<span class="math notranslate nohighlight">\(p_c\)</span>), onde <span class="math notranslate nohighlight">\(p_a\)</span>, <span class="math notranslate nohighlight">\(p_b\)</span> e <span class="math notranslate nohighlight">\(p_c\)</span> são os pesos individuais dos objetos.</p></li>
+<li><p>Quantas combinações são possíveis de modo que <span class="math notranslate nohighlight">\(p_a + p_b + p_c = 10\)</span>?</p></li>
+</ol>
+<p>Notas:</p>
+<ul class="simple">
+<li><p>Para resolver 1, observe que será necessário encontrar todas as soluções inteiras não-negativas como ternas (<span class="math notranslate nohighlight">\(p_a\)</span>,<span class="math notranslate nohighlight">\(p_b\)</span>,<span class="math notranslate nohighlight">\(p_c\)</span>) tais que <span class="math notranslate nohighlight">\(p_a + p_b + p_c \leq 5\)</span>.</p></li>
+<li><p>Para resolver 2, considere o seguinte resultado:</p></li>
+</ul>
+<blockquote>
+<div><p>Se <span class="math notranslate nohighlight">\(x_1 + x_2 + \ldots + x_n = b\)</span>, então <span class="math notranslate nohighlight">\(N = \frac{(n + b -1)!}{b!(n-1)!}\)</span> é o número de soluções não-negativas da equação linear.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># busca as triplas</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">yes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># filtra para carga máxima</span>
+            <span class="k">if</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">M</span><span class="p">:</span>
+                <span class="n">tripla</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+                <span class="n">yes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tripla</span><span class="p">)</span>
+
+<span class="c1"># remove solução nula                </span>
+<span class="n">yes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># solucoes</span>
+<span class="n">yes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 0, 1),
+ (0, 0, 2),
+ (0, 0, 3),
+ (0, 0, 4),
+ (0, 0, 5),
+ (0, 1, 0),
+ (0, 1, 1),
+ (0, 1, 2),
+ (0, 1, 3),
+ (0, 1, 4),
+ (0, 2, 0),
+ (0, 2, 1),
+ (0, 2, 2),
+ (0, 2, 3),
+ (0, 3, 0),
+ (0, 3, 1),
+ (0, 3, 2),
+ (0, 4, 0),
+ (0, 4, 1),
+ (0, 5, 0),
+ (1, 0, 0),
+ (1, 0, 1),
+ (1, 0, 2),
+ (1, 0, 3),
+ (1, 0, 4),
+ (1, 1, 0),
+ (1, 1, 1),
+ (1, 1, 2),
+ (1, 1, 3),
+ (1, 2, 0),
+ (1, 2, 1),
+ (1, 2, 2),
+ (1, 3, 0),
+ (1, 3, 1),
+ (1, 4, 0),
+ (2, 0, 0),
+ (2, 0, 1),
+ (2, 0, 2),
+ (2, 0, 3),
+ (2, 1, 0),
+ (2, 1, 1),
+ (2, 1, 2),
+ (2, 2, 0),
+ (2, 2, 1),
+ (2, 3, 0),
+ (3, 0, 0),
+ (3, 0, 1),
+ (3, 0, 2),
+ (3, 1, 0),
+ (3, 1, 1),
+ (3, 2, 0),
+ (4, 0, 0),
+ (4, 0, 1),
+ (4, 1, 0),
+ (5, 0, 0)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculo de soluções </span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">M</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">N</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gcpeixoto/METCOMP",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab-gabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Gustavo Oliveira<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

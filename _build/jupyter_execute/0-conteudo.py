@@ -13,10 +13,18 @@ Programa para semestre 2020/02 (atualização semanal)
 - [Fundamentos de Python](01b-fundamentos-python.ipynb)
 - [Laboratório Computacional 1](lab-01.ipynb)
 
-### Semana 2 
+### Semanas 2 e 3
 
 - [Computação Simbólica](02a-computacao-simbolica.ipynb)
 - [Laboratório Computacional 2](lab-02.ipynb)
+
+
+### Semana 4
+
+- [Matemática Discreta](03a-matematica-discreta.ipynb)
+- [Laboratório Computacional 3](lab-03.ipynb)
+
+
 
 
 ```{toctree}
@@ -28,6 +36,7 @@ Programa para semestre 2020/02 (atualização semanal)
 01a-introducao
 01b-fundamentos-python
 02a-computacao-simbolica
+03a-matematica-discreta
 ```
 
 
@@ -38,4 +47,5 @@ Programa para semestre 2020/02 (atualização semanal)
 
 lab-01
 lab-02
+lab-03
 ```
