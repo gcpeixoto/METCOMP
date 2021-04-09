@@ -24,6 +24,10 @@ Programa para semestre 2020/02 (atualização semanal)
 - [Matemática Discreta](03a-matematica-discreta.ipynb)
 - [Laboratório Computacional 3](lab-03.ipynb)
 
+### Semana 5
+
+- [Computação Vetorizada](04a-computacao-vetorizada.ipynb)
+- [Laboratório Computacional 4](lab-04.ipynb)
 
 
 
