@@ -7,12 +7,14 @@
   - file: 01b-fundamentos-python
   - file: 02a-computacao-simbolica
   - file: 03a-matematica-discreta
+  - file: 04a-computacao-vetorizada
 - part: Laboratório Computacional
   numbered: False
   chapters:
   - file: lab-01
   - file: lab-02
   - file: lab-03
+  - file: lab-04
 #
 # MODEL: 
 # - file: intro
