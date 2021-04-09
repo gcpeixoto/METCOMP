@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Laboratório 4 &#8212; Métodos Computacionais</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Laboratório 3" href="lab-03.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Métodos Computacionais</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-conteudo.html">
+   METCOMP - Métodos Computacionais
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Python para computação científica
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Ferramentas computacionais do curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-fundamentos-python.html">
+   2. Fundamentos de
+   <em>
+    Python
+   </em>
+   para Computação Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-matematica-discreta.html">
+   4. Fundamentos de Matemática Discreta com Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Laboratório Computacional
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-01.html">
+   Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-02.html">
+   Laboratório 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-03.html">
+   Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Laboratório 4
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lab-04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lab-04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lab-04.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="laboratorio-4">
+<h1>Laboratório 4<a class="headerlink" href="#laboratorio-4" title="Permalink to this headline">¶</a></h1>
+<p><strong>Resolva todos os problemas por computação.</strong></p>
+<hr><p><strong>Problema 1:</strong> O <em>Índice de Massa Corpórea</em> (IMC) é usado para saber se um indivíduo está no peso ideal. Ele é definido pela fórmula</p>
+<div class="math notranslate nohighlight">
+\[IMC = \dfrac{M}{A^2},\]</div>
+<p>onde <span class="math notranslate nohighlight">\(M\)</span> é a massa (considere quilogramas) do indivíduo e <span class="math notranslate nohighlight">\(A\)</span> é a sua altura (considere metros). Um indíviduo tem <em>peso normal</em> se seu IMC estiver no intervalo faixa <span class="math notranslate nohighlight">\(18.5 \leq IMC &lt; 25.0\)</span>.</p>
+<p>A seleção brasileira masculina de futebol profissional convocada para a Copa do Mundo 2018 era composta de 23 jogadores, a saber: Alisson, Casemiro, Cássio, Danilo, Douglas Costa, Ederson, Fagner, Fernandinho, Filipe Luis, Firmino, Fred, Gabriel Jesus, Geromel, Marcelo, Marquinhos, Miranda, Neymar, Paulinho, Philippe Coutinho, Renato Augusto, Taison, Thiago Silva e Willian.</p>
+<p>O arquivo <code class="docutils literal notranslate"><span class="pre">data/04c-copa2018.npy</span></code>, disponibilizado juntamente com este arquivo, contém uma tabela de peso, altura e idade de cada um desses atletas.</p>
+<p>O gráfico abaixo plota o valor do IMC para cada um desses jogadores. Todos os jogadores possuem peso ideal, mas a linha tracejada divide-os em dois grupos:</p>
+<ul class="simple">
+<li><p>Grupo 1: aqueles na faixa ideal cujo IMC é menor do que 21.7.</p></li>
+<li><p>Grupo 2: aqueles na faixa ideal cujo IMC é maior do que 21.7.</p></li>
+</ul>
+<figure class="align-default" id="imc-selecao">
+<a class="reference internal image-reference" href="figs/imc.png"><img alt="figs/imc.png" src="figs/imc.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">IMC dos jogadores da seleção brasileira da Copa de 2018. <a class="reference external" href="https://www.espn.com.br/artigo/_/id/4310177/selecao-brasileira-veja-o-censo-completo-dos-jogadores-que-vao-a-copa">[Fonte: ESPN]</a></span><a class="headerlink" href="#imc-selecao" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Carregue as informações do arquivo e reproduza o gráfico da figura anterior ou crie um similar estilizando-o do seu modo que contenha:</p>
+<ul class="simple">
+<li><p>a linha tracejada intermediária;</p></li>
+<li><p>marcadores coloridos de modo distinto;</p></li>
+<li><p>eixo com os nomes dos jogadores;</p></li>
+<li><p>linhas de grade;</p></li>
+</ul>
+<p><strong>Obs.:</strong> Use a função do <em>numpy</em> <code class="docutils literal notranslate"><span class="pre">load('...')</span></code>, com a opção <code class="docutils literal notranslate"><span class="pre">allow_pickle=True</span></code>.</p>
+<p><strong>Problema 2</strong>: A <em>Taxa Metabólica Basal</em> (TMB) é a quantidade mínima de energia que o ser humano, em repouso, precisa para sobreviver. A <em>Equação de Mifflin - St. Jeor</em> para calcular a TMB em kcal/dia (quilocalorias por dia) de pessoas do sexo masculino é dada por:</p>
+<div class="math notranslate nohighlight">
+\[TMB = 10M + 6.25A + 5I + 5,\]</div>
+<p>onde <span class="math notranslate nohighlight">\(M\)</span> é a massa do indivíduo, <span class="math notranslate nohighlight">\(A\)</span> sua altura e <span class="math notranslate nohighlight">\(I\)</span> sua idade.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">[Fonte: Wiikipedia]</a></p>
+<p>Usando a equação de Mifflin - St. Jeor:</p>
+<ul class="simple">
+<li><p>calcule a energia necessária total para a manutenção vital de todos os jogadores da seleção de 2018 durante um ano inteiro, isto é, a TMB anual. Considere 1 ano = 365 dias.</p></li>
+<li><p>calcule a TMB anual do time inteiro para o quinquenio 2020 - 2024. Assuma o início do período em 1 de janeiro de 2020 e que nenhuma alteração na escalação do time ocorrerá no período.</p></li>
+<li><p>plote um gráfico em que o eixo <code class="docutils literal notranslate"><span class="pre">x</span></code> deve corresponder ao quinquênio e o eixo <code class="docutils literal notranslate"><span class="pre">y</span></code> ao total da TMB para todos os jogadores em cada ano. Use marcadores do tipo <code class="docutils literal notranslate"><span class="pre">'o'</span></code>.</p></li>
+<li><p>qual é o valor total em kcal no final de 2024?</p></li>
+</ul>
+<p><strong>Obs:</strong> Note que a idade dos jogadores se altera com o tempo. Isto é, após o quinquênio estarão 5 anos mais velhos e a TMB para cada um será diferente a cada ano.</p>
+<p><strong>Problema 3:</strong> O movimento executado por uma bola de futebol ao ser chutada a partir do campo por um jogador é similar ao movimento parabólico de um projétil. A velocidade da bola <span class="math notranslate nohighlight">\(V_b\)</span> pode ser calculada pela expressão:</p>
+<div class="math notranslate nohighlight">
+\[V_b = V_p\left( \dfrac{M_p}{M_p + M_b} \right)(1 + e),\]</div>
+<p>onde <span class="math notranslate nohighlight">\(V_p\)</span> é a velocidade da perna do chutador, <span class="math notranslate nohighlight">\(M_p\)</span> é a massa da perna do chutador, <span class="math notranslate nohighlight">\(M_b\)</span> é a massa da bola e <span class="math notranslate nohighlight">\(e\)</span> é o <em>coeficiente de restituição</em> da bola.</p>
+<p>O alcance <span class="math notranslate nohighlight">\(a\)</span> é a medida horizontal máxima que a bola atinge a partir do ponto de lançamento de acordo com um certo ângulo em que é lançada. Como conhecemos da Física Básica, a fórmula para o alcance é dada por:</p>
+<div class="math notranslate nohighlight">
+\[a = \dfrac{V_b^2\textrm{sen}(2\alpha)}{g}\]</div>
+<p>Diante disso, considere os seguintes dados:</p>
+<ul class="simple">
+<li><p>A massa da bola de futebol profissional é de 400 gramas e seu coeficiente de restituição é 0.7.</p></li>
+<li><p>A massa da perna de um jogador equivale a 10% de sua massa.</p></li>
+<li><p>A velocidade da perna de um jogador é de 20 m/s.</p></li>
+<li><p>A constante gravitacional equivale a 9.8 m/s<sup>2</sup>.</p></li>
+</ul>
+<p>Assuma que um campo de futebol profissional “padrão FIFA” possui área de 100 x 68 <sup>2</sup>. Além disso, defina um <em>Whole-Field Kicker</em> (WFK) o jogador que, chutando uma bola a um ângulo de 45 graus, consegue transportá-la de gol a gol, ou seja de uma linha de fundo a outra, e como <em>Not Whole-Field Kicker</em> (not WFK) aquele que não consegue realizar esta proeza.</p>
+<p>Usando os dados disponíveis na tabela dos jogadores da seleção de 2018:</p>
+<ul class="simple">
+<li><p>determine os jogadores que são “WFK” e os “not WFK”, bem como a quantidade de jogadores em cada classe.</p></li>
+<li><p>determine quem é o WFK do time que chuta mais longe.</p></li>
+<li><p>determine qual é o menor alcance entre os chutes.</p></li>
+<li><p>plote um gráfico do tipo jogador x alcance, colorindo os “not WFK” com marcadores com borda vermelha e cor de face branca.</p></li>
+</ul>
+<p><a class="reference external" href="http://www.mathematicshed.com/uploads/1/2/5/7/12572836/physicsofkickingsoccerball.pdf">[Fonte: Physics of Kicking a Soccer Ball]</a></p>
+<p><strong>Problema 4:</strong> Em 1835, o astrônomo James Inman desenvolveu a <em>fórmula de Haversine</em>. A fórmula de haversine (ou <em>de haverseno</em>) é uma equação usada em navegação para fornecer distâncias entre dois pontos de uma esfera a partir de suas latitudes e longitudes. É um caso especial de uma fórmula mais geral de trigonometria esférica, a <em>lei dos haversines</em>, que relaciona os lados e ângulos de um triângulo contido em uma superfície esférica.</p>
+<p>A distância mais curta <span class="math notranslate nohighlight">\(d\)</span> entre dois pontos sobre uma esfera de raio <span class="math notranslate nohighlight">\(R\)</span> cujas latitudes são <span class="math notranslate nohighlight">\((\phi_1,\phi_2)\)</span> e longitudes <span class="math notranslate nohighlight">\((\theta_1,\theta_2)\)</span> é dada por:</p>
+<div class="math notranslate nohighlight">
+\[d = 2R \, \textrm{arcsen}\big(\sqrt{ \textrm{hav}(\phi_2 - \phi_1) + \cos(\phi_1)\cos(\phi_2)\textrm{hav}(\theta_2 - \theta_1) } \big),\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\textrm{hav}(\alpha) = \textrm{sen}^2\big(\frac{\alpha}{2}\big)\)</span> é a função haverseno de um ângulo <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>A tabela abaixo lista os 5 aeroportos mais movimentados do mundo em 2014, com latitudes e longitudes dadas em graus.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>IATA</p></th>
+<th class="head"><p>Aeroporto</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\phi\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FRA</p></td>
+<td><p>Frankfurt</p></td>
+<td><p>50.026</p></td>
+<td><p>8.543</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEN</p></td>
+<td><p>Denver International</p></td>
+<td><p>39.862</p></td>
+<td><p>-104.673</p></td>
+</tr>
+<tr class="row-even"><td><p>BKK</p></td>
+<td><p>Suvarnabhumi</p></td>
+<td><p>13.681</p></td>
+<td><p>100.747</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYD</p></td>
+<td><p>Sydney Kingsford-Smith</p></td>
+<td><p>-33.946</p></td>
+<td><p>151.177</p></td>
+</tr>
+<tr class="row-even"><td><p>GRU</p></td>
+<td><p>Guarulhos</p></td>
+<td><p>-23.432</p></td>
+<td><p>-46.47</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tarefas:</p>
+<ul class="simple">
+<li><p>Escreva uma função para calcular a distância mais curta em quilômetros entre dois pontos quaisquer sobre a superfície da Terra (considere <span class="math notranslate nohighlight">\(R = 6378.1\)</span> km) dadas as suas latitudes e longitudes.</p></li>
+<li><p>Use esta função para calcular as distâncias dois-a-dois para todos os aeroportos da tabela acima dadas não só as latitudes e longitudes, mas também os seus códigos IATA.</p></li>
+<li><p>Construa uma matriz numérica <span class="math notranslate nohighlight">\(M\)</span> de correlação de distâncias <em>estritamente triangular inferior</em> com base na ordem alfabética do código IATA. Note que uma matriz estritamente triangular inferior é possui zeros em todas as posições <span class="math notranslate nohighlight">\(M_{ij}\)</span>, exceto quando <span class="math notranslate nohighlight">\(i &gt; j\)</span>. Logo, não é necessário computar duas vezes um mesmo trajeto, por exemplo, a distância de FRA a DEN será a mesma de DEN a FRA. (Vide exemplo de uma matriz de distâncias <a class="reference external" href="https://www.researchgate.net/figure/Figura-2-Matriz-de-distancias_fig3_322896495">aqui</a>)</p></li>
+<li><p>Determine <span class="math notranslate nohighlight">\(i\)</span> e <span class="math notranslate nohighlight">\(j\)</span> tais que <span class="math notranslate nohighlight">\(M_{ij}\)</span> é máxima, bem como o valor de <span class="math notranslate nohighlight">\(M_{ij}\)</span>.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gcpeixoto/METCOMP",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="lab-03.html" title="previous page">Laboratório 3</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Gustavo Oliveira<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

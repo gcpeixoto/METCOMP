@@ -70,7 +70,9 @@ print(list(os_100)) # casting com 'list'
 
 **Exemplo**: crie o conjunto $\{ x \in \mathbb{Z} \, ; \, -20 \leq x < 10 \}$
 
-print(list(range(-20,10))) # print é usado para imprimir column-wise 
+#print(list(range(-20,10))) # print é usado para imprimir column-wise 
+
+print(list(range(-20,10)))
 
 **Exemplo**: crie o conjunto $\{ x \in \mathbb{Z} \, ; \, -20 \leq x \leq 10 \}$
 
@@ -85,7 +87,7 @@ Há vários métodos aplicáveis para adicionar e remover elementos em listas.
 Adiciona elementos por concatenação no final da lista.
 
 times.append('Botafogo')
-times
+times 
 
 times.append('Fluminense')
 times
@@ -119,11 +121,11 @@ Suponha que tivéssemos criado a lista:
 pares = [0,2,5,6] # 5 não é par
 pares
 
+
 Como 5 não é par, não deveria estar na lista. Para excluírmos um elemento em uma posição específica, usamos `pop` passando o *índice* onde o elemento está. 
 
 pares.pop(2) # o ímpar 5 está na posição 2 e NÃO 3! 
-pares
-
+pares     
 
 ### Adição por índice
 
@@ -131,6 +133,7 @@ Nesta lista, podemos pensar em incluir 4 entre 2 e 6. Para isto, usamos `insert(
 
 pares.insert(2,4) # 4 é inserido na posição de 6, que é deslocado
 pares
+  
 
 ### Apagar conteúdo da lista
 
@@ -143,7 +146,6 @@ Podemos contar o número de elementos da lista com `len`.
 
 len(times) # verifica que a lista está vazia
 
-
 type([]) # a lista é vazia, mas continua sendo lista 
 
 ### Outros métodos de lista
@@ -155,7 +157,7 @@ print( numeros.count(1), numeros.count(3), numeros.count(7) )
 
 Localize a posição de um elemento com `index`.
 
-numeros.index(5) # retorna a posição da primeira aparição
+numeros.index(5) # retorna a posição da primeira aparição 
 
 Remova a primeira aparição do elemento com `remove`.
 
@@ -165,7 +167,7 @@ numeros
 Faça uma reflexão ("flip") *in-place* (sem criar nova lista) da lista com `reverse`.
 
 numeros.reverse() 
-numeros 
+numeros
 
 Ordene a lista de maneira *in-place* (sem criar nova lista) com `sort`.
 

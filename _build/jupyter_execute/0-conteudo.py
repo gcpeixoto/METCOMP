@@ -37,6 +37,7 @@ Programa para semestre 2020/02 (atualização semanal)
 01b-fundamentos-python
 02a-computacao-simbolica
 03a-matematica-discreta
+04a-computacao-vetorizada
 ```
 
 
@@ -48,4 +49,5 @@ Programa para semestre 2020/02 (atualização semanal)
 lab-01
 lab-02
 lab-03
+lab-04
 ```
