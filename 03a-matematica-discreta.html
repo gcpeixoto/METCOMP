@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>4. Fundamentos de Matemática Discreta com Python &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,8 +26,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -40,14 +41,11 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -55,9 +53,11 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Laboratório 1" href="lab-01.html" />
+    <link rel="next" title="5. Computação vetorizada com numpy" href="04a-computacao-vetorizada.html" />
     <link rel="prev" title="3. Introdução à Computação Simbólica com sympy" href="02a-computacao-simbolica.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,7 +93,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Python para computação científica
  </span>
@@ -126,8 +126,16 @@
    4. Fundamentos de Matemática Discreta com Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Laboratório Computacional
  </span>
@@ -146,6 +154,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="lab-03.html">
    Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-04.html">
+   Laboratório 4
   </a>
  </li>
 </ul>
@@ -635,14 +648,14 @@
         
               <div>
                 
-  <div class="section" id="fundamentos-de-matematica-discreta-com-python">
+  <section id="fundamentos-de-matematica-discreta-com-python">
 <h1><span class="section-number">4. </span>Fundamentos de Matemática Discreta com Python<a class="headerlink" href="#fundamentos-de-matematica-discreta-com-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="a-matematica-das-maquinas">
+<section id="a-matematica-das-maquinas">
 <h2><span class="section-number">4.1. </span>A matemática das máquinas<a class="headerlink" href="#a-matematica-das-maquinas" title="Permalink to this headline">¶</a></h2>
 <p>A característica distintiva da matemática realizada pelas máquinas é a finitude. Isto é, enquanto a matemática tradicional que aprendemos é capaz de lidar com quantidades infinitas e incontáveis, as máquinas possuem limitações em suas capacidades, seja em armazenamento, seja em memória. Embora tais capacidades sejam expansíveis de alguma forma, devemos compreender que os recursos computacionais são finitos.</p>
 <p>Chamamos de <em>Matemática Discreta</em> (ou <em>Álgebra Abstrata</em>) a área da Matemática que lida com objetos discretos, a saber, conjuntos, sequencias, listas, coleções ou quaisquer entidades <em>contáveis</em>. Neste capítulo, aprenderemos estruturas computacionais para organizar dados.</p>
-</div>
-<div class="section" id="estruturas-de-dados-em-python-para-lidar-com-objetos-discretos">
+</section>
+<section id="estruturas-de-dados-em-python-para-lidar-com-objetos-discretos">
 <h2><span class="section-number">4.2. </span>Estruturas de dados em Python para lidar com objetos discretos<a class="headerlink" href="#estruturas-de-dados-em-python-para-lidar-com-objetos-discretos" title="Permalink to this headline">¶</a></h2>
 <p>A linguagem oferece diversos objetos para operarmos com quantidades discretas em formas de sequencias, listas ou coleções. De forma genérica, você pode interpretá-las como “conjuntos” que contém zero ou mais elementos. Um conjunto com zero elementos é chamado de <em>vazio</em>. Em Python, também temos meios para representar o “vazio” também, como veremos adiante.</p>
 <p>As principais estruturas que aprenderemos serão:</p>
@@ -652,8 +665,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code>: estruturas contendo uma coleção de pares do tipo <em>chave-valor</em>. Dicionários são caracterizados por <em>arrays associativos</em> (<em>tabelas hash</em>). Objetos <code class="docutils literal notranslate"><span class="pre">dict</span></code> são definidos por um par de chaves e agrupamentos do tipo  <code class="docutils literal notranslate"><span class="pre">'chave':valor</span></code> (<em>key:value</em>), separados por vírgula: <code class="docutils literal notranslate"><span class="pre">{'chave1':valor1,</span> <span class="pre">'chave2':valor2,</span> <span class="pre">...</span> <span class="pre">,'chaven':valorn}</span></code>. As chaves (<em>keys</em>) são do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>, ao passo que os valores podem ser de tipos arbitrários.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: estruturas similares a <code class="docutils literal notranslate"><span class="pre">dict</span></code>, porém não possuem chaves e contêm objetos únicos. Conjuntos são caracterizadas por <em>unicidade</em> de elementos. Objetos <code class="docutils literal notranslate"><span class="pre">set</span></code> são definidos por um par de chaves e vírgulas que separam seus elementos: <code class="docutils literal notranslate"><span class="pre">{.,</span> <span class="pre">.,</span> <span class="pre">...</span> <span class="pre">,.}</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="listas">
+</section>
+<section id="listas">
 <h2><span class="section-number">4.3. </span>Listas<a class="headerlink" href="#listas" title="Permalink to this headline">¶</a></h2>
 <p>Estruturas <code class="docutils literal notranslate"><span class="pre">list</span></code> formam uma coleção de objetos arbitrários e podem ser criadas de modo sequenciado com operadores de pertencimento ou por expressões geradoras, visto que são estruturas iteráveis.</p>
 <div class="cell docutils container">
@@ -708,7 +721,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="listas-por-geracao">
+<section id="listas-por-geracao">
 <h3><span class="section-number">4.3.1. </span>Listas por geração<a class="headerlink" href="#listas-por-geracao" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo</strong>: crie uma lista dos primeiros 100 inteiros não-negativos.</p>
 <div class="cell docutils container">
@@ -750,12 +763,12 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="adicionando-e-removendo-elementos">
+</section>
+</section>
+<section id="adicionando-e-removendo-elementos">
 <h2><span class="section-number">4.4. </span>Adicionando e removendo elementos<a class="headerlink" href="#adicionando-e-removendo-elementos" title="Permalink to this headline">¶</a></h2>
 <p>Há vários métodos aplicáveis para adicionar e remover elementos em listas.</p>
-<div class="section" id="adicao-por-apensamento">
+<section id="adicao-por-apensamento">
 <h3><span class="section-number">4.4.1. </span>Adição por apensamento<a class="headerlink" href="#adicao-por-apensamento" title="Permalink to this headline">¶</a></h3>
 <p>Adiciona elementos por concatenação no final da lista.</p>
 <div class="cell docutils container">
@@ -784,8 +797,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="adicao-por-extensao">
+</section>
+<section id="adicao-por-extensao">
 <h3><span class="section-number">4.4.2. </span>Adição por extensão<a class="headerlink" href="#adicao-por-extensao" title="Permalink to this headline">¶</a></h3>
 <p>Para incluir elementos através de um objeto iterável, sequenciável, usamos <code class="docutils literal notranslate"><span class="pre">extend</span></code>.</p>
 <div class="cell docutils container">
@@ -807,7 +820,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="iteracao-e-indexacao">
+<section id="iteracao-e-indexacao">
 <h4><span class="section-number">4.4.2.1. </span>Iteração e indexação<a class="headerlink" href="#iteracao-e-indexacao" title="Permalink to this headline">¶</a></h4>
 <p>A <em>iteração</em> sobre uma lista é o processo de “passear” por seus elementos de modo sequenciado. Ao fornecermos o <em>índice</em> (posição) de seus elementos, podemos indexá-los.</p>
 <p>Em Python, a indexação de listas começa a partir de <code class="docutils literal notranslate"><span class="pre">0</span></code> e termina em <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>, onde <code class="docutils literal notranslate"><span class="pre">n</span></code> é o tamanho da lista.</p>
@@ -816,9 +829,9 @@
 <p><span class="math notranslate nohighlight">\(\text{elementos na lista} : [x_1, x_2, \ldots, x_{n}]\)</span></p>
 <p>Quer dizer, o primeiro elemento, <span class="math notranslate nohighlight">\(x_1\)</span> está na posição 0, <span class="math notranslate nohighlight">\(p = 0\)</span>, ao passo que o último elemento, <span class="math notranslate nohighlight">\(x_n\)</span>, está na posição <span class="math notranslate nohighlight">\(n - 1\)</span>, <span class="math notranslate nohighlight">\(p = {n-1}\)</span>.  Logo, se escolhermos uma variável chamada <span class="math notranslate nohighlight">\(p\)</span> que assume o valor <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, …, <span class="math notranslate nohighlight">\(n-1\)</span>, mediante a posição (ordenada) do elemento na lista, diremos que <span class="math notranslate nohighlight">\(p\)</span> é um <em>iterador</em>, os inteiros de <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(n-1\)</span> são os <em>índices</em> e <span class="math notranslate nohighlight">\(n\)</span> é o <em>tamanho da lista</em>.</p>
 <p>Esta mesma idéia é aplicável a qualquer coleção, sequencia ou objeto iterável.</p>
-</div>
-</div>
-<div class="section" id="remocao-por-indice">
+</section>
+</section>
+<section id="remocao-por-indice">
 <h3><span class="section-number">4.4.3. </span>Remoção por índice<a class="headerlink" href="#remocao-por-indice" title="Permalink to this headline">¶</a></h3>
 <p>Suponha que tivéssemos criado a lista:</p>
 <div class="cell docutils container">
@@ -848,8 +861,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="adicao-por-indice">
+</section>
+<section id="adicao-por-indice">
 <h3><span class="section-number">4.4.4. </span>Adição por índice<a class="headerlink" href="#adicao-por-indice" title="Permalink to this headline">¶</a></h3>
 <p>Nesta lista, podemos pensar em incluir 4 entre 2 e 6. Para isto, usamos <code class="docutils literal notranslate"><span class="pre">insert(posicao,valor)</span></code>, para <code class="docutils literal notranslate"><span class="pre">valor</span></code> na <code class="docutils literal notranslate"><span class="pre">posicao</span></code> desejada.</p>
 <div class="cell docutils container">
@@ -865,8 +878,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="apagar-conteudo-da-lista">
+</section>
+<section id="apagar-conteudo-da-lista">
 <h3><span class="section-number">4.4.5. </span>Apagar conteúdo da lista<a class="headerlink" href="#apagar-conteudo-da-lista" title="Permalink to this headline">¶</a></h3>
 <p>Podemos apagar o conteúdo inteiro da lista com <code class="docutils literal notranslate"><span class="pre">clear</span></code>.</p>
 <div class="cell docutils container">
@@ -907,8 +920,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="outros-metodos-de-lista">
+</section>
+<section id="outros-metodos-de-lista">
 <h3><span class="section-number">4.4.6. </span>Outros métodos de lista<a class="headerlink" href="#outros-metodos-de-lista" title="Permalink to this headline">¶</a></h3>
 <p>Conte repetições de elementos na lista com <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p>
 <div class="cell docutils container">
@@ -979,9 +992,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="concatenacao-de-listas">
+</section>
+</section>
+<section id="concatenacao-de-listas">
 <h2><span class="section-number">4.5. </span>Concatenação de listas<a class="headerlink" href="#concatenacao-de-listas" title="Permalink to this headline">¶</a></h2>
 <p>Listas são concatenadas (“somadas”) com <code class="docutils literal notranslate"><span class="pre">+</span></code>. Caso já possua listas definidas, use <code class="docutils literal notranslate"><span class="pre">extend</span></code>.</p>
 <div class="cell docutils container">
@@ -1040,8 +1053,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="fatiamento-de-listas">
+</section>
+<section id="fatiamento-de-listas">
 <h2><span class="section-number">4.6. </span>Fatiamento de listas<a class="headerlink" href="#fatiamento-de-listas" title="Permalink to this headline">¶</a></h2>
 <p>O fatiamento (“slicing”) permite que selecionemos partes da lista através do modelo <code class="docutils literal notranslate"><span class="pre">start:stop</span></code>, em que <code class="docutils literal notranslate"><span class="pre">start</span></code> é um índice incluído na iteração, e <code class="docutils literal notranslate"><span class="pre">stop</span></code> não.</p>
 <div class="cell docutils container">
@@ -1093,7 +1106,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="omissao-de-start-e-stop">
+<section id="omissao-de-start-e-stop">
 <h3><span class="section-number">4.6.1. </span>Omissão de <code class="docutils literal notranslate"><span class="pre">start</span></code> e <code class="docutils literal notranslate"><span class="pre">stop</span></code><a class="headerlink" href="#omissao-de-start-e-stop" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1143,8 +1156,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="modo-reverso">
+</section>
+<section id="modo-reverso">
 <h3><span class="section-number">4.6.2. </span>Modo reverso<a class="headerlink" href="#modo-reverso" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1230,9 +1243,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="elementos-alternados-com-step">
+</section>
+</section>
+<section id="elementos-alternados-com-step">
 <h2><span class="section-number">4.7. </span>Elementos alternados com <code class="docutils literal notranslate"><span class="pre">step</span></code><a class="headerlink" href="#elementos-alternados-com-step" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar um dois pontos duplo (<code class="docutils literal notranslate"><span class="pre">::</span></code>) para dar um “passo” de alternância.</p>
 <div class="cell docutils container">
@@ -1283,8 +1296,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="mutabilidade-de-listas">
+</section>
+<section id="mutabilidade-de-listas">
 <h2><span class="section-number">4.8. </span>Mutabilidade de listas<a class="headerlink" href="#mutabilidade-de-listas" title="Permalink to this headline">¶</a></h2>
 <p>Podemos alterar o conteúdo de elementos diretamente por indexação.</p>
 <div class="cell docutils container">
@@ -1501,7 +1514,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="formatacao-de-strings">
+<section id="formatacao-de-strings">
 <h3><span class="section-number">4.8.1. </span>Formatação de strings<a class="headerlink" href="#formatacao-de-strings" title="Permalink to this headline">¶</a></h3>
 <p>Os valores na lista acima poderiam ser impressos de uma maneira mais legível. Até o momento, estivemos habituados em imprimir valores passando-s à função <code class="docutils literal notranslate"><span class="pre">print</span></code>. Entretanto, a Python nos oferece uma ampla gama de recursos para formatar strings. Veremos mais detalhes sobre <em>templating</em> e formatação de strings mais à frente no curso. Por enquanto, vamos ver como podemos imprimir melhor os <code class="docutils literal notranslate"><span class="pre">float</span></code> anteriores.</p>
 <p>O <em>template</em> a seguir usa a função <code class="docutils literal notranslate"><span class="pre">format</span></code> para substituição de valores indexados.</p>
@@ -1555,8 +1568,8 @@ Perímetro de C = 14.818863
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="como-interpretar-o-que-fizemos">
+</section>
+<section id="como-interpretar-o-que-fizemos">
 <h3><span class="section-number">4.8.2. </span>Como interpretar o que fizemos?<a class="headerlink" href="#como-interpretar-o-que-fizemos" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">{0:s}</span></code> formata o primeiro argumento de <code class="docutils literal notranslate"><span class="pre">format</span></code>, o qual é <code class="docutils literal notranslate"><span class="pre">props[0]</span></code>, como <code class="docutils literal notranslate"><span class="pre">str</span></code> (<code class="docutils literal notranslate"><span class="pre">s</span></code>).</p></li>
@@ -1570,7 +1583,7 @@ Perímetro de C = 14.818863
 <li><p><code class="docutils literal notranslate"><span class="pre">\</span></code>, que é um <em>caracter de escape</em> para continuidade da instrução na linha seguinte. No exemplo em tela, o <em>template</em> criado é do tipo <em>multi-line</em>.</p></li>
 </ul>
 <p><strong>Nota:</strong> a contrabarra em <code class="docutils literal notranslate"><span class="pre">\n</span></code> também é um caracter de escape e não um caracter <em>literal</em>. Isto é, para imprimir uma contrabarra literalmente, é necessário fazer <code class="docutils literal notranslate"><span class="pre">\\</span></code>. Vejamos exemplos de literais a seguir.</p>
-<div class="section" id="exemplos-de-impressao-de-caracteres-literais">
+<section id="exemplos-de-impressao-de-caracteres-literais">
 <h4><span class="section-number">4.8.2.1. </span>Exemplos de impressão de caracteres literais<a class="headerlink" href="#exemplos-de-impressao-de-caracteres-literais" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1590,8 +1603,8 @@ Perímetro de C = 14.818863
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="f-strings">
+</section>
+<section id="f-strings">
 <h4><span class="section-number">4.8.2.2. </span>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this headline">¶</a></h4>
 <p>Temos uma maneira bastante interessante de criar templates usando f-strings, que foi introduzida a partir da versão Python 3.6. Com f-strings a substituição é imediata.</p>
 <div class="cell docutils container">
@@ -1606,8 +1619,8 @@ Perímetro de C = 14.818863
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="estilos-de-formatacao">
+</section>
+<section id="estilos-de-formatacao">
 <h4><span class="section-number">4.8.2.3. </span>Estilos de formatação<a class="headerlink" href="#estilos-de-formatacao" title="Permalink to this headline">¶</a></h4>
 <p>Veja um comparativo de estilos:</p>
 <div class="cell docutils container">
@@ -1653,10 +1666,10 @@ Perímetro de C = 14.818863
 </div>
 </div>
 <p>Veremos à frente meios mais elegantes de fazer coisas similares.</p>
-</div>
-</div>
-</div>
-<div class="section" id="controle-de-fluxo-laco-for">
+</section>
+</section>
+</section>
+<section id="controle-de-fluxo-laco-for">
 <h2><span class="section-number">4.9. </span>Controle de fluxo: laço <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#controle-de-fluxo-laco-for" title="Permalink to this headline">¶</a></h2>
 <p>Em Python, podemos realizar iterar por uma coleção ou iterador usando <em>laços</em>. Introduziremos aqui o laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Em Python, o bloco padrão para este laço é dado por:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">sequencia</span><span class="p">:</span>
@@ -1710,8 +1723,8 @@ uuuuuuuuuu
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="compreensao-de-lista">
+</section>
+<section id="compreensao-de-lista">
 <h2><span class="section-number">4.10. </span>Compreensão de lista<a class="headerlink" href="#compreensao-de-lista" title="Permalink to this headline">¶</a></h2>
 <p>Usando <code class="docutils literal notranslate"><span class="pre">for</span></code>, a criação de listas torna-se bastante facilitada.</p>
 <p><strong>Exemplo:</strong> crie a lista dos primeiros 10 quadrados perfeitos.</p>
@@ -1789,8 +1802,8 @@ uuuuuuuuuu
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tuplas">
+</section>
+<section id="tuplas">
 <h2><span class="section-number">4.11. </span>Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this headline">¶</a></h2>
 <p>Tuplas são são sequencias imutáveis de tamanho fixo. Em Matemática, uma tupla é uma sequência ordenada de elementos. Em geral, o termo <span class="math notranslate nohighlight">\(n-\)</span>upla (“ênupla”) é usado para se referir a uma tupla com <span class="math notranslate nohighlight">\(n\)</span> elementos.</p>
 <p>Por exemplo, tuplas de um único elemento são chamadas de “singleton” ou “mônada”. Tuplas de dois elementos são os conhecidos “pares ordenados”. Com três elementos, chamamos de “trio” ou “tripleta”, e assim por diante.</p>
@@ -1937,7 +1950,7 @@ uuuuuuuuuu
 </div>
 </div>
 </div>
-<div class="section" id="desempacotamento-de-tuplas">
+<section id="desempacotamento-de-tuplas">
 <h3><span class="section-number">4.11.1. </span>Desempacotamento de tuplas<a class="headerlink" href="#desempacotamento-de-tuplas" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1976,8 +1989,8 @@ uuuuuuuuuu
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="enumerate">
+</section>
+<section id="enumerate">
 <h3><span class="section-number">4.11.2. </span><code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#enumerate" title="Permalink to this headline">¶</a></h3>
 <p>Podemos controlar índice e valor ao iterar em uma sequencia.</p>
 <div class="cell docutils container">
@@ -2011,9 +2024,9 @@ uuuuuuuuuu
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="dicionarios">
+</section>
+</section>
+<section id="dicionarios">
 <h2><span class="section-number">4.12. </span>Dicionários<a class="headerlink" href="#dicionarios" title="Permalink to this headline">¶</a></h2>
 <p>Dicionários, ou especificamente, objetos <code class="docutils literal notranslate"><span class="pre">dict</span></code>, possuem extrema versatilidade e são muito poderosos. Criamos um <code class="docutils literal notranslate"><span class="pre">dict</span></code> por diversas formas. A mais simples é usar chaves e pares explícitos.</p>
 <div class="cell docutils container">
@@ -2058,7 +2071,7 @@ uuuuuuuuuu
 </div>
 </div>
 </div>
-<div class="section" id="acesso-a-conteudo">
+<section id="acesso-a-conteudo">
 <h3><span class="section-number">4.12.1. </span>Acesso a conteúdo<a class="headerlink" href="#acesso-a-conteudo" title="Permalink to this headline">¶</a></h3>
 <p>Para acessar o conteúdo de uma chave, indexamos pelo seu nome.</p>
 <div class="cell docutils container">
@@ -2113,8 +2126,8 @@ pos(2) | Soma = 3.1 | Prod = 0.30000000000000004
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="insercao-de-conteudo">
+</section>
+<section id="insercao-de-conteudo">
 <h3><span class="section-number">4.12.2. </span>Inserção de conteúdo<a class="headerlink" href="#insercao-de-conteudo" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2131,8 +2144,8 @@ pos(2) | Soma = 3.1 | Prod = 0.30000000000000004
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="alteracao-de-conteudo">
+</section>
+<section id="alteracao-de-conteudo">
 <h3><span class="section-number">4.12.3. </span>Alteração de conteúdo<a class="headerlink" href="#alteracao-de-conteudo" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2147,8 +2160,8 @@ pos(2) | Soma = 3.1 | Prod = 0.30000000000000004
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="delecao-de-conteudo-com-del-e-pop">
+</section>
+<section id="delecao-de-conteudo-com-del-e-pop">
 <h3><span class="section-number">4.12.4. </span>Deleção de conteúdo com <code class="docutils literal notranslate"><span class="pre">del</span></code> e <code class="docutils literal notranslate"><span class="pre">pop</span></code><a class="headerlink" href="#delecao-de-conteudo-com-del-e-pop" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2188,8 +2201,8 @@ pos(2) | Soma = 3.1 | Prod = 0.30000000000000004
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="listagem-de-chaves-e-valores">
+</section>
+<section id="listagem-de-chaves-e-valores">
 <h3><span class="section-number">4.12.5. </span>Listagem de chaves e valores<a class="headerlink" href="#listagem-de-chaves-e-valores" title="Permalink to this headline">¶</a></h3>
 <p>Usamos os métodos <code class="docutils literal notranslate"><span class="pre">keys()</span></code> e <code class="docutils literal notranslate"><span class="pre">values()</span></code> para listar chaves e valores.</p>
 <div class="cell docutils container">
@@ -2216,8 +2229,8 @@ A operação &#39;div&#39; de &quot;arit&quot; usa o símbolo &#39;/&#39;.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="combinando-dicionarios">
+</section>
+<section id="combinando-dicionarios">
 <h3><span class="section-number">4.12.6. </span>Combinando dicionários<a class="headerlink" href="#combinando-dicionarios" title="Permalink to this headline">¶</a></h3>
 <p>Usamos <code class="docutils literal notranslate"><span class="pre">update</span></code> para combinar dicionários. Este método possui um resultado similar a <code class="docutils literal notranslate"><span class="pre">extend</span></code>, usado em listas.</p>
 <div class="cell docutils container">
@@ -2234,8 +2247,8 @@ A operação &#39;div&#39; de &quot;arit&quot; usa o símbolo &#39;/&#39;.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dicionarios-a-partir-de-sequencias">
+</section>
+<section id="dicionarios-a-partir-de-sequencias">
 <h3><span class="section-number">4.12.7. </span>Dicionários a partir de sequencias<a class="headerlink" href="#dicionarios-a-partir-de-sequencias" title="Permalink to this headline">¶</a></h3>
 <p>Podemos criar dicionários a partir de sequencias existentes usando <code class="docutils literal notranslate"><span class="pre">zip</span></code>.</p>
 <div class="cell docutils container">
@@ -2272,9 +2285,9 @@ A operação &#39;div&#39; de &quot;arit&quot; usa o símbolo &#39;/&#39;.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="controle-de-fluxo-condicionais-if-elif-e-else">
+</section>
+</section>
+<section id="controle-de-fluxo-condicionais-if-elif-e-else">
 <h2><span class="section-number">4.13. </span>Controle de fluxo: condicionais <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#controle-de-fluxo-condicionais-if-elif-e-else" title="Permalink to this headline">¶</a></h2>
 <p>Em Python, como na maioria das linguagens, o operador <code class="docutils literal notranslate"><span class="pre">if</span></code> (“se”) serve para tratar situações quando um bloco de instruções de código precisa ser executado apenas se uma dada condição estabelecida for avaliada como verdadeira. Um bloco condicional é escrito da seguinte forma:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condição</span><span class="p">:</span>
@@ -2434,8 +2447,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="conjuntos">
+</section>
+<section id="conjuntos">
 <h2><span class="section-number">4.14. </span>Conjuntos<a class="headerlink" href="#conjuntos" title="Permalink to this headline">¶</a></h2>
 <p>As estruturas <code class="docutils literal notranslate"><span class="pre">set</span></code> (conjunto) são úteis para realizar operações com conjuntos.</p>
 <div class="cell docutils container">
@@ -2474,7 +2487,7 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-<div class="section" id="uniao-de-conjuntos">
+<section id="uniao-de-conjuntos">
 <h3><span class="section-number">4.14.1. </span>União de conjuntos<a class="headerlink" href="#uniao-de-conjuntos" title="Permalink to this headline">¶</a></h3>
 <p>Considere os seguintes conjuntos.</p>
 <div class="cell docutils container">
@@ -2510,8 +2523,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="atualizacao-de-conjuntos-uniao">
+</section>
+<section id="atualizacao-de-conjuntos-uniao">
 <h3><span class="section-number">4.14.2. </span>Atualização de conjuntos (união)<a class="headerlink" href="#atualizacao-de-conjuntos-uniao" title="Permalink to this headline">¶</a></h3>
 <p>A união <em>in-place</em> de dois conjuntos pode ser feita com <code class="docutils literal notranslate"><span class="pre">update</span></code>.</p>
 <div class="cell docutils container">
@@ -2577,8 +2590,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="intersecao-de-conjuntos">
+</section>
+<section id="intersecao-de-conjuntos">
 <h3><span class="section-number">4.14.3. </span>Interseção de conjuntos<a class="headerlink" href="#intersecao-de-conjuntos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2604,8 +2617,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="atualizacao-de-conjuntos-intersecao">
+</section>
+<section id="atualizacao-de-conjuntos-intersecao">
 <h3><span class="section-number">4.14.4. </span>Atualização de conjuntos (interseção)<a class="headerlink" href="#atualizacao-de-conjuntos-intersecao" title="Permalink to this headline">¶</a></h3>
 <p>A interseção <em>in-place</em> de dois conjuntos pode ser feita com <code class="docutils literal notranslate"><span class="pre">intersection_update</span></code>.</p>
 <div class="cell docutils container">
@@ -2667,8 +2680,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="diferenca-entre-conjuntos">
+</section>
+<section id="diferenca-entre-conjuntos">
 <h3><span class="section-number">4.14.5. </span>Diferença entre conjuntos<a class="headerlink" href="#diferenca-entre-conjuntos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2742,8 +2755,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="atualizacao-de-conjuntos-diferenca">
+</section>
+<section id="atualizacao-de-conjuntos-diferenca">
 <h3><span class="section-number">4.14.6. </span>Atualização de conjuntos (diferença)<a class="headerlink" href="#atualizacao-de-conjuntos-diferenca" title="Permalink to this headline">¶</a></h3>
 <p>A interseção <em>in-place</em> de dois conjuntos pode ser feita com <code class="docutils literal notranslate"><span class="pre">difference_update</span></code>.</p>
 <div class="cell docutils container">
@@ -2806,8 +2819,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="adicao-ou-remocao-de-elementos">
+</section>
+<section id="adicao-ou-remocao-de-elementos">
 <h3><span class="section-number">4.14.7. </span>Adição ou remoção de elementos<a class="headerlink" href="#adicao-ou-remocao-de-elementos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2859,8 +2872,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="reinicializacao-de-um-conjunto-vazio">
+</section>
+<section id="reinicializacao-de-um-conjunto-vazio">
 <h3><span class="section-number">4.14.8. </span>Reinicialização de um conjunto (vazio)<a class="headerlink" href="#reinicializacao-de-um-conjunto-vazio" title="Permalink to this headline">¶</a></h3>
 <p>Podemos remover todos os elementos de um conjunto com <code class="docutils literal notranslate"><span class="pre">clear</span></code>, deixando-o em um estado vazio.</p>
 <div class="cell docutils container">
@@ -2900,8 +2913,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="diferenca-simetrica">
+</section>
+<section id="diferenca-simetrica">
 <h3><span class="section-number">4.14.9. </span>Diferença simétrica<a class="headerlink" href="#diferenca-simetrica" title="Permalink to this headline">¶</a></h3>
 <p>A diferença simétrica entre dois conjuntos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> é dada pela união dos complementares relativos:</p>
 <div class="math notranslate nohighlight">
@@ -2940,8 +2953,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="atualizacao-de-conjuntos-diferenca-simetrica">
+</section>
+<section id="atualizacao-de-conjuntos-diferenca-simetrica">
 <h3><span class="section-number">4.14.10. </span>Atualização de conjuntos (diferença simétrica)<a class="headerlink" href="#atualizacao-de-conjuntos-diferenca-simetrica" title="Permalink to this headline">¶</a></h3>
 <p>A diferença simétrica <em>in-place</em> de dois conjuntos pode ser feita com <code class="docutils literal notranslate"><span class="pre">symmetric_difference_update</span></code>.</p>
 <div class="cell docutils container">
@@ -2982,8 +2995,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="continencia">
+</section>
+<section id="continencia">
 <h3><span class="section-number">4.14.11. </span>Continência<a class="headerlink" href="#continencia" title="Permalink to this headline">¶</a></h3>
 <p>Podemos verificar se um conjunto <span class="math notranslate nohighlight">\(A\)</span> é subconjunto de (está contido em) outro conjunto <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(A \subseteq B\)</span>) ou se <span class="math notranslate nohighlight">\(B\)</span> é um superconjunto para (contém) <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(B \supseteq A\)</span>) com <code class="docutils literal notranslate"><span class="pre">issubset</span></code> e  <code class="docutils literal notranslate"><span class="pre">issuperset</span></code>.</p>
 <div class="cell docutils container">
@@ -3034,9 +3047,9 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="subconjuntos-e-subconjuntos-proprios">
+</section>
+</section>
+<section id="subconjuntos-e-subconjuntos-proprios">
 <h2><span class="section-number">4.15. </span>Subconjuntos e subconjuntos próprios<a class="headerlink" href="#subconjuntos-e-subconjuntos-proprios" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar operadores de comparação entre conjuntos para verificar continência.</p>
 <ul class="simple">
@@ -3091,7 +3104,7 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-<div class="section" id="disjuncao">
+<section id="disjuncao">
 <h3><span class="section-number">4.15.1. </span>Disjunção<a class="headerlink" href="#disjuncao" title="Permalink to this headline">¶</a></h3>
 <p>Dois conjuntos são disjuntos se sua interseção é vazia. Podemos verificar a disjunção com <code class="docutils literal notranslate"><span class="pre">isdisjoint</span></code></p>
 <div class="cell docutils container">
@@ -3181,8 +3194,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="igualdade-entre-conjuntos">
+</section>
+<section id="igualdade-entre-conjuntos">
 <h3><span class="section-number">4.15.2. </span>Igualdade entre conjuntos<a class="headerlink" href="#igualdade-entre-conjuntos" title="Permalink to this headline">¶</a></h3>
 <p>Dois conjuntos são iguais se contém os mesmos elementos.</p>
 <div class="cell docutils container">
@@ -3230,9 +3243,9 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="compreensao-de-conjunto">
+</section>
+</section>
+<section id="compreensao-de-conjunto">
 <h2><span class="section-number">4.16. </span>Compreensão de conjunto<a class="headerlink" href="#compreensao-de-conjunto" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar <code class="docutils literal notranslate"><span class="pre">for</span></code> para criar conjuntos de maneira esperta do mesmo modo que as compreensões de lista e de dicionários. Neste caso, o funcionamento é como <code class="docutils literal notranslate"><span class="pre">list</span></code>, porém, em vez de colchetes, usamos chaves.</p>
 <div class="cell docutils container">
@@ -3259,8 +3272,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sobrecarga-de-operadores">
+</section>
+<section id="sobrecarga-de-operadores">
 <h2><span class="section-number">4.17. </span>Sobrecarga de operadores<a class="headerlink" href="#sobrecarga-de-operadores" title="Permalink to this headline">¶</a></h2>
 <p>Em Python, podemos realizar alguns procedimentos úteis para laços de repetição.</p>
 <div class="cell docutils container">
@@ -3364,8 +3377,8 @@ A probabilidade de ser doador universal é de 10.00%.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="controle-de-fluxo-laco-while">
+</section>
+<section id="controle-de-fluxo-laco-while">
 <h2><span class="section-number">4.18. </span>Controle de fluxo: laço <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#controle-de-fluxo-laco-while" title="Permalink to this headline">¶</a></h2>
 <p>O condicional <code class="docutils literal notranslate"><span class="pre">while</span></code> permite que um bloco de código seja repetidamente executado até que uma dada condição seja avaliada como <code class="docutils literal notranslate"><span class="pre">False</span></code>, ou o laço seja explicitamente terminado com a keyword <code class="docutils literal notranslate"><span class="pre">break</span></code>.
 Em laços <code class="docutils literal notranslate"><span class="pre">while</span></code>, é muito comum usar uma linha de atualização da condição usando sobrecarga de operadores.</p>
@@ -3539,8 +3552,8 @@ x = 0.12575150099999965
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="map">
+</section>
+<section id="map">
 <h2><span class="section-number">4.19. </span><code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h2>
 <p>A função <code class="docutils literal notranslate"><span class="pre">map</span></code> serve para construir uma função que será aplicada a todos os elementos de uma sequencia. Seu uso é da seguinte forma:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span><span class="p">(</span><span class="n">funcao</span><span class="p">,</span><span class="n">sequencia</span><span class="p">)</span>
@@ -3601,8 +3614,8 @@ x = 0.12575150099999965
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="filter">
+</section>
+<section id="filter">
 <h2><span class="section-number">4.20. </span><code class="docutils literal notranslate"><span class="pre">filter</span></code><a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
 <p>Podemos aplicar também como uma espécie de “filtro” para valores usando a função <code class="docutils literal notranslate"><span class="pre">filter</span></code>. No caso anterior, digamos que  valores acima de 7 sejam inseridos erroneamente no gerador de números (lembre-se que no sistema sanguíneo ABO, consideramos um <code class="docutils literal notranslate"><span class="pre">dict</span></code> cujo valor das chaves é no máximo 7). Podemos, ainda assim, filtrar a lista para coletar apenas valores menores do que 7. Para tanto, definimos uma função <code class="docutils literal notranslate"><span class="pre">lambda</span></code> com este propósito.</p>
 <div class="cell docutils container">
@@ -3644,8 +3657,8 @@ x = 0.12575150099999965
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exemplos-com-maior-complexidade">
+</section>
+<section id="exemplos-com-maior-complexidade">
 <h2><span class="section-number">4.21. </span>Exemplos com maior complexidade<a class="headerlink" href="#exemplos-com-maior-complexidade" title="Permalink to this headline">¶</a></h2>
 <p><strong>Exemplo:</strong> Podemos escrever outro gerador de forma mais complexa. Estude este caso (pouco Pythônico).</p>
 <div class="cell docutils container">
@@ -3680,8 +3693,8 @@ x = 0.12575150099999965
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3709,7 +3722,7 @@ x = 0.12575150099999965
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="02a-computacao-simbolica.html" title="previous page"><span class="section-number">3. </span>Introdução à Computação Simbólica com <em>sympy</em></a>
-    <a class='right-next' id="next-link" href="lab-01.html" title="next page">Laboratório 1</a>
+    <a class='right-next' id="next-link" href="04a-computacao-vetorizada.html" title="next page"><span class="section-number">5. </span>Computação vetorizada com <em>numpy</em></a>
 
         </div>
         

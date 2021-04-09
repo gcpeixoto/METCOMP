@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>METCOMP - Métodos Computacionais &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,8 +26,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -40,14 +41,11 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -92,7 +90,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Python para computação científica
  </span>
@@ -125,8 +123,16 @@
    4. Fundamentos de Matemática Discreta com Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Laboratório Computacional
  </span>
@@ -145,6 +151,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="lab-03.html">
    Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-04.html">
+   Laboratório 4
   </a>
  </li>
 </ul>
@@ -279,30 +290,30 @@
         
               <div>
                 
-  <div class="section" id="metcomp-metodos-computacionais">
+  <section id="metcomp-metodos-computacionais">
 <h1>METCOMP - Métodos Computacionais<a class="headerlink" href="#metcomp-metodos-computacionais" title="Permalink to this headline">¶</a></h1>
 <p>Material desenvolvido para a disciplina <em>Métodos Computacionais (GDCOC0080)</em> do curso de Engenharia de Produção Mecânica.</p>
-<div class="section" id="conteudo">
+<section id="conteudo">
 <h2>Conteúdo<a class="headerlink" href="#conteudo" title="Permalink to this headline">¶</a></h2>
 <p>Programa para semestre 2020/02 (atualização semanal)</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="01a-introducao.html"><span class="doc std std-doc">Ferramentas básicas</span></a></p></li>
 </ul>
-<div class="section" id="semana-1">
+<section id="semana-1">
 <h3>Semana 1<a class="headerlink" href="#semana-1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="01b-fundamentos-python.html"><span class="doc std std-doc">Fundamentos de Python</span></a></p></li>
 <li><p><a class="reference internal" href="lab-01.html"><span class="doc std std-doc">Laboratório Computacional 1</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="semanas-2-e-3">
+</section>
+<section id="semanas-2-e-3">
 <h3>Semanas 2 e 3<a class="headerlink" href="#semanas-2-e-3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="02a-computacao-simbolica.html"><span class="doc std std-doc">Computação Simbólica</span></a></p></li>
 <li><p><a class="reference internal" href="lab-02.html"><span class="doc std std-doc">Laboratório Computacional 2</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="semana-4">
+</section>
+<section id="semana-4">
 <h3>Semana 4<a class="headerlink" href="#semana-4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="03a-matematica-discreta.html"><span class="doc std std-doc">Matemática Discreta</span></a></p></li>
@@ -312,9 +323,9 @@
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
