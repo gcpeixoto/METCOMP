@@ -15,6 +15,11 @@
   - file: lab-02
   - file: lab-03
   - file: lab-04
+  - file: lab-05
+- part: Exercícios Avaliativos
+  numbered: False
+  chapters:
+  - file: lista-01
 #
 # MODEL: 
 # - file: intro

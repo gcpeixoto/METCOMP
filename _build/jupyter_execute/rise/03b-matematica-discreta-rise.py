@@ -31,6 +31,7 @@ if x < y:
 
 **Exemplo:** teste da tricotomia. Verificar se um número é $>$, $<$ ou $= 0$.
 
+'''
 x = 4.1 # número para teste
 
 if x < 0: # se
@@ -39,6 +40,24 @@ elif x > 0: # ou se
     print(f'{x} > 0')
 else: # senão
     print(f'{x} = 0')
+''';
+
+objetos_da_sala_de_aula = ['mesa','quadro','apagador','lâmpada']
+obj = ['giz','cabo eletrico','projetor','cadeira']
+
+if obj[0] in objetos_da_sala_de_aula:
+    print(f'{obj[0]} não está em falta.')    
+elif obj[0] not in objetos_da_sala_de_aula:
+    print(f'É necessário comprar {obj[0]}.')
+elif obj[1] in objetos_da_sala_de_aula:
+    print(f'{obj[1]} não está em falta.')    
+elif obj[1] not in objetos_da_sala_de_aula:
+    print(f'É necessário comprar {obj[1]}.')    
+elif obj[2] in objetos_da_sala_de_aula:
+    print(f'{obj[2]} não está em falta.')   
+elif obj[2] not in objetos_da_sala_de_aula:
+    print(f'É necessário comprar {obj[2]}.')    
+
 
 **Exemplo:** Considere o conjunto de classificações sanguíneas ABO (+/-) 
 

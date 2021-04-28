@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Lista de exercícios 1 &#8212; Métodos Computacionais</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Laboratório 5" href="lab-05.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Métodos Computacionais</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-conteudo.html">
+   METCOMP - Métodos Computacionais
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Python para computação científica
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Ferramentas computacionais do curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-fundamentos-python.html">
+   2. Fundamentos de
+   <em>
+    Python
+   </em>
+   para Computação Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-matematica-discreta.html">
+   4. Fundamentos de Matemática Discreta com Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Laboratório Computacional
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-01.html">
+   Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-02.html">
+   Laboratório 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-03.html">
+   Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-04.html">
+   Laboratório 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-05.html">
+   Laboratório 5
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Exercícios Avaliativos
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lista de exercícios 1
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lista-01.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lista-01.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lista-01.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="lista-de-exercicios-1">
+<h1>Lista de exercícios 1<a class="headerlink" href="#lista-de-exercicios-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Resolva todos os problemas por computação e registre as suas respostas no questionário disponibilizado no ambiente virtual de aprendizagem.</strong></p>
+<hr><p><strong>Exercício 1.</strong> Calcule o valor de <code class="docutils literal notranslate"><span class="pre">1+1.0009</span></code>, atribua o resultado a uma variável e imprima o valor dessa variável. Quantos noves são impressos?</p>
+<p><strong>Exercício 2.</strong> A expectativa de vida no Brasil em 2020 era de 76,6 anos. Paulo, um cidadão paraibano, já viveu 2,4 bilhões de segundos. Tomando como referência o valor de 2020, responda: Paulo atingiu a expectativa de vida? Quantos anos ele já viveu? <strong>Nota:</strong> a resposta deve ser um valor inteiro.</p>
+<p><strong>Exercício 3.</strong> O <em>Birchfield Harriers</em> é um clube de atletismo inglês fundado em 1877. Você recebeu um convite para trabalhar no setor de engenharia do clube provendo cálculos para materiais de revestimento de raias de corrida. Seu gerente lhe deu o seguinte desafio: construir um programa em Python para converter unidades de comprimento para o sistema britânico. O seu programa deve funcionar da seguinte forma: dado um valor de entrada <code class="docutils literal notranslate"><span class="pre">x</span></code> em metros, calcular o valor correspondente em <em>pés</em>, <em>polegadas</em>, <em>jardas</em> e <em>milhas</em>. Supondo uma raia com <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1000</span></code> m de extensão, obtenha os valores correspondentes para <code class="docutils literal notranslate"><span class="pre">x</span></code>, nas 4 unidades acima, com 2 casas decimais.</p>
+<p>Tabela de conversão:</p>
+<ul class="simple">
+<li><p>1 polegada = 2.54 centímetros</p></li>
+<li><p>1 pé = 12 polegadas</p></li>
+<li><p>1 jarda = 3 pés</p></li>
+<li><p>1 milha britânica = 1760 jardas</p></li>
+</ul>
+<p><strong>Nota:</strong> os valores calculados devem ser expressos na ordem acima mencionada para as unidades. Use a função <code class="docutils literal notranslate"><span class="pre">round(x,d)</span></code>, onde <code class="docutils literal notranslate"><span class="pre">d</span></code> é o número de casas decimais.</p>
+<p><strong>Exercício 4.</strong> A massa específica de uma substância é definida por <span class="math notranslate nohighlight">\(\rho = m/V\)</span>, onde <span class="math notranslate nohighlight">\(m\)</span> é a massa de um volume <span class="math notranslate nohighlight">\(V\)</span>. Calcule a massa, em quilogramas, para 10 m<sup>3</sup> de cada uma das substâncias listadas abaixo.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>material</p></th>
+<th class="head"><p>massa específica (g/cm<sup>3</sup>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>água do mar</p></td>
+<td><p>1.025</p></td>
+</tr>
+<tr class="row-odd"><td><p>ar</p></td>
+<td><p>0.0012</p></td>
+</tr>
+<tr class="row-even"><td><p>gasolina</p></td>
+<td><p>0.67</p></td>
+</tr>
+<tr class="row-odd"><td><p>gelo</p></td>
+<td><p>0.9</p></td>
+</tr>
+<tr class="row-even"><td><p>mercúrio</p></td>
+<td><p>13.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>ouro</p></td>
+<td><p>18.9</p></td>
+</tr>
+<tr class="row-even"><td><p>platina</p></td>
+<td><p>21.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>prata</p></td>
+<td><p>10.5</p></td>
+</tr>
+</tbody>
+</table>
+<p>Então, considere os seguintes grupos:</p>
+<ul class="simple">
+<li><p>Grupo 1: água do mar, ar, gasolina, gelo</p></li>
+<li><p>Grupo 2: mercúrio, ouro, platina, prata</p></li>
+</ul>
+<p>Se <span class="math notranslate nohighlight">\(M_1\)</span> e <span class="math notranslate nohighlight">\(M_2\)</span> são as maiores massas que você calculou entre as substâncias dos grupos 1 e 2, nesta ordem, qual é o valor de <span class="math notranslate nohighlight">\(M_1\)</span> + <span class="math notranslate nohighlight">\(M_2\)</span>, em toneladas?</p>
+<p><strong>Exercício 5.</strong> Suponha que a taxa de juros de um banco brasileiro seja de <span class="math notranslate nohighlight">\(p\)</span> por cento ao ano. Um depósito inicial de <span class="math notranslate nohighlight">\(A\)</span> reais terá um montante de <span class="math notranslate nohighlight">\(A(1 + p)^n\)</span> após <span class="math notranslate nohighlight">\(n\)</span> anos. Considere que você tenha depositado 1000 euros em uma conta no exterior e espera retirar o dinheiro daqui a 5 anos com rendimentos a uma taxa de 2.5% ao ano. Quanto você obteria, em reais, após o período? <strong>Nota:</strong> use 1 euro = 6,52 reais.</p>
+<p><strong>Exercício 6.</strong> O código a seguir contém dois erros. Identifique-os e proponha as correções devidas.
+Que valor deve ser impresso após o símbolo de <code class="docutils literal notranslate"><span class="pre">=</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin(</span><span class="si">{0}</span><span class="s1">)=</span><span class="si">{1:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Exercício 7.</strong> Ao tentar calcular a identidade trigonométrica <span class="math notranslate nohighlight">\(\textrm{sen}^2(x) + \cos^2(x) = 1\)</span>, um engenheiro copiou o seguinte código de um colega:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="mi">1</span><span class="n">_val</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="n">_VAL</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Entretanto, verificou que a resposta não condizia com o esperado. Analise o que pode estar errado no código, proponha correções e avalie o resultado. Que valor é impresso com o código correto?</p>
+<p><strong>Exercício 8.</strong> Escreva um programa para calcular as raízes de uma equação do 2o. grau qualquer na forma <span class="math notranslate nohighlight">\(P(x) = ax^2 + bx + c\)</span>. Use seu programa para computar as raízes de <span class="math notranslate nohighlight">\(P(x)\)</span> para <span class="math notranslate nohighlight">\(a = \sqrt{3}\)</span>, <span class="math notranslate nohighlight">\(b = e^2\)</span>, <span class="math notranslate nohighlight">\(c = \textrm{ln}(2)/2\)</span>.</p>
+<p><strong>Exercício 9.</strong> A fórmula utilizada para determinar o volume de um tronco de pirâmide é dada por <span class="math notranslate nohighlight">\(V=\frac{h}{3}(A + \sqrt{Aa} + a)\)</span>, onde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(h\)</span>: altura do tronco</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span>: área da base maior</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span>: área da base menor</p></li>
+</ul>
+<p>Suponha que as bases sejam formadas por octógonos regulares. Sabendo que a área de um octógono é dada por <span class="math notranslate nohighlight">\(2L^2(\sqrt{2} + 1)\)</span>, onde <span class="math notranslate nohighlight">\(L\)</span> é a medida da aresta, calcule o volume de um tronco de pirâmide medindo 1,5 metros de altura, 3 metros de aresta inferior e 2 metros de aresta superior. Aproxime a resposta para um valor inteiro.</p>
+<p><strong>Exercício 10.</strong> A força de arrasto devido à resistência do ar sobre um objeto pode ser expressa como <span class="math notranslate nohighlight">\(F_d = \frac{1}{2}C_d\rho AV^2\)</span> (em newtons), onde <span class="math notranslate nohighlight">\(\rho\)</span> é a massa específica do ar, <span class="math notranslate nohighlight">\(V\)</span> é a velocidade do objeto, <span class="math notranslate nohighlight">\(A\)</span> é a área da seção transversal (normal à direção da velocidade), e <span class="math notranslate nohighlight">\(C_d\)</span> é o coeficiente de arrasto, o qual depende da forma do objeto e da rugosidade da superfície.A força gravitacional sobre um objeto de massa <span class="math notranslate nohighlight">\(m\)</span> é dada por <span class="math notranslate nohighlight">\(F_g = mg\)</span>, onde <span class="math notranslate nohighlight">\(g = 9.81 \, m/s^2\)</span>.</p>
+<p>Podemos usar as fórmulas para <span class="math notranslate nohighlight">\(F_d\)</span> e <span class="math notranslate nohighlight">\(F_g\)</span> para estudar a importância da resistência do ar versus gravidade ao chutar uma bola de futebol. A massa específica do ar é <span class="math notranslate nohighlight">\(\rho = 1.2 \, kg/m^3\)</span>. Temos <span class="math notranslate nohighlight">\(A = \pi a^2\)</span> para qualquer bola com raio <span class="math notranslate nohighlight">\(a\)</span>. Para uma bola de futebol, <span class="math notranslate nohighlight">\(a = 11 \, cm\)</span>, a massa é <span class="math notranslate nohighlight">\(m = 0.43 \, kg\)</span> e <span class="math notranslate nohighlight">\(C_d = 0.2\)</span>.</p>
+<p>Escreva um programa para calcular as forças de arrasto e gravitacional em newtons (<span class="math notranslate nohighlight">\(N\)</span>). Use o programa para calcular as força gravitacional e as forças de arrasto sobre a bola durante um chute pesado, <span class="math notranslate nohighlight">\(V = 120 \, km/h\)</span> e, durante um chute leve, <span class="math notranslate nohighlight">\(V = 10 \, km/h\)</span>. Seu programa deverá imprimir 3 valores aproximados a 2 casas decimais, <span class="math notranslate nohighlight">\(F_g\)</span>, <span class="math notranslate nohighlight">\(F_d\)</span> (chute pesado), <span class="math notranslate nohighlight">\(F_d\)</span> (chute leve). <strong>Nota:</strong> utilize <span class="math notranslate nohighlight">\(V\)</span> em <span class="math notranslate nohighlight">\(m/s\)</span>.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gcpeixoto/METCOMP",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="lab-05.html" title="previous page">Laboratório 5</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Gustavo Oliveira<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

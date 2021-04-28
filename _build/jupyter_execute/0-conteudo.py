@@ -11,24 +11,26 @@ Programa para semestre 2020/02 (atualização semanal)
 ### Semana 1 
 
 - [Fundamentos de Python](01b-fundamentos-python.ipynb)
-- [Laboratório Computacional 1](lab-01.ipynb)
 
-### Semanas 2 e 3
+### Semanas 2 a 3
 
 - [Computação Simbólica](02a-computacao-simbolica.ipynb)
-- [Laboratório Computacional 2](lab-02.ipynb)
 
-
-### Semana 4
+### Semanas 4 a 7
 
 - [Matemática Discreta](03a-matematica-discreta.ipynb)
+
+### Laboratórios Computacionais
+
+- [Laboratório Computacional 1](lab-01.ipynb)
+- [Laboratório Computacional 2](lab-02.ipynb)
 - [Laboratório Computacional 3](lab-03.ipynb)
-
-### Semana 5
-
-- [Computação Vetorizada](04a-computacao-vetorizada.ipynb)
 - [Laboratório Computacional 4](lab-04.ipynb)
+- [Laboratório Computacional 5](lab-05.ipynb)
 
+### Exercícios Avaliativos
+
+- [Lista de Exercícios 1](lista-01.ipynb)
 
 
 ```{toctree}
@@ -54,4 +56,14 @@ lab-01
 lab-02
 lab-03
 lab-04
+lab-05
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Exercícios Avaliativos
+
+lista-01
 ```

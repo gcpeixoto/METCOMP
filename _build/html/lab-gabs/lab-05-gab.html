@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Laboratório 5 &#8212; Métodos Computacionais</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Métodos Computacionais</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0-conteudo.html">
+   METCOMP - Métodos Computacionais
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Python para computação científica
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01a-introducao.html">
+   1. Ferramentas computacionais do curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01b-fundamentos-python.html">
+   2. Fundamentos de
+   <em>
+    Python
+   </em>
+   para Computação Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03a-matematica-discreta.html">
+   4. Fundamentos de Matemática Discreta com Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Laboratório Computacional
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-01.html">
+   Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-02.html">
+   Laboratório 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-03.html">
+   Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-04.html">
+   Laboratório 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-05.html">
+   Laboratório 5
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Exercícios Avaliativos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lista-01.html">
+   Lista de exercícios 1
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lab-gabs/lab-05-gab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lab-gabs/lab-05-gab.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lab-gabs/lab-05-gab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="laboratorio-5">
+<h1>Laboratório 5<a class="headerlink" href="#laboratorio-5" title="Permalink to this headline">¶</a></h1>
+<p><strong>Resolva todos os problemas por computação.</strong></p>
+<hr><p><strong>Problema 1:</strong> Considere os seguintes vetores:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{u} = 4\vec{i} + 3\vec{j} + 2\vec{k}
+\\
+\vec{v} = 1\vec{i} + 3\vec{j} + 1\vec{k}
+\\
+\vec{w} = 2\vec{i} + 1\vec{j} + 3\vec{k}\end{split}\]</div>
+<p>Calcule as seguintes operações de álgebra linear:</p>
+<p>a) <span class="math notranslate nohighlight">\(\vec{u} + \vec{v}\)</span></p>
+<p>b) <span class="math notranslate nohighlight">\(\vec{u} + \vec{v} - \vec{w}\)</span></p>
+<p>c) <span class="math notranslate nohighlight">\(\alpha\vec{u} + \beta\vec{v}\)</span>, para <span class="math notranslate nohighlight">\(\alpha = 0.5,\sqrt{3},1.5\)</span> e <span class="math notranslate nohighlight">\(\beta = e,2,-5\)</span></p>
+<p>d) <span class="math notranslate nohighlight">\(\langle \vec{u},  \vec{v} \rangle\)</span> (produto interno)</p>
+<p>e) <span class="math notranslate nohighlight">\(\langle \vec{u} - \vec{v}, \vec{v} + \vec{w} \rangle\)</span></p>
+<p>f) <span class="math notranslate nohighlight">\(\theta(5\vec{v},-2\vec{w})\)</span> (ângulo entre dois vetores)</p>
+<p><strong>Problema 2:</strong> Matrizes podem ser criadas a partir da organização de vetores alinhados em forma de colunas. Por exemplo, se <span class="math notranslate nohighlight">\(\vec{x} = \vec{i} + 2\vec{j}\)</span> e <span class="math notranslate nohighlight">\(\vec{y} = -\vec{i}-2\vec{j}\)</span>, então a matriz <span class="math notranslate nohighlight">\(A = [\vec{x} \ \ \vec{y}]\)</span> é dada por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = 
+\begin{bmatrix}
+1 &amp; -1 \\
+2 &amp; 2
+\end{bmatrix}\end{split}\]</div>
+<p>A partir dos vetores definidos no Problema 1, definamos as seguintes matrizes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = [\vec{u} \ \ \vec{v}]
+\\
+C = [\vec{v} \ \ \vec{w}]^T
+\\
+D = [\vec{u} \ \ \vec{v} \ \ \vec{w}]
+\\ 
+E = [\vec{z} \ \ \vec{t}], \ \ \vec{z} = \vec{u} + \vec{v}, \vec{t} = 2\vec{w}
+\\
+F = [-\vec{z} \ \ -\vec{t} \ \ \vec{w}]^T, \ \ \vec{z} = \vec{u} - \vec{v}, \vec{t} = 1/2\vec{v},
+\end{split}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(^{T}\)</span> é o símbolo para de transposição.</p>
+<p>Calcule:</p>
+<p>a) <span class="math notranslate nohighlight">\(B + C\)</span></p>
+<p>b) <span class="math notranslate nohighlight">\(2B - C\)</span></p>
+<p>c) <span class="math notranslate nohighlight">\(B^T - C\)</span></p>
+<p>d) <span class="math notranslate nohighlight">\(BC\)</span> (produto de matrizes)</p>
+<p>e) <span class="math notranslate nohighlight">\((B + C)^2\)</span>, (note que para uma matriz <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(A^2 = AA\)</span>)</p>
+<p>f) <span class="math notranslate nohighlight">\(B\vec{v}\)</span> (produto matriz vetor)</p>
+<p>g) <span class="math notranslate nohighlight">\(D - EE^T\)</span></p>
+<p>h) <span class="math notranslate nohighlight">\(D + 2E - F\)</span></p>
+<p>i) <span class="math notranslate nohighlight">\(D\vec{u} + E\vec{v} - F\vec{w}\)</span></p>
+<p><strong>Problema 3:</strong> A energia cinética <span class="math notranslate nohighlight">\(K\)</span> de uma partícula de massa <span class="math notranslate nohighlight">\(m\)</span> que se move com velocidade dada por um vetor <span class="math notranslate nohighlight">\(\vec{v}\)</span> pode ser calculada como:</p>
+<div class="math notranslate nohighlight">
+\[K = m\dfrac{\langle \vec{v}, \vec{v}\rangle}{2}.\]</div>
+<p>Determine a variação de energia cinética <span class="math notranslate nohighlight">\(\Delta K = K_B - K_A\)</span> de uma partícula de pó químico que se moveu do ponto A para o ponto B sabendo que sua massa é de 0.004 kg e que a sua velocidade em A e em B, eram, respectivamente, dadas pelos vetores:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v}_A = 10\vec{i} - 2.5\vec{j} + 0.5\vec{k}
+\\
+\vec{v}_B = 2.5\vec{i} -1.1\vec{j} + 0\vec{k}\end{split}\]</div>
+<p>Verifique se <span class="math notranslate nohighlight">\(\Delta K \ge 0\)</span> ou <span class="math notranslate nohighlight">\(\Delta K &lt; 0\)</span>.</p>
+<p><strong>Problema 4:</strong> Considere a função chapeu (<em>hat</em>), definida por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H(x) = 
+\begin{cases}
+0,&amp; x &lt; 0\\  
+x,&amp; 0 \le x &lt; 1\\  
+2-x,&amp; 1 \le x \le 2\\  
+0,&amp; x \ge 2
+\end{cases}.\end{split}\]</div>
+<p>no domínio <span class="math notranslate nohighlight">\([-1,3]\)</span>.</p>
+<p>Tarefas:</p>
+<ul class="simple">
+<li><p>plote o gráfico da função <span class="math notranslate nohighlight">\(H(x)\)</span> (gráfico 1);</p></li>
+<li><p>plote o gráfico da função <span class="math notranslate nohighlight">\(1 - H(x)\)</span> na mesma figura (gráfico 2);</p></li>
+</ul>
+<p>Para o gráfico 1, use a seguinte formatação:</p>
+<ul class="simple">
+<li><p>50 valores para domínio e imagem;</p></li>
+<li><p>tipo de linha: espessa;</p></li>
+<li><p>cor de linha: vermelha;</p></li>
+<li><p>espessura de linha: 2pt</p></li>
+<li><p>texto de legenda: “H(x)”</p></li>
+</ul>
+<p>Para o gráfico 2, use a seguinte formatação:</p>
+<ul class="simple">
+<li><p>80 valores para domínio e imagem;</p></li>
+<li><p>tipo de linha: nenhum;</p></li>
+<li><p>tipo de marcador: circular;</p></li>
+<li><p>cor de face do marcador: branca;</p></li>
+<li><p>cor de aresta do marcador: preta;</p></li>
+<li><p>texto de legenda: “1 - H(x)”</p></li>
+</ul>
+<p>Para ambos</p>
+<ul class="simple">
+<li><p>adicione gradeado apenas horizontal</p></li>
+<li><p>posição de legenda: central à direita;</p></li>
+<li><p>texto do eixo x: “domínio”</p></li>
+<li><p>texto do eixo y: “imagem”</p></li>
+<li><p>título: “função chapeu / invertida”</p></li>
+</ul>
+<p>Você deve gerar um gráfico como o da figura abaixo.</p>
+<figure class="align-default" id="funcao-chapeu">
+<a class="reference internal image-reference" href="lab-gabs/figs/05/hat.png"><img alt="lab-gabs/figs/05/hat.png" src="lab-gabs/figs/05/hat.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Gráficos das funções chapeu e chapeu invertida no domínio [-1,3].</span><a class="headerlink" href="#funcao-chapeu" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p><em>Observação:</em> para uma solução completamente vetorizada, as funções <code class="docutils literal notranslate"><span class="pre">where</span></code> e <code class="docutils literal notranslate"><span class="pre">logical_and</span></code> do <em>numpy</em> podem ser úteis.</p>
+</div>
+</figcaption>
+</figure>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># - solução não vetorizada</span>
+<span class="k">def</span> <span class="nf">H</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+    <span class="k">elif</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">elif</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">x</span>  <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+
+<span class="c1"># gráfico 1 </span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="n">H</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;H(x)&#39;</span><span class="p">)</span>
+
+<span class="c1"># gráfico 2</span>
+<span class="n">xinv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">hinv</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span> <span class="n">H</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xinv</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xinv</span><span class="p">,</span><span class="n">hinv</span><span class="p">,</span><span class="s1">&#39;or&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">mec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;1 - H(x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;domínio&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;imagem&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;função chapeu / invertida&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/lab-05-gab_5_0.png" src="../_images/lab-05-gab_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># - solução vetorizada</span>
+
+<span class="k">def</span> <span class="nf">H2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    
+    <span class="c1"># condicoes são vetorizadas porque </span>
+    <span class="c1"># &#39;and&#39; nao funciona com arrays</span>
+    <span class="c1"># por exemplo: o uso de where abaixo falharia</span>
+    <span class="c1"># np.where(1 &lt;= x &lt; 2,2-x,y) </span>
+    <span class="n">cond1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>
+    <span class="n">cond2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> 
+    <span class="n">cond3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">cond4</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond3</span><span class="p">,</span> <span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="c1"># gráfico 1 </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">H2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;H(x)&#39;</span><span class="p">)</span>
+
+<span class="c1"># gráfico 2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xinv</span><span class="p">,</span><span class="mi">1</span><span class="o">-</span><span class="n">H2</span><span class="p">(</span><span class="n">xinv</span><span class="p">),</span><span class="s1">&#39;or&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">mec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;1 - H(x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;domínio&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;imagem&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;função chapeu / invertida&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/lab-05-gab_6_0.png" src="../_images/lab-05-gab_6_0.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gcpeixoto/METCOMP",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab-gabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Gustavo Oliveira<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -18,7 +18,7 @@ O gráfico abaixo plota o valor do IMC para cada um desses jogadores. Todos os j
 - Grupo 1: aqueles na faixa ideal cujo IMC é menor do que 21.7.
 - Grupo 2: aqueles na faixa ideal cujo IMC é maior do que 21.7.
 
-```{figure} figs/imc.png
+```{figure} figs/04/imc.png
 ---
 width: 800px
 name: imc-selecao

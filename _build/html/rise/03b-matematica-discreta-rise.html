@@ -159,6 +159,23 @@
    Laboratório 4
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab-05.html">
+   Laboratório 5
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Exercícios Avaliativos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lista-01.html">
+   Lista de exercícios 1
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -487,19 +504,37 @@
 <p><strong>Exemplo:</strong> teste da tricotomia. Verificar se um número é <span class="math notranslate nohighlight">\(&gt;\)</span>, <span class="math notranslate nohighlight">\(&lt;\)</span> ou <span class="math notranslate nohighlight">\(= 0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">4.1</span> <span class="c1"># número para teste</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">x = 4.1 # número para teste</span>
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># se</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> &lt; 0&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># ou se</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> &gt; 0&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span> <span class="c1"># senão</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> = 0&#39;</span><span class="p">)</span>
+<span class="sd">if x &lt; 0: # se</span>
+<span class="sd">    print(f&#39;{x} &lt; 0&#39;)</span>
+<span class="sd">elif x &gt; 0: # ou se</span>
+<span class="sd">    print(f&#39;{x} &gt; 0&#39;)</span>
+<span class="sd">else: # senão</span>
+<span class="sd">    print(f&#39;{x} = 0&#39;)</span>
+<span class="sd">&#39;&#39;&#39;</span><span class="p">;</span>
+
+<span class="n">objetos_da_sala_de_aula</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mesa&#39;</span><span class="p">,</span><span class="s1">&#39;quadro&#39;</span><span class="p">,</span><span class="s1">&#39;apagador&#39;</span><span class="p">,</span><span class="s1">&#39;lâmpada&#39;</span><span class="p">]</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;giz&#39;</span><span class="p">,</span><span class="s1">&#39;cabo eletrico&#39;</span><span class="p">,</span><span class="s1">&#39;projetor&#39;</span><span class="p">,</span><span class="s1">&#39;cadeira&#39;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">objetos_da_sala_de_aula</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> não está em falta.&#39;</span><span class="p">)</span>    
+<span class="k">elif</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">objetos_da_sala_de_aula</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;É necessário comprar </span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">objetos_da_sala_de_aula</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> não está em falta.&#39;</span><span class="p">)</span>    
+<span class="k">elif</span> <span class="n">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">objetos_da_sala_de_aula</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;É necessário comprar </span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>    
+<span class="k">elif</span> <span class="n">obj</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="n">objetos_da_sala_de_aula</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1"> não está em falta.&#39;</span><span class="p">)</span>   
+<span class="k">elif</span> <span class="n">obj</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">objetos_da_sala_de_aula</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;É necessário comprar </span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.1 &gt; 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>É necessário comprar giz.
 </pre></div>
 </div>
 </div>

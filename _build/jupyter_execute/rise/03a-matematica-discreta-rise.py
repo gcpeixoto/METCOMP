@@ -254,7 +254,7 @@ ops[0] = x-y
 ops
 
 ops[2] = x/y
-ops
+ops 
 
 ops[1], ops[3] = x + y, x*y # mutação por desempacotamento
 ops
@@ -336,7 +336,7 @@ props = ['Área de R',
          'Área de C'
         ] # propriedades
 
-# template
+# template 
 templ = '{0:s} = {1:.2f}\n\
 {2:s} = {3:.3f}\n\
 {4:s} = {5:.4f}\n\
@@ -371,7 +371,7 @@ Além disso, temos:
 
 print('\\') # imprime contrabarra literal
 print('\\\\') # imprime duas contrabarras literais
-print('\'') # imprime plica
+print('\'') # imprime plica 
 print('\"') # imprime aspas
 
 #### f-strings
@@ -451,17 +451,12 @@ XsY
 XpY = [ X[i]*Y[i] for i in range(len(X)) ]
 XpY
 
-from sympy import lambdify
-from sympy.abc import x
-
-for i,v in enumerate(XpY)
-    lambdify(x,'x**2')
-
 ## Tuplas
 
 Tuplas são são sequencias imutáveis de tamanho fixo. Em Matemática, uma tupla é uma sequência ordenada de elementos. Em geral, o termo $n-$upla ("ênupla") é usado para se referir a uma tupla com $n$ elementos.
 
 par = 1,2; par
+par
 
 type(par)
 
@@ -512,6 +507,8 @@ X = [1,2,3] # lista / sequencia
 
 for i,x in enumerate(X): # (i,x) é uma tupla (índice,valor)
     print(f'{i} : {x}')
+
+
 
 **Exemplo:** Construa o produto cartesiano 
 
@@ -574,7 +571,7 @@ op
 ### Deleção de conteúdo com `del` e `pop`
 
 del op[1] # deleta chave 
-op
+op 
 
 novo = op.pop('novo') # retorna e simultaneamente deleta
 novo
@@ -587,9 +584,10 @@ Usamos os métodos `keys()` e `values()` para listar chaves e valores.
 
 arit = {'soma': '+', 'subtr': '-', 'mult': '*', 'div': '/'} # dict
 k = list(arit.keys())
-print(k)
+#print(k)
 val = list(arit.values())
-print(val)
+#print(val)
+
 for v in range(len(arit)):
     print(f'A operação \'{k[v]}\' de "arit" usa o símbolo \'{val[v]}\'.')
 
