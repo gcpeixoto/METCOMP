@@ -161,6 +161,23 @@
    Laboratório 4
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-05.html">
+   Laboratório 5
+  </a>
+ </li>
+</ul>
+<p>
+ <span class="caption-text">
+  Exercícios Avaliativos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-01.html">
+   Lista de exercícios 1
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -544,12 +561,13 @@
 <h2><span class="section-number">5.2. </span>Comprimento, tamanho e dimensão<a class="headerlink" href="#comprimento-tamanho-e-dimensao" title="Permalink to this headline">¶</a></h2>
 <p>Para exemplificar o que queremos dizer com “comprimento”, “tamanho” e “dimensão”, vejamos uma ilustração. Se <span class="math notranslate nohighlight">\(x_1\)</span> e <span class="math notranslate nohighlight">\(x_2\)</span> são dois números inteiros, a lista <code class="docutils literal notranslate"><span class="pre">[x1,x2]</span></code> seria um array unidimensional, mas de comprimento dois (você verifica isto com <code class="docutils literal notranslate"><span class="pre">len</span></code>). Agora, imagine que <span class="math notranslate nohighlight">\((x_1,x_2)\)</span> seja a notação matemática para representar as coordenadas de um ponto do plano cartesiano. Sabemos da geometria que o plano cartesiano tem duas dimensões. Porém, poderíamos, computacionalmente, usar a mesma lista anterior para armazenar no computador essas duas coordenadas. A lista continuaria sendo unidimensional, porém de tamanho dois. Logo, embora a entidade matemática seja bidimensional, não necessariamente a sua representação computacional deve ser bidimensional.</p>
 <p>Vejamos outra ilustração. Uma esfera é um sólido geométrico. Cada ponto da esfera está no espaço tridimensional. Isto significa que precisamos de 3 coordenadas para localizar este ponto. Embora você talvez tenha estudado pouco ou nada sobre a geometria analítica em três dimensões, o exemplo que daremos aqui será simples. Do mesmo modo que o caso anterior, suponha você tenha não apenas <span class="math notranslate nohighlight">\(x_1\)</span> e <span class="math notranslate nohighlight">\(x_2\)</span> como dois números inteiros, mas também um terceiro, <span class="math notranslate nohighlight">\(x_3\)</span>, para montar as coordenadas do seu ponto espacial. Você poderia representá-lo, matematicamente, por uma tripleta <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> sem problema algum. Por outro lado, no computador, a lista <code class="docutils literal notranslate"><span class="pre">[x1,x2,x3]</span></code> seria um <em>array</em> adequado para armazenar os valores das suas coordendas. Entretanto, esta lista continuaria sendo um array unidimensional, mas com tamanho 3. Portanto, <em>arrays</em> unidimensionais podem representar dados em dimensões maiores do que um.</p>
-<p>Vejamos outra ilustração. Uma matriz 2 x 2 pode ser escrita, em matemática, utilizando 4 números da seguinte forma:
-$<span class="math notranslate nohighlight">\(\begin{bmatrix}
-a_{11} &amp; a_{12} \\
+<p>Vejamos outra ilustração. Uma matriz 2 x 2 pode ser escrita, em matemática, utilizando 4 números da seguinte forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+a_{11} &amp; a_{12}\\
 a_{21} &amp; a_{22}
-\end{bmatrix}\)</span>$
-Uma matriz é um <em>array</em> formado por outros <em>arrays</em>. Usando listas, a construção anterior poderia ser representada, no computador, por exemplo, com a lista de listas <code class="docutils literal notranslate"><span class="pre">[[a11,a12],[a21,a22]]</span></code>. Porém, teríamos que ter total controle sobre isto para poder dizer que <code class="docutils literal notranslate"><span class="pre">[a11,a12]</span></code> é a primeira linha da matriz e que <code class="docutils literal notranslate"><span class="pre">[a21,a22]</span></code> é a segunda linha. Neste exemplo, a matriz é uma entidade matemática caracterizada como bidimensional por ser um “retângulo (ou quadrado) cheio de números” , mas para a Python, ela deve ser um <em>array bidimensional</em> basicamente porque existem “duas direções” nos dados: linhas e colunas. Agora, você consegue imaginar o que seria uma matriz de matrizes?</p>
+\end{bmatrix}\end{split}\]</div>
+<p>Uma matriz é um <em>array</em> formado por outros <em>arrays</em>. Usando listas, a construção anterior poderia ser representada, no computador, por exemplo, com a lista de listas <code class="docutils literal notranslate"><span class="pre">[[a11,a12],[a21,a22]]</span></code>. Porém, teríamos que ter total controle sobre isto para poder dizer que <code class="docutils literal notranslate"><span class="pre">[a11,a12]</span></code> é a primeira linha da matriz e que <code class="docutils literal notranslate"><span class="pre">[a21,a22]</span></code> é a segunda linha. Neste exemplo, a matriz é uma entidade matemática caracterizada como bidimensional por ser um “retângulo (ou quadrado) cheio de números” , mas para a Python, ela deve ser um <em>array bidimensional</em> basicamente porque existem “duas direções” nos dados: linhas e colunas. Agora, você consegue imaginar o que seria uma matriz de matrizes?</p>
 <p>Imagine duas folhas de papel A4 postas uma sobre a outra em uma mesa. Agora, pense como se cada folha de papel fosse uma matriz. No final das contas, você tem uma “caixa com matrizes dentro”. Isto é o que seria um tensor, uma “caixa de números”, embora, física e matematicemente, não seja esta a definição. Uma matriz de matrizes é um <em>array tridimensional</em>. Se as suas duas matrizes fossem idênticas e iguais à do exemplo acima, você teria duas listas de listas <code class="docutils literal notranslate"><span class="pre">[[a11,a12],[a21,a22]]</span></code>, quatro listas (2 iguais a <code class="docutils literal notranslate"><span class="pre">[a11,a12]</span></code> e 2 iguais a <code class="docutils literal notranslate"><span class="pre">[a21,a22]</span></code>) e uma superlista com duas listas de listas dentro!</p>
 <p>Como veremos adiante, o <em>numpy</em> é a ferramenta ideal para lidar com tudo isso.</p>
 </section>
