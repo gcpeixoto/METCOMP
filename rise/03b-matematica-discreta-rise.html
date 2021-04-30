@@ -552,11 +552,15 @@
 <span class="n">n</span> <span class="o">=</span> <span class="mi">150000</span> 
 
 <span class="c1"># associa inteiros 0-7 ao tipo sanguíneo</span>
-<span class="n">tipos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span>
-<span class="n">sangue</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">tipos</span><span class="p">,[</span><span class="s1">&#39;A+&#39;</span><span class="p">,</span><span class="s1">&#39;A-&#39;</span><span class="p">,</span><span class="s1">&#39;B+&#39;</span><span class="p">,</span><span class="s1">&#39;B-&#39;</span><span class="p">,</span><span class="s1">&#39;AB+&#39;</span><span class="p">,</span><span class="s1">&#39;AB-&#39;</span><span class="p">,</span><span class="s1">&#39;O+&#39;</span><span class="p">,</span><span class="s1">&#39;O-&#39;</span><span class="p">]))</span>
-
-
-<span class="c1"># primeira pessoa</span>
+<span class="n">tipos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span>   
+<span class="n">sangue</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">tipos</span><span class="p">,[</span><span class="s1">&#39;A+&#39;</span><span class="p">,</span><span class="s1">&#39;A-&#39;</span><span class="p">,</span><span class="s1">&#39;B+&#39;</span><span class="p">,</span><span class="s1">&#39;B-&#39;</span><span class="p">,</span><span class="s1">&#39;AB+&#39;</span><span class="p">,</span><span class="s1">&#39;AB-&#39;</span><span class="p">,</span><span class="s1">&#39;O+&#39;</span><span class="p">,</span><span class="s1">&#39;O-&#39;</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># primeira pessoa</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span> 
 
 <span class="c1"># grupo sanguíneo</span>
@@ -576,7 +580,7 @@
         <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
         <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> 
         <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -599,19 +603,19 @@
     <span class="k">if</span> <span class="n">sangue</span><span class="p">[</span><span class="n">tipo</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O-&#39;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A probabilidade de ser doador universal é de </span><span class="si">{0:.2f}</span><span class="s1">%.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">tipo</span><span class="p">]))</span>        
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A probabilidade de ser </span><span class="si">{0:s}</span><span class="s1"> é de </span><span class="si">{1:.2f}</span><span class="s1">%.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sangue</span><span class="p">[</span><span class="n">tipo</span><span class="p">],</span><span class="n">P</span><span class="p">[</span><span class="n">tipo</span><span class="p">]))</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A probabilidade de ser </span><span class="si">{0:s}</span><span class="s1"> é de </span><span class="si">{1:.2f}</span><span class="s1">%.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sangue</span><span class="p">[</span><span class="n">tipo</span><span class="p">],</span><span class="n">P</span><span class="p">[</span><span class="n">tipo</span><span class="p">]))</span>        
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A probabilidade de ser A+ é de 11.20%.
-A probabilidade de ser A- é de 11.01%.
-A probabilidade de ser B+ é de 11.12%.
-A probabilidade de ser B- é de 11.12%.
-A probabilidade de ser AB+ é de 11.02%.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A probabilidade de ser A+ é de 11.15%.
+A probabilidade de ser A- é de 11.12%.
+A probabilidade de ser B+ é de 11.11%.
+A probabilidade de ser B- é de 11.04%.
+A probabilidade de ser AB+ é de 11.12%.
 A probabilidade de ser AB- é de 11.13%.
-A probabilidade de ser O+ é de 11.16%.
-A probabilidade de ser doador universal é de 22.23%.
+A probabilidade de ser O+ é de 11.01%.
+A probabilidade de ser doador universal é de 22.32%.
 </pre></div>
 </div>
 </div>
@@ -1446,7 +1450,7 @@ A probabilidade de ser doador universal é de 22.23%.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># x = 2 + 1 (incrementação)</span>
-<span class="n">x</span>
+<span class="n">x</span>  
 </pre></div>
 </div>
 </div>
@@ -1474,12 +1478,6 @@ A probabilidade de ser doador universal é de 22.23%.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">z</span> <span class="o">*=</span> <span class="mi">2</span> <span class="c1"># z = 2*2</span>
-<span class="n">z</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
