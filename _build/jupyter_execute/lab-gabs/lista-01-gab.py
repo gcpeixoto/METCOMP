@@ -11,7 +11,7 @@ str(1+1.0009).count('9') # são 11.
 
 **Exercício 2.** A expectativa de vida no Brasil em 2020 era de 76,6 anos. Paulo, um cidadão paraibano já viveu 2,4 bilhões de segundos. Tomando como referência o valor de 2020, responda: Paulo atingiu a expectativa de vida? Quantos anos ele já viveu? **Nota:** a resposta deve ser um valor inteiro.
 
-2.4e9/(365*24*60*60) 
+int(2.4e9/(365*24*60*60))
 
 **Exercício 3.** O _Birchfield Harriers_ é um clube de atletismo inglês fundado em 1877. Você recebeu um convite para trabalhar no setor de engenharia do clube provendo cálculos para materiais de  revestimento de raias de corrida. Seu gerente lhe deu o seguinte desafio: construir um programa em Python para converter unidades de comprimento para o sistema britânico. O seu programa deve funcionar da seguinte forma: dado um valor de entrada `x` em metros, calcular o valor correspondente em _pés_, _polegadas_, _jardas_ e _milhas_. 
 

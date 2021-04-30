@@ -68,7 +68,7 @@ Para $n = 1,2,\ldots,10$, os alcanos recebem nomes especiais da seguinte forma: 
 
 1. Determine todas as configurações possíveis transportáveis como ternas do tipo ($p_a$,$p_b$,$p_c$), onde $p_a$, $p_b$ e $p_c$ são os pesos individuais dos objetos. 
 
-2. Quantas combinações são possíveis de modo que $p_a + p_b + p_c = 10$?
+2. Quantas combinações são possíveis de modo que $p_a + p_b + p_c = 5$?
 
 Notas:
 

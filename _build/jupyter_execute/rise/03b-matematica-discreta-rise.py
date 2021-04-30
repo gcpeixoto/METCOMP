@@ -72,9 +72,8 @@ from random import randint
 n = 150000 
 
 # associa inteiros 0-7 ao tipo sanguíneo
-tipos = [i for i in range(0,8)]
-sangue = dict(zip(tipos,['A+','A-','B+','B-','AB+','AB-','O+','O-']))
-
+tipos = [i for i in range(0,8)]   
+sangue = dict(zip(tipos,['A+','A-','B+','B-','AB+','AB-','O+','O-'])) 
 
 # primeira pessoa
 i = randint(0,8) 
@@ -96,7 +95,7 @@ for _ in range(0,n): # _ significa uma variável inutilizada, mas necessária pa
         s.append(4)
     elif i == 5:
         s.append(5)
-    elif i == 6:
+    elif i == 6: 
         s.append(6)
     else:
         s.append(7)
@@ -114,7 +113,7 @@ for tipo in tipos:
     if sangue[tipo] == 'O-':
         print('A probabilidade de ser doador universal é de {0:.2f}%.'.format(P[tipo]))        
     else:
-        print('A probabilidade de ser {0:s} é de {1:.2f}%.'.format(sangue[tipo],P[tipo])) 
+        print('A probabilidade de ser {0:s} é de {1:.2f}%.'.format(sangue[tipo],P[tipo]))        
 
 ## Conjuntos
 
@@ -341,7 +340,9 @@ Em Python, podemos realizar alguns procedimentos úteis para laços de repetiç�
 
 x = 2
 x += 1 # x = 2 + 1 (incrementação)
-x
+x  
+
+
 
 y = 3
 y -= 1 # y = 3 - 1 (decrementação)
@@ -349,7 +350,6 @@ y
 
 z = 2
 z *= 2 # z = 2*2
-z
 
 t = 3
 t /= 3 # t = 3/3
