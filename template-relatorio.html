@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>METCOMP - Métodos Computacionais &#8212; Métodos Computacionais</title>
+    <title>Relátorio de Projeto Final &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Ferramentas computacionais do curso" href="01a-introducao.html" />
+    <link rel="prev" title="Distribuição de pontos das tarefas" href="log-pontos.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -86,8 +86,8 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-conteudo.html">
    METCOMP - Métodos Computacionais
   </a>
  </li>
@@ -200,9 +200,9 @@
   Modelo de Relatório Final
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="template-relatorio.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Relátorio de Projeto Final
   </a>
  </li>
@@ -246,7 +246,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/0-conteudo.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/template-relatorio.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -271,7 +271,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/0-conteudo.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/template-relatorio.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -279,7 +279,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/0-conteudo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/template-relatorio.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -303,27 +303,30 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conteudo">
-   Conteúdo
+  <a class="reference internal nav-link" href="#descricao-do-problema">
+   Descrição do problema
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#laboratorios-computacionais">
-     Laboratórios Computacionais
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercicios-avaliativos">
-     Exercícios Avaliativos
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gestao">
-   Gestão
+  <a class="reference internal nav-link" href="#metodologia-de-solucao">
+   Metodologia de solução
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resultados-analise-e-discussao">
+   Resultados, análise e discussão
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias-bibliograficas">
+   Referências bibliográficas
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio">
+     Ajuda (esta seção não deve ser incluída no relatório!)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -338,52 +341,46 @@
         
               <div>
                 
-  <div class="section" id="metcomp-metodos-computacionais">
-<h1>METCOMP - Métodos Computacionais<a class="headerlink" href="#metcomp-metodos-computacionais" title="Permalink to this headline">¶</a></h1>
-<p>Material desenvolvido para a disciplina <em>Métodos Computacionais (GDCOC0080)</em> do curso de Engenharia de Produção Mecânica.</p>
-<div class="section" id="conteudo">
-<h2>Conteúdo<a class="headerlink" href="#conteudo" title="Permalink to this headline">¶</a></h2>
-<p>Programa para semestre 2020/02 (atualização semanal)</p>
+  <div class="section" id="relatorio-de-projeto-final">
+<h1>Relátorio de Projeto Final<a class="headerlink" href="#relatorio-de-projeto-final" title="Permalink to this headline">¶</a></h1>
+<p><strong>Métodos Computacionais - Prof. Gustavo Oliveira - Semestre 2020/02</strong></p>
+<p><strong>Alunos:</strong></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="01a-introducao.html"><span class="doc std std-doc">Ferramentas básicas</span></a></p></li>
-<li><p><a class="reference internal" href="01b-fundamentos-python.html"><span class="doc std std-doc">Fundamentos de Python</span></a></p></li>
-<li><p><a class="reference internal" href="02a-computacao-simbolica.html"><span class="doc std std-doc">Computação Simbólica</span></a></p></li>
-<li><p><a class="reference internal" href="03a-matematica-discreta.html"><span class="doc std std-doc">Matemática Discreta</span></a></p></li>
-<li><p><a class="reference internal" href="04a-computacao-vetorizada.html"><span class="doc std std-doc">Computação Vetorizada</span></a></p></li>
+<li><p>Euclides de Alexandria, ‘euclides.alexandria&#64;nome.edu.br’</p></li>
+<li><p>Rei Henrique VII, ‘henry&#64;eu.com’</p></li>
+<li><p>Cosme de Médici, ‘cmedici&#64;yuhh.com.br’</p></li>
 </ul>
-<div class="section" id="laboratorios-computacionais">
-<h3>Laboratórios Computacionais<a class="headerlink" href="#laboratorios-computacionais" title="Permalink to this headline">¶</a></h3>
+<hr><div class="section" id="descricao-do-problema">
+<h2>Descrição do problema<a class="headerlink" href="#descricao-do-problema" title="Permalink to this headline">¶</a></h2>
+<p>Descreva aqui o problema a ser tratado. (O quê?)</p>
+</div>
+<div class="section" id="metodologia-de-solucao">
+<h2>Metodologia de solução<a class="headerlink" href="#metodologia-de-solucao" title="Permalink to this headline">¶</a></h2>
+<p>Descreva a metodologia utilizada para resolver o problema proposto. (Como?)</p>
+</div>
+<div class="section" id="resultados-analise-e-discussao">
+<h2>Resultados, análise e discussão<a class="headerlink" href="#resultados-analise-e-discussao" title="Permalink to this headline">¶</a></h2>
+<p>Adicione gráficos, figuras, tabelas e informações necessárias (E aí?)</p>
+</div>
+<div class="section" id="referencias-bibliograficas">
+<h2>Referências bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">¶</a></h2>
+<p>Registre qualquer bibliografia utilizada para resolver o problema.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="lab-01.html"><span class="doc std std-doc">Laboratório Computacional 1</span></a></p></li>
-<li><p><a class="reference internal" href="lab-02.html"><span class="doc std std-doc">Laboratório Computacional 2</span></a></p></li>
-<li><p><a class="reference internal" href="lab-03.html"><span class="doc std std-doc">Laboratório Computacional 3</span></a></p></li>
-<li><p><a class="reference internal" href="lab-04.html"><span class="doc std std-doc">Laboratório Computacional 4</span></a></p></li>
-<li><p><a class="reference internal" href="lab-05.html"><span class="doc std std-doc">Laboratório Computacional 5</span></a></p></li>
+<li><p>Livro</p></li>
+<li><p>Site</p></li>
+<li><p>Link</p></li>
+<li><p>Post</p></li>
+<li><p>etc.</p></li>
 </ul>
-</div>
-<div class="section" id="exercicios-avaliativos">
-<h3>Exercícios Avaliativos<a class="headerlink" href="#exercicios-avaliativos" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio">
+<h3>Ajuda (esta seção não deve ser incluída no relatório!)<a class="headerlink" href="#ajuda-esta-secao-nao-deve-ser-incluida-no-relatorio" title="Permalink to this headline">¶</a></h3>
+<p>Recursos para aprender como escrever o relatório. Caso queira fazer algo e não saiba, pergunte ao professor. Se ele souber, orientará como fazer.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="lista-01.html"><span class="doc std std-doc">Lista de Exercícios 1</span></a></p></li>
-<li><p><a class="reference internal" href="lista-02.html"><span class="doc std std-doc">Lista de Exercícios 2</span></a></p></li>
+<li><p>O que é Markdown?: <a class="reference external" href="https://pt.wikipedia.org/wiki/Markdown">link</a></p></li>
+<li><p>Dicas rápidas de Markdown: <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">link</a></p></li>
+<li><p>Editor online para aprender Markdown: <a class="reference external" href="https://stackedit.io/app">link</a></p></li>
+<li><p>Como inserir texto, imagens e tabelas em notebooks: <a class="reference external" href="https://www.earthdatascience.org/courses/intro-to-earth-data-science/file-formats/use-text-files/format-text-with-markdown-jupyter-notebook/">link</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="gestao">
-<h2>Gestão<a class="headerlink" href="#gestao" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="log-pontos.html"><span class="doc std std-doc">Tabela de Pontuação</span></a></p></li>
-<li><p><a class="reference internal" href="template-relatorio.html"><span class="doc std std-doc">Modelo de Relatório Final</span></a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 </div>
@@ -413,7 +410,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="01a-introducao.html" title="next page"><span class="section-number">1. </span>Ferramentas computacionais do curso</a>
+    <a class='left-prev' id="prev-link" href="log-pontos.html" title="previous page">Distribuição de pontos das tarefas</a>
 
         </div>
         

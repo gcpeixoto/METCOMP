@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introdução à Computação Simbólica com sympy &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -91,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -133,9 +133,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -165,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -174,6 +174,35 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lista-01.html">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -444,9 +473,9 @@
         
               <div>
                 
-  <section id="introducao-a-computacao-simbolica-com-sympy">
+  <div class="section" id="introducao-a-computacao-simbolica-com-sympy">
 <h1>Introdução à Computação Simbólica com <em>sympy</em><a class="headerlink" href="#introducao-a-computacao-simbolica-com-sympy" title="Permalink to this headline">¶</a></h1>
-<section id="motivacao">
+<div class="section" id="motivacao">
 <h2>Motivação<a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>O valor de <span class="math notranslate nohighlight">\(\pi\)</span> que você usa é finito…</p></li>
@@ -463,30 +492,30 @@
 <li><p>3.141592653589793 é um valor razoavelmente aceitável</p></li>
 <li><p>Exemplo: a equipe de engenharia da NASA explica que, usando este valor para calcular o perímetro de uma circunferência com diâmetro igual a 25 bilhões de milhas, o erro de cálculo é próximo de 1,5 polegada <a class="reference external" href="https://www.jpl.nasa.gov/edu/news/2016/3/16/how-many-decimals-of-pi-do-we-really-need/">[NASA]</a>.</p></li>
 </ul>
-</section>
-<section id="o-que-e-computacao-simbolica">
+</div>
+<div class="section" id="o-que-e-computacao-simbolica">
 <h2>O que é computação simbólica<a class="headerlink" href="#o-que-e-computacao-simbolica" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><em>Computação Simbólica</em> (CS) é uma subárea de estudo da matemática e da ciência da computação que se preocupa em resolver problemas usando objetos simbólicos representáveis em um computador.</p>
 </div></blockquote>
-</section>
-<section id="para-que-serve-cs">
+</div>
+<div class="section" id="para-que-serve-cs">
 <h2>Para que serve CS?<a class="headerlink" href="#para-que-serve-cs" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Base de vários <em>sistemas de computação algébrica</em> (SCAs).</p></li>
 <li><p>Álgebra computacional, projetos assistidos por computação (CAD)</p></li>
 <li><p>Raciocínio automatizado, gestão do conhecimento, lógica computacional, sistemas formais de verificação etc.</p></li>
 </ul>
-<section id="como-a-cs-esta-integrada">
+<div class="section" id="como-a-cs-esta-integrada">
 <h3>Como a CS está integrada?<a class="headerlink" href="#como-a-cs-esta-integrada" title="Permalink to this headline">¶</a></h3>
 <!-- Figura -->
 <center>
     <img src='../figs/02/comp-simb.png' width=900px> </img>
 </center>
 <p>Fonte: <a class="reference external" href="https://risc.jku.at/studying-symbolic-computation/">[RISC/JKU]</a></p>
-</section>
-</section>
-<section id="principais-scas">
+</div>
+</div>
+<div class="section" id="principais-scas">
 <h2>Principais SCAs<a class="headerlink" href="#principais-scas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Maple</p></li>
@@ -495,8 +524,8 @@
 <li><p>Sagemath</p></li>
 <li><p>…</p></li>
 </ul>
-</section>
-<section id="por-que-sympy">
+</div>
+<div class="section" id="por-que-sympy">
 <h2>Por que <em>sympy</em>?<a class="headerlink" href="#por-que-sympy" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>O objetivo principal do <em>sympy</em> é ser uma biblioteca de manipulação simbólica para Python.</p>
@@ -510,8 +539,8 @@
 <li><p>é baseado inteiramente em Python;</p></li>
 <li><p>é leve e independente.</p></li>
 </ul>
-</section>
-<section id="objetos-numericos-x-objetos-simbolicos">
+</div>
+<div class="section" id="objetos-numericos-x-objetos-simbolicos">
 <h2>Objetos numéricos x objetos simbólicos<a class="headerlink" href="#objetos-numericos-x-objetos-simbolicos" title="Permalink to this headline">¶</a></h2>
 <p>Importaremos os módulos <code class="docutils literal notranslate"><span class="pre">math</span></code> e <code class="docutils literal notranslate"><span class="pre">sympy</span></code> para ver diferenças</p>
 <div class="cell docutils container">
@@ -613,7 +642,7 @@
 </div>
 </div>
 </div>
-<section id="funcao-x-metodo">
+<div class="section" id="funcao-x-metodo">
 <h3>Função x método<a class="headerlink" href="#funcao-x-metodo" title="Permalink to this headline">¶</a></h3>
 <p>A partir deste ponto, poderemos ver situações como as seguintes:</p>
 <ul class="simple">
@@ -622,8 +651,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">a.f(x)</span></code>: <code class="docutils literal notranslate"><span class="pre">f</span></code> é um método com parâmetro <code class="docutils literal notranslate"><span class="pre">x</span></code> do objeto <code class="docutils literal notranslate"><span class="pre">a</span></code>; ex. <code class="docutils literal notranslate"><span class="pre">mt.sqrt(2)</span></code></p></li>
 </ul>
 <p>A partir do último exemplo, podemos dizer que um método é, na verdade, uma função que pertence a um objeto.</p>
-</section>
-<section id="atribuicoes-com-simbolos">
+</div>
+<div class="section" id="atribuicoes-com-simbolos">
 <h3>Atribuições com símbolos<a class="headerlink" href="#atribuicoes-com-simbolos" title="Permalink to this headline">¶</a></h3>
 <p>Podemos atribuir símbolos a variáveis usando a função <code class="docutils literal notranslate"><span class="pre">symbols</span></code>.</p>
 <div class="cell docutils container">
@@ -690,8 +719,8 @@
 <img alt="../_images/02a-computacao-simbolica-rise_31_0.png" src="../_images/02a-computacao-simbolica-rise_31_0.png" />
 </div>
 </div>
-</section>
-<section id="atribuicao-por-desempacotamento">
+</div>
+<div class="section" id="atribuicao-por-desempacotamento">
 <h3>Atribuição por desempacotamento<a class="headerlink" href="#atribuicao-por-desempacotamento" title="Permalink to this headline">¶</a></h3>
 <p>Também poderíamos realizar as atribuições anteriores da seguinte forma:</p>
 <div class="cell docutils container">
@@ -701,8 +730,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="alfabeto-de-simbolos">
+</div>
+<div class="section" id="alfabeto-de-simbolos">
 <h3>Alfabeto de símbolos<a class="headerlink" href="#alfabeto-de-simbolos" title="Permalink to this headline">¶</a></h3>
 <p>O <em>sympy</em> dispõe de um submódulo chamado <code class="docutils literal notranslate"><span class="pre">abc</span></code> do qual podemos importar símbolos para letras latinas (maiúsculas e minúsculas) e gregas (minúsculas).</p>
 <div class="cell docutils container">
@@ -750,8 +779,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="simbolos-com-nomes-genericos">
+</div>
+<div class="section" id="simbolos-com-nomes-genericos">
 <h3>Símbolos com nomes genéricos<a class="headerlink" href="#simbolos-com-nomes-genericos" title="Permalink to this headline">¶</a></h3>
 <p>Para criar símbolos genéricos, temos de usar <code class="docutils literal notranslate"><span class="pre">symbols</span></code> ou <code class="docutils literal notranslate"><span class="pre">Symbol</span></code>.</p>
 <div class="cell docutils container">
@@ -776,8 +805,8 @@
 <img alt="../_images/02a-computacao-simbolica-rise_43_0.png" src="../_images/02a-computacao-simbolica-rise_43_0.png" />
 </div>
 </div>
-</section>
-<section id="variaveis-e-simbolos">
+</div>
+<div class="section" id="variaveis-e-simbolos">
 <h3>Variáveis e símbolos<a class="headerlink" href="#variaveis-e-simbolos" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -802,9 +831,9 @@
 <img alt="../_images/02a-computacao-simbolica-rise_46_0.png" src="../_images/02a-computacao-simbolica-rise_46_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="substituicao">
+</div>
+</div>
+<div class="section" id="substituicao">
 <h2>Substituição<a class="headerlink" href="#substituicao" title="Permalink to this headline">¶</a></h2>
 <p>A operação de <em>substituição</em> permite que:</p>
 <ol class="simple">
@@ -894,7 +923,7 @@
 <img alt="../_images/02a-computacao-simbolica-rise_58_0.png" src="../_images/02a-computacao-simbolica-rise_58_0.png" />
 </div>
 </div>
-<section id="avaliacao-de-expressao-em-ponto-flutuante">
+<div class="section" id="avaliacao-de-expressao-em-ponto-flutuante">
 <h3>Avaliação de expressão em ponto flutuante<a class="headerlink" href="#avaliacao-de-expressao-em-ponto-flutuante" title="Permalink to this headline">¶</a></h3>
 <p>Note que a expressão anterior não foi computada em valor numérico. Para obter seu valor numérico, podemos usar o método <code class="docutils literal notranslate"><span class="pre">evalf</span></code>.</p>
 <div class="cell docutils container">
@@ -907,7 +936,7 @@
 <img alt="../_images/02a-computacao-simbolica-rise_60_0.png" src="../_images/02a-computacao-simbolica-rise_60_0.png" />
 </div>
 </div>
-<section id="precisao-arbitraria">
+<div class="section" id="precisao-arbitraria">
 <h4>Precisão arbitrária<a class="headerlink" href="#precisao-arbitraria" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">evalf</span></code> permite que escolhamos a precisão do cálculo impondo o número de dígitos de precisão. Por exemplo, a última expressão com 20 dígitos de precisão seria:</p>
 <div class="cell docutils container">
@@ -953,10 +982,10 @@
 <img alt="../_images/02a-computacao-simbolica-rise_68_0.png" src="../_images/02a-computacao-simbolica-rise_68_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="funcoes-predefinidas-x-funcoes-regulares">
+</div>
+</div>
+</div>
+<div class="section" id="funcoes-predefinidas-x-funcoes-regulares">
 <h2>Funções predefinidas x funções regulares<a class="headerlink" href="#funcoes-predefinidas-x-funcoes-regulares" title="Permalink to this headline">¶</a></h2>
 <p>Apresentaremos 3 grupos de funções que podem ser criadas em Python</p>
 <ul class="simple">
@@ -1176,8 +1205,8 @@
 <img alt="../_images/02a-computacao-simbolica-rise_97_0.png" src="../_images/02a-computacao-simbolica-rise_97_0.png" />
 </div>
 </div>
-</section>
-<section id="modelos-matematicos-simbolicos">
+</div>
+<div class="section" id="modelos-matematicos-simbolicos">
 <h2>Modelos matemáticos simbólicos<a class="headerlink" href="#modelos-matematicos-simbolicos" title="Permalink to this headline">¶</a></h2>
 <p>A partir do que aprendemos, podemos definir modelos matemáticos completamente simbólicos.</p>
 <div class="cell docutils container">
@@ -1244,7 +1273,7 @@
 <img alt="../_images/02a-computacao-simbolica-rise_108_0.png" src="../_images/02a-computacao-simbolica-rise_108_0.png" />
 </div>
 </div>
-<section id="substituindo-valores">
+<div class="section" id="substituindo-valores">
 <h3>Substituindo valores<a class="headerlink" href="#substituindo-valores" title="Permalink to this headline">¶</a></h3>
 <p>Podemos usar a função <code class="docutils literal notranslate"><span class="pre">subs</span></code> para atribuir quaisquer valores para o modelo.</p>
 <p><strong>Exemplo:</strong> <span class="math notranslate nohighlight">\(c = 0.119\)</span></p>
@@ -1280,8 +1309,8 @@
 <img alt="../_images/02a-computacao-simbolica-rise_114_0.png" src="../_images/02a-computacao-simbolica-rise_114_0.png" />
 </div>
 </div>
-</section>
-<section id="substituicao-multipla">
+</div>
+<div class="section" id="substituicao-multipla">
 <h3>Substituição múltipla<a class="headerlink" href="#substituicao-multipla" title="Permalink to this headline">¶</a></h3>
 <p>O modo anterior de substituição não é “Pythônico”. Para substituirmos mais de uma variável de uma vez, devemos usar <em>pares ordenados</em> separados por vírgula sequenciados entre colchetes como uma <em>lista</em>. Mais tarde, aprenderemos sobre pares ordenados e listas.</p>
 <p><strong>Exemplo:</strong> Modifique o modelo <span class="math notranslate nohighlight">\(r_3\)</span> para que <span class="math notranslate nohighlight">\(c = 0.043\)</span> e <span class="math notranslate nohighlight">\(b = 54.0\)</span></p>
@@ -1296,7 +1325,7 @@
 <img alt="../_images/02a-computacao-simbolica-rise_118_0.png" src="../_images/02a-computacao-simbolica-rise_118_0.png" />
 </div>
 </div>
-<section id="pares-ordenados">
+<div class="section" id="pares-ordenados">
 <h4>Pares ordenados<a class="headerlink" href="#pares-ordenados" title="Permalink to this headline">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[X \times Y = \{ (x,y) ; x \in X \text{ e } y \in Y \}\]</div>
@@ -1338,10 +1367,10 @@
 </div>
 </div>
 <p>Podemos seguir esta regra de pares para substituir todos os valores de um modelo simbólico genérico não necessariamente definido através de uma função. Veja o exemplo aplicado a seguir.</p>
-</section>
-</section>
-</section>
-<section id="exemplo-de-aplicacao-o-indice-de-caminhabilidade">
+</div>
+</div>
+</div>
+<div class="section" id="exemplo-de-aplicacao-o-indice-de-caminhabilidade">
 <h2>Exemplo de aplicação: o índice de caminhabilidade<a class="headerlink" href="#exemplo-de-aplicacao-o-indice-de-caminhabilidade" title="Permalink to this headline">¶</a></h2>
 <p>O <em>índice de caminhabilidade</em> <span class="math notranslate nohighlight">\(W\)</span> para uma vizinhança de casas é uma medida matemática que assume valores no intervalo <span class="math notranslate nohighlight">\([0,1]\)</span>. A fórmula é definida por:</p>
 <div class="math notranslate nohighlight">
@@ -1351,7 +1380,7 @@
 <center>
     <img src='../figs/02/walkability.png' width=400px> </img>
 </center>
-<section id="interpretacao">
+<div class="section" id="interpretacao">
 <h3>Interpretação<a class="headerlink" href="#interpretacao" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>quando estamos na vizinhança, <span class="math notranslate nohighlight">\(d = 0\)</span>, <span class="math notranslate nohighlight">\(W = 1\)</span> e a caminhabilidade é considerada ótima.</p></li>
@@ -1363,8 +1392,8 @@
 <li><p>ex. Para <span class="math notranslate nohighlight">\(M = 500 \, m\)</span> , um bar a 100 metros da vizinhança teria um índice de caminhabilidade maior do que o de uma farmácia localizada a 300 m e muito maior do que o de um shopping localizado a 800 m, ainda que muito famoso.</p></li>
 </ul>
 <p>Fonte: <em>De Nadai, M. and Lepri, B. <a class="reference external" href="https://arxiv.org/pdf/1808.02547.pdf">[The economic value of neighborhoods: Predicting real estate prices from the urban environment]</a></em>.</p>
-</section>
-<section id="modelo-simbolico">
+</div>
+<div class="section" id="modelo-simbolico">
 <h3>Modelo simbólico<a class="headerlink" href="#modelo-simbolico" title="Permalink to this headline">¶</a></h3>
 <p>Podemos modelar <span class="math notranslate nohighlight">\(W\)</span> simbolicamente e calcular seu valor para diferentes valores de <span class="math notranslate nohighlight">\(d\)</span> e <span class="math notranslate nohighlight">\(M\)</span> usando a substituição múltipla.</p>
 <div class="cell docutils container">
@@ -1462,7 +1491,7 @@
 </div>
 </div>
 <p>Como era de se esperar, os valores decaem de 0.997 a 3.24e-17, que é um valor considerado nulo em termos de aproximação numérica.</p>
-<section id="quebrando-instrucoes-com">
+<div class="section" id="quebrando-instrucoes-com">
 <h4>Quebrando instruções com <code class="docutils literal notranslate"><span class="pre">\</span></code><a class="headerlink" href="#quebrando-instrucoes-com" title="Permalink to this headline">¶</a></h4>
 <p>A contra-barra <code class="docutils literal notranslate"><span class="pre">\</span></code> pode ser usada para quebrar instruções e continuá-las nas próximas linhas, porém não poderá haver nenhum caracter após ela, nem mesmo espaços. Caso contrário, um erro será lançado.</p>
 <div class="cell docutils container">
@@ -1495,9 +1524,9 @@
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="o-tipo-bool">
+</div>
+</div>
+<div class="section" id="o-tipo-bool">
 <h3>O tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#o-tipo-bool" title="Permalink to this headline">¶</a></h3>
 <p>Em Python, temos mais um tipo de dado bastante útil, o <code class="docutils literal notranslate"><span class="pre">bool</span></code>, que é uma redução de “booleano”. Objetos <code class="docutils literal notranslate"><span class="pre">bool</span></code>, que têm sua raiz na chamada Álgebra de Boole, são baseados nos conceitos <em>true</em> (verdadeiro) e <em>false</em>, ou <em>0</em> e <em>1</em> e são estudados em algumas disciplinas, tais como Circuitos Lógicos, Matemática Discreta, Lógica Aplicada, entre outras.</p>
 <p>Aprenderemos sobre operadores lógicos mais à frente. Por enquanto, cabe mencionar as entidades fundamentais <code class="docutils literal notranslate"><span class="pre">True</span></code> e <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
@@ -1595,9 +1624,9 @@
 <blockquote>
 <div><p>Note que, de acordo com nosso modelo de caminhabilidade, este valor deveria ser zero. Porém, numericamente, ele é uma aproximação para zero. Embora muito pequeno, não é exatamente zero! Por que isso ocorre? Porque o computador lida com uma matemática inexata e aproximada, mas com precisão satisfatória.</p>
 </div></blockquote>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

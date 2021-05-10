@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratório 2 &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -91,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -133,9 +133,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -165,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -174,6 +174,35 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lista-01.html">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -274,7 +303,7 @@
         
               <div>
                 
-  <section id="laboratorio-2">
+  <div class="section" id="laboratorio-2">
 <h1>Laboratório 2<a class="headerlink" href="#laboratorio-2" title="Permalink to this headline">¶</a></h1>
 <p><strong>Resolva todos os problemas por computação.</strong></p>
 <hr><p><strong>Problema 1</strong>: Considere <span class="math notranslate nohighlight">\(f(x) = b + \sqrt{e^{\alpha} - (x - a)^2}\)</span> e <span class="math notranslate nohighlight">\(g(x) = x^2\cos(x) - 4\)</span>. Calcule <span class="math notranslate nohighlight">\(y = f(g(x=0))\)</span> para <span class="math notranslate nohighlight">\(a = 2\)</span> e <span class="math notranslate nohighlight">\(b = -2\)</span>. Quais são os valores aceitáveis de <span class="math notranslate nohighlight">\(\alpha\)</span> para que <span class="math notranslate nohighlight">\(y \in \mathbb{R}\)</span>?</p>
@@ -351,7 +380,7 @@
 <li><p>considerando o interstício de 2010 a 2019, qual foi a taxa de crescimento <span class="math notranslate nohighlight">\(r\)</span> do estado?</p></li>
 <li><p>supondo que a população cresça na mesma taxa encontrada no item anterior, qual será a população do estado em 2037? E em 2055?</p></li>
 </ul>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {

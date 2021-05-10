@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>METCOMP - Métodos Computacionais &#8212; Métodos Computacionais</title>
+    <title>Distribuição de pontos das tarefas &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Ferramentas computacionais do curso" href="01a-introducao.html" />
+    <link rel="next" title="Relátorio de Projeto Final" href="template-relatorio.html" />
+    <link rel="prev" title="Lista de exercícios 2" href="lista-02.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -86,8 +87,8 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-conteudo.html">
    METCOMP - Métodos Computacionais
   </a>
  </li>
@@ -188,9 +189,9 @@
   Distribuição de Pontos
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="log-pontos.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Distribuição de pontos das tarefas
   </a>
  </li>
@@ -246,7 +247,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/0-conteudo.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/log-pontos.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -271,7 +272,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/0-conteudo.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/log-pontos.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -279,7 +280,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/0-conteudo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/log-pontos.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -303,28 +304,14 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conteudo">
-   Conteúdo
+  <a class="reference internal nav-link" href="#como-entregar-listas-e-laboratorios">
+   Como entregar listas e laboratórios
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#laboratorios-computacionais">
-     Laboratórios Computacionais
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercicios-avaliativos">
-     Exercícios Avaliativos
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gestao">
-   Gestão
+  <a class="reference internal nav-link" href="#como-entregar-o-projeto-final">
+   Como entregar o projeto final
   </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
  </li>
 </ul>
 
@@ -338,53 +325,58 @@
         
               <div>
                 
-  <div class="section" id="metcomp-metodos-computacionais">
-<h1>METCOMP - Métodos Computacionais<a class="headerlink" href="#metcomp-metodos-computacionais" title="Permalink to this headline">¶</a></h1>
-<p>Material desenvolvido para a disciplina <em>Métodos Computacionais (GDCOC0080)</em> do curso de Engenharia de Produção Mecânica.</p>
-<div class="section" id="conteudo">
-<h2>Conteúdo<a class="headerlink" href="#conteudo" title="Permalink to this headline">¶</a></h2>
-<p>Programa para semestre 2020/02 (atualização semanal)</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="01a-introducao.html"><span class="doc std std-doc">Ferramentas básicas</span></a></p></li>
-<li><p><a class="reference internal" href="01b-fundamentos-python.html"><span class="doc std std-doc">Fundamentos de Python</span></a></p></li>
-<li><p><a class="reference internal" href="02a-computacao-simbolica.html"><span class="doc std std-doc">Computação Simbólica</span></a></p></li>
-<li><p><a class="reference internal" href="03a-matematica-discreta.html"><span class="doc std std-doc">Matemática Discreta</span></a></p></li>
-<li><p><a class="reference internal" href="04a-computacao-vetorizada.html"><span class="doc std std-doc">Computação Vetorizada</span></a></p></li>
-</ul>
-<div class="section" id="laboratorios-computacionais">
-<h3>Laboratórios Computacionais<a class="headerlink" href="#laboratorios-computacionais" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference internal" href="lab-01.html"><span class="doc std std-doc">Laboratório Computacional 1</span></a></p></li>
-<li><p><a class="reference internal" href="lab-02.html"><span class="doc std std-doc">Laboratório Computacional 2</span></a></p></li>
-<li><p><a class="reference internal" href="lab-03.html"><span class="doc std std-doc">Laboratório Computacional 3</span></a></p></li>
-<li><p><a class="reference internal" href="lab-04.html"><span class="doc std std-doc">Laboratório Computacional 4</span></a></p></li>
-<li><p><a class="reference internal" href="lab-05.html"><span class="doc std std-doc">Laboratório Computacional 5</span></a></p></li>
-</ul>
+  <div class="section" id="distribuicao-de-pontos-das-tarefas">
+<h1>Distribuição de pontos das tarefas<a class="headerlink" href="#distribuicao-de-pontos-das-tarefas" title="Permalink to this headline">¶</a></h1>
+<p><strong>Entenda como as tarefas serão pontuadas.</strong></p>
+<hr><table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tarefa</p></th>
+<th class="head"><p>Pontos</p></th>
+<th class="head"><p>Público-alvo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lista de exercícios 1</p></td>
+<td><p>0,5</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lista de exercícios 2</p></td>
+<td><p>0,5</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-even"><td><p>Laboratório Computacional 1</p></td>
+<td><p>1,0</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-odd"><td><p>Laboratório Computacional 2</p></td>
+<td><p>1,0</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-even"><td><p>Laboratório Computacional 3</p></td>
+<td><p>1,0</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-odd"><td><p>Laboratório Computacional 4</p></td>
+<td><p>1,0</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-even"><td><p>Laboratório Computacional 5</p></td>
+<td><p>1,0</p></td>
+<td><p>Individual</p></td>
+</tr>
+<tr class="row-odd"><td><p>Projeto Final</p></td>
+<td><p>3,0</p></td>
+<td><p>Grupo</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="como-entregar-listas-e-laboratorios">
+<h2>Como entregar listas e laboratórios<a class="headerlink" href="#como-entregar-listas-e-laboratorios" title="Permalink to this headline">¶</a></h2>
+<p>Submeta suas respostas através dos questionários que serão disponibilizados pelo ambiente virtual (SIGAA).</p>
 </div>
-<div class="section" id="exercicios-avaliativos">
-<h3>Exercícios Avaliativos<a class="headerlink" href="#exercicios-avaliativos" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference internal" href="lista-01.html"><span class="doc std std-doc">Lista de Exercícios 1</span></a></p></li>
-<li><p><a class="reference internal" href="lista-02.html"><span class="doc std std-doc">Lista de Exercícios 2</span></a></p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="gestao">
-<h2>Gestão<a class="headerlink" href="#gestao" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="log-pontos.html"><span class="doc std std-doc">Tabela de Pontuação</span></a></p></li>
-<li><p><a class="reference internal" href="template-relatorio.html"><span class="doc std std-doc">Modelo de Relatório Final</span></a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<div class="section" id="como-entregar-o-projeto-final">
+<h2>Como entregar o projeto final<a class="headerlink" href="#como-entregar-o-projeto-final" title="Permalink to this headline">¶</a></h2>
+<p>O projeto final deverá ser escrito na forma de relatório conforme o modelo disponibilizado no arquivo <a class="reference internal" href="template-relatorio.html"><span class="doc std std-doc">template-relatorio.ipynb</span></a>.</p>
 </div>
 </div>
 
@@ -413,7 +405,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="01a-introducao.html" title="next page"><span class="section-number">1. </span>Ferramentas computacionais do curso</a>
+    <a class='left-prev' id="prev-link" href="lista-02.html" title="previous page">Lista de exercícios 2</a>
+    <a class='right-next' id="next-link" href="template-relatorio.html" title="next page">Relátorio de Projeto Final</a>
 
         </div>
         
