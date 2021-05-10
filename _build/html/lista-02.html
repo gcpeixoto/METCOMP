@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de exercícios 2 &#8212; Métodos Computacionais</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Distribuição de pontos das tarefas" href="log-pontos.html" />
+    <link rel="prev" title="Lista de exercícios 1" href="lista-01.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Métodos Computacionais</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-conteudo.html">
+   METCOMP - Métodos Computacionais
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python para Computação Científica
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Ferramentas computacionais do curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-fundamentos-python.html">
+   2. Fundamentos de
+   <em>
+    Python
+   </em>
+   para Computação Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-matematica-discreta.html">
+   4. Fundamentos de Matemática Discreta com Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Laboratórios Computacionais
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-01.html">
+   Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-02.html">
+   Laboratório 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-03.html">
+   Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-04.html">
+   Laboratório 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-05.html">
+   Laboratório 5
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exercícios Avaliativos
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-01.html">
+   Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="template-relatorio.html">
+   Relátorio de Projeto Final
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lista-02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/lista-02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/lista-02.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lista-de-exercicios-2">
+<h1>Lista de exercícios 2<a class="headerlink" href="#lista-de-exercicios-2" title="Permalink to this headline">¶</a></h1>
+<p><strong>Resolva todos os problemas por computação e registre as suas respostas no questionário disponibilizado no ambiente virtual de aprendizagem.</strong></p>
+<hr><p><strong>Exercício 1.</strong> Defina uma variável chamada <code class="docutils literal notranslate"><span class="pre">primos</span></code> e atribua a ela uma lista usando um laço <code class="docutils literal notranslate"><span class="pre">for</span></code> para preenchê-la com os números primos de 2 a 13, inclusive. Enfim, atribua o número 17 a uma variável chamada <code class="docutils literal notranslate"><span class="pre">p</span></code> e adicione <code class="docutils literal notranslate"><span class="pre">p</span></code> ao final da lista. Imprima a nova lista inteira.</p>
+<p><strong>Exercício 2.</strong> Escreva um programa que gera todos os números ímpares de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">n</span></code>. Defina <code class="docutils literal notranslate"><span class="pre">n</span></code> no início do programa e use um laço <code class="docutils literal notranslate"><span class="pre">while</span></code> para computar os números. (Certifique-se que se <code class="docutils literal notranslate"><span class="pre">n</span></code> é um número par, o maior número ímpar gerado seja <code class="docutils literal notranslate"><span class="pre">n-1</span></code>.</p>
+<p><strong>Exercício 3.</strong> Defina a seguinte lista aninhada:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">q</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Use indexação para extrair:</p>
+<p>a. a letra <code class="docutils literal notranslate"><span class="pre">'a'</span></code>;</p>
+<p>b. a lista <code class="docutils literal notranslate"><span class="pre">['d','e','f']</span></code>;</p>
+<p>c. o último elemento <code class="docutils literal notranslate"><span class="pre">'h'</span></code>;</p>
+<p>d. o elemento <code class="docutils literal notranslate"><span class="pre">'d'</span></code>;</p>
+<p>e. o elemento <code class="docutils literal notranslate"><span class="pre">'g'</span></code>.</p>
+<p>Considere o seguinte código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>for i in q:
+    for j in range(len(?)):
+        print ??[j]
+</pre></div>
+</div>
+<p>Para que sejam impressos todos os elementos da lista <code class="docutils literal notranslate"><span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code> e <code class="docutils literal notranslate"><span class="pre">??</span></code> devem ser substituídos por letras, convenientemente, de modo que o código realize o que pretende. Faças as modificações devidas para essa finalidade.</p>
+<p><strong>Exercício 4.</strong> Um triângulo arbitrário pode ser descrito pelas coordenadas de seus três vértices: <span class="math notranslate nohighlight">\((x_1,y_1)\)</span>, <span class="math notranslate nohighlight">\((x_2,y_2)\)</span> e <span class="math notranslate nohighlight">\((x_3,y_3)\)</span>, orientados no sentido anti-horário. A área do triângulo é dada pela fórmula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \frac{1}{2}
+\begin{vmatrix}
+x_1 &amp; y_1 &amp; 1 \\
+x_2 &amp; y_2 &amp; 1 \\
+x_3 &amp; y_3 &amp; 1 \\
+\end{vmatrix}\end{split}\]</div>
+<p>Escreva uma função <code class="docutils literal notranslate"><span class="pre">area(vertices)</span></code> que calcule a área <span class="math notranslate nohighlight">\(A\)</span> de um triângulo cujos vértices são especificados pelo argumento <code class="docutils literal notranslate"><span class="pre">vertices</span></code>, o qual deve ser dado por uma lista aninhada contendo as coordenadas de cada vértice. Por exemplo, a área do triângulo com vértices <span class="math notranslate nohighlight">\((0,0)\)</span>, <span class="math notranslate nohighlight">\((1,0)\)</span> e <span class="math notranslate nohighlight">\((0,1)\)</span> deve ser calculada como segue:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">area</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>ou como</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="n">v2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="n">v3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exercício 5.</strong> Considere a seguinte função:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">elif</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Explique por que <code class="docutils literal notranslate"><span class="pre">f(15)</span></code> não mostra nenhum valor? O que poderia ser feito para que <code class="docutils literal notranslate"><span class="pre">f(15)</span></code> seja igual a <code class="docutils literal notranslate"><span class="pre">-15</span></code>?</p>
+<p><strong>Exercício 6.</strong> Considere a função (matemática) <span class="math notranslate nohighlight">\(f(x) = e^{rx} \, \textrm{sen}(mx) + e^{sx} \, \textrm{sen}(nx)\)</span>. Escreva uma função (computacional) para calcular o valor de <span class="math notranslate nohighlight">\(x\)</span> para quaisquer valores reais <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(r\)</span> e <span class="math notranslate nohighlight">\(s\)</span>. Por exemplo, sua função deve começar com a instrução:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Exercício 7.</strong> Defina <span class="math notranslate nohighlight">\(h(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}\)</span>. Escreva duas listas, <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">h</span></code>, contendo os valores de <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(h(x)\)</span> para 51 valores uniformemente espaçados no domínio <span class="math notranslate nohighlight">\([-4,4]\)</span>.</p>
+<p><strong>Exercício 8.</strong> Escreva um código para plotar o gráfico de <span class="math notranslate nohighlight">\(h(x)\)</span>. Em seguida, plote o gráfico de h(x). (Na resposta ao questionário, insira apenas o código.)</p>
+<p><strong>Exercício 9.</strong> Considere a função <span class="math notranslate nohighlight">\(f(t) = t^3 + te^t + 1\)</span> e o vetor <span class="math notranslate nohighlight">\(v = (3,2,-1)\)</span>. Aplique <span class="math notranslate nohighlight">\(f\)</span> a cada elemento de <span class="math notranslate nohighlight">\(v\)</span> e determine o resultado como uma tupla de 3 elementos.</p>
+<p><strong>Exercício 10.</strong> Escreva um código para plotar o gráfico da função <span class="math notranslate nohighlight">\(y(t) = v_0t - \frac{1}{2}gt^2\)</span>, que descreve a trajetória de uma bola. Use <span class="math notranslate nohighlight">\(v_0 = 10\)</span>, <span class="math notranslate nohighlight">\(g = 9.81\)</span> e <span class="math notranslate nohighlight">\(t \in [0,2v_0/g]\)</span>. Configure a legenda do eixo <span class="math notranslate nohighlight">\(x\)</span> para <code class="docutils literal notranslate"><span class="pre">tempo</span> <span class="pre">(s)</span></code> e a do eixo <span class="math notranslate nohighlight">\(y\)</span> para <code class="docutils literal notranslate"><span class="pre">altura</span> <span class="pre">(m)</span></code>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gcpeixoto/METCOMP",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="lista-01.html" title="previous page">Lista de exercícios 1</a>
+    <a class='right-next' id="next-link" href="log-pontos.html" title="next page">Distribuição de pontos das tarefas</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Gustavo Oliveira<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

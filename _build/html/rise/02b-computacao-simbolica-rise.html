@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computação Simbólica com sympy - Parte 2 &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -91,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -133,9 +133,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -165,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -174,6 +174,35 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lista-01.html">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -355,9 +384,9 @@
         
               <div>
                 
-  <section id="computacao-simbolica-com-sympy-parte-2">
+  <div class="section" id="computacao-simbolica-com-sympy-parte-2">
 <h1>Computação Simbólica com <em>sympy</em> - Parte 2<a class="headerlink" href="#computacao-simbolica-com-sympy-parte-2" title="Permalink to this headline">¶</a></h1>
-<section id="operadores-logicos">
+<div class="section" id="operadores-logicos">
 <h2>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this headline">¶</a></h2>
 <p>Vamos estudar:</p>
 <ul class="simple">
@@ -365,7 +394,7 @@
 <li><p><em>operadores de pertencimento</em></p></li>
 <li><p><em>operadores de identidade</em></p></li>
 </ul>
-<section id="operadores-de-comparacao">
+<div class="section" id="operadores-de-comparacao">
 <h3>Operadores de comparação<a class="headerlink" href="#operadores-de-comparacao" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
@@ -539,9 +568,9 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="operadores-booleanos-e-conjuntos">
+</div>
+</div>
+<div class="section" id="operadores-booleanos-e-conjuntos">
 <h2>Operadores booleanos e conjuntos<a class="headerlink" href="#operadores-booleanos-e-conjuntos" title="Permalink to this headline">¶</a></h2>
 <p>Explicação por meio de diagramas de Venn</p>
 <!-- Figura -->
@@ -618,7 +647,7 @@
 </div>
 </div>
 </div>
-<section id="operadores-de-pertencimento">
+<div class="section" id="operadores-de-pertencimento">
 <h3>Operadores de pertencimento<a class="headerlink" href="#operadores-de-pertencimento" title="Permalink to this headline">¶</a></h3>
 <p>A tabela abaixo resume os operadores de pertencimento.</p>
 <table class="colwidths-auto table">
@@ -694,8 +723,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="operadores-de-identidade">
+</div>
+<div class="section" id="operadores-de-identidade">
 <h3>Operadores de identidade<a class="headerlink" href="#operadores-de-identidade" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
@@ -778,9 +807,9 @@
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="equacoes-simbolicas">
+</div>
+</div>
+<div class="section" id="equacoes-simbolicas">
 <h2>Equações simbólicas<a class="headerlink" href="#equacoes-simbolicas" title="Permalink to this headline">¶</a></h2>
 <p>Equações simbólicas podem ser formadas por meio de <code class="docutils literal notranslate"><span class="pre">Eq</span></code> e não com <code class="docutils literal notranslate"><span class="pre">=</span></code> ou <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
 <div class="cell docutils container">
@@ -813,7 +842,7 @@
 <img alt="../_images/02b-computacao-simbolica-rise_34_0.png" src="../_images/02b-computacao-simbolica-rise_34_0.png" />
 </div>
 </div>
-<section id="resolucao-de-equacoes-algebricas-simbolicas">
+<div class="section" id="resolucao-de-equacoes-algebricas-simbolicas">
 <h3>Resolução de equações algébricas simbólicas<a class="headerlink" href="#resolucao-de-equacoes-algebricas-simbolicas" title="Permalink to this headline">¶</a></h3>
 <p>Podemos resolver equações algébricas da seguinte forma:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solveset</span><span class="p">(</span><span class="n">equação</span><span class="p">,</span><span class="n">variável</span><span class="p">,</span><span class="n">domínio</span><span class="p">)</span>
@@ -898,9 +927,9 @@
 <img alt="../_images/02b-computacao-simbolica-rise_50_0.png" src="../_images/02b-computacao-simbolica-rise_50_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="expansao-simplificacao-e-fatoracao-de-polinomios">
+</div>
+</div>
+<div class="section" id="expansao-simplificacao-e-fatoracao-de-polinomios">
 <h2>Expansão, simplificação e fatoração de polinômios<a class="headerlink" href="#expansao-simplificacao-e-fatoracao-de-polinomios" title="Permalink to this headline">¶</a></h2>
 <p>Vejamos exemplos de polinômios em uma variável.</p>
 <div class="cell docutils container">
@@ -991,8 +1020,8 @@
 <img alt="../_images/02b-computacao-simbolica-rise_59_0.png" src="../_images/02b-computacao-simbolica-rise_59_0.png" />
 </div>
 </div>
-</section>
-<section id="identidades-trigonometricas">
+</div>
+<div class="section" id="identidades-trigonometricas">
 <h2>Identidades trigonométricas<a class="headerlink" href="#identidades-trigonometricas" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar <code class="docutils literal notranslate"><span class="pre">expand_trig</span></code> para expandir funções trigonométricas.</p>
 <div class="cell docutils container">
@@ -1025,8 +1054,8 @@
 <img alt="../_images/02b-computacao-simbolica-rise_63_0.png" src="../_images/02b-computacao-simbolica-rise_63_0.png" />
 </div>
 </div>
-</section>
-<section id="propriedades-de-logaritmo">
+</div>
+<div class="section" id="propriedades-de-logaritmo">
 <h2>Propriedades de logaritmo<a class="headerlink" href="#propriedades-de-logaritmo" title="Permalink to this headline">¶</a></h2>
 <p>Com <code class="docutils literal notranslate"><span class="pre">expand_log</span></code>, podemos aplicar propriedades válidas de logaritmo.</p>
 <div class="cell docutils container">
@@ -1089,8 +1118,8 @@
 <img alt="../_images/02b-computacao-simbolica-rise_72_0.png" src="../_images/02b-computacao-simbolica-rise_72_0.png" />
 </div>
 </div>
-</section>
-<section id="fatorial">
+</div>
+<div class="section" id="fatorial">
 <h2>Fatorial<a class="headerlink" href="#fatorial" title="Permalink to this headline">¶</a></h2>
 <p>A função <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> pode ser usada para calcular o fatorial de um número.</p>
 <div class="cell docutils container">
@@ -1140,8 +1169,8 @@
 <img alt="../_images/02b-computacao-simbolica-rise_78_0.png" src="../_images/02b-computacao-simbolica-rise_78_0.png" />
 </div>
 </div>
-</section>
-<section id="funcoes-anonimas">
+</div>
+<div class="section" id="funcoes-anonimas">
 <h2>Funções anônimas<a class="headerlink" href="#funcoes-anonimas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Função sem nome</p></li>
@@ -1209,8 +1238,8 @@
 </div>
 <p>O resultado anterior continua sendo um objeto simbólico, mas obtido de uma maneira mais direta.</p>
 <p>Conclusão: usamos funções anônimas para tarefas de menor complexidade.</p>
-</section>
-<section id="lambdificacao-simbolica">
+</div>
+<div class="section" id="lambdificacao-simbolica">
 <h2>“Lambdificação” simbólica<a class="headerlink" href="#lambdificacao-simbolica" title="Permalink to this headline">¶</a></h2>
 <p>Usando <code class="docutils literal notranslate"><span class="pre">lambdify</span></code>, podemos converter uma expressão simbólica do <em>sympy</em> para uma expressão que pode ser numericamente avaliada em outra biblioteca. Essa função desempenha papel similar a uma função <em>lambda</em> (anônima).</p>
 <div class="cell docutils container">
@@ -1257,8 +1286,8 @@
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

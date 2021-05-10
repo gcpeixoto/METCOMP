@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plotagem básica com matplotlib &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
 
@@ -91,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -133,9 +133,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -165,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -174,6 +174,35 @@
  <li class="toctree-l1">
   <a class="reference internal" href="lista-01.html">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -393,24 +422,24 @@
         
               <div>
                 
-  <section id="plotagem-basica-com-matplotlib">
+  <div class="section" id="plotagem-basica-com-matplotlib">
 <h1>Plotagem básica com <em>matplotlib</em><a class="headerlink" href="#plotagem-basica-com-matplotlib" title="Permalink to this headline">¶</a></h1>
-<section id="visualizacao-de-dados">
+<div class="section" id="visualizacao-de-dados">
 <h2>Visualização de dados<a class="headerlink" href="#visualizacao-de-dados" title="Permalink to this headline">¶</a></h2>
 <p>A visualização de dados é um campo do conhecimento bastante antigo que foi trazido à mostra muito recentemente com a expansão do “Big Data”. Seu principal objetivo é representar dados e informações graficamente por meio de elementos visuais como tabelas, gráficos, mapas e infográficos. Diversas ferramentas estão disponíveis para tornar a interpretação de dados mais clara, compreensível e acessível.</p>
 <p>No contexto da análise de dados, a visualização de dados é um componente fundamental para a criação de relatórios de negócios, painéis de instrumentos (<em>dashboards</em>) e gráficos multidimensionais que são aplicáveis às mais diversas disciplinas, tais como Economia, Ciência Política e, principalmente, todo o núcleo de ciências exatas (Matemática, Estatística e Computação).</p>
 <p>Em seu livro <em>The Visual Display of Quantitative Information</em>, <a class="reference external" href="https://www.edwardtufte.com/tufte/">[Edward Tufte]</a>, conhecido como o guru do <em>design</em> aplicado à visualização de dados, afirma que, a cada ano, o mundo produz algo entre 900 bilhões e 2 trilhões de imagens impressas de gráficos. Ele destaca que o <em>design</em> de um gráfico estatístico, por exemplo, é uma matéria universal similar à Matemática e não está atrelado a características únicas de uma linguagem particular. Portanto, aprender visualização de dados para comunicar dados com eficiência é tão importante quanto aprender a Língua Portuguesa para escrever melhor.</p>
 <p>Você pode ver uma lista sugestiva de bons blogues e livros sobre visualização de dados nas páginas de aprendizagem do software Tableau <a class="reference external" href="https://www.tableau.com/learn/articles/best-data-visualization-blogs">[TabelauBlogs]</a>, <a class="reference external" href="https://www.tableau.com/learn/articles/books-about-data-visualization">[TabelauBooks]</a>.</p>
-</section>
-<section id="data-storytelling">
+</div>
+<div class="section" id="data-storytelling">
 <h2><em>Data storytelling</em><a class="headerlink" href="#data-storytelling" title="Permalink to this headline">¶</a></h2>
 <p><em>Data Storytelling</em> é o processo de “contar histórias através dos dados”. <a class="reference external" href="http://www.storytellingwithdata.com">[Cole Knaflic]</a>, uma engenheira de dados do Google, ao perceber como a quantidade de informação produzida no mundo às vezes é muito mal lida e comunicada, escreveu dois <em>best-sellers</em> sobre este tema a fim de ajudar pessoas a comunicarem melhor seus dados e produtos quantitativos. Ela argumenta em seu livro <em>Storytelling with Data: A Data Visualization Guide for Business Professionals</em> (<em>Storytelling com Dados: um Guia Sobre Visualização de Dados Para Profissionais de Negócios</em>, na versão em português) que não somos inerentemente bons para “contar uma história” através dos dados. Cole mostra com poucas lições o que devemos aprender para atingir uma comunicação eficiente por meio da visualização de dados.</p>
-</section>
-<section id="plotagem-matematica">
+</div>
+<div class="section" id="plotagem-matematica">
 <h2>Plotagem matemática<a class="headerlink" href="#plotagem-matematica" title="Permalink to this headline">¶</a></h2>
 <p><em>Plotagem</em> é o termo comumente empregado para o esboço de gráficos de funções matemáticas via computador. Plotar gráficos é uma das tarefas que você mais realizará como futuro(a) cientista ou analista de dados. Nesta aula, nós introduziremos você ao universo da plotagem de gráficos em duas dimensões e ensinar como você pode visualizar dados facilmente com a biblioteca <em>matplotlib</em>. Daremos uma visão geral principalmente sobre a plotagem de funções matemáticas utilizando <em>arrays</em> e recursos de computação vetorizada com <em>numpy</em> já aprendidos. Ao longo do curso, você aprenderá a fazer plotagens mais interessantes de cunho estatístico.</p>
-</section>
-<section id="a-biblioteca-matplotlib">
+</div>
+<div class="section" id="a-biblioteca-matplotlib">
 <h2>A biblioteca <em>matplotlib</em><a class="headerlink" href="#a-biblioteca-matplotlib" title="Permalink to this headline">¶</a></h2>
 <p><em>Matplotlib</em> é a biblioteca Python mais conhecida para plotagem 2D (bidimensional) de <em>arrays</em>. Sua filosofia é simples: criar plotagens simples com apenas alguns comandos, ou apenas um. John Hunter <a class="reference external" href="https://matplotlib.org/users/history.html">[History]</a>, falecido em 2012, foi o autor desta biblioteca. Em 2008, ele escreveu que, enquanto buscava uma solução em Python para plotagem 2D, ele gostaria de ter, entre outras coisas:</p>
 <ul class="simple">
@@ -425,7 +454,7 @@
 <li><p>O <em>backend</em>: um conjunto de renderizadores responsáveis por converter os gráficos para dispositivos onde eles podem ser, de fato, visualizados. A <a class="reference external" href="https://pt.wikipedia.org/wiki/Renderiza%C3%A7%C3%A3o">[renderização]</a> é o produto final do processamento digital. Por exemplo, o <em>backend</em> PS é responsável pela renderização de <a class="reference external" href="https://www.adobe.com/br/products/postscript.html">[PostScript]</a>. Já o <em>backend</em> SVG constroi gráficos vetoriais escaláveis (<a class="reference external" href="https://www.w3.org/Graphics/SVG/">[Scalable Vector Graphics]</a>.</p></li>
 </ol>
 <p>Veja o conceito de <a class="reference external" href="https://en.wikipedia.org/wiki/Canvas_(GUI)">[Canvas]</a>.</p>
-<section id="sessoes-interativas-do-matplotlib">
+<div class="section" id="sessoes-interativas-do-matplotlib">
 <h3>Sessões interativas do <em>matplotlib</em><a class="headerlink" href="#sessoes-interativas-do-matplotlib" title="Permalink to this headline">¶</a></h3>
 <p>Sessões interativas do <em>matplotlib</em> são habilitadas através de um <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">[comando mágico]</a>:</p>
 <ul class="simple">
@@ -452,9 +481,9 @@
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="criacao-de-plots-simples">
+</div>
+</div>
+<div class="section" id="criacao-de-plots-simples">
 <h2>Criação de plots simples<a class="headerlink" href="#criacao-de-plots-simples" title="Permalink to this headline">¶</a></h2>
 <p>Vamos importar o <em>numpy</em> para usarmos os benefícios da computação vetorizada e plotar nossos primeiros exemplos.</p>
 <div class="cell docutils container">
@@ -574,8 +603,8 @@
 </div>
 </div>
 <p>As cores e marcações no gráfico são todas padronizadas. Vejamos como alterar tudo isto.</p>
-</section>
-<section id="alteracao-de-propriedades-e-estilos-de-linhas">
+</div>
+<div class="section" id="alteracao-de-propriedades-e-estilos-de-linhas">
 <h2>Alteração de propriedades e estilos de linhas<a class="headerlink" href="#alteracao-de-propriedades-e-estilos-de-linhas" title="Permalink to this headline">¶</a></h2>
 <p>Altere:</p>
 <ul class="simple">
@@ -617,7 +646,7 @@
 <img alt="_images/04b-plotagem-matplotlib_21_0.png" src="_images/04b-plotagem-matplotlib_21_0.png" />
 </div>
 </div>
-<section id="plotagem-multipla">
+<div class="section" id="plotagem-multipla">
 <h3>Plotagem múltipla<a class="headerlink" href="#plotagem-multipla" title="Permalink to this headline">¶</a></h3>
 <p>O exemplo acima poderia ser feito como plotagem múltipla em 3 blocos do tipo (<code class="docutils literal notranslate"><span class="pre">x,y,'fmt')</span></code>, onde <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> são as informações dos eixos coordenados e <code class="docutils literal notranslate"><span class="pre">fmt</span></code> é uma string de formatação.</p>
 <div class="cell docutils container">
@@ -631,8 +660,8 @@
 </div>
 </div>
 <p>Para verificar todas as opções de propriedades e estilos de linhas, veja <code class="docutils literal notranslate"><span class="pre">plt.plot?</span></code>.</p>
-</section>
-<section id="especificacao-de-figuras">
+</div>
+<div class="section" id="especificacao-de-figuras">
 <h3>Especificação de figuras<a class="headerlink" href="#especificacao-de-figuras" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">plt.figure</span></code> para criar um ambiente de figura e altere:</p>
 <ul class="simple">
@@ -656,8 +685,8 @@
 <img alt="_images/04b-plotagem-matplotlib_28_0.png" src="_images/04b-plotagem-matplotlib_28_0.png" />
 </div>
 </div>
-</section>
-<section id="alterando-limites-e-marcacoes-de-eixos">
+</div>
+<div class="section" id="alterando-limites-e-marcacoes-de-eixos">
 <h3>Alterando limites e marcações de eixos<a class="headerlink" href="#alterando-limites-e-marcacoes-de-eixos" title="Permalink to this headline">¶</a></h3>
 <p>Altere:</p>
 <ul class="simple">
@@ -692,8 +721,8 @@
 <img alt="_images/04b-plotagem-matplotlib_31_0.png" src="_images/04b-plotagem-matplotlib_31_0.png" />
 </div>
 </div>
-</section>
-<section id="especificando-texto-de-marcacoes-em-eixos">
+</div>
+<div class="section" id="especificando-texto-de-marcacoes-em-eixos">
 <h3>Especificando texto de marcações em eixos<a class="headerlink" href="#especificando-texto-de-marcacoes-em-eixos" title="Permalink to this headline">¶</a></h3>
 <p>Podemos alterar as marcações das <code class="docutils literal notranslate"><span class="pre">ticks</span></code> passando um texto indicativo. No caso anterior, seria melhor algo como:</p>
 <div class="cell docutils container">
@@ -713,8 +742,8 @@
 <img alt="_images/04b-plotagem-matplotlib_33_0.png" src="_images/04b-plotagem-matplotlib_33_0.png" />
 </div>
 </div>
-</section>
-<section id="deslocamento-de-eixos-principais">
+</div>
+<div class="section" id="deslocamento-de-eixos-principais">
 <h3>Deslocamento de eixos principais<a class="headerlink" href="#deslocamento-de-eixos-principais" title="Permalink to this headline">¶</a></h3>
 <p>Os eixos principais podem ser movidos para outras posições arbitrárias e as bordas da área de plotagem desligadas usando <code class="docutils literal notranslate"><span class="pre">spine</span></code>.</p>
 <div class="cell docutils container">
@@ -745,8 +774,8 @@
 <img alt="_images/04b-plotagem-matplotlib_35_0.png" src="_images/04b-plotagem-matplotlib_35_0.png" />
 </div>
 </div>
-</section>
-<section id="insercao-de-legendas">
+</div>
+<div class="section" id="insercao-de-legendas">
 <h3>Inserção de legendas<a class="headerlink" href="#insercao-de-legendas" title="Permalink to this headline">¶</a></h3>
 <p>Para criarmos:</p>
 <ul class="simple">
@@ -769,7 +798,7 @@
 <img alt="_images/04b-plotagem-matplotlib_38_0.png" src="_images/04b-plotagem-matplotlib_38_0.png" />
 </div>
 </div>
-<section id="localizacao-de-legendas">
+<div class="section" id="localizacao-de-legendas">
 <h4>Localização de legendas<a class="headerlink" href="#localizacao-de-legendas" title="Permalink to this headline">¶</a></h4>
 <p>Use <code class="docutils literal notranslate"><span class="pre">loc=valor</span></code> para especificar onde posicionar a legenda. Use <code class="docutils literal notranslate"><span class="pre">plt.legend?</span></code> para verificar as posições disponíveis para <code class="docutils literal notranslate"><span class="pre">valor</span></code>. Vide tabela de valores <code class="docutils literal notranslate"><span class="pre">Location</span> <span class="pre">String</span></code> e <code class="docutils literal notranslate"><span class="pre">Location</span> <span class="pre">Code</span></code>.</p>
 <div class="cell docutils container">
@@ -794,9 +823,9 @@
 <img alt="_images/04b-plotagem-matplotlib_41_0.png" src="_images/04b-plotagem-matplotlib_41_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="alteracao-de-tamanho-de-fonte">
+</div>
+</div>
+<div class="section" id="alteracao-de-tamanho-de-fonte">
 <h3>Alteração de tamanho de fonte<a class="headerlink" href="#alteracao-de-tamanho-de-fonte" title="Permalink to this headline">¶</a></h3>
 <p>Para alterar o tamanho da fonte de legendas, use <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>.</p>
 <div class="cell docutils container">
@@ -816,8 +845,8 @@
 <img alt="_images/04b-plotagem-matplotlib_43_0.png" src="_images/04b-plotagem-matplotlib_43_0.png" />
 </div>
 </div>
-</section>
-<section id="anotacoes-simples">
+</div>
+<div class="section" id="anotacoes-simples">
 <h3>Anotações simples<a class="headerlink" href="#anotacoes-simples" title="Permalink to this headline">¶</a></h3>
 <p>Podemos incluir anotações em gráficos com a função <code class="docutils literal notranslate"><span class="pre">annotate(texto,xref,yref)</span></code></p>
 <div class="cell docutils container">
@@ -859,9 +888,9 @@
 </div>
 </div>
 <p><strong>Problema:</strong> o código acima tem um problema. Verifique que <code class="docutils literal notranslate"><span class="pre">len(P)</span> <span class="pre">=</span> <span class="pre">10</span></code>, mas ele não plota os 10 pontos como gostaríamos de ver. Descubra o que está acontecendo e proponha uma solução.</p>
-</section>
-</section>
-<section id="multiplotagem-e-eixos">
+</div>
+</div>
+<div class="section" id="multiplotagem-e-eixos">
 <h2>Multiplotagem e eixos<a class="headerlink" href="#multiplotagem-e-eixos" title="Permalink to this headline">¶</a></h2>
 <p>No matplotlib, podemos trabalhar com a função <code class="docutils literal notranslate"><span class="pre">subplot(m,n,p)</span></code> para criar múltiplas figuras e eixos independentes como se cada figura fosse um elemento de uma grande “matriz de figuras” de <code class="docutils literal notranslate"><span class="pre">m</span></code> linhas e <code class="docutils literal notranslate"><span class="pre">n</span></code> colunas, enquanto <code class="docutils literal notranslate"><span class="pre">p</span></code> é o índice da figura (este valor será no máximo o produto <code class="docutils literal notranslate"><span class="pre">mxn</span></code>). A função funciona da seguinte forma.</p>
 <ul class="simple">
@@ -948,8 +977,8 @@
 <img alt="_images/04b-plotagem-matplotlib_55_0.png" src="_images/04b-plotagem-matplotlib_55_0.png" />
 </div>
 </div>
-</section>
-<section id="plots-com-gradeado">
+</div>
+<div class="section" id="plots-com-gradeado">
 <h2>Plots com gradeado<a class="headerlink" href="#plots-com-gradeado" title="Permalink to this headline">¶</a></h2>
 <p>Podemos habilitar o gradeado usando <code class="docutils literal notranslate"><span class="pre">grid(b,which,axis)</span></code>.</p>
 <p>Para especificar o gradeado:</p>
@@ -1028,8 +1057,8 @@
 <img alt="_images/04b-plotagem-matplotlib_61_1.png" src="_images/04b-plotagem-matplotlib_61_1.png" />
 </div>
 </div>
-</section>
-<section id="plots-com-preenchimento">
+</div>
+<div class="section" id="plots-com-preenchimento">
 <h2>Plots com preenchimento<a class="headerlink" href="#plots-com-preenchimento" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar <code class="docutils literal notranslate"><span class="pre">fill_between</span></code> para criar preenchimentos de área em gráficos.</p>
 <div class="cell docutils container">
@@ -1061,8 +1090,8 @@
 <img alt="_images/04b-plotagem-matplotlib_64_0.png" src="_images/04b-plotagem-matplotlib_64_0.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

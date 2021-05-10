@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Problemas (Física) &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -91,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -133,9 +133,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -165,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -174,6 +174,35 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../lista-01.html">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -296,9 +325,9 @@
         
               <div>
                 
-  <section id="problemas-fisica">
+  <div class="section" id="problemas-fisica">
 <h1>Problemas (Física)<a class="headerlink" href="#problemas-fisica" title="Permalink to this headline">¶</a></h1>
-<section id="problema-movimento-de-particula">
+<div class="section" id="problema-movimento-de-particula">
 <h2>Problema (Movimento de partícula)<a class="headerlink" href="#problema-movimento-de-particula" title="Permalink to this headline">¶</a></h2>
 <p>A posição de uma partícula à medida que se move ao longo do eixo <span class="math notranslate nohighlight">\(y\)</span> é dada por
 <span class="math notranslate nohighlight">\(y(t) = 2\sin\left(\frac{\pi t}{4}\right),\)</span>
@@ -308,7 +337,7 @@ com <span class="math notranslate nohighlight">\(t\)</span> em segundos e <span 
 <p>c. A aceleração média da partícula entre <span class="math notranslate nohighlight">\(t = 0\)</span> e <span class="math notranslate nohighlight">\(t=2.0 \, s\)</span>.</p>
 <p>d. A aceleração instantânea da partícula em <span class="math notranslate nohighlight">\(t = 0, \, 1.0\)</span> e <span class="math notranslate nohighlight">\(2.0 \, s\)</span>.</p>
 <p>(Adaptado de Halliday &amp; Resnick)</p>
-<section id="resolucao">
+<div class="section" id="resolucao">
 <h3>Resolução<a class="headerlink" href="#resolucao" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -390,9 +419,9 @@ Aceleração instantânea em t = 2.0 é -1.23 cm/s^2
 <img alt="../_images/lista-02-gab_5_0.png" src="../_images/lista-02-gab_5_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

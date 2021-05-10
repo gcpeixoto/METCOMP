@@ -71,7 +71,7 @@ X = np.array(A)
 np.ndim(X) # array bidimensional
 X
 
-np.shape(X) # 2 x 2
+np.shape(X) # 2 x 3
 
 len(X) # apenas um comprimento. Qual?
 
@@ -98,7 +98,7 @@ imp, par = np.arange(1,36,2), np.arange(0,63,2)
 f = lambda x: x**3 + 2*x
 fi, fp = f(imp), f(par)
 print(fi)
-print(fp)
+print(fp) 
 
 ### `linspace`
 
@@ -116,7 +116,7 @@ y
 
 x == y # comparação é elemento a elemento
 
-x == -y # apenas 0 é True
+x == -y # apenas 0 é True     
 
 x[1:] == y[1:] # indexação
 
@@ -143,9 +143,9 @@ r2
 def gera_matriz(m,n,l,h):
     return np.random.randint(l,h,(m,n)) # tupla (m,n)
 
-gera_matriz(2,2,0,2)
+gera_matriz(3,20,1,3)
 
-gera_matriz(3,2,0,4)
+gera_matriz(3,2,0,4)  
 
 gera_matriz(4,4,-2,7)
 
@@ -161,7 +161,7 @@ np.ones((6,6)) # tupla necessária para linhas e colunas
 
 Criando arrays 2D identidade. 1 na diagonal e 0 nas demais.
 
-np.eye(15) # matriz identidade 3 x 3 
+np.eye(5) # matriz identidade 3 x 3 
 
 ### `zeros`
 
@@ -169,7 +169,7 @@ Arrays nulos.
 
 np.zeros(8)
 
-np.zeros((3,3)) # 2 x 4
+np.zeros((2,4)) # 2 x 4
 
 ### `full`
 

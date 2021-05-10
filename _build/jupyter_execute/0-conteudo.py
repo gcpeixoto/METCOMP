@@ -7,18 +7,10 @@ Material desenvolvido para a disciplina _Métodos Computacionais (GDCOC0080)_ do
 Programa para semestre 2020/02 (atualização semanal)
 
 - [Ferramentas básicas](01a-introducao.ipynb)
-
-### Semana 1 
-
 - [Fundamentos de Python](01b-fundamentos-python.ipynb)
-
-### Semanas 2 a 3
-
 - [Computação Simbólica](02a-computacao-simbolica.ipynb)
-
-### Semanas 4 a 7
-
 - [Matemática Discreta](03a-matematica-discreta.ipynb)
+- [Computação Vetorizada](04a-computacao-vetorizada.ipynb)
 
 ### Laboratórios Computacionais
 
@@ -31,13 +23,20 @@ Programa para semestre 2020/02 (atualização semanal)
 ### Exercícios Avaliativos
 
 - [Lista de Exercícios 1](lista-01.ipynb)
+- [Lista de Exercícios 2](lista-02.ipynb)
+
+
+## Gestão
+
+- [Tabela de Pontuação](log-pontos.ipynb)
+- [Modelo de Relatório Final](template-relatorio.ipynb)
 
 
 ```{toctree}
 :hidden:
 :titlesonly:
 :numbered: True
-:caption: Python para computação científica
+:caption: Python para Computação Científica
 
 01a-introducao
 01b-fundamentos-python
@@ -50,7 +49,7 @@ Programa para semestre 2020/02 (atualização semanal)
 ```{toctree}
 :hidden:
 :titlesonly:
-:caption: Laboratório Computacional
+:caption: Laboratórios Computacionais
 
 lab-01
 lab-02
@@ -66,4 +65,23 @@ lab-05
 :caption: Exercícios Avaliativos
 
 lista-01
+lista-02
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Distribuição de Pontos
+
+log-pontos
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Modelo de Relatório Final
+
+template-relatorio
 ```

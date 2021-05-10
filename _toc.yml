@@ -1,6 +1,6 @@
 # The introduction file is mandatory
 - file: 0-conteudo
-- part: Python para computação científica
+- part: Python para Computação Científica
   numbered: True
   chapters:
   - file: 01a-introducao
@@ -8,7 +8,7 @@
   - file: 02a-computacao-simbolica
   - file: 03a-matematica-discreta
   - file: 04a-computacao-vetorizada
-- part: Laboratório Computacional
+- part: Laboratórios Computacionais
   numbered: False
   chapters:
   - file: lab-01
@@ -20,6 +20,15 @@
   numbered: False
   chapters:
   - file: lista-01
+  - file: lista-02
+- part: Distribuição de Pontos
+  numbered: False
+  chapters:
+  - file: log-pontos
+- part: Modelo de Relatório Final
+  numbered: False
+  chapters:
+  - file: template-relatorio
 #
 # MODEL: 
 # - file: intro

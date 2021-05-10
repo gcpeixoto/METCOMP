@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de exercícios 1 &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,10 +55,9 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lista de exercícios 2" href="lista-02.html" />
     <link rel="prev" title="Laboratório 5" href="lab-05.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,9 +93,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -134,9 +135,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -166,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -175,6 +176,35 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -275,7 +305,7 @@
         
               <div>
                 
-  <section id="lista-de-exercicios-1">
+  <div class="section" id="lista-de-exercicios-1">
 <h1>Lista de exercícios 1<a class="headerlink" href="#lista-de-exercicios-1" title="Permalink to this headline">¶</a></h1>
 <p><strong>Resolva todos os problemas por computação e registre as suas respostas no questionário disponibilizado no ambiente virtual de aprendizagem.</strong></p>
 <hr><p><strong>Exercício 1.</strong> Calcule o valor de <code class="docutils literal notranslate"><span class="pre">1+1.0009</span></code>, atribua o resultado a uma variável e imprima o valor dessa variável. Quantos noves são impressos?</p>
@@ -354,7 +384,7 @@ Que valor deve ser impresso após o símbolo de <code class="docutils literal no
 <p><strong>Exercício 10.</strong> A força de arrasto devido à resistência do ar sobre um objeto pode ser expressa como <span class="math notranslate nohighlight">\(F_d = \frac{1}{2}C_d\rho AV^2\)</span> (em newtons), onde <span class="math notranslate nohighlight">\(\rho\)</span> é a massa específica do ar, <span class="math notranslate nohighlight">\(V\)</span> é a velocidade do objeto, <span class="math notranslate nohighlight">\(A\)</span> é a área da seção transversal (normal à direção da velocidade), e <span class="math notranslate nohighlight">\(C_d\)</span> é o coeficiente de arrasto, o qual depende da forma do objeto e da rugosidade da superfície.A força gravitacional sobre um objeto de massa <span class="math notranslate nohighlight">\(m\)</span> é dada por <span class="math notranslate nohighlight">\(F_g = mg\)</span>, onde <span class="math notranslate nohighlight">\(g = 9.81 \, m/s^2\)</span>.</p>
 <p>Podemos usar as fórmulas para <span class="math notranslate nohighlight">\(F_d\)</span> e <span class="math notranslate nohighlight">\(F_g\)</span> para estudar a importância da resistência do ar versus gravidade ao chutar uma bola de futebol. A massa específica do ar é <span class="math notranslate nohighlight">\(\rho = 1.2 \, kg/m^3\)</span>. Temos <span class="math notranslate nohighlight">\(A = \pi a^2\)</span> para qualquer bola com raio <span class="math notranslate nohighlight">\(a\)</span>. Para uma bola de futebol, <span class="math notranslate nohighlight">\(a = 11 \, cm\)</span>, a massa é <span class="math notranslate nohighlight">\(m = 0.43 \, kg\)</span> e <span class="math notranslate nohighlight">\(C_d = 0.2\)</span>.</p>
 <p>Escreva um programa para calcular as forças de arrasto e gravitacional em newtons (<span class="math notranslate nohighlight">\(N\)</span>). Use o programa para calcular as força gravitacional e as forças de arrasto sobre a bola durante um chute pesado, <span class="math notranslate nohighlight">\(V = 120 \, km/h\)</span> e, durante um chute leve, <span class="math notranslate nohighlight">\(V = 10 \, km/h\)</span>. Seu programa deverá imprimir 3 valores aproximados a 2 casas decimais, <span class="math notranslate nohighlight">\(F_g\)</span>, <span class="math notranslate nohighlight">\(F_d\)</span> (chute pesado), <span class="math notranslate nohighlight">\(F_d\)</span> (chute leve). <strong>Nota:</strong> utilize <span class="math notranslate nohighlight">\(V\)</span> em <span class="math notranslate nohighlight">\(m/s\)</span>.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -382,6 +412,7 @@ Que valor deve ser impresso após o símbolo de <code class="docutils literal no
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="lab-05.html" title="previous page">Laboratório 5</a>
+    <a class='right-next' id="next-link" href="lista-02.html" title="next page">Lista de exercícios 2</a>
 
         </div>
         

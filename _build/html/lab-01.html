@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratório 1 &#8212; Métodos Computacionais</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -26,8 +25,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -41,11 +40,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -53,8 +55,6 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Laboratório 2" href="lab-02.html" />
@@ -93,9 +93,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Python para computação científica
+  Python para Computação Científica
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -135,9 +135,9 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Laboratório Computacional
+  Laboratórios Computacionais
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -167,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Exercícios Avaliativos
  </span>
@@ -176,6 +176,35 @@
  <li class="toctree-l1">
   <a class="reference internal" href="lista-01.html">
    Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="template-relatorio.html">
+   Relátorio de Projeto Final
   </a>
  </li>
 </ul>
@@ -276,19 +305,17 @@
         
               <div>
                 
-  <section id="laboratorio-1">
+  <div class="section" id="laboratorio-1">
 <h1>Laboratório 1<a class="headerlink" href="#laboratorio-1" title="Permalink to this headline">¶</a></h1>
 <p><strong>Resolva todos os problemas por computação.</strong></p>
 <hr><p><strong>Problema 1:</strong> Calcule a hipotenusa <span class="math notranslate nohighlight">\(c\)</span> para um triângulo retângulo com catetos medindo <span class="math notranslate nohighlight">\(a = \frac{e^{1.2}}{\pi}\sqrt{111.4}\)</span> e <span class="math notranslate nohighlight">\(b = 4!\textrm{sen}(65\pi/51 + 210)\)</span>.</p>
 <p><strong>Problema 2:</strong> A fórmula de Heron para calcular a área de um triângulo qualquer com lados medindo <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> e <span class="math notranslate nohighlight">\(x_3\)</span> é dada por <span class="math notranslate nohighlight">\(A = \sqrt{p(p - x_1)(p - x_2)(p - x_3)}\)</span>, onde <span class="math notranslate nohighlight">\(p\)</span> é o semiperímetro do triângulo. Assumindo que <span class="math notranslate nohighlight">\(x_1=a\)</span>, <span class="math notranslate nohighlight">\(x_2=b\)</span> e <span class="math notranslate nohighlight">\(x_3=c\)</span>, para <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> e <span class="math notranslate nohighlight">\(c\)</span> encontrados pelo Problema 1, calcule <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><strong>Problema 3:</strong> Suponha que <span class="math notranslate nohighlight">\(b\)</span> seja a altura do triângulo retângulo do Problema 1. Calcule a área <span class="math notranslate nohighlight">\(A_2\)</span> do triângulo retângulo pela fórmula tradicional. Qual é o valor de <span class="math notranslate nohighlight">\(|A - A_2|\)</span>, sendo <span class="math notranslate nohighlight">\(A\)</span> o valor obtido no Problema 2.</p>
 <p><strong>Problema 4:</strong> A tampa superior do farol do automóvel <em>Mercedes-Benz 203 series C-Class Sports Coupés</em> pode ser modelada aproximadamente pela união de duas elipses <span class="math notranslate nohighlight">\(E_1\)</span> e <span class="math notranslate nohighlight">\(E_2\)</span>, centradas em <span class="math notranslate nohighlight">\(C_1\)</span> e <span class="math notranslate nohighlight">\(C_2\)</span>, respectivamente, excluindo-se uma vez a área hachurada que se obtém pela intersecção (superposição) das duas elipses (vide figura abaixo). O arco entre os pontos <span class="math notranslate nohighlight">\(P\)</span> e <span class="math notranslate nohighlight">\(Q\)</span> da elipse <span class="math notranslate nohighlight">\(E_1\)</span> (cor vermelha) possui comprimento <span class="math notranslate nohighlight">\(d_1 = 9.45 \, cm\)</span>, enquanto que o segundo arco (cor azul) entre os mesmos pontos, pertencente à elipse <span class="math notranslate nohighlight">\(E_2\)</span>, possui comprimento <span class="math notranslate nohighlight">\(d_2 = 10.25 \, cm\)</span>.</p>
-<figure class="align-default" id="farol-mercedes">
+<div class="figure align-default" id="farol-mercedes">
 <a class="reference internal image-reference" href="_images/farol-mercedes.png"><img alt="_images/farol-mercedes.png" src="_images/farol-mercedes.png" style="width: 800px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Modelo de farol do Mercedes-Benz 203 series C-Class.</span><a class="headerlink" href="#farol-mercedes" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Modelo de farol do Mercedes-Benz 203 series C-Class.</span><a class="headerlink" href="#farol-mercedes" title="Permalink to this image">¶</a></p>
+</div>
 <p>Na época em que este carro foi desenvolvido, a Engenharia de Produtos da Mercedes-Benz precisou estimar o custo com vedação das tampas dos faróis para previsão orçamentária. Suponha que o comprimento da borracha de vedação de cada tampa de farol foi calculado como a soma dos perímetros de <span class="math notranslate nohighlight">\(E_1\)</span> e <span class="math notranslate nohighlight">\(E_2\)</span> subtraindo-se disso a soma <span class="math notranslate nohighlight">\(d_1 + d_2\)</span>. Com o custo da borracha a 0,75 centavos de dólar por centímetro, calcule o valor aproximado, em reais, que a Mercedes despendeu apenas com borrachas de vedação para os faróis desse modelo para produzir 2000 automóveis. Use a taxa de câmbio 1 dólar : 2.35 reais.</p>
 <p>Dados:</p>
 <ul class="simple">
@@ -302,7 +329,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">a'</span> <span class="pre">=</span> <span class="pre">0.79a</span></code> (comprimento do semi-eixo maior de <span class="math notranslate nohighlight">\(E_2\)</span>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">b'</span> <span class="pre">=</span> <span class="pre">0.31a</span></code> (comprimento do semi-eixo menor de <span class="math notranslate nohighlight">\(E_2\)</span>)</p></li>
 </ul>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
