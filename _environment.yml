@@ -1,0 +1,6 @@
+# Environment to use RISE separately
+name: lecture
+channels:
+  - conda-forge
+dependencies:
+  - rise

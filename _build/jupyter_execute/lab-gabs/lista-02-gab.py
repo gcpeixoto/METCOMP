@@ -1,22 +1,28 @@
-# Problemas (Física)
+#!/usr/bin/env python
+# coding: utf-8
 
-## Problema (Movimento de partícula)
+# # Problemas (Física)
+# 
+# ## Problema (Movimento de partícula)
+# 
+# A posição de uma partícula à medida que se move ao longo do eixo $y$ é dada por 
+# $y(t) = 2\sin\left(\frac{\pi t}{4}\right),$
+# com $t$ em segundos e $y$ em centímetros. Calcule: 
+# 
+# a. A velocidade média da partícula entre $t = 0$ e $t=2.0 \, s$.
+# 
+# b. A velocidade instantânea da partícula em $t = 0, \, 1.0$ e $2.0 \, s$.
+# 
+# c. A aceleração média da partícula entre $t = 0$ e $t=2.0 \, s$.
+# 
+# d. A aceleração instantânea da partícula em $t = 0, \, 1.0$ e $2.0 \, s$.
+# 
+# (Adaptado de Halliday & Resnick)
 
-A posição de uma partícula à medida que se move ao longo do eixo $y$ é dada por 
-$y(t) = 2\sin\left(\frac{\pi t}{4}\right),$
-com $t$ em segundos e $y$ em centímetros. Calcule: 
+# ### Resolução
 
-a. A velocidade média da partícula entre $t = 0$ e $t=2.0 \, s$.
+# In[110]:
 
-b. A velocidade instantânea da partícula em $t = 0, \, 1.0$ e $2.0 \, s$.
-
-c. A aceleração média da partícula entre $t = 0$ e $t=2.0 \, s$.
-
-d. A aceleração instantânea da partícula em $t = 0, \, 1.0$ e $2.0 \, s$.
-
-(Adaptado de Halliday & Resnick)
-
-### Resolução
 
 import numpy as np
 import sympy as sym
@@ -29,8 +35,16 @@ def y(t):
 def m(tf,t0,f):
     return (f(tf) - f(t0))/(tf - t0)
 
+
+# In[102]:
+
+
 # a.
 print(f'Velocidade média = {np.round(m(0,2,y),2)} cm/s') 
+
+
+# In[112]:
+
 
 # b. c. e d.
 
@@ -55,5 +69,10 @@ for t0 in [0.,1.0,2.0]:
     ainst = d2ydt2.subs({'t':t0})    
     print(f'Aceleração instantânea em t = {t0} é {ainst.evalf(3)} cm/s^2') 
 
+
+# In[113]:
+
+
 tnum = np.linspace(0,5)
 plt.plot(tnum,y(tnum));
+
