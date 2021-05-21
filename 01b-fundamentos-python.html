@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>2. Fundamentos de Python para Computação Científica &#8212; Métodos Computacionais</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,25 +34,24 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Introdução à Computação Simbólica com sympy" href="02a-computacao-simbolica.html" />
@@ -128,6 +128,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -501,12 +509,12 @@
         
               <div>
                 
-  <div class="section" id="fundamentos-de-python-para-computacao-cientifica">
+  <section id="fundamentos-de-python-para-computacao-cientifica">
 <h1><span class="section-number">2. </span>Fundamentos de <em>Python</em> para Computação Científica<a class="headerlink" href="#fundamentos-de-python-para-computacao-cientifica" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="python-como-calculadora-de-bolso">
+<section id="python-como-calculadora-de-bolso">
 <h2><span class="section-number">2.1. </span>Python como calculadora de bolso<a class="headerlink" href="#python-como-calculadora-de-bolso" title="Permalink to this headline">¶</a></h2>
 <p>Nesta seção mostraremos como podemos fazer cálculos usando Python como uma calculadora científica. Como Python é uma <em>linguagem interpretada</em>, ela funciona diretamente como um ciclo <em>LAI (Ler-Avaliar-Imprimir)</em>. Isto é, ela lê uma instrução que você escreve, avalia essa instrução interpretando-a e imprimindo (ou não) um valor.</p>
-<div class="section" id="aritmetica">
+<section id="aritmetica">
 <h3><span class="section-number">2.1.1. </span>Aritmética<a class="headerlink" href="#aritmetica" title="Permalink to this headline">¶</a></h3>
 <p>Os símbolos são os seguintes:</p>
 <table class="colwidths-auto table">
@@ -546,8 +554,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="expressoes-numericas">
+</section>
+<section id="expressoes-numericas">
 <h3><span class="section-number">2.1.2. </span>Expressões numéricas<a class="headerlink" href="#expressoes-numericas" title="Permalink to this headline">¶</a></h3>
 <p>Comutatividade, associatividade, distributividade e agrupamento de números por meio de parênteses, colchetes ou chaves são escritos em Python usando apenas parênteses.</p>
 <p><strong>Exemplo:</strong> calcule o valor de <span class="math notranslate nohighlight">\(2 - 98\{ 7/3 \, [ 2 \times (3 + 5 \times 6) - ( 2^3 + 2^2 ) - (2^2 + 2^3) ] - (-1) \}\)</span></p>
@@ -606,8 +614,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numeros-inteiros-e-fracionarios">
+</section>
+<section id="numeros-inteiros-e-fracionarios">
 <h3><span class="section-number">2.1.3. </span>Números inteiros e fracionários<a class="headerlink" href="#numeros-inteiros-e-fracionarios" title="Permalink to this headline">¶</a></h3>
 <p>Em Python, números inteiros e fracionários são escritos de maneira distinta através do ponto decimal.</p>
 <p><strong>Exemplo:</strong> Calcule o valor de <span class="math notranslate nohighlight">\(2 + 3\)</span></p>
@@ -678,7 +686,7 @@
 </div>
 <p>Observe a resposta no caso anterior. A diferença entre um número em ponto flutuante e um número inteiro resulta em um número em ponto flutuante! Isto é verdadeiro para as versões 3.x (onde x é um número maior ou igual a 0) da linguagem Python, mas não o é para versões anteriores da linguagem.</p>
 <p>Vale mencionar este detalhe para seu conhecimento. Entretanto, usaremos Python 3 neste curso e você não deverá ter problemas com isso no caminho.</p>
-<div class="section" id="usar-ponto-ou-usar-virgula">
+<section id="usar-ponto-ou-usar-virgula">
 <h4><span class="section-number">2.1.3.1. </span>Usar ponto ou usar vírgula?<a class="headerlink" href="#usar-ponto-ou-usar-virgula" title="Permalink to this headline">¶</a></h4>
 <p>Em nosso sistema numérico, a vírgula (<code class="docutils literal notranslate"><span class="pre">,</span></code>) é quem separa a parte inteira da parte fracionária de um número decimal. Em Python, este papel é desempenhado pelo ponto (<code class="docutils literal notranslate"><span class="pre">.</span></code>). Daqui para a frente, sempre que não houver ambiguidade de notação, usaremos o ponto e não a vírgula para representar números fracionários em exemplos, exercícios ou explicações.</p>
 <p><strong>Exemplo:</strong> calcule o valor de <span class="math notranslate nohighlight">\(5.1 - 5\)</span></p>
@@ -697,9 +705,9 @@
 <p>Observe o cálculo anterior… O resultado deveria ser 0.1, não? O que aconteceu?!</p>
 <p>Isto se deve a um conceito chamado <em>precisão de máquina</em>. Não entraremos em detalhe nisto neste curso, mas é suficiente que você saiba que números no computador não são exatos como na Matemática tradicional.</p>
 <p>Um computador, por mais rápido e inteligente que possa parecer, é incapaz de representar a infinidade dos números reais. Às vezes, ele <em>aproximará</em> resultados. Portanto, não se preocupe com isso. A conta parece errada e, de fato, está! Porém, este erro é tão pequeno que praticamente não afetará suas contas significativamente.</p>
-</div>
-</div>
-<div class="section" id="divisao-inteira">
+</section>
+</section>
+<section id="divisao-inteira">
 <h3><span class="section-number">2.1.4. </span>Divisão inteira<a class="headerlink" href="#divisao-inteira" title="Permalink to this headline">¶</a></h3>
 <p>Podemos realizar a operação de divisão inteira quando quisermos um quociente inteiro. Para isso, utilizamos o símbolo <code class="docutils literal notranslate"><span class="pre">//</span></code> (divisão inteira).</p>
 <p><strong>Exemplo:</strong> calcule o valor de <span class="math notranslate nohighlight">\(5/2\)</span></p>
@@ -728,7 +736,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="o-algoritmo-da-divisao-e-restos">
+<section id="o-algoritmo-da-divisao-e-restos">
 <h4><span class="section-number">2.1.4.1. </span>O algoritmo da divisão e restos<a class="headerlink" href="#o-algoritmo-da-divisao-e-restos" title="Permalink to this headline">¶</a></h4>
 <p>Você deve se lembrar do algoritmo da divisão. Um número <span class="math notranslate nohighlight">\(D\)</span> (dividendo), quando dividido por outro número <span class="math notranslate nohighlight">\(d\)</span> (divisor), resulta em um quociente <span class="math notranslate nohighlight">\(q\)</span> e um resto <span class="math notranslate nohighlight">\(r\)</span> nulo se a divisão for exata, ou um resto <span class="math notranslate nohighlight">\(r\)</span> diferente de zero, se a divisão não for exata. Ou seja, o algoritmo diz o seguinte:</p>
 <div class="math notranslate nohighlight">
@@ -774,9 +782,9 @@
 </div>
 </div>
 <p>Com efeito, 5 é ímpar, pois, ao ser dividido por 2, retorna resto igual a 1, e 6 é par, pois, sendo exatamente divisível por 2, retorna resto 0.</p>
-</div>
-</div>
-<div class="section" id="porcentagem">
+</section>
+</section>
+<section id="porcentagem">
 <h3><span class="section-number">2.1.5. </span>Porcentagem<a class="headerlink" href="#porcentagem" title="Permalink to this headline">¶</a></h3>
 <p>Então, se <code class="docutils literal notranslate"><span class="pre">%</span></code> serve para calcular o resto de uma divisão, como calcular porcentagem?</p>
 <p>Bem, não há um símbolo especial para o cálculo da porcentagem. Ele deve ser feito dividindo o número em questão por 100 da maneira usual.</p>
@@ -820,7 +828,7 @@
 </div>
 </div>
 <p>Esta última não seria tão literal quanto à conta original, porém, os três exemplos mostram que a multiplicação e a divisão são equivalentes em <strong>precedência</strong>. Tanto faz neste caso realizar primeiro a multiplicação e depois a divisão, ou vice-versa. A única ressalva é o segundo exemplo, no qual, na verdade, não foi o computador quem dividiu 45 por 100.</p>
-<div class="section" id="precedencia-de-operacoes">
+<section id="precedencia-de-operacoes">
 <h4><span class="section-number">2.1.5.1. </span>Precedência de operações<a class="headerlink" href="#precedencia-de-operacoes" title="Permalink to this headline">¶</a></h4>
 <p>Assim como na Matemática, Python possui precedências em operações.</p>
 <p>Quando não há parênteses envolvidos, multiplicação e divisão são realizadas antes de adições e subtrações.</p>
@@ -895,12 +903,12 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="comentarios">
+</section>
+</section>
+<section id="comentarios">
 <h3><span class="section-number">2.1.6. </span>Comentários<a class="headerlink" href="#comentarios" title="Permalink to this headline">¶</a></h3>
 <p>Note que acima descrevemos passos executados pelo interpretador Python para calcular as expressões numéricas. Porém, fizemos isso em uma célula de código e não houve nenhuma interferência no resultado. Por quê? Porque inserimos <em>comentários</em>.</p>
-<div class="section" id="comentarios-em-linha">
+<section id="comentarios-em-linha">
 <h4><span class="section-number">2.1.6.1. </span>Comentários em linha<a class="headerlink" href="#comentarios-em-linha" title="Permalink to this headline">¶</a></h4>
 <p>São utilizados para ignorar tudo o que vier após o símbolo <code class="docutils literal notranslate"><span class="pre">#</span></code> naquela linha.</p>
 <div class="cell docutils container">
@@ -975,8 +983,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="docstrings">
+</section>
+<section id="docstrings">
 <h4><span class="section-number">2.1.6.2. </span>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h4>
 <p>Em Python, não há comentários em bloco, mas podemos usar <em>docstrings</em> quando queremos comentar uma ou múltiplas linhas. Basta inserir um par de três aspas simples (<code class="docutils literal notranslate"><span class="pre">'''</span></code>) ou duplas (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>). Aspas simples são também chamadas de “plicas” (<code class="docutils literal notranslate"><span class="pre">'...'</span></code>).</p>
 <p>Por exemplo,</p>
@@ -1020,9 +1028,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="omitindo-impressao">
+</section>
+</section>
+<section id="omitindo-impressao">
 <h3><span class="section-number">2.1.7. </span>Omitindo impressão<a class="headerlink" href="#omitindo-impressao" title="Permalink to this headline">¶</a></h3>
 <p>Podemos usar um <code class="docutils literal notranslate"><span class="pre">;</span></code> para omitir a impressão do último comando executado na célula.</p>
 <div class="cell docutils container">
@@ -1057,9 +1065,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="variaveis-atribuicao-e-reatribuicao">
+</section>
+</section>
+<section id="variaveis-atribuicao-e-reatribuicao">
 <h2><span class="section-number">2.2. </span>Variáveis, atribuição e reatribuição<a class="headerlink" href="#variaveis-atribuicao-e-reatribuicao" title="Permalink to this headline">¶</a></h2>
 <p>Em Matemática, é muito comum usarmos letras para substituir valores. Em Python, uma variável é um nome associado a um local na memória do computador. A idéia é similar ao endereço de seu domicílio.</p>
 <p><strong>Exemplo:</strong> se <span class="math notranslate nohighlight">\(x = 2\)</span> e <span class="math notranslate nohighlight">\(y = 3\)</span>, calcule <span class="math notranslate nohighlight">\(x + y\)</span></p>
@@ -1176,7 +1184,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="atribuicao-por-desempacotamento">
+<section id="atribuicao-por-desempacotamento">
 <h3><span class="section-number">2.2.1. </span>Atribuição por desempacotamento<a class="headerlink" href="#atribuicao-por-desempacotamento" title="Permalink to this headline">¶</a></h3>
 <p>Podemos realizar atribuições em uma única linha.</p>
 <div class="cell docutils container">
@@ -1210,8 +1218,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="imprimindo-com-print">
+</section>
+<section id="imprimindo-com-print">
 <h3><span class="section-number">2.2.2. </span>Imprimindo com <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#imprimindo-com-print" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> é uma função. Aprenderemos um pouco sobre funções mais à frente. Por enquanto, basta entender que ela funciona da seguinte forma:</p>
 <div class="cell docutils container">
@@ -1294,9 +1302,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="caracteres-letras-palavras-strings">
+</section>
+</section>
+<section id="caracteres-letras-palavras-strings">
 <h2><span class="section-number">2.3. </span>Caracteres, letras, palavras: strings<a class="headerlink" href="#caracteres-letras-palavras-strings" title="Permalink to this headline">¶</a></h2>
 <p>Em Python, escrevemos caracteres entre plicas ou aspas.</p>
 <div class="cell docutils container">
@@ -1505,8 +1513,8 @@ A área do retângulo é 200
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tipos-de-dados-int-float-e-str">
+</section>
+<section id="tipos-de-dados-int-float-e-str">
 <h2><span class="section-number">2.4. </span>Tipos de dados: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> e <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#tipos-de-dados-int-float-e-str" title="Permalink to this headline">¶</a></h2>
 <p>Até o momento, aprendemos a trabalhar com números inteiros, fracionários e sequencias de caracteres.</p>
 <p>Em Python, cada objeto possui uma “família”. Chamamos essas famílias de “tipos”.</p>
@@ -1551,7 +1559,7 @@ oo
 </div>
 </div>
 </div>
-<div class="section" id="casting">
+<section id="casting">
 <h3><span class="section-number">2.4.1. </span><em>Casting</em><a class="headerlink" href="#casting" title="Permalink to this headline">¶</a></h3>
 <p>Uma das coisas legais que podemos fazer em Python é alterar o tipo de um dado para outro. Essa operação é chamada de <em>type casting</em>, ou simplesmente <em>casting</em>.</p>
 <p>Para fazer <em>casting</em> de <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> e <code class="docutils literal notranslate"><span class="pre">str</span></code>, usamos funções de mesmo nome.</p>
@@ -1664,8 +1672,8 @@ oo
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="concatenacao">
+</section>
+<section id="concatenacao">
 <h3><span class="section-number">2.4.2. </span>Concatenação<a class="headerlink" href="#concatenacao" title="Permalink to this headline">¶</a></h3>
 <p>Outra coisa legal que podemos fazer em Python é a <em>concatenação</em> de objetos <code class="docutils literal notranslate"><span class="pre">str</span></code>. A concatenação pode ser feita de modo direto como uma “soma” (usando <code class="docutils literal notranslate"><span class="pre">+</span></code>) ou acompanhada por <em>casting</em>.</p>
 <div class="cell docutils container">
@@ -1754,9 +1762,9 @@ oo
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="modulos-e-importacao">
+</section>
+</section>
+<section id="modulos-e-importacao">
 <h2><span class="section-number">2.5. </span>Módulos e importação<a class="headerlink" href="#modulos-e-importacao" title="Permalink to this headline">¶</a></h2>
 <p>Um mecânico, bombeiro hidráulico ou eletricista sempre anda com uma caixa de ferramentas contendo ferramentas essenciais, tais como alicate, chave de fenda e parafusadeira. Cada ferramenta possui uma função bem definida. Porém, quando esses profissionais deparam com uma tarefa que nenhuma ferramenta de sua caixa é capaz de executar, é necessário buscar por outra ferramenta para resolver o problema.</p>
 <p>Podemos entender Python de modo similar. A linguagem fornece uma estrutura mínima de ferramentas que pode ser expandida. Por exemplo, até agora aprendemos a somar e a subtrair, mas ainda não sabemos calcular a raiz quadrada de um número.</p>
@@ -1799,7 +1807,7 @@ oo
 </pre></div>
 </div>
 <p>Neste exemplo, estamos criando um pseudônimo para um submódulo.</p>
-<div class="section" id="o-modulo-math">
+<section id="o-modulo-math">
 <h3><span class="section-number">2.5.1. </span>O módulo <code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#o-modulo-math" title="Permalink to this headline">¶</a></h3>
 <p>O módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> é uma biblioteca de funções matemáticas. O que é uma função?</p>
 <p>Em Matemática, uma função é como uma máquina que recebe uma matéria-prima e entrega um produto.
@@ -1982,9 +1990,9 @@ Se a matéria-prima é <span class="math notranslate nohighlight">\(x\)</span>, 
 </div>
 </div>
 <p>No exemplo anterior, espaços foram acrescentados para tornar os comandos mais legíveis.</p>
-</div>
-</div>
-<div class="section" id="introspeccao">
+</section>
+</section>
+<section id="introspeccao">
 <h2><span class="section-number">2.6. </span>Introspecção<a class="headerlink" href="#introspeccao" title="Permalink to this headline">¶</a></h2>
 <p>Podemos entender mais sobre módulos, funções e suas capacidades examinando seus componentes e pedindo ajuda sobre eles.</p>
 <p>Para listar todos os objetos de um módulo, use <code class="docutils literal notranslate"><span class="pre">dir(nomeDoModulo)</span></code>.</p>
@@ -2166,7 +2174,7 @@ pow(x, y, /)
 </div>
 </div>
 </div>
-<div class="section" id="arredondamento-de-numeros-fracionarios-para-inteiros">
+<section id="arredondamento-de-numeros-fracionarios-para-inteiros">
 <h3><span class="section-number">2.6.1. </span>Arredondamento de números fracionários para inteiros<a class="headerlink" href="#arredondamento-de-numeros-fracionarios-para-inteiros" title="Permalink to this headline">¶</a></h3>
 <p>Com <code class="docutils literal notranslate"><span class="pre">math</span></code>, podemos arredondar números fracionários para inteiros usando a regra “para cima” (teto) ou “para baixo” (piso/chão).</p>
 <ul class="simple">
@@ -2221,9 +2229,9 @@ pow(x, y, /)
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="numeros-complexos">
+</section>
+</section>
+<section id="numeros-complexos">
 <h2><span class="section-number">2.7. </span>Números complexos<a class="headerlink" href="#numeros-complexos" title="Permalink to this headline">¶</a></h2>
 <p>Números complexos são muito importantes no estudo de fenômenos físicos envolvendo sons, frequencias e vibrações. Na Matemática, o conjunto dos números complexos é definido como</p>
 <p><span class="math notranslate nohighlight">\(\mathbb{C} = \{ z = a + bi \, : \, a, b \in \mathbb{R} \text{ e } i = \sqrt{-1} \}\)</span>. O valor <span class="math notranslate nohighlight">\(i\)</span> é o <em>número imaginário</em>.</p>
@@ -2302,7 +2310,7 @@ pow(x, y, /)
 </div>
 </div>
 </div>
-<div class="section" id="parte-real-parte-imaginaria-e-conjugados">
+<section id="parte-real-parte-imaginaria-e-conjugados">
 <h3><span class="section-number">2.7.1. </span>Parte real, parte imaginária e conjugados<a class="headerlink" href="#parte-real-parte-imaginaria-e-conjugados" title="Permalink to this headline">¶</a></h3>
 <p>Números complexos também podem ser diretamente definidos como <code class="docutils literal notranslate"><span class="pre">complex(a,b)</span></code> onde <code class="docutils literal notranslate"><span class="pre">a</span></code> é a parte real e <code class="docutils literal notranslate"><span class="pre">b</span></code> é a parte imaginária.</p>
 <div class="cell docutils container">
@@ -2356,8 +2364,8 @@ pow(x, y, /)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="modulo-de-um-numero-complexo">
+</section>
+<section id="modulo-de-um-numero-complexo">
 <h3><span class="section-number">2.7.2. </span>Módulo de um número complexo<a class="headerlink" href="#modulo-de-um-numero-complexo" title="Permalink to this headline">¶</a></h3>
 <p>Se <span class="math notranslate nohighlight">\(Re(z)\)</span> e <span class="math notranslate nohighlight">\(Im(z)\)</span> forem, respectivamente, a parte real e a parte imaginária de um número complexo, o <em>módulo</em> de <span class="math notranslate nohighlight">\(z\)</span> é definido como</p>
 <div class="math notranslate nohighlight">
@@ -2437,9 +2445,9 @@ abs(x, /)
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="zen-do-python-o-estilo-pythonico-dos-codigos">
+</section>
+</section>
+<section id="zen-do-python-o-estilo-pythonico-dos-codigos">
 <h2><span class="section-number">2.8. </span>Zen do Python: o estilo “pythônico” dos códigos<a class="headerlink" href="#zen-do-python-o-estilo-pythonico-dos-codigos" title="Permalink to this headline">¶</a></h2>
 <p>O Python tem um estilo de programação próprio popularmente chamado de <em>Zen do Python</em>, que advoga por princípios de projeto. O Zen do Python foi elaborado por Tim Peters e documentado no <a class="reference external" href="https://legacy.python.org/dev/peps/pep-0020/">[PEP 20]</a>. Em nossa língua, os princípios seriam traduzidos da seguinte forma:</p>
 <ul class="simple">
@@ -2468,8 +2476,8 @@ abs(x, /)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

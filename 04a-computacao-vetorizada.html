@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>5. Computação vetorizada com numpy &#8212; Métodos Computacionais</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,28 +34,27 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Laboratório 1" href="lab-01.html" />
+    <link rel="next" title="6. Plotagem básica com matplotlib" href="04b-plotagem-matplotlib.html" />
     <link rel="prev" title="4. Fundamentos de Matemática Discreta com Python" href="03a-matematica-discreta.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -128,6 +128,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -573,16 +581,16 @@
         
               <div>
                 
-  <div class="section" id="computacao-vetorizada-com-numpy">
+  <section id="computacao-vetorizada-com-numpy">
 <h1><span class="section-number">5. </span>Computação vetorizada com <em>numpy</em><a class="headerlink" href="#computacao-vetorizada-com-numpy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="computacao-vetorizada">
+<section id="computacao-vetorizada">
 <h2><span class="section-number">5.1. </span>Computação vetorizada<a class="headerlink" href="#computacao-vetorizada" title="Permalink to this headline">¶</a></h2>
 <p>A computação científica é uma ciência interdisciplinar que procura resolver problemas de alta complexidade utilizando recursos computacionais. Ao longo das décadas, a capacidade de processamento computacional aumentou dramaticamente. Em junho de 2020, o site <a class="reference external" href="https://www.top500.org/news/japan-captures-top500-crown-arm-powered-supercomputer/">[Top500]</a>, que atualiza semestralmente a lista dos computadores mais potentes do mundo, divulgou que o primeiro da lista agora é o Fugaku, um computador de alto desempenho japonês capaz de realizar 415,5 petaflops no teste de referência Linpack para medição de desempenho. Se um petaflop já equivale à impressionante marca de um quadrilhão (<span class="math notranslate nohighlight">\(10^{15}\)</span>) de operações numéricas executadas por segundo, o que dizer de 415,5 vezes isto?! É realmente um número inimaginável. Para saber mais sobre medidas utilizadas na computação de alto desempenho, veja esta página da <a class="reference external" href="https://kb.iu.edu/d/apeq">[Universidade de Indiana]</a>.</p>
 <p>Todo este potencial serve para resolver problemas de engenharia, das ciências da saúde, das ciências atmosféricas, de energia, entre tantas outras áreas. Por outro lado, a computação científica depende de algoritmos e projetos de software otimizados e bem construídos para atingir cada vez mais eficência, portabilidade e facilidade de execução. Em ciência de dados, embora o foco não seja resolver problemas utilizando os mesmos moldes da computação científica, devemos ter em mente que grande parte das ferramentas computacionais que permitem que um problema da ciência de dados seja resolvido deve-se a um trabalho muito minucioso de cientistas da computação e engenheiros que trabalham em nível de hardware. E é aí que entra a <em>computação vetorizada</em>.</p>
 <p>O conceito de <em>computação vetorizada</em>, ou <em>computação baseada em arrays</em> está relacionado à execução de operações que podem ser feitas de uma só vez a um conjunto amplo de valores. Até agora, vimos no curso, por exemplo, que podemos percorrer uma lista de números inteiros e calcular o quadrado desses números um de cada vez utilizando um laço, ou mesmo realizando um mapeamento. A computação vetorizada, por outro lado, evita que tais operações dependam de laços e iterações. Com ela, podemos simplesmente aplicar uma função ao <em>array</em> (uma coleção de dados) inteiro de uma só vez e produzir um <em>array</em> com o resultado desejado diretamente. Ou seja, a ideia principal da computação vetorizada é evitar laços e cálculos com repetições a fim de acelerar operações matemáticas. O nome <em>vetorizada</em> está relacionado a <em>vetor</em>. Como veremos aqui, estruturas multidimensionais e, mais geralmente, <em>arrays</em>, identificam-se com a nossa compreensão de vetores, matrizes e tensores.</p>
 <p>Vetores são arrays unidimensionais. Matrizes são arrays bidimensionais. Tensores são arrays de três ou mais dimensões. Todavia, é importante salientar que o conceito de “dimensão” em <em>computação vetorizada</em> deve ser distinguido da ideia mais abstrata de dimensão como você estudadará em Cálculo Vetorial, Geometria Analítica ou Álgebra Linear. <em>Arrays</em> possuem alguns atributos, tais como “comprimento”, “formato” e “dimensão, os quais dizem respeito, de certa forma, à quantidade de seus elementos e ao modo como ocupam a memória. Esses nomes variam de linguagem para linguagem. Em Python, existem funções e métodos específicos para verificar comprimento, formato e dimensão, tais como <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code> e <code class="docutils literal notranslate"><span class="pre">ndim</span></code>. As duas últimas serão apresentadas a seguir. Em outras linguagens, usa-se também <code class="docutils literal notranslate"><span class="pre">size</span></code> para desempenhar o mesmo papel que <code class="docutils literal notranslate"><span class="pre">shape</span></code>. A palavra “dimension”, em Python, é encontrada de maneira explicativa em documentações. Para não confundir “comprimento”, “formato” e “dimensão”, redobre seu entendimento.</p>
-</div>
-<div class="section" id="comprimento-tamanho-e-dimensao">
+</section>
+<section id="comprimento-tamanho-e-dimensao">
 <h2><span class="section-number">5.2. </span>Comprimento, tamanho e dimensão<a class="headerlink" href="#comprimento-tamanho-e-dimensao" title="Permalink to this headline">¶</a></h2>
 <p>Para exemplificar o que queremos dizer com “comprimento”, “tamanho” e “dimensão”, vejamos uma ilustração. Se <span class="math notranslate nohighlight">\(x_1\)</span> e <span class="math notranslate nohighlight">\(x_2\)</span> são dois números inteiros, a lista <code class="docutils literal notranslate"><span class="pre">[x1,x2]</span></code> seria um array unidimensional, mas de comprimento dois (você verifica isto com <code class="docutils literal notranslate"><span class="pre">len</span></code>). Agora, imagine que <span class="math notranslate nohighlight">\((x_1,x_2)\)</span> seja a notação matemática para representar as coordenadas de um ponto do plano cartesiano. Sabemos da geometria que o plano cartesiano tem duas dimensões. Porém, poderíamos, computacionalmente, usar a mesma lista anterior para armazenar no computador essas duas coordenadas. A lista continuaria sendo unidimensional, porém de tamanho dois. Logo, embora a entidade matemática seja bidimensional, não necessariamente a sua representação computacional deve ser bidimensional.</p>
 <p>Vejamos outra ilustração. Uma esfera é um sólido geométrico. Cada ponto da esfera está no espaço tridimensional. Isto significa que precisamos de 3 coordenadas para localizar este ponto. Embora você talvez tenha estudado pouco ou nada sobre a geometria analítica em três dimensões, o exemplo que daremos aqui será simples. Do mesmo modo que o caso anterior, suponha você tenha não apenas <span class="math notranslate nohighlight">\(x_1\)</span> e <span class="math notranslate nohighlight">\(x_2\)</span> como dois números inteiros, mas também um terceiro, <span class="math notranslate nohighlight">\(x_3\)</span>, para montar as coordenadas do seu ponto espacial. Você poderia representá-lo, matematicamente, por uma tripleta <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> sem problema algum. Por outro lado, no computador, a lista <code class="docutils literal notranslate"><span class="pre">[x1,x2,x3]</span></code> seria um <em>array</em> adequado para armazenar os valores das suas coordendas. Entretanto, esta lista continuaria sendo um array unidimensional, mas com tamanho 3. Portanto, <em>arrays</em> unidimensionais podem representar dados em dimensões maiores do que um.</p>
@@ -595,8 +603,8 @@ a_{21} &amp; a_{22}
 <p>Uma matriz é um <em>array</em> formado por outros <em>arrays</em>. Usando listas, a construção anterior poderia ser representada, no computador, por exemplo, com a lista de listas <code class="docutils literal notranslate"><span class="pre">[[a11,a12],[a21,a22]]</span></code>. Porém, teríamos que ter total controle sobre isto para poder dizer que <code class="docutils literal notranslate"><span class="pre">[a11,a12]</span></code> é a primeira linha da matriz e que <code class="docutils literal notranslate"><span class="pre">[a21,a22]</span></code> é a segunda linha. Neste exemplo, a matriz é uma entidade matemática caracterizada como bidimensional por ser um “retângulo (ou quadrado) cheio de números” , mas para a Python, ela deve ser um <em>array bidimensional</em> basicamente porque existem “duas direções” nos dados: linhas e colunas. Agora, você consegue imaginar o que seria uma matriz de matrizes?</p>
 <p>Imagine duas folhas de papel A4 postas uma sobre a outra em uma mesa. Agora, pense como se cada folha de papel fosse uma matriz. No final das contas, você tem uma “caixa com matrizes dentro”. Isto é o que seria um tensor, uma “caixa de números”, embora, física e matematicemente, não seja esta a definição. Uma matriz de matrizes é um <em>array tridimensional</em>. Se as suas duas matrizes fossem idênticas e iguais à do exemplo acima, você teria duas listas de listas <code class="docutils literal notranslate"><span class="pre">[[a11,a12],[a21,a22]]</span></code>, quatro listas (2 iguais a <code class="docutils literal notranslate"><span class="pre">[a11,a12]</span></code> e 2 iguais a <code class="docutils literal notranslate"><span class="pre">[a21,a22]</span></code>) e uma superlista com duas listas de listas dentro!</p>
 <p>Como veremos adiante, o <em>numpy</em> é a ferramenta ideal para lidar com tudo isso.</p>
-</div>
-<div class="section" id="o-pacote-numpy">
+</section>
+<section id="o-pacote-numpy">
 <h2><span class="section-number">5.3. </span>O pacote <em>numpy</em><a class="headerlink" href="#o-pacote-numpy" title="Permalink to this headline">¶</a></h2>
 <p>O <em>numpy</em> é a biblioteca padrão em Python para trabalhar com <em>arrays</em> multidimensionais e computação vetorizada. Ela praticamente dá “superpoderes” às listas e permite que trabalhemos com cálculos numéricos de maneira ágil, simples e eficiente. Com <em>numpy</em>, também podemos ler e escrever arquivos, trabalhar com sistemas lineares e realizar muito mais. Para importar o numpy use a instrução abaixo, onde <code class="docutils literal notranslate"><span class="pre">np</span></code> é um alias padrão:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -610,8 +618,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="motivacao">
+</section>
+<section id="motivacao">
 <h2><span class="section-number">5.4. </span>Motivação<a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
 <p>Este exemplo compara a eficiência de operações feitas com listas comuns e com <em>numpy</em>.</p>
 <div class="cell docutils container">
@@ -634,8 +642,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="criacao-de-arrays-unidimensionais-1d">
+</section>
+<section id="criacao-de-arrays-unidimensionais-1d">
 <h2><span class="section-number">5.5. </span>Criação de arrays unidimensionais (1D)<a class="headerlink" href="#criacao-de-arrays-unidimensionais-1d" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,8 +682,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="criacao-de-arrays-bidimensionais-2d">
+</section>
+<section id="criacao-de-arrays-bidimensionais-2d">
 <h2><span class="section-number">5.6. </span>Criação de arrays bidimensionais (2D)<a class="headerlink" href="#criacao-de-arrays-bidimensionais-2d" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,7 +743,7 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-<div class="section" id="dimensao-formato-e-comprimento">
+<section id="dimensao-formato-e-comprimento">
 <h3><span class="section-number">5.6.1. </span>Dimensão, formato e comprimento<a class="headerlink" href="#dimensao-formato-e-comprimento" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -860,11 +868,11 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="funcoes-para-criacao-de-arrays">
+</section>
+</section>
+<section id="funcoes-para-criacao-de-arrays">
 <h2><span class="section-number">5.7. </span>Funções para criação de arrays<a class="headerlink" href="#funcoes-para-criacao-de-arrays" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="arange">
+<section id="arange">
 <h3><span class="section-number">5.7.1. </span><code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#arange" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo:</strong> crie um array de números ímpares positivos menores do que 36.</p>
 <div class="cell docutils container">
@@ -916,8 +924,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="linspace">
+</section>
+<section id="linspace">
 <h3><span class="section-number">5.7.2. </span><code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#linspace" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo:</strong> crie um array igualmente espaçado de elementos em [0,1] com 11 elementos.</p>
 <div class="cell docutils container">
@@ -1008,8 +1016,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="all-e-any">
+</section>
+<section id="all-e-any">
 <h3><span class="section-number">5.7.3. </span><code class="docutils literal notranslate"><span class="pre">all</span></code> e <code class="docutils literal notranslate"><span class="pre">any</span></code><a class="headerlink" href="#all-e-any" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1035,8 +1043,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="random">
+</section>
+<section id="random">
 <h3><span class="section-number">5.7.4. </span><code class="docutils literal notranslate"><span class="pre">random</span></code><a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo</strong>: crie um <em>array</em> 1D com 5 números aleatórios entre [0,1].</p>
 <div class="cell docutils container">
@@ -1119,8 +1127,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ones">
+</section>
+<section id="ones">
 <h3><span class="section-number">5.7.5. </span><code class="docutils literal notranslate"><span class="pre">ones</span></code><a class="headerlink" href="#ones" title="Permalink to this headline">¶</a></h3>
 <p>Criando arrays unitários.</p>
 <div class="cell docutils container">
@@ -1149,8 +1157,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="eye">
+</section>
+<section id="eye">
 <h3><span class="section-number">5.7.6. </span><code class="docutils literal notranslate"><span class="pre">eye</span></code><a class="headerlink" href="#eye" title="Permalink to this headline">¶</a></h3>
 <p>Criando arrays 2D identidade. 1 na diagonal e 0 nas demais.</p>
 <div class="cell docutils container">
@@ -1167,8 +1175,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="zeros">
+</section>
+<section id="zeros">
 <h3><span class="section-number">5.7.7. </span><code class="docutils literal notranslate"><span class="pre">zeros</span></code><a class="headerlink" href="#zeros" title="Permalink to this headline">¶</a></h3>
 <p>Arrays nulos.</p>
 <div class="cell docutils container">
@@ -1196,8 +1204,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="full">
+</section>
+<section id="full">
 <h3><span class="section-number">5.7.8. </span><code class="docutils literal notranslate"><span class="pre">full</span></code><a class="headerlink" href="#full" title="Permalink to this headline">¶</a></h3>
 <p>Arrays de valor constante.</p>
 <div class="cell docutils container">
@@ -1268,9 +1276,9 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="especificando-tipos-de-dados">
+</section>
+</section>
+<section id="especificando-tipos-de-dados">
 <h2><span class="section-number">5.8. </span>Especificando tipos de dados<a class="headerlink" href="#especificando-tipos-de-dados" title="Permalink to this headline">¶</a></h2>
 <p>Observe o seguinte exemplo:</p>
 <div class="cell docutils container">
@@ -1399,8 +1407,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexacao-e-fatiamento">
+</section>
+<section id="indexacao-e-fatiamento">
 <h2><span class="section-number">5.9. </span>Indexação e fatiamento<a class="headerlink" href="#indexacao-e-fatiamento" title="Permalink to this headline">¶</a></h2>
 <p>Funcionam de maneira similar ao uso com listas.</p>
 <div class="cell docutils container">
@@ -1581,7 +1589,7 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-<div class="section" id="alteracao-de-valores">
+<section id="alteracao-de-valores">
 <h3><span class="section-number">5.9.1. </span>Alteração de valores<a class="headerlink" href="#alteracao-de-valores" title="Permalink to this headline">¶</a></h3>
 <p>Os arrays são mutáveis por indexação.</p>
 <div class="cell docutils container">
@@ -1682,8 +1690,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="newaxis">
+</section>
+<section id="newaxis">
 <h3><span class="section-number">5.9.2. </span><code class="docutils literal notranslate"><span class="pre">newaxis</span></code><a class="headerlink" href="#newaxis" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">newaxis</span></code> é uma instância do <code class="docutils literal notranslate"><span class="pre">numpy</span></code> que permite aumentar de 1 a dimensão de um array existente.</p>
 <p><strong>Exemplo:</strong> como inserir a diagonal de uma matriz em uma segunda matriz como uma coluna adicional?</p>
@@ -1775,8 +1783,8 @@ a_{21} &amp; a_{22}
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">newaxis</span></code> é um “eixo imaginário” incluído <em>inplace</em>, mas que altera dinamicamente o array. No caso acima, o array tornou-se em uma coluna.</p>
 <p>Agora, podemos “colar” um array 2D com outro por uma concatenação.</p>
-</div>
-<div class="section" id="concatenate">
+</section>
+<section id="concatenate">
 <h3><span class="section-number">5.9.3. </span><code class="docutils literal notranslate"><span class="pre">concatenate</span></code><a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">concatenate</span></code> é usado para concatenar <em>arrays</em>. A concatenação requer uma tupla contendo os <em>arrays</em> a concatenar e o eixo de referência.</p>
 <div class="cell docutils container">
@@ -1796,7 +1804,7 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 <p>No caso acima, <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> indica que a concatenação é ao longo da coluna. Dessa forma, inserimos a segunda diagonal como uma coluna adicional na segunda matriz. Claramente, isto só é possível porque ambas as matrizes eram de mesmo formato.</p>
-<div class="section" id="axis">
+<section id="axis">
 <h4><span class="section-number">5.9.3.1. </span><code class="docutils literal notranslate"><span class="pre">axis</span></code><a class="headerlink" href="#axis" title="Permalink to this headline">¶</a></h4>
 <p>Nos arrays multidimensionais do Python, <code class="docutils literal notranslate"><span class="pre">axis</span></code> é usado para indicar a “direção” dos dados. Em arrays bidimensionais, <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> refere-se à direção de cima para baixo (ao longo das linhas), ao passo que <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> refere-se à direção da esquerda para a direita (ao longo das colunas).</p>
 <p><strong>Obs.:</strong> note que a palavra <code class="docutils literal notranslate"><span class="pre">axis</span></code> (“eixo”) deve ser usada, e não “axes” (“eixos”).</p>
@@ -1839,10 +1847,10 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="indexacao-avancada">
+</section>
+</section>
+</section>
+<section id="indexacao-avancada">
 <h2><span class="section-number">5.10. </span>Indexação avançada<a class="headerlink" href="#indexacao-avancada" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar máscaras como artifícios para indexação avançada.</p>
 <div class="cell docutils container">
@@ -1977,8 +1985,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 <p>No caso acima, por exemplo, -10 é uma indexação reversa que excede o compriemento do array à esquerda. Portanto, ele retorna o primeiro elemento do array, que é -9. O índice -6 acessa o sexto elemento a partir da direita, que é -1. O índice -4 acessa o quarto elemento a partir da direita. Por fim, o índice 0 acessa o primeiro elemento que é -9.</p>
-</div>
-<div class="section" id="operacoes-elemento-a-elemento">
+</section>
+<section id="operacoes-elemento-a-elemento">
 <h2><span class="section-number">5.11. </span>Operações elemento a elemento<a class="headerlink" href="#operacoes-elemento-a-elemento" title="Permalink to this headline">¶</a></h2>
 <p>As operações aritméticas e de cálculo são feitas elemento a elemento nos <em>arrays</em>. Já mostramos alguns exemplos acima, mas vamos tornar isto mais claro aqui.</p>
 <div class="cell docutils container">
@@ -2022,8 +2030,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="funcoes-matematicas">
+</section>
+<section id="funcoes-matematicas">
 <h2><span class="section-number">5.12. </span>Funções matemáticas<a class="headerlink" href="#funcoes-matematicas" title="Permalink to this headline">¶</a></h2>
 <p>O <code class="docutils literal notranslate"><span class="pre">numpy</span></code> possui a maioria dass funções disponíveis no módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> e outras mais. As funções são diretamente aplicáveis aos <em>arrays</em>. Lembre-se que para fazer o mesmo usando em listas, tínhamos de construir meios de iterar sobre elas e aplicar a função a cada elemento por vez. Isto não é mais necessário com o <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Eis a beleza da computação vetorizada!</p>
 <p>Vejamos uma série de exemplos.</p>
@@ -2082,7 +2090,7 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-<div class="section" id="problema-resolvido-laboratorio-computacional-1c">
+<section id="problema-resolvido-laboratorio-computacional-1c">
 <h3><span class="section-number">5.12.1. </span>Problema resolvido (Laboratório Computacional 1C)<a class="headerlink" href="#problema-resolvido-laboratorio-computacional-1c" title="Permalink to this headline">¶</a></h3>
 <p>Observe a tabela a seguir, onde <strong>DS (UA)</strong> é a distância do referido planeta do até o Sol em unidades astronômicas (UA), <strong>Tm (F)</strong> sua temperatura superficial mínima em graus Farenheit e <strong>TM (F)</strong> sua temperatura superficial máxima em graus Farenheit.</p>
 <table class="colwidths-auto table">
@@ -2133,7 +2141,7 @@ a_{21} &amp; a_{22}
 <li><p>Repita o item anterior para a coluna <strong>TmM ©</strong>, que é a média aritmética entre <strong>Tm</strong> e <strong>TM</strong>.</p></li>
 </ul>
 <p><em>Observação:</em> use notação científica (exemplo: <span class="math notranslate nohighlight">\(4.2 \times 10^8\)</span> pode ser escrito como <code class="docutils literal notranslate"><span class="pre">4.2e8</span></code> em Python).</p>
-<div class="section" id="resolucao">
+<section id="resolucao">
 <h4><span class="section-number">5.12.1.1. </span>Resolução<a class="headerlink" href="#resolucao" title="Permalink to this headline">¶</a></h4>
 <p>Há várias maneiras de resolver. Aqui apresentamos uma estratégia com <code class="docutils literal notranslate"><span class="pre">lambdas</span></code>.</p>
 <ul class="simple">
@@ -2201,9 +2209,9 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="reshape-e-hstack">
+</section>
+</section>
+<section id="reshape-e-hstack">
 <h3><span class="section-number">5.12.2. </span><code class="docutils literal notranslate"><span class="pre">reshape</span></code> e <code class="docutils literal notranslate"><span class="pre">hstack</span></code><a class="headerlink" href="#reshape-e-hstack" title="Permalink to this headline">¶</a></h3>
 <p>A montagem do array bidimensional com os cálculos resultantes não foi requisitada no problema. Porém, vamos mostrar uma maneira de fazer isto usando <code class="docutils literal notranslate"><span class="pre">reshape</span></code>, que é uma função utilizada para reformatar os dados e <code class="docutils literal notranslate"><span class="pre">hstack</span></code>, que é usada para “empilhar” arrays horizontalmente.</p>
 <p>Note que todos os nossos <em>arrays</em> são unidimensionais. Vamos torná-los bidimensionais com formato 4 x 1 e empilhá-los horizontalmente, isto é, na direção do eixo 1 (esquerda para direita).</p>
@@ -2391,19 +2399,19 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="broadcasting">
+</section>
+</section>
+<section id="broadcasting">
 <h2><span class="section-number">5.13. </span><em>Broadcasting</em><a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h2>
 <p><em>Broadcasting</em> é a capacidade que o <em>numpy</em> oferece para realizarmos operações em arrays com diferentes dimensões.</p>
-<div class="section" id="regras-do-broadcasting">
+<section id="regras-do-broadcasting">
 <h3><span class="section-number">5.13.1. </span>Regras do <em>broadcasting</em><a class="headerlink" href="#regras-do-broadcasting" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Se dois <em>arrays</em> tiverem dimensões diferentes, o formato do array com menor dimensão é preenchido por 1 do lado esquerdo.</p></li>
 <li><p>Se o formato dos <em>arrays</em> não for igual em dimensão alguma, o array com tamanho igual a 1 é esticado nesta direção para ficar no mesmo tamanho correspondente do outro array.</p></li>
 <li><p>Se em qualquer direção os tamanhos dos <em>arrays</em> forem diferentes e nenhum deles for igual a 1, então um erro é retornado.</p></li>
 </ol>
-<div class="section" id="exemplo-da-regra-1">
+<section id="exemplo-da-regra-1">
 <h4><span class="section-number">5.13.1.1. </span>Exemplo da Regra 1<a class="headerlink" href="#exemplo-da-regra-1" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2459,8 +2467,8 @@ a_{21} &amp; a_{22}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exemplo-da-regra-2">
+</section>
+<section id="exemplo-da-regra-2">
 <h4><span class="section-number">5.13.1.2. </span>Exemplo da Regra 2<a class="headerlink" href="#exemplo-da-regra-2" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2509,8 +2517,8 @@ a_{21} &amp; a_{22}
 </pre></div>
 </div>
 <p>Assim, o <em>broadcasting</em> é permitido.</p>
-</div>
-<div class="section" id="exemplo-da-regra-3">
+</section>
+<section id="exemplo-da-regra-3">
 <h4><span class="section-number">5.13.1.3. </span>Exemplo da Regra 3<a class="headerlink" href="#exemplo-da-regra-3" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2562,10 +2570,10 @@ a_{21} &amp; a_{22}
 </pre></div>
 </div>
 <p>Porém, o formato final de ambos não se combina. Sendo incompatíveis, o <em>broadcasting</em> falha.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2593,7 +2601,7 @@ a_{21} &amp; a_{22}
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="03a-matematica-discreta.html" title="previous page"><span class="section-number">4. </span>Fundamentos de Matemática Discreta com Python</a>
-    <a class='right-next' id="next-link" href="lab-01.html" title="next page">Laboratório 1</a>
+    <a class='right-next' id="next-link" href="04b-plotagem-matplotlib.html" title="next page"><span class="section-number">6. </span>Plotagem básica com <em>matplotlib</em></a>
 
         </div>
         

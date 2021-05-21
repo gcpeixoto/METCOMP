@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Computação vetorizada com numpy &#8212; Métodos Computacionais</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,25 +34,24 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -126,6 +126,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -557,9 +565,9 @@
         
               <div>
                 
-  <div class="section" id="computacao-vetorizada-com-numpy">
+  <section id="computacao-vetorizada-com-numpy">
 <h1>Computação vetorizada com <em>numpy</em><a class="headerlink" href="#computacao-vetorizada-com-numpy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="visao-geral">
+<section id="visao-geral">
 <h2>Visão geral<a class="headerlink" href="#visao-geral" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><em>Computação vetorizada</em> relaciona-se à execução de operações que podem ser feitas diretamente sobre <em>arrays</em>.</p></li>
@@ -568,14 +576,14 @@
 <li><p>Confere “superpoderes” às listas e eficiência a cálculos numéricos gerais.</p></li>
 <li><p>Com <em>numpy</em>, podemos ler e escrever arquivos, resolver sistemas lineares e realizar muito mais.</p></li>
 </ul>
-</div>
-<div class="section" id="um-conselho-a-ser-seguido">
+</section>
+<section id="um-conselho-a-ser-seguido">
 <h2>Um conselho a ser seguido<a class="headerlink" href="#um-conselho-a-ser-seguido" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Vetorize seus cálculos numéricos evitando laços, iterações e repetições o máximo possível!</p>
 </div></blockquote>
-</div>
-<div class="section" id="motivacao">
+</section>
+<section id="motivacao">
 <h2>Motivação<a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
 <p>Este exemplo compara a eficiência de operações feitas com listas comuns e com <em>numpy</em>.</p>
 <div class="cell docutils container">
@@ -591,8 +599,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>165 µs ± 8.04 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
-1.04 µs ± 458 ns per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>129 µs ± 11.9 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+The slowest run took 4.28 times longer than the fastest. This could mean that an intermediate result is being cached.
+1.44 µs ± 896 ns per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -601,8 +610,8 @@
 <li><p>1 µs = <span class="math notranslate nohighlight">\(10^{-6}\)</span> segundo</p></li>
 <li><p>1 ns = <span class="math notranslate nohighlight">\(10^{-9}\)</span> segundo</p></li>
 </ul>
-</div>
-<div class="section" id="criacao-de-arrays-unidimensionais-1d">
+</section>
+<section id="criacao-de-arrays-unidimensionais-1d">
 <h2>Criação de arrays unidimensionais (1D)<a class="headerlink" href="#criacao-de-arrays-unidimensionais-1d" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -641,8 +650,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="criacao-de-arrays-bidimensionais-2d">
+</section>
+<section id="criacao-de-arrays-bidimensionais-2d">
 <h2>Criação de arrays bidimensionais (2D)<a class="headerlink" href="#criacao-de-arrays-bidimensionais-2d" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -702,7 +711,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="dimensao-formato-e-comprimento">
+<section id="dimensao-formato-e-comprimento">
 <h3>Dimensão, formato e comprimento<a class="headerlink" href="#dimensao-formato-e-comprimento" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -834,11 +843,11 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="funcoes-para-criacao-de-arrays">
+</section>
+</section>
+<section id="funcoes-para-criacao-de-arrays">
 <h2>Funções para criação de arrays<a class="headerlink" href="#funcoes-para-criacao-de-arrays" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="arange">
+<section id="arange">
 <h3><code class="docutils literal notranslate"><span class="pre">arange</span></code><a class="headerlink" href="#arange" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo:</strong> crie um array de números ímpares positivos menores do que 36.</p>
 <div class="cell docutils container">
@@ -890,8 +899,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="linspace">
+</section>
+<section id="linspace">
 <h3><code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#linspace" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo:</strong> crie um array igualmente espaçado de elementos em [0,1] com 11 elementos.</p>
 <div class="cell docutils container">
@@ -982,8 +991,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="all-e-any">
+</section>
+<section id="all-e-any">
 <h3><code class="docutils literal notranslate"><span class="pre">all</span></code> e <code class="docutils literal notranslate"><span class="pre">any</span></code><a class="headerlink" href="#all-e-any" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1009,8 +1018,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="random">
+</section>
+<section id="random">
 <h3><code class="docutils literal notranslate"><span class="pre">random</span></code><a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h3>
 <p><strong>Exemplo</strong>: crie um <em>array</em> 1D com 5 números aleatórios entre [0,1].</p>
 <div class="cell docutils container">
@@ -1094,8 +1103,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ones">
+</section>
+<section id="ones">
 <h3><code class="docutils literal notranslate"><span class="pre">ones</span></code><a class="headerlink" href="#ones" title="Permalink to this headline">¶</a></h3>
 <p>Criando arrays unitários.</p>
 <div class="cell docutils container">
@@ -1127,8 +1136,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="eye">
+</section>
+<section id="eye">
 <h3><code class="docutils literal notranslate"><span class="pre">eye</span></code><a class="headerlink" href="#eye" title="Permalink to this headline">¶</a></h3>
 <p>Criando arrays 2D identidade. 1 na diagonal e 0 nas demais.</p>
 <div class="cell docutils container">
@@ -1147,8 +1156,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="zeros">
+</section>
+<section id="zeros">
 <h3><code class="docutils literal notranslate"><span class="pre">zeros</span></code><a class="headerlink" href="#zeros" title="Permalink to this headline">¶</a></h3>
 <p>Arrays nulos.</p>
 <div class="cell docutils container">
@@ -1176,8 +1185,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="full">
+</section>
+<section id="full">
 <h3><code class="docutils literal notranslate"><span class="pre">full</span></code><a class="headerlink" href="#full" title="Permalink to this headline">¶</a></h3>
 <p>Arrays de valor constante.</p>
 <div class="cell docutils container">
@@ -1248,9 +1257,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="especificando-tipos-de-dados">
+</section>
+</section>
+<section id="especificando-tipos-de-dados">
 <h2>Especificando tipos de dados<a class="headerlink" href="#especificando-tipos-de-dados" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1357,14 +1366,19 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexacao-e-fatiamento">
+</section>
+<section id="indexacao-e-fatiamento">
 <h2>Indexação e fatiamento<a class="headerlink" href="#indexacao-e-fatiamento" title="Permalink to this headline">¶</a></h2>
 <p>Funcionam de maneira similar ao uso com listas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">I</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.,  4.,  8., 12., 16., 20.])
 </pre></div>
 </div>
 </div>
@@ -1375,10 +1389,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12.0, array([ 8., 12.]), array([20.]), array([ 8., 12., 16.]))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># invertendo o array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20., 16., 12.,  8.,  4.,  0.])
 </pre></div>
 </div>
 </div>
@@ -1390,11 +1414,24 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.,  4.,  8., 12., 16., 20.],
+       [ 0.,  8., 16., 24., 32., 40.],
+       [ 0., 12., 24., 36., 48., 60.],
+       [ 0., 16., 32., 48., 64., 80.]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Em arrays bidimensionais, a indexação é feita por meio de uma tupla. Porém, a explicitação dos parênteses é desnecessária.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I2</span><span class="p">[(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)]</span> <span class="c1"># 3a. linha; 4a. coluna</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.0
 </pre></div>
 </div>
 </div>
@@ -1405,10 +1442,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I2</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="c1"># 1a. linha</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.,  4.,  8., 12., 16., 20.])
 </pre></div>
 </div>
 </div>
@@ -1419,10 +1466,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.,  8., 16., 24., 32., 40.])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span> <span class="c1"># última linha</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span> <span class="c1"># última linha </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0., 16., 32., 48., 64., 80.])
 </pre></div>
 </div>
 </div>
@@ -1433,10 +1490,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0.])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 2a. coluna</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.,  8., 12., 16.])
 </pre></div>
 </div>
 </div>
@@ -1447,10 +1514,28 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mi">7</span><span class="n">f3ed8783815</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">I2</span><span class="p">[:,</span><span class="mi">8</span><span class="p">]</span> <span class="c1"># 9a. coluna</span>
+
+<span class="ne">IndexError</span>: index 8 is out of bounds for axis 1 with size 6
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I2</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># 3a. - 4a. coluna</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 8., 12.],
+       [16., 24.],
+       [24., 36.],
+       [32., 48.]])
 </pre></div>
 </div>
 </div>
@@ -1461,14 +1546,27 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([], shape=(2, 0), dtype=float64)
+</pre></div>
 </div>
-<div class="section" id="alteracao-de-valores">
+</div>
+</div>
+<section id="alteracao-de-valores">
 <h3>Alteração de valores<a class="headerlink" href="#alteracao-de-valores" title="Permalink to this headline">¶</a></h3>
 <p>Os arrays são mutáveis por indexação.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">A3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.30645815, 0.63649824, 0.67689171, 0.07343422],
+       [0.63650531, 0.74749891, 0.2506924 , 0.98255916],
+       [0.49579714, 0.85742291, 0.26920836, 0.28699652],
+       [0.658983  , 0.66570333, 0.57977717, 0.38066499]])
 </pre></div>
 </div>
 </div>
@@ -1480,6 +1578,14 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.        ,  0.63649824,  0.67689171,  0.07343422],
+       [-1.        ,  0.74749891,  0.2506924 ,  0.98255916],
+       [-1.        ,  0.85742291,  0.26920836,  0.28699652],
+       [-1.        ,  0.66570333,  0.57977717,  0.38066499]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1488,11 +1594,27 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.        ,  0.63649824,  0.67689171, -1.        ],
+       [-1.        ,  0.74749891,  0.2506924 , -1.        ],
+       [-1.        ,  0.85742291,  0.26920836, -1.        ],
+       [-1.        ,  0.66570333,  0.57977717, -1.        ]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A3</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">A3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.        ,  0.63649824,  0.67689171, -1.        ],
+       [-1.        ,  0.        ,  0.        , -1.        ],
+       [-1.        ,  0.        ,  0.        , -1.        ],
+       [-1.        ,  0.66570333,  0.57977717, -1.        ]])
 </pre></div>
 </div>
 </div>
@@ -1505,18 +1627,35 @@
 </pre></div>
 </div>
 </div>
-</div>
-<p>A indexação pode usar um comprimento de passo (<em>step</em>).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># na indexação esquerda, 1a. linha : 4a. linha : step de 3</span>
-<span class="n">A3</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.        ,  0.63649824,  0.67689171, -1.        ],
+       [-2.        , -2.        , -2.        , -2.        ],
+       [-1.        ,  0.        ,  0.        , -1.        ],
+       [-1.        ,  0.66570333,  0.57977717, -1.        ]])
 </pre></div>
 </div>
 </div>
 </div>
+<p>A indexação pode usar um comprimento de passo (<em>step</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A3</span>
+<span class="n">A3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># na indexação esquerda, 1a. linha : 4a. linha : step de 3</span>
+<span class="n">A3</span>
+</pre></div>
 </div>
-<div class="section" id="newaxis">
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.,  8.,  8., -1.],
+       [-2., -2., -2., -2.],
+       [-1.,  0.,  0., -1.],
+       [-1.,  8.,  8., -1.]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="newaxis">
 <h3><code class="docutils literal notranslate"><span class="pre">newaxis</span></code><a class="headerlink" href="#newaxis" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">newaxis</span></code> é uma instância do <code class="docutils literal notranslate"><span class="pre">numpy</span></code> que permite aumentar de 1 a dimensão de um array existente.</p>
 <p><strong>Exemplo:</strong> como inserir a diagonal de uma matriz em uma segunda matriz como uma coluna adicional?</p>
@@ -1529,12 +1668,28 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 3, 9, 9],
+       [6, 3, 2, 8],
+       [5, 7, 9, 3],
+       [6, 6, 3, 5]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matriz 4 x 4 de inteiros aleatórios entre -10 e 9</span>
 <span class="n">B2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> 
-<span class="n">B2</span>
+<span class="n">B2</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0, -7,  7,  0],
+       [-1, -2,  3,  8],
+       [-5,  0, -7, -5],
+       [-5,  4,  1,  1]])
 </pre></div>
 </div>
 </div>
@@ -1548,12 +1703,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 3, 9, 5])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notemos agora que as dimensões são diferentes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">B2</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">db1</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+1
 </pre></div>
 </div>
 </div>
@@ -1567,17 +1733,36 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2],
+       [3],
+       [9],
+       [5]])
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">newaxis</span></code> é um “eixo imaginário” incluído <em>inplace</em>, mas que altera dinamicamente o array. No caso acima, o array tornou-se em uma coluna.</p>
 <p>Agora, podemos “colar” um array 2D com outro por uma concatenação.</p>
-</div>
-<div class="section" id="concatenate">
+</section>
+<section id="concatenate">
 <h3><code class="docutils literal notranslate"><span class="pre">concatenate</span></code><a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">concatenate</span></code> é usado para concatenar <em>arrays</em>. A concatenação requer uma tupla contendo os <em>arrays</em> a concatenar e o eixo de referência.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">B2</span><span class="p">,</span><span class="n">db1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">B2</span><span class="p">,</span><span class="n">db1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
 <span class="n">B3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0, -7,  7,  0,  2],
+       [-1, -2,  3,  8,  3],
+       [-5,  0, -7, -5,  9],
+       [-5,  4,  1,  1,  5]])
 </pre></div>
 </div>
 </div>
@@ -1588,7 +1773,7 @@
 <li><p>Isto foi possível porque ambas as matrizes eram de mesmo formato</p></li>
 <li><p>É necessário observar o formato dos <em>arrays</em></p></li>
 </ul>
-<div class="section" id="axis">
+<section id="axis">
 <h4><code class="docutils literal notranslate"><span class="pre">axis</span></code><a class="headerlink" href="#axis" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Nos arrays multidimensionais do Python, <code class="docutils literal notranslate"><span class="pre">axis</span></code> é usado para indicar a “direção” dos dados.</p></li>
@@ -1608,6 +1793,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0.])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1623,17 +1813,32 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0., -7.,  7.,  0.,  2.],
+       [-1., -2.,  3.,  8.,  3.],
+       [-5.,  0., -7., -5.,  9.],
+       [-5.,  4.,  1.,  1.,  5.],
+       [ 0.,  0.,  0.,  0.,  0.]])
+</pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexacao-avancada">
+</section>
+</section>
+</section>
+<section id="indexacao-avancada">
 <h2>Indexação avançada<a class="headerlink" href="#indexacao-avancada" title="Permalink to this headline">¶</a></h2>
 <p>Podemos usar máscaras como artifícios para indexação avançada.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
 <span class="n">IA1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-10,  -9,  -8,  -7,  -6,  -5,  -4,  -3,  -2,  -1,   0,   1,   2,
+         3,   4,   5,   6,   7,   8,   9,  10])
 </pre></div>
 </div>
 </div>
@@ -1646,6 +1851,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True,  True, False,  True, False,  True, False,  True,
+       False,  True,  True, False, False,  True, False,  True, False,
+        True, False,  True])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Esta <em>máscara booleana</em> pode ser aplicada no array para extrair apenas os elementos cujos índices são marcados como <code class="docutils literal notranslate"><span class="pre">True</span></code> pela máscara.</p>
 <div class="cell docutils container">
@@ -1654,11 +1866,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-9, -8, -6, -4, -2,  0,  1,  4,  6,  8, 10])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Há maneiras mais diretas aplicáveis a filtragens. Para extrair os valores negativos do array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IA1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="c1"># máscara booleana</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IA1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="c1"># máscara booleana </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True, False, False, False, False, False, False, False, False,
+       False, False, False])
 </pre></div>
 </div>
 </div>
@@ -1666,6 +1890,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IA1</span><span class="p">[</span><span class="n">IA1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-10,  -9,  -8,  -7,  -6,  -5,  -4,  -3,  -2,  -1])
 </pre></div>
 </div>
 </div>
@@ -1677,11 +1906,21 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Para extrair os valores no intervalo <span class="math notranslate nohighlight">\(]-2,5[\)</span>, fazemos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IA1</span><span class="p">[(</span><span class="n">IA1</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">IA1</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)]</span> <span class="c1"># &amp; é o operador booleano &#39;elemento a elemento&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1,  0,  1,  2,  3,  4])
 </pre></div>
 </div>
 </div>
@@ -1694,11 +1933,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-10,  -8,  -6,  -4,  -2,   0,   2,   4,   6,   8,  10]),
+ array([-9, -7, -5, -3, -1,  1,  3,  5,  7,  9]))
+</pre></div>
+</div>
+</div>
 </div>
 <p>Podemos usar listas como máscaras:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alguns</span> <span class="o">=</span> <span class="n">pares</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span> <span class="c1"># acessa 1o., 3o. 4o. e 6o. elemento de &#39;pares&#39;</span>
+<span class="n">alguns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-10,  -6,  -4,   0])
 </pre></div>
 </div>
 </div>
@@ -1709,6 +1960,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-9, -1,  3, -9])
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>-10 é indexação reversa excededida. Retorna o 1o. elemento do array: -9.</p></li>
@@ -1716,8 +1972,8 @@
 <li><p>-4 acessa o 4o. elemento a partir da direita.</p></li>
 <li><p>0 acessa o primeiro elemento que é -9.</p></li>
 </ul>
-</div>
-<div class="section" id="operacoes-elemento-a-elemento">
+</section>
+<section id="operacoes-elemento-a-elemento">
 <h2>Operações elemento a elemento<a class="headerlink" href="#operacoes-elemento-a-elemento" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>As operações aritméticas e de cálculo são feitas elemento a elemento nos <em>arrays</em>.</p></li>
@@ -1742,6 +1998,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 7 9]
+[-3 -3 -3]
+[ 4 10 18]
+[0.25 0.4  0.5 ]
+[  1  32 729]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1749,9 +2014,14 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -77.45, -124.9 , -184.35])
+</pre></div>
 </div>
 </div>
-<div class="section" id="funcoes-matematicas">
+</div>
+</section>
+<section id="funcoes-matematicas">
 <h2>Funções matemáticas<a class="headerlink" href="#funcoes-matematicas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>O <code class="docutils literal notranslate"><span class="pre">numpy</span></code> possui a maioria dass funções de <code class="docutils literal notranslate"><span class="pre">math</span></code> e outras mais.</p></li>
@@ -1766,6 +2036,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1773,10 +2048,22 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,
+       2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 2.54030231, 2.41228029, 2.47410912, 3.34635638,
+       4.75579814, 5.85914977, 6.04540488, 5.51135422, 5.08886974])
 </pre></div>
 </div>
 </div>
@@ -1789,8 +2076,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.00000000e+00, -5.83904850e+00, -4.22348298e+00, -1.54686133e+01,
+       -1.45852799e+02, -8.66844526e+01, -2.36441078e+02, -2.95209938e+03,
+       -2.23551181e+03, -3.82459986e+03])
+</pre></div>
 </div>
-<div class="section" id="problema-resolvido-laboratorio-computacional-1c">
+</div>
+</div>
+<section id="problema-resolvido-laboratorio-computacional-1c">
 <h3>Problema resolvido (Laboratório Computacional 1C)<a class="headerlink" href="#problema-resolvido-laboratorio-computacional-1c" title="Permalink to this headline">¶</a></h3>
 <p>Observe a tabela a seguir, onde <strong>DS (UA)</strong> é a distância do referido planeta do até o Sol em unidades astronômicas (UA), <strong>Tm (F)</strong> sua temperatura superficial mínima em graus Farenheit e <strong>TM (F)</strong> sua temperatura superficial máxima em graus Farenheit.</p>
 <table class="colwidths-auto table">
@@ -1841,7 +2135,7 @@
 <li><p>Repita o item anterior para a coluna <strong>TmM ©</strong>, que é a média aritmética entre <strong>Tm</strong> e <strong>TM</strong>.</p></li>
 </ul>
 <p><em>Observação:</em> use notação científica (exemplo: <span class="math notranslate nohighlight">\(4.2 \times 10^8\)</span> pode ser escrito como <code class="docutils literal notranslate"><span class="pre">4.2e8</span></code> em Python).</p>
-<div class="section" id="resolucao">
+<section id="resolucao">
 <h4>Resolução<a class="headerlink" href="#resolucao" title="Permalink to this headline">¶</a></h4>
 <p>Há várias maneiras de resolver. Aqui apresentamos uma estratégia com <code class="docutils literal notranslate"><span class="pre">lambdas</span></code>.</p>
 <ul class="simple">
@@ -1869,6 +2163,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-170.55555556  465.55555556  -89.44444444 -126.11111111]
+[448.88888889 465.55555556  57.77777778  21.11111111]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Fórmula e cálculo da conversão UA para km:</p></li>
@@ -1878,6 +2178,11 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UA</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">km</span><span class="p">:</span> <span class="mf">1.496e+8</span><span class="o">*</span><span class="n">km</span> 
 <span class="n">UADS</span> <span class="o">=</span> <span class="n">UA</span><span class="p">(</span><span class="n">DS</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">UADS</span><span class="p">)</span> <span class="c1"># valores a inserir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5.834400e+07 1.081608e+08 1.496000e+08 2.279904e+08]
 </pre></div>
 </div>
 </div>
@@ -1892,10 +2197,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[139.16666667 465.55555556 -15.83333333 -52.5       ]
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="reshape-e-hstack">
+</section>
+</section>
+<section id="reshape-e-hstack">
 <h3><code class="docutils literal notranslate"><span class="pre">reshape</span></code> e <code class="docutils literal notranslate"><span class="pre">hstack</span></code><a class="headerlink" href="#reshape-e-hstack" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Montagem do array bidimensional com resultdos não requisitada.</p></li>
@@ -1904,7 +2214,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">hstack</span></code> é usada para “empilhar” arrays horizontalmente.</p></li>
 </ul>
 <p><strong>Obs:</strong> consulte também <code class="docutils literal notranslate"><span class="pre">vstack</span></code>.</p>
-<div class="section" id="nota">
+<section id="nota">
 <h4>Nota:<a class="headerlink" href="#nota" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Todos os <em>arrays</em> são unidimensionais.</p></li>
@@ -1935,10 +2245,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4,)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">DS</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># reformata </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.39 ],
+       [0.723],
+       [1.   ],
+       [1.524]])
 </pre></div>
 </div>
 </div>
@@ -1949,10 +2272,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 1)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">DS</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">ndim</span> <span class="c1"># o array agora é bidimensional</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1967,6 +2300,18 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">DS</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">TmM</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))]</span> <span class="c1"># apenas DS e TmM</span>
 <span class="n">L</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([[0.39 ],
+        [0.723],
+        [1.   ],
+        [1.524]]),
+ array([[139.16666667],
+        [465.55555556],
+        [-15.83333333],
+        [-52.5       ]])]
 </pre></div>
 </div>
 </div>
@@ -1987,11 +2332,24 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.90000000e-01,  1.39166667e+02],
+       [ 7.23000000e-01,  4.65555556e+02],
+       [ 1.00000000e+00, -1.58333333e+01],
+       [ 1.52400000e+00, -5.25000000e+01]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Agora podemos verificar que, de fato, o array está na forma como queremos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lh</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 1a. coluna idêntica à DS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.39 , 0.723, 1.   , 1.524])
 </pre></div>
 </div>
 </div>
@@ -2002,10 +2360,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span> <span class="n">Lh</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">DS</span> <span class="p">)</span> <span class="c1"># teste completo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2016,10 +2384,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([139.16666667, 465.55555556, -15.83333333, -52.5       ])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lh</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">TmM</span> <span class="c1"># teste</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True])
 </pre></div>
 </div>
 </div>
@@ -2030,22 +2408,27 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="broadcasting">
+</section>
+</section>
+</section>
+<section id="broadcasting">
 <h2><em>Broadcasting</em><a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h2>
 <p><em>Broadcasting</em> é a capacidade que o <em>numpy</em> oferece para realizarmos operações em arrays com diferentes dimensões.</p>
 <p><strong>Obs:</strong> para entender o <em>broadcasting</em>, veja o material.</p>
-<div class="section" id="regras-do-broadcasting">
+<section id="regras-do-broadcasting">
 <h3>Regras do <em>broadcasting</em><a class="headerlink" href="#regras-do-broadcasting" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Se dois <em>arrays</em> tiverem dimensões diferentes, o formato do array com menor dimensão é preenchido por 1 do lado esquerdo.</p></li>
 <li><p>Se o formato dos <em>arrays</em> não for igual em dimensão alguma, o array com tamanho igual a 1 é esticado nesta direção para ficar no mesmo tamanho correspondente do outro array.</p></li>
 <li><p>Se em qualquer direção os tamanhos dos <em>arrays</em> forem diferentes e nenhum deles for igual a 1, então um erro é retornado.</p></li>
 </ol>
-<div class="section" id="exemplo-da-regra-1">
+<section id="exemplo-da-regra-1">
 <h4>Exemplo da Regra 1<a class="headerlink" href="#exemplo-da-regra-1" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2056,10 +2439,22 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+(3,)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[11, 22, 33],
+       [14, 25, 36]])
 </pre></div>
 </div>
 </div>
@@ -2082,9 +2477,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[11, 22, 33],
+       [14, 25, 36]])
+</pre></div>
 </div>
 </div>
-<div class="section" id="exemplo-da-regra-2">
+</div>
+</section>
+<section id="exemplo-da-regra-2">
 <h4>Exemplo da Regra 2<a class="headerlink" href="#exemplo-da-regra-2" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2095,10 +2496,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 1)
+(3,)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2],
+       [1, 2, 3],
+       [2, 3, 4]])
 </pre></div>
 </div>
 </div>
@@ -2120,8 +2534,8 @@
 </pre></div>
 </div>
 <p>Assim, o <em>broadcasting</em> é permitido.</p>
-</div>
-<div class="section" id="exemplo-da-regra-3">
+</section>
+<section id="exemplo-da-regra-3">
 <h4>Exemplo da Regra 3<a class="headerlink" href="#exemplo-da-regra-3" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2132,10 +2546,26 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 2)
+(3,)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">229</span><span class="o">-</span><span class="mi">48207</span><span class="n">f55069c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">A</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (3,2) (3,) 
 </pre></div>
 </div>
 </div>
@@ -2157,10 +2587,10 @@
 </pre></div>
 </div>
 <p>Porém, o formato final de ambos não se combina. Sendo incompatíveis, o <em>broadcasting</em> falha.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
