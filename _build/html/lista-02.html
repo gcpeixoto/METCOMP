@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Lista de exercícios 2 &#8212; Métodos Computacionais</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,25 +34,24 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Distribuição de pontos das tarefas" href="log-pontos.html" />
@@ -128,6 +128,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -303,7 +311,7 @@
         
               <div>
                 
-  <div class="section" id="lista-de-exercicios-2">
+  <section id="lista-de-exercicios-2">
 <h1>Lista de exercícios 2<a class="headerlink" href="#lista-de-exercicios-2" title="Permalink to this headline">¶</a></h1>
 <p><strong>Resolva todos os problemas por computação e registre as suas respostas no questionário disponibilizado no ambiente virtual de aprendizagem.</strong></p>
 <hr><p><strong>Exercício 1.</strong> Defina uma variável chamada <code class="docutils literal notranslate"><span class="pre">primos</span></code> e atribua a ela uma lista usando um laço <code class="docutils literal notranslate"><span class="pre">for</span></code> para preenchê-la com os números primos de 2 a 13, inclusive. Enfim, atribua o número 17 a uma variável chamada <code class="docutils literal notranslate"><span class="pre">p</span></code> e adicione <code class="docutils literal notranslate"><span class="pre">p</span></code> ao final da lista. Imprima a nova lista inteira.</p>
@@ -363,7 +371,7 @@ x_3 &amp; y_3 &amp; 1 \\
 <p><strong>Exercício 8.</strong> Escreva um código para plotar o gráfico de <span class="math notranslate nohighlight">\(h(x)\)</span>. Em seguida, plote o gráfico de h(x). (Na resposta ao questionário, insira apenas o código.)</p>
 <p><strong>Exercício 9.</strong> Considere a função <span class="math notranslate nohighlight">\(f(t) = t^3 + te^t + 1\)</span> e o vetor <span class="math notranslate nohighlight">\(v = (3,2,-1)\)</span>. Aplique <span class="math notranslate nohighlight">\(f\)</span> a cada elemento de <span class="math notranslate nohighlight">\(v\)</span> e determine o resultado como uma tupla de 3 elementos.</p>
 <p><strong>Exercício 10.</strong> Escreva um código para plotar o gráfico da função <span class="math notranslate nohighlight">\(y(t) = v_0t - \frac{1}{2}gt^2\)</span>, que descreve a trajetória de uma bola. Use <span class="math notranslate nohighlight">\(v_0 = 10\)</span>, <span class="math notranslate nohighlight">\(g = 9.81\)</span> e <span class="math notranslate nohighlight">\(t \in [0,2v_0/g]\)</span>. Configure a legenda do eixo <span class="math notranslate nohighlight">\(x\)</span> para <code class="docutils literal notranslate"><span class="pre">tempo</span> <span class="pre">(s)</span></code> e a do eixo <span class="math notranslate nohighlight">\(y\)</span> para <code class="docutils literal notranslate"><span class="pre">altura</span> <span class="pre">(m)</span></code>.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

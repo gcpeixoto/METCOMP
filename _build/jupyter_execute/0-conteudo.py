@@ -5,15 +5,18 @@
 # 
 # Material desenvolvido para a disciplina _Métodos Computacionais (GDCOC0080)_ do curso de Engenharia de Produção Mecânica.
 # 
+# Prof. Gustavo Oliveira, UFPB/CI/DCC
+# 
 # ## Conteúdo 
 # 
-# Programa para semestre 2020/02 (atualização semanal)
+# (Programa em atualização)
 # 
 # - [Ferramentas básicas](01a-introducao.ipynb)
 # - [Fundamentos de Python](01b-fundamentos-python.ipynb)
 # - [Computação Simbólica](02a-computacao-simbolica.ipynb)
 # - [Matemática Discreta](03a-matematica-discreta.ipynb)
 # - [Computação Vetorizada](04a-computacao-vetorizada.ipynb)
+# - [Plotagem Básica](04b-plotagem-matplotlib.ipynb)
 # 
 # ### Laboratórios Computacionais
 # 
@@ -46,6 +49,7 @@
 # 02a-computacao-simbolica
 # 03a-matematica-discreta
 # 04a-computacao-vetorizada
+# 04b-plotagem-matplotlib
 # ```
 # 
 # 

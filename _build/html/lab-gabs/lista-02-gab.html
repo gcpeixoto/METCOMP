@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Problemas (Física) &#8212; Métodos Computacionais</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,25 +34,24 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -126,6 +126,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -321,9 +329,9 @@
         
               <div>
                 
-  <div class="section" id="problemas-fisica">
+  <section id="problemas-fisica">
 <h1>Problemas (Física)<a class="headerlink" href="#problemas-fisica" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="problema-movimento-de-particula">
+<section id="problema-movimento-de-particula">
 <h2>Problema (Movimento de partícula)<a class="headerlink" href="#problema-movimento-de-particula" title="Permalink to this headline">¶</a></h2>
 <p>A posição de uma partícula à medida que se move ao longo do eixo <span class="math notranslate nohighlight">\(y\)</span> é dada por
 <span class="math notranslate nohighlight">\(y(t) = 2\sin\left(\frac{\pi t}{4}\right),\)</span>
@@ -333,7 +341,7 @@ com <span class="math notranslate nohighlight">\(t\)</span> em segundos e <span 
 <p>c. A aceleração média da partícula entre <span class="math notranslate nohighlight">\(t = 0\)</span> e <span class="math notranslate nohighlight">\(t=2.0 \, s\)</span>.</p>
 <p>d. A aceleração instantânea da partícula em <span class="math notranslate nohighlight">\(t = 0, \, 1.0\)</span> e <span class="math notranslate nohighlight">\(2.0 \, s\)</span>.</p>
 <p>(Adaptado de Halliday &amp; Resnick)</p>
-<div class="section" id="resolucao">
+<section id="resolucao">
 <h3>Resolução<a class="headerlink" href="#resolucao" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -415,9 +423,9 @@ Aceleração instantânea em t = 2.0 é -1.23 cm/s^2
 <img alt="../_images/lista-02-gab_5_0.png" src="../_images/lista-02-gab_5_0.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

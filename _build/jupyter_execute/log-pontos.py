@@ -15,7 +15,7 @@
 # |Laboratório Computacional 3|1,0|Individual|
 # |Laboratório Computacional 4|1,0|Individual|
 # |Laboratório Computacional 5|1,0|Individual|
-# |Projeto Final |3,0|Grupo|
+# |Projeto Final |4,0|Grupo|
 
 # ## Como entregar listas e laboratórios
 
@@ -24,9 +24,3 @@
 # ## Como entregar o projeto final
 
 # O projeto final deverá ser escrito na forma de relatório conforme o modelo disponibilizado no arquivo [template-relatorio.ipynb](./template-relatorio.ipynb).
-
-# In[ ]:
-
-
-
-

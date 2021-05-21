@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>1. Ferramentas computacionais do curso &#8212; Métodos Computacionais</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,20 +34,17 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -128,6 +126,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -368,34 +374,34 @@
         
               <div>
                 
-  <div class="section" id="ferramentas-computacionais-do-curso">
+  <section id="ferramentas-computacionais-do-curso">
 <h1><span class="section-number">1. </span>Ferramentas computacionais do curso<a class="headerlink" href="#ferramentas-computacionais-do-curso" title="Permalink to this headline">¶</a></h1>
 <p>Neste curso, usaremos Python 3.x (onde x é um número de versão) como linguagem de programação. Por se tratar de uma linguagem interpretada, interagir com ela é mais fácil do que uma linguagem compilada. Um conjunto mínimo de recursos para Python funcionar é composto do <em>core</em> da linguagem, um terminal de comandos e um editor de texto. Enquanto programadores experientes usam menos recursos visuais, para efeito didático, usaremos interfaces mais amigáveis e interativas comprovadas como bons ambientes de aprendizagem.</p>
-<div class="section" id="ipython-e-jupyter-notebook">
+<section id="ipython-e-jupyter-notebook">
 <h2><span class="section-number">1.1. </span><em>iPython</em> e <em>Jupyter Notebook</em><a class="headerlink" href="#ipython-e-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
 <p>O <a class="reference external" href="http://ipython.org">[iPython]</a> foi um projeto iniciado em 2001 para o desenvolvimento de um interpretador Python para melhorar a interatividade com a linguagem. Ele foi integrado como um <em>kernel</em> (núcleo) no projeto <a class="reference external" href="http://jupyter.org">[Jupyter]</a>, desenvolvido em 2014, permitindo textos, códigos e elementos gráficos sejam integrados em cadernos interativos. <em>Jupyter notebooks</em> são interfaces onde podemos executar códigos em diferentes linguagens desde que alteremos os <em>kernels</em>. A palavra <em>Jupyter</em> é uma aglutinação das iniciais de <em>Julia</em>, <em>Python</em> e <em>R</em>, que são as linguagens de programação mais usuais para ciência de dados.</p>
-</div>
-<div class="section" id="anaconda">
+</section>
+<section id="anaconda">
 <h2><span class="section-number">1.2. </span><em>Anaconda</em><a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h2>
 <p>Em 2012, o projeto <a class="reference external" href="https://www.anaconda.com">[Anaconda]</a> foi iniciado como objetivo de fornecer uma ferramenta completa para o trabalho com Python. Em 2020, já como uma empresa de ponta, ela tornou-se uma das pioneiras no fornecimento de plataformas individuais e empresariais para ciência de dados. Segundo a empresa, a <a class="reference external" href="https://www.anaconda.com/products/individual">[Individual Edition]</a>, que é a versão aberta para uso é a mais popular no mundo com mais de 20 milhões de usuários. Recomendamos que você siga as orientações de instalação desta versão. Uma vez instalada, basta lançar as ferramentas a partir do dashboard <em>Anaconda Navigator</em>.</p>
-</div>
-<div class="section" id="jupyter-lab">
+</section>
+<section id="jupyter-lab">
 <h2><span class="section-number">1.3. </span><em>Jupyter Lab</em><a class="headerlink" href="#jupyter-lab" title="Permalink to this headline">¶</a></h2>
 <p>Uma ferramenta que melhorou a interatividade do Jupyter é o <em>Jupyter Lab</em>, que realiza um alto nível de integração. Este <a class="reference external" href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">[artigo]</a> discute as características do Jupyter Lab, entre as quais vale citar o recurso de arrastar/soltar para reordenar células de cadernos e copiá-las entre cadernos.</p>
-</div>
-<div class="section" id="binder">
+</section>
+<section id="binder">
 <h2><span class="section-number">1.4. </span><em>Binder</em><a class="headerlink" href="#binder" title="Permalink to this headline">¶</a></h2>
 <p>O projeto <a class="reference external" href="https://mybinder.org">[Binder]</a> funciona como um servidor online baseada na tecnologia <em>Jupyter Hub</em> para servir cadernos interativos online. Através do Binder, é possível executar códigos “na nuvem” sem a necessidade de instalações, porém as sessões são perdidas após o uso.</p>
-</div>
-<div class="section" id="google-colab">
+</section>
+<section id="google-colab">
 <h2><span class="section-number">1.5. </span><em>Google Colab</em><a class="headerlink" href="#google-colab" title="Permalink to this headline">¶</a></h2>
 <p>O <a class="reference external" href="http://colab.research.google.com">[Google Colab]</a>, uma redução de <em>Colaboratory</em>, é uma ferramenta que possui características mistas entre o <em>Jupyter notebook</em> e o <em>Binder</em>, porém permite que o usuário use a infra-estrutura de computação de alto desempenho (GPUs e TPUS) da Google. A vantagem é que usuários de contas Google podem sincronizar arquivos diretamente com o Google Drive.</p>
-</div>
-<div class="section" id="live-code">
+</section>
+<section id="live-code">
 <h2><span class="section-number">1.6. </span><em>Live Code</em><a class="headerlink" href="#live-code" title="Permalink to this headline">¶</a></h2>
 <p>Ferramenta experimental que permite executar códigos instantaneamente a partir do livro interativo do curso disponibilizado online.</p>
-</div>
-<div class="section" id="modulos-principais">
+</section>
+<section id="modulos-principais">
 <h2><span class="section-number">1.7. </span>Módulos principais<a class="headerlink" href="#modulos-principais" title="Permalink to this headline">¶</a></h2>
 <p>Neste curso, o ecossistema de ferramentas torna-se pleno com a adição de alguns módulos que são considerados essenciais para a prática da ciência e análise de dados contemporânea:</p>
 <ul class="simple">
@@ -407,8 +413,8 @@
 <li><p><em>seaborn</em>: é um módulo para visualização de dados baseado no <em>matplotlib</em>, porém com capacidades visuais melhores.</p></li>
 </ul>
 <p>A visualização de dados é um tema de suma importância para resultados da análise exploratória de dados em estatística. Um site recomendado para pesquisar as melhores ferramentas para análise de dados é o <a class="reference external" href="https://pyviz.org">[PyViz]</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

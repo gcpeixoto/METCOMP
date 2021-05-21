@@ -8,6 +8,7 @@
   - file: 02a-computacao-simbolica
   - file: 03a-matematica-discreta
   - file: 04a-computacao-vetorizada
+  - file: 04b-plotagem-matplotlib
 - part: Laboratórios Computacionais
   numbered: False
   chapters:

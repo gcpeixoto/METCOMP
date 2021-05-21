@@ -23,7 +23,7 @@
 # 
 # Este exemplo compara a eficiência de operações feitas com listas comuns e com *numpy*.
 
-# In[3]:
+# In[1]:
 
 
 import numpy as np # alias np 
@@ -440,26 +440,26 @@ S.dtype # 4 é o no. máximo de caracteres nas strings
 # 
 # Funcionam de maneira similar ao uso com listas
 
-# In[ ]:
+# In[19]:
 
 
-I = np.linspace(0,20,11)
+I = np.linspace(0,20,6)
 I
 
 
-# In[ ]:
+# In[25]:
 
 
 I[3],I[2:4],I[5:8],I[-4:-1]
 
 
-# In[ ]:
+# In[26]:
 
 
 I[::-1] # invertendo o array
 
 
-# In[ ]:
+# In[27]:
 
 
 I2 = np.array([I,2*I,3*I,4*I])
@@ -468,61 +468,61 @@ I2
 
 # Em arrays bidimensionais, a indexação é feita por meio de uma tupla. Porém, a explicitação dos parênteses é desnecessária.
 
-# In[ ]:
+# In[31]:
 
 
 I2[(2,3)] # 3a. linha; 4a. coluna
 
 
-# In[ ]:
+# In[33]:
 
 
 I2[2,3]
 
 
-# In[ ]:
+# In[34]:
 
 
 I2[0,:] # 1a. linha
 
 
-# In[ ]:
+# In[36]:
 
 
 I2[1,:] # 2a. linha
 
 
-# In[ ]:
+# In[37]:
 
 
-I2[-1,:] # última linha
+I2[-1,:] # última linha 
 
 
-# In[ ]:
+# In[39]:
 
 
 I2[:,0] # 1a. coluna
 
 
-# In[ ]:
+# In[41]:
 
 
 I2[:,1] # 2a. coluna
 
 
-# In[ ]:
+# In[43]:
 
 
 I2[:,8] # 9a. coluna
 
 
-# In[ ]:
+# In[45]:
 
 
 I2[:,2:4] # 3a. - 4a. coluna
 
 
-# In[ ]:
+# In[47]:
 
 
 I2[1:3,6:10] # submatriz: linhas 2 - 3; 7-10
@@ -532,28 +532,28 @@ I2[1:3,6:10] # submatriz: linhas 2 - 3; 7-10
 # 
 # Os arrays são mutáveis por indexação.
 
-# In[ ]:
+# In[78]:
 
 
 A3 = np.random.rand(4,4)
 A3
 
 
-# In[ ]:
+# In[80]:
 
 
 A3[0:4,0] = -1
 A3
 
 
-# In[ ]:
+# In[82]:
 
 
 A3[:,-1] = -1
 A3
 
 
-# In[ ]:
+# In[83]:
 
 
 A3[1:3,1:3] = 0
@@ -562,7 +562,7 @@ A3
 
 # Podemos alterar valores com arrays.
 
-# In[ ]:
+# In[85]:
 
 
 A3[1,:] = -2*np.ones(4)
@@ -571,9 +571,10 @@ A3
 
 # A indexação pode usar um comprimento de passo (*step*).
 
-# In[ ]:
+# In[91]:
 
 
+A3
 A3[0:4:3,1:3] = np.full((1,2),8) # na indexação esquerda, 1a. linha : 4a. linha : step de 3
 A3
 
@@ -586,7 +587,7 @@ A3
 
 # Criamos duas matrizes aleatórias.
 
-# In[ ]:
+# In[93]:
 
 
 # matriz 4 x 4 de inteiros aleatórios entre 0 e 9
@@ -594,17 +595,17 @@ B1 = np.random.randint(0,10,(4,4))
 B1
 
 
-# In[ ]:
+# In[95]:
 
 
 # matriz 4 x 4 de inteiros aleatórios entre -10 e 9
 B2 = np.random.randint(-10,10,(4,4)) 
-B2
+B2 
 
 
 # Extraímos a diagonal da primeira.
 
-# In[ ]:
+# In[102]:
 
 
 # diagonal de B1
@@ -614,7 +615,7 @@ db1
 
 # Notemos agora que as dimensões são diferentes.
 
-# In[ ]:
+# In[103]:
 
 
 print(B2.ndim)
@@ -623,7 +624,7 @@ print(db1.ndim)
 
 # Para podermos aglutinar a diagonal como uma nova coluna na primeira matriz, primeiro temos que transformar o array unidimensional para uma matriz.  
 
-# In[ ]:
+# In[104]:
 
 
 db1 = db1[:,np.newaxis]
@@ -639,10 +640,10 @@ db1
 # 
 # `concatenate` é usado para concatenar *arrays*. A concatenação requer uma tupla contendo os *arrays* a concatenar e o eixo de referência.
 
-# In[ ]:
+# In[108]:
 
 
-B3 = np.concatenate((B2,db1), axis=1) 
+B3 = np.concatenate((B2,db1), axis=1)  
 B3
 
 
@@ -663,7 +664,7 @@ B3
 
 # Para aglutinar uma linha na matriz anterior, fazemos uma concatenação em linha.
 
-# In[ ]:
+# In[113]:
 
 
 # array de zeros com mesmo número de colunas de B3
@@ -671,13 +672,13 @@ db2 = np.zeros(np.shape(B3)[1])
 db2
 
 
-# In[ ]:
+# In[114]:
 
 
 db2 = db2[np.newaxis,:] # cria o "eixo imaginário" na direção 0
 
 
-# In[ ]:
+# In[117]:
 
 
 B4 = np.concatenate((B3,db2),axis=0) # concatena ao longo das linhas
@@ -688,7 +689,7 @@ B4
 # 
 # Podemos usar máscaras como artifícios para indexação avançada.
 
-# In[ ]:
+# In[119]:
 
 
 IA1 = np.arange(-10,11)
@@ -697,7 +698,7 @@ IA1
 
 # Vamos criar um *array* aleatório de True e False no mesmo formato que o *array* anterior.
 
-# In[ ]:
+# In[132]:
 
 
 mask1 = np.random.randint(0,2,np.shape(IA1),dtype=bool) 
@@ -706,7 +707,7 @@ mask1
 
 # Esta *máscara booleana* pode ser aplicada no array para extrair apenas os elementos cujos índices são marcados como `True` pela máscara.
 
-# In[ ]:
+# In[135]:
 
 
 IA1[mask1]
@@ -714,13 +715,13 @@ IA1[mask1]
 
 # Há maneiras mais diretas aplicáveis a filtragens. Para extrair os valores negativos do array:
 
-# In[ ]:
+# In[137]:
 
 
-IA1 < 0 # máscara booleana
+IA1 < 0 # máscara booleana 
 
 
-# In[ ]:
+# In[139]:
 
 
 IA1[IA1 < 0] 
@@ -728,7 +729,7 @@ IA1[IA1 < 0]
 
 # Para extrair os valores positivos do array:
 
-# In[ ]:
+# In[141]:
 
 
 IA1[IA1 > 0] # máscara booleana para positivos
@@ -736,7 +737,7 @@ IA1[IA1 > 0] # máscara booleana para positivos
 
 # Para extrair os valores no intervalo $]-2,5[$, fazemos:
 
-# In[ ]:
+# In[146]:
 
 
 IA1[(IA1 > -2) & (IA1 < 5)] # & é o operador booleano 'elemento a elemento'
@@ -744,7 +745,7 @@ IA1[(IA1 > -2) & (IA1 < 5)] # & é o operador booleano 'elemento a elemento'
 
 # Para extrair pares e ímpares, poderíamos fazer:
 
-# In[ ]:
+# In[148]:
 
 
 pares, impares = IA1[IA1 % 2 == 0] , IA1[IA1 % 2 == 1] 
@@ -753,13 +754,14 @@ pares,impares
 
 # Podemos usar listas como máscaras:
 
-# In[ ]:
+# In[152]:
 
 
 alguns = pares[[0,2,3,5]] # acessa 1o., 3o. 4o. e 6o. elemento de 'pares'
+alguns
 
 
-# In[ ]:
+# In[155]:
 
 
 impares[alguns] # estude este caso
@@ -775,14 +777,14 @@ impares[alguns] # estude este caso
 # - As operações aritméticas e de cálculo são feitas elemento a elemento nos *arrays*. 
 # - Já fizemos isso, mas vejamos claramente com mais exemplos
 
-# In[ ]:
+# In[156]:
 
 
 a = np.array([1,2,3]) 
 b = np.array([4,5,6])
 
 
-# In[ ]:
+# In[157]:
 
 
 # operações elemento a elemento
@@ -793,7 +795,7 @@ print(a / b)
 print(a ** b)
 
 
-# In[ ]:
+# In[159]:
 
 
 2*a + 4*b - 6*b**2 + 1.1/2*a
@@ -806,26 +808,26 @@ print(a ** b)
 # - Como era com listas? Tínhamos de iterar sobre elas... 
 # - Com `numpy`, esse problema está resolvido: isto é computação vetorizada.
 
-# In[ ]:
+# In[160]:
 
 
 x = np.arange(10)
 x
 
 
-# In[ ]:
+# In[162]:
 
 
 np.sqrt(x)
 
 
-# In[ ]:
+# In[164]:
 
 
 np.cos(x) + 2*np.sqrt(x)
 
 
-# In[ ]:
+# In[166]:
 
 
 y = np.sin(2*x)
@@ -861,7 +863,7 @@ y - z
 # 
 # - Montar os arrays dos dados numéricos.
 
-# In[ ]:
+# In[167]:
 
 
 DS = np.array([0.39,0.723,1.0,1.524])
@@ -871,7 +873,7 @@ TM = np.array([840,870,136,70])
 
 # - Fórmula e cálculo da conversão Farenheit para Celsius:
 
-# In[ ]:
+# In[173]:
 
 
 C = lambda F: 5/9*(F-32)
@@ -883,7 +885,7 @@ print(CTM) # maximas em C
 
 # - Fórmula e cálculo da conversão UA para km:
 
-# In[ ]:
+# In[175]:
 
 
 UA = lambda km: 1.496e+8*km 
@@ -893,7 +895,7 @@ print(UADS) # valores a inserir
 
 # - Cálculo da média
 
-# In[ ]:
+# In[179]:
 
 
 TmM = 0.5*(CTm + CTM)
@@ -915,7 +917,7 @@ print(TmM)
 # - Vamos torná-los bidimensionais com formato 4 x 1 
 # - Depois, empilhá-los horizontalmente -> direção do eixo 1 (esquerda para direita). 
 
-# In[ ]:
+# In[184]:
 
 
 todos = [DS,CTm,CTM,UADS,TmM] # lista com todos os arrays
@@ -933,25 +935,25 @@ final = np.hstack(todos) # empilha
 # 
 # Para o segundo ponto, observe:
 
-# In[ ]:
+# In[186]:
 
 
 DS.shape # formato é 1 x 4 (unidimensional)
 
 
-# In[ ]:
+# In[188]:
 
 
 np.reshape(DS,(4,1)) # reformata 
 
 
-# In[ ]:
+# In[190]:
 
 
 np.reshape(DS,(4,1)).shape # novo formato é 4 x 1
 
 
-# In[ ]:
+# In[192]:
 
 
 np.reshape(DS,(4,1)).ndim # o array agora é bidimensional
@@ -962,7 +964,7 @@ np.reshape(DS,(4,1)).ndim # o array agora é bidimensional
 # - Na resolução, escolhemos sobrescrever. 
 # - Assim, suponha que a lista dos arrays reformatados seja:
 
-# In[ ]:
+# In[194]:
 
 
 L = [np.reshape(DS,(4,1)),np.reshape(TmM,(4,1))] # apenas DS e TmM
@@ -977,7 +979,7 @@ L
 # - Para criar o array 4 x 2, faremos um empilhamento horizontal 
 # - Isto é similar a uma concatenação na direção 1
 
-# In[ ]:
+# In[196]:
 
 
 Lh = np.hstack(L)
@@ -986,37 +988,37 @@ Lh
 
 # Agora podemos verificar que, de fato, o array está na forma como queremos. 
 
-# In[ ]:
+# In[198]:
 
 
 Lh[:,0] # 1a. coluna idêntica à DS
 
 
-# In[ ]:
+# In[200]:
 
 
 Lh[:,0] == DS # teste
 
 
-# In[ ]:
+# In[202]:
 
 
 np.all( Lh[:,0] == DS ) # teste completo
 
 
-# In[ ]:
+# In[203]:
 
 
 Lh[:,1] # 2a. coluna idêntica a TmM
 
 
-# In[ ]:
+# In[204]:
 
 
 Lh[:,1] == TmM # teste
 
 
-# In[ ]:
+# In[206]:
 
 
 np.all( Lh[:,1] == TmM ) # teste completo
@@ -1036,7 +1038,7 @@ np.all( Lh[:,1] == TmM ) # teste completo
 
 # #### Exemplo da Regra 1
 
-# In[ ]:
+# In[211]:
 
 
 A = np.array([[1, 2, 3],[4, 5, 6]]) # array 2D
@@ -1045,7 +1047,7 @@ print(A.shape)
 print(b.shape)
 
 
-# In[ ]:
+# In[213]:
 
 
 A + b
@@ -1069,7 +1071,7 @@ A + b
 
 # A mesma operação poderia ter sido feita com:
 
-# In[ ]:
+# In[217]:
 
 
 A + np.array([b,b])
@@ -1077,7 +1079,7 @@ A + np.array([b,b])
 
 # #### Exemplo da Regra 2
 
-# In[ ]:
+# In[226]:
 
 
 A = np.arange(3).reshape((3, 1))
@@ -1086,7 +1088,7 @@ print(A.shape)
 print(b.shape)
 
 
-# In[ ]:
+# In[220]:
 
 
 A + b
@@ -1117,7 +1119,7 @@ A + b
 
 # #### Exemplo da Regra 3
 
-# In[ ]:
+# In[230]:
 
 
 A = np.ones((3, 2))
@@ -1126,7 +1128,7 @@ print(A.shape)
 print(b.shape)
 
 
-# In[ ]:
+# In[229]:
 
 
 A + b

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Laboratório 4 &#8212; Métodos Computacionais</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,25 +34,24 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -126,6 +126,14 @@
    5. Computação vetorizada com
    <em>
     numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
    </em>
   </a>
  </li>
@@ -301,7 +309,7 @@
         
               <div>
                 
-  <div class="section" id="laboratorio-4">
+  <section id="laboratorio-4">
 <h1>Laboratório 4<a class="headerlink" href="#laboratorio-4" title="Permalink to this headline">¶</a></h1>
 <p><strong>Resolva todos os problemas por computação.</strong></p>
 <hr><p><strong>Problema 1:</strong> O <em>Índice de Massa Corpórea</em> (IMC) é usado para saber se um indivíduo está no peso ideal. Ele é definido pela fórmula</p>
@@ -315,10 +323,12 @@
 <li><p>Grupo 1: aqueles na faixa ideal cujo IMC é menor do que 21.7.</p></li>
 <li><p>Grupo 2: aqueles na faixa ideal cujo IMC é maior do que 21.7.</p></li>
 </ul>
-<div class="figure align-default" id="imc-selecao">
+<figure class="align-default" id="imc-selecao">
 <a class="reference internal image-reference" href="lab-gabs/figs/imc.png"><img alt="lab-gabs/figs/imc.png" src="lab-gabs/figs/imc.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-text">IMC dos jogadores da seleção brasileira da Copa de 2018. <a class="reference external" href="https://www.espn.com.br/artigo/_/id/4310177/selecao-brasileira-veja-o-censo-completo-dos-jogadores-que-vao-a-copa">[Fonte: ESPN]</a></span><a class="headerlink" href="#imc-selecao" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">IMC dos jogadores da seleção brasileira da Copa de 2018. <a class="reference external" href="https://www.espn.com.br/artigo/_/id/4310177/selecao-brasileira-veja-o-censo-completo-dos-jogadores-que-vao-a-copa">[Fonte: ESPN]</a></span><a class="headerlink" href="#imc-selecao" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Carregue as informações do arquivo e reproduza o gráfico da figura anterior ou crie um similar estilizando-o do seu modo que contenha:</p>
 <ul class="simple">
 <li><p>a linha tracejada intermediária;</p></li>
@@ -578,7 +588,7 @@
 </div>
 </div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
