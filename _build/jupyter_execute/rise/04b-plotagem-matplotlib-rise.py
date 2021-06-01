@@ -24,7 +24,7 @@
 
 
 # chamada padrão
-get_ipython().run_line_magic('matplotlib', 'inline')
+#%matplotlib inline
 import matplotlib.pyplot as plt
 
 
@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 # 
 # Vamos importar o *numpy* para usarmos os benefícios da computação vetorizada e plotar nossos primeiros exemplos.
 
-# In[2]:
+# In[3]:
 
 
 import numpy as np
@@ -44,7 +44,7 @@ plt.plot(x,y); # reta y = x
 
 # **Exemplo:** plote o gráfico da parábola $f(x) = ax^2 + bx + c$ para valores quaisquer de $a,b,c$ no intervalo $-20 \leq x \leq 20$.
 
-# In[13]:
+# In[3]:
 
 
 x = np.linspace(-20,20,50)
@@ -56,7 +56,7 @@ plt.plot(x,y);
 
 # Podemos definir uma função para plotar a parábola:
 
-# In[14]:
+# In[4]:
 
 
 def plota_parabola(a,b,c):
@@ -67,30 +67,30 @@ def plota_parabola(a,b,c):
 
 # Agora podemos estudar o que cada coeficiente faz:
 
-# In[15]:
+# In[5]:
 
 
 # mude o valor de a e considere b = 2, c = 1
 
-for a in np.linspace(-2,3,10):
+for a in np.linspace(-10,30,10):
     plota_parabola(a,2,1)
 
 
-# In[18]:
+# In[6]:
 
 
 # mude o valor de b e considere a = 2, c = 1
 
-for b in np.linspace(-2,3,20):
+for b in np.linspace(-3,2,20):
     plota_parabola(2,b,1)
 
 
-# In[25]:
+# In[7]:
 
 
 # mude o valor de c e considere a = 2, b = 1
 
-for c in np.linspace(-2,3,10):
+for c in np.linspace(-5,10,10):
     plota_parabola(2,1,c) # por que você não vê muitas mudanças?
 
 
@@ -103,12 +103,12 @@ valores = np.linspace(-2,3,5)
 for a in valores:
     for b in valores:
         for c in valores:
-            plota_parabola(a,b,c)
+            plota_parabola(a,b,c)                       
 
 
 # **Exemplo:** plote o gráfico da função $g(t) = a\cos(bt + \pi)$ para valores quaisquer de $a$ e $b$ no intervalo $0 \leq t \leq 2\pi$.
 
-# In[32]:
+# In[9]:
 
 
 t = np.linspace(0,2*np.pi,50,endpoint=True) # t: ângulo
@@ -120,7 +120,7 @@ b = 2
 plt.plot(t,a*np.cos(b*t + np.pi));
 
 b = 3
-plt.plot(t,a*np.cos(b*t + np.pi));
+plt.plot(t,a*np.cos(b*t + np.pi)); 
 
 
 # As cores e marcações no gráfico são todas padronizadas. Vejamos como alterar tudo isto.
@@ -138,21 +138,21 @@ plt.plot(t,a*np.cos(b*t + np.pi));
 # - cor de face do símbolo marcardor com `markerfacecolor` ou `mfc`
 # - transparência com `alpha` no intervalo [0,1]
 
-# In[56]:
+# In[10]:
 
 
 g = lambda a,b: a*np.cos(b*t + np.pi) # assume t anterior
 
 # estude cada exemplo
 # a ordem do 3o. argumento em diante pode mudar
-plt.plot(t,g(1,1),color='c',linewidth=5,linestyle='-.',alpha=.3)
-plt.plot(t,g(1,2),c='g',ls='-',lw='.7',marker='s',mfc='y',ms=8)
-plt.plot(t,g(1,3),c='#e26d5a',ls=':', marker='d',mec='k',mew=2.0);
+plt.plot(t,g(1,1),color='c',linewidth=5,linestyle='-.',alpha=0.8)
+plt.plot(t,g(1,2),c='g',ls='-',lw='.7',marker='s',mfc='y',ms=10)
+plt.plot(t,g(1,3),c='k',ls=':', marker='d',mec='r',mew=1.0); 
 
 
 # Cores e estilo de linha podem ser especificados de modo reduzido e em ordens distintas usando um especificador de formato.
 
-# In[57]:
+# In[11]:
 
 
 plt.plot(t,g(1,1),'yv') # amarelo; triângulo para baixo;
@@ -182,15 +182,15 @@ plt.plot(t,g(1,1),'yv', t,g(1,2),':c+', t,-g(2,2),'>-.r'); # 3 blocos sequenciad
 
 # **Exemplo:** Plote os gráficos de $h_1(x) = a\sqrt{x}$ e $h_2(x) = be^{\frac{x}{c}}$ para valores de a,b,c e propriedades acima livres.
 
-# In[58]:
+# In[13]:
 
 
 x = np.linspace(0,10,50,endpoint=True)
 
 h1, h2 = lambda a: a*np.sqrt(x), lambda b,c: b*np.exp(x/c) 
 
-plt.figure(figsize=(8,6), dpi=200, facecolor='#e0eeee')
-plt.plot(x,h1(.9),x,h2(1,9));
+plt.figure(figsize=(4,2), dpi=300, facecolor='#d0eeee')
+plt.plot(x,h1(.3),x,h2(-1,10));
 
 
 # ### Alterando limites e marcações de eixos
@@ -205,17 +205,23 @@ plt.plot(x,h1(.9),x,h2(1,9));
 # In[14]:
 
 
-plt.plot(x,h1(.9),x,h2(1,9)); plt.xlim(1.6,9.2); plt.ylim(1.0,2.8);
+plt.subplot(121)
+plt.plot(x,h1(.9),x,h2(1,9)); 
+plt.xlim(1.6,9.2); 
+plt.ylim(1.0,2.8);
+
+plt.subplot(122)
+plt.plot(x,h1(.9),x,h2(1,9)); 
+plt.xlim(0,40); 
+plt.ylim(0,40);
 
 
 # In[15]:
 
 
-plt.figure(figsize=(10,8))
-
+plt.figure(figsize=(8,4))
 plt.plot(t,g(1,3),c=[0.1,0.4,0.5],marker='s',mfc='w',mew=2.0);
 plt.plot(t,g(1.2,2),c=[1.0,0.5,0.0],ls='--',marker='>',mfc='c',mew=1.0,ms=10);
-
 plt.xticks([0, np.pi/2,np.pi,3*np.pi/2,2*np.pi]); # lista de múltiplos de pi
 plt.yticks([-1, 0, 1]); # 3 valores em y
 
@@ -227,7 +233,7 @@ plt.yticks([-1, 0, 1]); # 3 valores em y
 # In[16]:
 
 
-plt.figure(figsize=(10,8))
+plt.figure(figsize=(8,5))
 
 plt.plot(t,g(1,3),c=[0.1,0.4,0.5],marker='s',mfc='w',mew=2.0);
 plt.plot(t,g(1.2,2),c=[1.0,0.5,0.0],ls='--',marker='>',mfc='c',mew=1.0,ms=10);
@@ -241,7 +247,7 @@ plt.yticks([-1, 0, 1], ['$y = -1$', '$y = 0$', '$y = +1$']);
 # 
 # Os eixos principais podem ser movidos para outras posições arbitrárias e as bordas da área de plotagem desligadas usando `spine`.
 
-# In[59]:
+# In[17]:
 
 
 # plotagem da função
@@ -255,11 +261,15 @@ ax.spines['top'].set_color('none') # remove borda superior
 ax.spines['bottom'].set_position(('data',0)) # desloca eixo para x = 0
 ax.spines['left'].set_position(('data',0)) # desloca eixo para y = 0
 
+
+# In[18]:
+
+
 ax.xaxis.set_ticks_position('top') # desloca marcações para cima
 ax.yaxis.set_ticks_position('right') # desloca marcações para a direita
 
 plt.xticks([-2,0,2]) # altera ticks de x
-ax.set_xticklabels(['esq.','zero','dir.']) # altera ticklabels de x
+ax.set_xticklabels(['esq.','zero','dir.']); # altera ticklabels de x
 
 plt.yticks([-0.4,0,0.4]) # altera ticks de y
 ax.set_yticklabels(['sup.','zero','inf.']); # altera ticklabels de y
@@ -276,12 +286,12 @@ ax.set_yticklabels(['sup.','zero','inf.']); # altera ticklabels de y
 
 # **Exemplo:** plote o gráfico da reta $f_1(x) = x + 1$ e da reta $f_2(x) = 1 - x$ e adicione uma legenda com cores azul e laranja.
 
-# In[18]:
+# In[107]:
 
 
 plt.plot(x, x + 1,'-b', label = 'y = x + 1' )
-plt.plot(x, 1-x, c = [1.0,0.5,0.0], label = 'y = 1 - x'); # laranja: 100% de vermelho, 50% verde
-plt.legend(loc = 'best') # 'loc=best' : melhor localização da legenda
+plt.plot(x, 1 - x, c = [1.,0.5,0.], label = 'y = 1 - x'); # laranja: 100% de vermelho, 50% verde
+plt.legend(loc='best') # 'loc=best' : melhor localização da legenda
 plt.xlabel('x'); plt.ylabel('y'); plt.title('Gráfico de duas retas');
 
 
@@ -289,14 +299,14 @@ plt.xlabel('x'); plt.ylabel('y'); plt.title('Gráfico de duas retas');
 # 
 # Use `loc=valor` para especificar onde posicionar a legenda. Use `plt.legend?` para verificar as posições disponíveis para `valor`. Vide tabela de valores `Location String` e `Location Code`.
 
-# In[19]:
+# In[112]:
 
 
 plt.plot(np.nan,np.nan,label='upper right'); # nan : not a number
 plt.legend(loc=1); # usando número
 
 
-# In[20]:
+# In[114]:
 
 
 plt.plot(np.nan,np.nan,label='loc=1');
@@ -307,7 +317,7 @@ plt.legend(loc='upper right'); # usando a string correspondente
 # 
 # Para alterar o tamanho da fonte de legendas, use `fontsize`.
 
-# In[21]:
+# In[121]:
 
 
 plt.plot(np.nan,np.nan,label='legenda');
@@ -324,17 +334,16 @@ plt.title('Título', c='c', fontsize=FStit);
 # 
 # Podemos incluir anotações em gráficos com a função `annotate(texto,xref,yref)`
 
-# In[22]:
+# In[16]:
 
 
-plt.plot(np.nan,np.nan);
 plt.annotate('P (0.5,0.5)',(0.5,0.5));
 plt.annotate('Q (0.1,0.8)',(0.1,0.8));
 
 
 # **Exemplo**: gere um conjunto de 10 pontos $(x,y)$ aleatórios em que $0.2 < x,y < 0.8$ e anote-os no plano.
 
-# In[23]:
+# In[51]:
 
 
 # gera uma lista de 10 pontos satisfazendo a condição
@@ -346,7 +355,7 @@ while len(P) != 10:
         P.append(tuple(xy))
 
 # plota o plano
-plt.figure(figsize=(8,8))
+plt.figure(figsize=(5,5))
 plt.xlim(0,1)
 plt.ylim(0,1)
 
@@ -371,7 +380,7 @@ for ponto in P:
 
 # **Exemplo 1:** gráfico de 1 reta, 1 parábola e 1 polinômio cúbico lado a lado.
 
-# In[60]:
+# In[62]:
 
 
 x = np.linspace(-5,5,20)
@@ -389,14 +398,14 @@ plt.plot(x,3*x**2 - 2*x - 1,c='g',marker='o')
 plt.title('$y=3x^2 - 2x - 1$')
 
 # aqui p = 3
-plt.subplot(1,3,3) # plt.subplot(133) também é válida
+plt.subplot(1,3,3) # plt.subplot(133) também é válida 
 plt.plot(x,1/2*x**3 + 3*x**2 - 2*x - 1,c='b',marker='*')
 plt.title('$y=1/2x^3 + 3x^2 - 2x - 1$');
 
 
 # **Exemplo 2:** gráficos de {$sen(x)$, $sen(2x)$, $sen(3x)$} e {$cos(x)$, $cos(2x)$, $cos(3x)$} dispostos em matriz 2x3.
 
-# In[25]:
+# In[71]:
 
 
 plt.figure(figsize=(15,4))
@@ -423,7 +432,7 @@ for p in range(1,7):
 
 # **Exemplo 3:** gráficos de um ponto isolado em matriz 4 x 3.
 
-# In[26]:
+# In[73]:
 
 
 plt.figure(figsize=(15,4))
@@ -448,7 +457,7 @@ for p in range(1,m*n+1):
 # - maior, menor ou ambos, use `which='major'`, `which='minor'` ou `which='both'`.
 # - nos eixos x, y ou ambos, use `axis='x'`, `axis='y'` ou `axis='both'`.
 
-# In[27]:
+# In[78]:
 
 
 x = np.linspace(-10,10)
@@ -456,25 +465,25 @@ plt.plot(x,x)
 plt.grid(True)
 
 
-# In[28]:
+# In[83]:
 
 
 plt.plot(x,x)
 plt.grid(True,which='major',axis='x')
 
 
-# In[29]:
+# In[84]:
 
 
 plt.plot(x,x)
-plt.grid(True,which='major',axis='y')
+plt.grid(True,which='major',axis='y') 
 
 
 # **Exemplo:** plotagem de gradeado.
 # 
 # Neste exemplo, um eixo abstrato é adicionado sobre a figura (criada diretamente) origem no ponto (0.025,0.025), largura 0.95 e altura 0.95.
 
-# In[30]:
+# In[87]:
 
 
 ax = plt.axes([0.025, 0.025, 0.95, 0.95])
@@ -490,7 +499,7 @@ ax.yaxis.set_minor_locator(plt.MultipleLocator(0.1)) # divisor maior em Y
 # propriedades das linhas
 ax.grid(which='major', axis='x', linewidth=0.75, linestyle='-', color='r')
 ax.grid(which='minor', axis='x', linewidth=0.5, linestyle=':', color='b')
-ax.grid(which='major', axis='y', linewidth=0.75, linestyle='-', color='r')
+ax.grid(which='major', axis='y', linewidth=0.75, linestyle='-', color='m')
 ax.grid(which='minor', axis='y', linewidth=0.5, linestyle=':', color='g')
 
 # para remover as ticks, adicione comentários
@@ -498,23 +507,23 @@ ax.grid(which='minor', axis='y', linewidth=0.5, linestyle=':', color='g')
 #ax.set_yticklabels([]);
 
 plt.plot(x,x,'k')
-plt.plot(x,-x+4,'k')
+plt.plot(x,-x+4,'k');
 
 
 # ## Plots com preenchimento
 # 
 # Podemos usar `fill_between` para criar preenchimentos de área em gráficos. 
 
-# In[31]:
+# In[96]:
 
 
 x = np.linspace(-np.pi, np.pi, 60)
 y = np.sin(2*x)*np.cos(x/2)
 
-plt.fill_between(x,y,alpha=0.5);
+plt.fill_between(x,y,alpha=.6);
 
 
-# In[32]:
+# In[113]:
 
 
 x = np.linspace(-np.pi, np.pi, 60)

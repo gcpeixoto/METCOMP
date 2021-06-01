@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>6. Plotagem básica com matplotlib &#8212; Métodos Computacionais</title>
     
@@ -54,7 +54,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Laboratório 1" href="lab-01.html" />
+    <link rel="next" title="7. Álgebra Linear Computacional Básica" href="05a-alc.html" />
     <link rel="prev" title="5. Computação vetorizada com numpy" href="04a-computacao-vetorizada.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -137,6 +137,11 @@
    <em>
     matplotlib
    </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05a-alc.html">
+   7. Álgebra Linear Computacional Básica
   </a>
  </li>
 </ul>
@@ -630,7 +635,7 @@
 
 <span class="c1"># estude cada exemplo</span>
 <span class="c1"># a ordem do 3o. argumento em diante pode mudar</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="s1">&#39;.7&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#e26d5a&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">mec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">2.0</span><span class="p">);</span>
 </pre></div>
@@ -684,7 +689,7 @@
 <span class="n">h1</span><span class="p">,</span> <span class="n">h2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">c</span><span class="p">)</span> 
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#e0eeee&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="mf">.9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -704,7 +709,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.6</span><span class="p">,</span><span class="mf">9.2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.8</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="mf">.9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.6</span><span class="p">,</span><span class="mf">9.2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.8</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1126,7 +1131,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="04a-computacao-vetorizada.html" title="previous page"><span class="section-number">5. </span>Computação vetorizada com <em>numpy</em></a>
-    <a class='right-next' id="next-link" href="lab-01.html" title="next page">Laboratório 1</a>
+    <a class='right-next' id="next-link" href="05a-alc.html" title="next page"><span class="section-number">7. </span>Álgebra Linear Computacional Básica</a>
 
         </div>
         

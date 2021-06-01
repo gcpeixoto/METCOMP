@@ -9,6 +9,7 @@
   - file: 03a-matematica-discreta
   - file: 04a-computacao-vetorizada
   - file: 04b-plotagem-matplotlib
+  - file: 05a-alc
 - part: Laboratórios Computacionais
   numbered: False
   chapters:

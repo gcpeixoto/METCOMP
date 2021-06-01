@@ -11,12 +11,13 @@
 # 
 # (Programa em atualização)
 # 
-# - [Ferramentas básicas](01a-introducao.ipynb)
+# - [Ferramentas Básicas](01a-introducao.ipynb)
 # - [Fundamentos de Python](01b-fundamentos-python.ipynb)
 # - [Computação Simbólica](02a-computacao-simbolica.ipynb)
 # - [Matemática Discreta](03a-matematica-discreta.ipynb)
 # - [Computação Vetorizada](04a-computacao-vetorizada.ipynb)
 # - [Plotagem Básica](04b-plotagem-matplotlib.ipynb)
+# - [Álgebra Linear Computacional Básica](05a-alc.ipynb)
 # 
 # ### Laboratórios Computacionais
 # 
@@ -50,6 +51,7 @@
 # 03a-matematica-discreta
 # 04a-computacao-vetorizada
 # 04b-plotagem-matplotlib
+# 05a-alc
 # ```
 # 
 # 

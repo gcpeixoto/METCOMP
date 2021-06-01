@@ -4,3 +4,9 @@ channels:
   - conda-forge
 dependencies:
   - rise
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - sympy
+  - seaborn

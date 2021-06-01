@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Plotagem básica com matplotlib &#8212; Métodos Computacionais</title>
     
@@ -135,6 +135,11 @@
    <em>
     matplotlib
    </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05a-alc.html">
+   7. Álgebra Linear Computacional Básica
   </a>
  </li>
 </ul>
@@ -436,7 +441,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># chamada padrão</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1">#%matplotlib inline</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
@@ -492,7 +497,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mude o valor de a e considere b = 2, c = 1</span>
 
-<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">plota_parabola</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -505,7 +510,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mude o valor de b e considere a = 2, c = 1</span>
 
-<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">plota_parabola</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -518,7 +523,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mude o valor de c e considere a = 2, b = 1</span>
 
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">plota_parabola</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="c1"># por que você não vê muitas mudanças?</span>
 </pre></div>
 </div>
@@ -535,7 +540,7 @@
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span>
-            <span class="n">plota_parabola</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+            <span class="n">plota_parabola</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>                       
 </pre></div>
 </div>
 </div>
@@ -555,7 +560,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">));</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">));</span> 
 </pre></div>
 </div>
 </div>
@@ -586,9 +591,9 @@
 
 <span class="c1"># estude cada exemplo</span>
 <span class="c1"># a ordem do 3o. argumento em diante pode mudar</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="s1">&#39;.7&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;#e26d5a&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">mec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">2.0</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="s1">&#39;.7&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">mec</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">1.0</span><span class="p">);</span> 
 </pre></div>
 </div>
 </div>
@@ -639,8 +644,8 @@
 
 <span class="n">h1</span><span class="p">,</span> <span class="n">h2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">c</span><span class="p">)</span> 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#e0eeee&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#d0eeee&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="mf">.3</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -660,7 +665,15 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.6</span><span class="p">,</span><span class="mf">9.2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.8</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="mf">.9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.6</span><span class="p">,</span><span class="mf">9.2</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.8</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h1</span><span class="p">(</span><span class="mf">.9</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">h2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -670,11 +683,9 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">2.0</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
-
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]);</span> <span class="c1"># lista de múltiplos de pi</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span> <span class="c1"># 3 valores em y</span>
 </pre></div>
@@ -690,7 +701,7 @@
 <p>Podemos alterar as marcações das <code class="docutils literal notranslate"><span class="pre">ticks</span></code> passando um texto indicativo. No caso anterior, seria melhor algo como:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">2.0</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="n">mew</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
@@ -721,12 +732,20 @@
 
 <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">((</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># desloca eixo para x = 0</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">((</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># desloca eixo para y = 0</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span> <span class="c1"># desloca marcações para cima</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04b-plotagem-matplotlib-rise_38_0.png" src="../_images/04b-plotagem-matplotlib-rise_38_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span> <span class="c1"># desloca marcações para cima</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;right&#39;</span><span class="p">)</span> <span class="c1"># desloca marcações para a direita</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># altera ticks de x</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;esq.&#39;</span><span class="p">,</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span><span class="s1">&#39;dir.&#39;</span><span class="p">])</span> <span class="c1"># altera ticklabels de x</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;esq.&#39;</span><span class="p">,</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span><span class="s1">&#39;dir.&#39;</span><span class="p">]);</span> <span class="c1"># altera ticklabels de x</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.4</span><span class="p">])</span> <span class="c1"># altera ticks de y</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;sup.&#39;</span><span class="p">,</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span><span class="s1">&#39;inf.&#39;</span><span class="p">]);</span> <span class="c1"># altera ticklabels de y</span>
@@ -734,7 +753,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_38_0.png" src="../_images/04b-plotagem-matplotlib-rise_38_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-18-8c7e3ef4f56a&gt;:5: UserWarning: FixedFormatter should only be used together with FixedLocator
+  ax.set_xticklabels([&#39;esq.&#39;,&#39;zero&#39;,&#39;dir.&#39;]); # altera ticklabels de x
+&lt;ipython-input-18-8c7e3ef4f56a&gt;:8: UserWarning: FixedFormatter should only be used together with FixedLocator
+  ax.set_yticklabels([&#39;sup.&#39;,&#39;zero&#39;,&#39;inf.&#39;]); # altera ticklabels de y
+</pre></div>
+</div>
+<img alt="../_images/04b-plotagem-matplotlib-rise_39_1.png" src="../_images/04b-plotagem-matplotlib-rise_39_1.png" />
 </div>
 </div>
 </section>
@@ -751,14 +776,14 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;y = x + 1&#39;</span> <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;y = 1 - x&#39;</span><span class="p">);</span> <span class="c1"># laranja: 100% de vermelho, 50% verde</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;best&#39;</span><span class="p">)</span> <span class="c1"># &#39;loc=best&#39; : melhor localização da legenda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;y = 1 - x&#39;</span><span class="p">);</span> <span class="c1"># laranja: 100% de vermelho, 50% verde</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span> <span class="c1"># &#39;loc=best&#39; : melhor localização da legenda</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de duas retas&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_41_0.png" src="../_images/04b-plotagem-matplotlib-rise_41_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_42_0.png" src="../_images/04b-plotagem-matplotlib-rise_42_0.png" />
 </div>
 </div>
 <section id="localizacao-de-legendas">
@@ -772,7 +797,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_43_0.png" src="../_images/04b-plotagem-matplotlib-rise_43_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_44_0.png" src="../_images/04b-plotagem-matplotlib-rise_44_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -783,7 +808,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_44_0.png" src="../_images/04b-plotagem-matplotlib-rise_44_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_45_0.png" src="../_images/04b-plotagem-matplotlib-rise_45_0.png" />
 </div>
 </div>
 </section>
@@ -805,7 +830,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_46_0.png" src="../_images/04b-plotagem-matplotlib-rise_46_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_47_0.png" src="../_images/04b-plotagem-matplotlib-rise_47_0.png" />
 </div>
 </div>
 </section>
@@ -814,14 +839,13 @@
 <p>Podemos incluir anotações em gráficos com a função <code class="docutils literal notranslate"><span class="pre">annotate(texto,xref,yref)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;P (0.5,0.5)&#39;</span><span class="p">,(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;P (0.5,0.5)&#39;</span><span class="p">,(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">));</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Q (0.1,0.8)&#39;</span><span class="p">,(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.8</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_48_0.png" src="../_images/04b-plotagem-matplotlib-rise_48_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_49_0.png" src="../_images/04b-plotagem-matplotlib-rise_49_0.png" />
 </div>
 </div>
 <p><strong>Exemplo</strong>: gere um conjunto de 10 pontos <span class="math notranslate nohighlight">\((x,y)\)</span> aleatórios em que <span class="math notranslate nohighlight">\(0.2 &lt; x,y &lt; 0.8\)</span> e anote-os no plano.</p>
@@ -836,7 +860,7 @@
         <span class="n">P</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">xy</span><span class="p">))</span>
 
 <span class="c1"># plota o plano</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
@@ -847,7 +871,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_50_0.png" src="../_images/04b-plotagem-matplotlib-rise_50_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_51_0.png" src="../_images/04b-plotagem-matplotlib-rise_51_0.png" />
 </div>
 </div>
 <p><strong>Problema:</strong> o código acima tem um problema. Verifique que <code class="docutils literal notranslate"><span class="pre">len(P)</span> <span class="pre">=</span> <span class="pre">10</span></code>, mas ele não plota os 10 pontos como gostaríamos de ver. Descubra o que está acontecendo e proponha uma solução.</p>
@@ -880,14 +904,14 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$y=3x^2 - 2x - 1$&#39;</span><span class="p">)</span>
 
 <span class="c1"># aqui p = 3</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># plt.subplot(133) também é válida</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># plt.subplot(133) também é válida </span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$y=1/2x^3 + 3x^2 - 2x - 1$&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_54_0.png" src="../_images/04b-plotagem-matplotlib-rise_54_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_55_0.png" src="../_images/04b-plotagem-matplotlib-rise_55_0.png" />
 </div>
 </div>
 <p><strong>Exemplo 2:</strong> gráficos de {<span class="math notranslate nohighlight">\(sen(x)\)</span>, <span class="math notranslate nohighlight">\(sen(2x)\)</span>, <span class="math notranslate nohighlight">\(sen(3x)\)</span>} e {<span class="math notranslate nohighlight">\(cos(x)\)</span>, <span class="math notranslate nohighlight">\(cos(2x)\)</span>, <span class="math notranslate nohighlight">\(cos(3x)\)</span>} dispostos em matriz 2x3.</p>
@@ -917,7 +941,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_56_0.png" src="../_images/04b-plotagem-matplotlib-rise_56_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_57_0.png" src="../_images/04b-plotagem-matplotlib-rise_57_0.png" />
 </div>
 </div>
 <p><strong>Exemplo 3:</strong> gráficos de um ponto isolado em matriz 4 x 3.</p>
@@ -937,7 +961,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_58_0.png" src="../_images/04b-plotagem-matplotlib-rise_58_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_59_0.png" src="../_images/04b-plotagem-matplotlib-rise_59_0.png" />
 </div>
 </div>
 </section>
@@ -959,7 +983,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_60_0.png" src="../_images/04b-plotagem-matplotlib-rise_60_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_61_0.png" src="../_images/04b-plotagem-matplotlib-rise_61_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -970,18 +994,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_61_0.png" src="../_images/04b-plotagem-matplotlib-rise_61_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_62_0.png" src="../_images/04b-plotagem-matplotlib-rise_62_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_62_0.png" src="../_images/04b-plotagem-matplotlib-rise_62_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_63_0.png" src="../_images/04b-plotagem-matplotlib-rise_63_0.png" />
 </div>
 </div>
 <p><strong>Exemplo:</strong> plotagem de gradeado.</p>
@@ -1001,7 +1025,7 @@
 <span class="c1"># propriedades das linhas</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 
 <span class="c1"># para remover as ticks, adicione comentários</span>
@@ -1009,15 +1033,12 @@
 <span class="c1">#ax.set_yticklabels([]);</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc4adc1b668&gt;]
-</pre></div>
-</div>
-<img alt="../_images/04b-plotagem-matplotlib-rise_64_1.png" src="../_images/04b-plotagem-matplotlib-rise_64_1.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_65_0.png" src="../_images/04b-plotagem-matplotlib-rise_65_0.png" />
 </div>
 </div>
 </section>
@@ -1029,12 +1050,12 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_66_0.png" src="../_images/04b-plotagem-matplotlib-rise_66_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_67_0.png" src="../_images/04b-plotagem-matplotlib-rise_67_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1050,7 +1071,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04b-plotagem-matplotlib-rise_67_0.png" src="../_images/04b-plotagem-matplotlib-rise_67_0.png" />
+<img alt="../_images/04b-plotagem-matplotlib-rise_68_0.png" src="../_images/04b-plotagem-matplotlib-rise_68_0.png" />
 </div>
 </div>
 </section>
