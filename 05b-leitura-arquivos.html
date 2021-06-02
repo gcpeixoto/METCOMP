@@ -1,0 +1,1803 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8. Leitura e Escrita de Arquivos de Planilha &#8212; Métodos Computacionais</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Laboratório 1" href="lab-01.html" />
+    <link rel="prev" title="7. Álgebra Linear Computacional Básica" href="05a-alc.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Métodos Computacionais</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-conteudo.html">
+   METCOMP - Métodos Computacionais
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python para Computação Científica
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-introducao.html">
+   1. Ferramentas computacionais do curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01b-fundamentos-python.html">
+   2. Fundamentos de
+   <em>
+    Python
+   </em>
+   para Computação Científica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-computacao-simbolica.html">
+   3. Introdução à Computação Simbólica com
+   <em>
+    sympy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03a-matematica-discreta.html">
+   4. Fundamentos de Matemática Discreta com Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04a-computacao-vetorizada.html">
+   5. Computação vetorizada com
+   <em>
+    numpy
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04b-plotagem-matplotlib.html">
+   6. Plotagem básica com
+   <em>
+    matplotlib
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05a-alc.html">
+   7. Álgebra Linear Computacional Básica
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8. Leitura e Escrita de Arquivos de Planilha
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Laboratórios Computacionais
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-01.html">
+   Laboratório 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-02.html">
+   Laboratório 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-03.html">
+   Laboratório 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-04.html">
+   Laboratório 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab-05.html">
+   Laboratório 5
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Exercícios Avaliativos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-01.html">
+   Lista de exercícios 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lista-02.html">
+   Lista de exercícios 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Distribuição de Pontos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="log-pontos.html">
+   Distribuição de pontos das tarefas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modelo de Relatório Final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="template-relatorio.html">
+   Relátorio de Projeto Final
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Desenvolvido por <a href="https://gcpeixoto.github.io">Gustavo Oliveira</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/05b-leitura-arquivos.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gcpeixoto/METCOMP/master?urlpath=lab/tree/05b-leitura-arquivos.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/gcpeixoto/METCOMP/blob/master/05b-leitura-arquivos.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivacao">
+   8.1. Motivação
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leitura-de-arquivos">
+   8.2. Leitura de arquivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-e-dataframes">
+   8.3.
+   <em>
+    Series
+   </em>
+   e
+   <em>
+    DataFrames
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecionando-colunas-e-valores">
+     8.3.1. Selecionando colunas e valores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#renomeando-colunas">
+     8.3.2. Renomeando colunas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identificando-maximos-minimos-e-medias">
+     8.3.3. Identificando máximos, mínimos e médias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acessando-dados-por-indice">
+   8.4. Acessando dados por índice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecionando-subtabelas">
+   8.5. Selecionando subtabelas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotando-dados">
+   8.6. Plotando dados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adicionando-colunas">
+   8.7. Adicionando colunas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escrita-de-arquivos">
+   8.8. Escrita de arquivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estatistica-descritiva">
+   8.9. Estatística Descritiva
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#medidas-de-posicao">
+     8.9.1. Medidas de posição
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#medidas-de-dispersao">
+     8.9.2. Medidas de dispersão
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="leitura-e-escrita-de-arquivos-de-planilha">
+<h1><span class="section-number">8. </span>Leitura e Escrita de Arquivos de Planilha<a class="headerlink" href="#leitura-e-escrita-de-arquivos-de-planilha" title="Permalink to this headline">¶</a></h1>
+<p>Grande parte da informação que é manipulada no terceiro setor e na indústria encontra-se estruturada na forma de planilhas intercambiáveis entre programas bem conhecidos, tais como <em>Microsoft Excel</em>, <em>LibreOffice Calc</em> e <em>Apple Numbers</em>. Planilhas compõem-se de tabelas que contém texto e números dispostos em células.</p>
+<p>Hoje em dia, o formato de arquivo <code class="docutils literal notranslate"><span class="pre">.csv</span></code> (<em>comma separated values</em>), ou <em>valores separados com vírgula</em>, tem ganhado notoriedade em diversas áreas, principalmente ciência e análise de dados. Para um engenheiro, a linguagem Python pode oferecer uma enorme gama de utilidades para tratamento de dados tabelados, permitindo que o trabalho conjunto com softwares de planilha seja expandido.</p>
+<p>Neste capítulo, aprenderemos a ler e a escrever arquivos em formato <code class="docutils literal notranslate"><span class="pre">.csv</span></code> para realizar análises e cálculos estatísticos básicos, dando enfoque à biblioteca <em>Pandas</em>.</p>
+<section id="motivacao">
+<h2><span class="section-number">8.1. </span>Motivação<a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
+<p>O arquivo <span class="xref myst">autos.csv</span> contém uma planilha relacionando modelos automotivos com sua massa (em kg) e consumo (em km/litro). Usaremos essas informações para realizar algumas análises.</p>
+</section>
+<section id="leitura-de-arquivos">
+<h2><span class="section-number">8.2. </span>Leitura de arquivos<a class="headerlink" href="#leitura-de-arquivos" title="Permalink to this headline">¶</a></h2>
+<p>Usaremos a função <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> para ler o arquivo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/autos.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>massa (kg)</th>
+      <th>C (km/litro)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crown Victoria</td>
+      <td>1715</td>
+      <td>6.80</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Explorer</td>
+      <td>2014</td>
+      <td>6.38</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fusion</td>
+      <td>1492</td>
+      <td>8.50</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Taurus</td>
+      <td>1652</td>
+      <td>7.65</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Fit</td>
+      <td>1168</td>
+      <td>13.60</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Accord</td>
+      <td>1492</td>
+      <td>9.78</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>CR-V</td>
+      <td>1602</td>
+      <td>8.93</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Civic</td>
+      <td>1192</td>
+      <td>11.90</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ridgeline</td>
+      <td>2045</td>
+      <td>6.38</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="series-e-dataframes">
+<h2><span class="section-number">8.3. </span><em>Series</em> e <em>DataFrames</em><a class="headerlink" href="#series-e-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>A variável <code class="docutils literal notranslate"><span class="pre">df</span></code> é um <em>DataFrame</em>, uma tabela (bidimensional) com cada coluna formada como uma <em>Series</em>. Uma <em>Series</em> (série) é um <em>array</em> unidimensional que possui um índice para cada entrada e tipos de dados variáveis.</p>
+<section id="selecionando-colunas-e-valores">
+<h3><span class="section-number">8.3.1. </span>Selecionando colunas e valores<a class="headerlink" href="#selecionando-colunas-e-valores" title="Permalink to this headline">¶</a></h3>
+<p>Para acessar as colunas, usamos indexação:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;modelo&#39;</span><span class="p">]</span>
+<span class="n">modelo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0              Focus
+1     Crown Victoria
+2         Expedition
+3           Explorer
+4              F-150
+5             Fusion
+6             Taurus
+7                Fit
+8             Accord
+9               CR-V
+10             Civic
+11         Ridgeline
+Name: modelo, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acessar os valores, usamos <code class="docutils literal notranslate"><span class="pre">values</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Focus&#39;, &#39;Crown Victoria&#39;, &#39;Expedition&#39;, &#39;Explorer&#39;, &#39;F-150&#39;,
+       &#39;Fusion&#39;, &#39;Taurus&#39;, &#39;Fit&#39;, &#39;Accord&#39;, &#39;CR-V&#39;, &#39;Civic&#39;, &#39;Ridgeline&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notemos que <code class="docutils literal notranslate"><span class="pre">modelo</span></code> é uma série, mas <code class="docutils literal notranslate"><span class="pre">modelo.values</span></code> é um <em>array</em> 1D.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">modelo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
+</pre></div>
+</div>
+</div>
+</div>
+<p>Enquanto a série acima armazena objetos <code class="docutils literal notranslate"><span class="pre">str</span></code>, as demais armazenam valores numéricos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">massa</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;massa (kg)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">massa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1198, 1715, 2530, 2014, 2136, 1492, 1652, 1168, 1492, 1602, 1192,
+       2045])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">consumo</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C (km/litro)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">consumo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11.9 ,  6.8 ,  5.53,  6.38,  5.53,  8.5 ,  7.65, 13.6 ,  9.78,
+        8.93, 11.9 ,  6.38])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="renomeando-colunas">
+<h3><span class="section-number">8.3.2. </span>Renomeando colunas<a class="headerlink" href="#renomeando-colunas" title="Permalink to this headline">¶</a></h3>
+<p>Vamos renomear as colunas através de um <code class="docutils literal notranslate"><span class="pre">dict</span></code> para facilitar a manipulação.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mapa de renomeação</span>
+<span class="n">n</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;massa (kg)&#39;</span><span class="p">:</span><span class="s1">&#39;M&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;C (km/litro)&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span> <span class="p">}</span>
+
+<span class="c1"># renomeia colunas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crown Victoria</td>
+      <td>1715</td>
+      <td>6.80</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Explorer</td>
+      <td>2014</td>
+      <td>6.38</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fusion</td>
+      <td>1492</td>
+      <td>8.50</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Taurus</td>
+      <td>1652</td>
+      <td>7.65</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Fit</td>
+      <td>1168</td>
+      <td>13.60</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Accord</td>
+      <td>1492</td>
+      <td>9.78</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>CR-V</td>
+      <td>1602</td>
+      <td>8.93</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Civic</td>
+      <td>1192</td>
+      <td>11.90</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ridgeline</td>
+      <td>2045</td>
+      <td>6.38</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="identificando-maximos-minimos-e-medias">
+<h3><span class="section-number">8.3.3. </span>Identificando máximos, mínimos e médias<a class="headerlink" href="#identificando-maximos-minimos-e-medias" title="Permalink to this headline">¶</a></h3>
+<p>Buscando os valores para <em>massa</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># máximo</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2530
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mínimo</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1168
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># média</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1686.3333333333333
+</pre></div>
+</div>
+</div>
+</div>
+<p>Buscando os valores para <em>consumo</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># máximo</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mínimo</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.53
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># média</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.573333333333332
+</pre></div>
+</div>
+</div>
+</div>
+<p>Encontrando os índices correspondentes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="acessando-dados-por-indice">
+<h2><span class="section-number">8.4. </span>Acessando dados por índice<a class="headerlink" href="#acessando-dados-por-indice" title="Permalink to this headline">¶</a></h2>
+<p>Primeiramente, notemos que os índices forma um array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=12, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converte para array</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acessar entradas pelo índice usamos <code class="docutils literal notranslate"><span class="pre">iloc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># massa máxima no índice 2</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2530
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># consumo máximo no índice 7</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="selecionando-subtabelas">
+<h2><span class="section-number">8.5. </span>Selecionando subtabelas<a class="headerlink" href="#selecionando-subtabelas" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crown Victoria</td>
+      <td>1715</td>
+      <td>6.80</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Explorer</td>
+      <td>2014</td>
+      <td>6.38</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># salto de 2</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Taurus</td>
+      <td>1652</td>
+      <td>7.65</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Accord</td>
+      <td>1492</td>
+      <td>9.78</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Civic</td>
+      <td>1192</td>
+      <td>11.90</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Restringindo colunas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1198
+1    1715
+Name: M, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># apenas considera colunas &#39;M&#39; e &#39;C&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">9</span><span class="p">][[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>M</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>6.38</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2136</td>
+      <td>5.53</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1492</td>
+      <td>8.50</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1652</td>
+      <td>7.65</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1168</td>
+      <td>13.60</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1492</td>
+      <td>9.78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="plotando-dados">
+<h2><span class="section-number">8.6. </span>Plotando dados<a class="headerlink" href="#plotando-dados" title="Permalink to this headline">¶</a></h2>
+<p>Podemos plotar dados diretamente a partir das séries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;massa&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;consumo&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05b-leitura-arquivos_43_0.png" src="_images/05b-leitura-arquivos_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05b-leitura-arquivos_44_0.png" src="_images/05b-leitura-arquivos_44_0.png" />
+</div>
+</div>
+</section>
+<section id="adicionando-colunas">
+<h2><span class="section-number">8.7. </span>Adicionando colunas<a class="headerlink" href="#adicionando-colunas" title="Permalink to this headline">¶</a></h2>
+<p>Suponhamos que queiramos computar o índice massa/consumo e seu inverso e adicioná-los como colunas em nossa planilha. Podemos fazer isso diretamente com:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cria coluna &#39;M/C&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;M/C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;C/M&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M/C&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+      <th>M/C</th>
+      <th>C/M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+      <td>100.672269</td>
+      <td>0.009933</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crown Victoria</td>
+      <td>1715</td>
+      <td>6.80</td>
+      <td>252.205882</td>
+      <td>0.003965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+      <td>457.504521</td>
+      <td>0.002186</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Explorer</td>
+      <td>2014</td>
+      <td>6.38</td>
+      <td>315.673981</td>
+      <td>0.003168</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+      <td>386.256781</td>
+      <td>0.002589</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fusion</td>
+      <td>1492</td>
+      <td>8.50</td>
+      <td>175.529412</td>
+      <td>0.005697</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Taurus</td>
+      <td>1652</td>
+      <td>7.65</td>
+      <td>215.947712</td>
+      <td>0.004631</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Fit</td>
+      <td>1168</td>
+      <td>13.60</td>
+      <td>85.882353</td>
+      <td>0.011644</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Accord</td>
+      <td>1492</td>
+      <td>9.78</td>
+      <td>152.556237</td>
+      <td>0.006555</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>CR-V</td>
+      <td>1602</td>
+      <td>8.93</td>
+      <td>179.395297</td>
+      <td>0.005574</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Civic</td>
+      <td>1192</td>
+      <td>11.90</td>
+      <td>100.168067</td>
+      <td>0.009983</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ridgeline</td>
+      <td>2045</td>
+      <td>6.38</td>
+      <td>320.532915</td>
+      <td>0.003120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="escrita-de-arquivos">
+<h2><span class="section-number">8.8. </span>Escrita de arquivos<a class="headerlink" href="#escrita-de-arquivos" title="Permalink to this headline">¶</a></h2>
+<p>Para exportar nossa nova planilha para um novo arquivo, digamos <code class="docutils literal notranslate"><span class="pre">autos-novo.csv</span></code>, fazemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;autos-novo.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos checar novamente o conteúdo do novo arquivo com:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfnovo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;autos-novo.csv&#39;</span><span class="p">)</span>
+<span class="n">dfnovo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+      <th>M/C</th>
+      <th>C/M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+      <td>100.672269</td>
+      <td>0.009933</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crown Victoria</td>
+      <td>1715</td>
+      <td>6.80</td>
+      <td>252.205882</td>
+      <td>0.003965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+      <td>457.504521</td>
+      <td>0.002186</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Explorer</td>
+      <td>2014</td>
+      <td>6.38</td>
+      <td>315.673981</td>
+      <td>0.003168</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+      <td>386.256781</td>
+      <td>0.002589</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fusion</td>
+      <td>1492</td>
+      <td>8.50</td>
+      <td>175.529412</td>
+      <td>0.005697</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Taurus</td>
+      <td>1652</td>
+      <td>7.65</td>
+      <td>215.947712</td>
+      <td>0.004631</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Fit</td>
+      <td>1168</td>
+      <td>13.60</td>
+      <td>85.882353</td>
+      <td>0.011644</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Accord</td>
+      <td>1492</td>
+      <td>9.78</td>
+      <td>152.556237</td>
+      <td>0.006555</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>CR-V</td>
+      <td>1602</td>
+      <td>8.93</td>
+      <td>179.395297</td>
+      <td>0.005574</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Civic</td>
+      <td>1192</td>
+      <td>11.90</td>
+      <td>100.168067</td>
+      <td>0.009983</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ridgeline</td>
+      <td>2045</td>
+      <td>6.38</td>
+      <td>320.532915</td>
+      <td>0.003120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Caso seu arquivo seja muito grande, é possível visualizar parte dele usando <code class="docutils literal notranslate"><span class="pre">head</span></code> e <code class="docutils literal notranslate"><span class="pre">tail</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;cabeça&#39; do arquivo</span>
+<span class="n">dfnovo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+      <th>M/C</th>
+      <th>C/M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Focus</td>
+      <td>1198</td>
+      <td>11.90</td>
+      <td>100.672269</td>
+      <td>0.009933</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crown Victoria</td>
+      <td>1715</td>
+      <td>6.80</td>
+      <td>252.205882</td>
+      <td>0.003965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Expedition</td>
+      <td>2530</td>
+      <td>5.53</td>
+      <td>457.504521</td>
+      <td>0.002186</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Explorer</td>
+      <td>2014</td>
+      <td>6.38</td>
+      <td>315.673981</td>
+      <td>0.003168</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F-150</td>
+      <td>2136</td>
+      <td>5.53</td>
+      <td>386.256781</td>
+      <td>0.002589</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;cauda&#39; do arquivo</span>
+<span class="n">dfnovo</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>modelo</th>
+      <th>M</th>
+      <th>C</th>
+      <th>M/C</th>
+      <th>C/M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>Fit</td>
+      <td>1168</td>
+      <td>13.60</td>
+      <td>85.882353</td>
+      <td>0.011644</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Accord</td>
+      <td>1492</td>
+      <td>9.78</td>
+      <td>152.556237</td>
+      <td>0.006555</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>CR-V</td>
+      <td>1602</td>
+      <td>8.93</td>
+      <td>179.395297</td>
+      <td>0.005574</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Civic</td>
+      <td>1192</td>
+      <td>11.90</td>
+      <td>100.168067</td>
+      <td>0.009983</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ridgeline</td>
+      <td>2045</td>
+      <td>6.38</td>
+      <td>320.532915</td>
+      <td>0.003120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="estatistica-descritiva">
+<h2><span class="section-number">8.9. </span>Estatística Descritiva<a class="headerlink" href="#estatistica-descritiva" title="Permalink to this headline">¶</a></h2>
+<p>Algumas medidas importantes da estatística podem ser calculadas diretamente com <em>DataFrames</em>. Aqui, aprenderemos a calcular duas classes:</p>
+<ul class="simple">
+<li><p>medidas de posição: média, moda, mediana</p></li>
+<li><p>medidas de dispersão: amplitude, desvio médio, desvio padrão, variância</p></li>
+</ul>
+<section id="medidas-de-posicao">
+<h3><span class="section-number">8.9.1. </span>Medidas de posição<a class="headerlink" href="#medidas-de-posicao" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># consumo</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># média</span>
+<span class="n">c</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.573333333333332
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># moda: valores mais frequentes</span>
+<span class="n">c</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5.53
+1     6.38
+2    11.90
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mediana</span>
+<span class="n">c</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.075
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="medidas-de-dispersao">
+<h3><span class="section-number">8.9.2. </span>Medidas de dispersão<a class="headerlink" href="#medidas-de-dispersao" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># amplitude</span>
+<span class="n">c</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">c</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.07
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># desvio médio</span>
+<span class="n">c</span><span class="o">.</span><span class="n">mad</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.2072222222222218
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># desvio padrão</span>
+<span class="n">c</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.715810052714336
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># variância</span>
+<span class="n">c</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.375624242424243
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gcpeixoto/METCOMP",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="05a-alc.html" title="previous page"><span class="section-number">7. </span>Álgebra Linear Computacional Básica</a>
+    <a class='right-next' id="next-link" href="lab-01.html" title="next page">Laboratório 1</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Gustavo Oliveira<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
