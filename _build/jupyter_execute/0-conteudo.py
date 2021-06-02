@@ -18,6 +18,7 @@
 # - [Computação Vetorizada](04a-computacao-vetorizada.ipynb)
 # - [Plotagem Básica](04b-plotagem-matplotlib.ipynb)
 # - [Álgebra Linear Computacional Básica](05a-alc.ipynb)
+# - [Planilhamento e Estatística Descritiva](05b-leitura-arquivos.ipynb)
 # 
 # ### Laboratórios Computacionais
 # 
@@ -38,6 +39,12 @@
 # - [Tabela de Pontuação](log-pontos.ipynb)
 # - [Modelo de Relatório Final](template-relatorio.ipynb)
 
+# In[ ]:
+
+
+
+
+
 # 
 # ```{toctree}
 # :hidden:
@@ -52,6 +59,7 @@
 # 04a-computacao-vetorizada
 # 04b-plotagem-matplotlib
 # 05a-alc
+# 05b-leitura-arquivos
 # ```
 # 
 # 
