@@ -37,7 +37,7 @@
 # - $\vec{v} = -2\vec{i} + 4\vec{j}$
 # - $\vec{w} = \vec{i}$
 
-# In[26]:
+# In[1]:
 
 
 import numpy as np 
@@ -57,7 +57,7 @@ print(u), print(v), print(w);
 
 # Observe que os vetores devem ser escritos como "coluna".
 
-# In[27]:
+# In[2]:
 
 
 A = np.array([[3,-2,1],[-2,4,0],[9,0,0]])
@@ -76,7 +76,7 @@ print(A)
 
 # Vamos escrever linha por linha.
 
-# In[28]:
+# In[3]:
 
 
 L1 = np.array([2,-2]) # linha 1
@@ -89,7 +89,7 @@ print(A2)
 
 # Diretamente, poderíamos também definir: 
 
-# In[29]:
+# In[4]:
 
 
 A3 = np.array([[2,-2],[4,1],[2,1]])
@@ -102,7 +102,7 @@ print(A3)
 # 
 # Matrizes e vetores podem ser transpostos com `.T`:
 
-# In[30]:
+# In[5]:
 
 
 A2T = A2.T
@@ -111,7 +111,7 @@ print(A2T)
 
 # Assim, com as variáveis antes definidas, poderíamos, equivalentemente, fazer para ${\bf A}$:
 
-# In[31]:
+# In[6]:
 
 
 # modo 2: matriz transposta
@@ -123,7 +123,7 @@ print(At)
 # 
 # Podemos verificar a igualdade entre matrizes como
 
-# In[32]:
+# In[7]:
 
 
 A == At
@@ -131,7 +131,7 @@ A == At
 
 # No caso de vetores:
 
-# In[33]:
+# In[8]:
 
 
 # vetor "linha" não difere
@@ -147,7 +147,7 @@ u == u.T
 
 # **Exemplo:** $\vec{u} \pm \vec{v}$
 
-# In[46]:
+# In[9]:
 
 
 # adição 
@@ -166,7 +166,7 @@ print(sub)
 # \vec{u} & 2\vec{u} & 3\vec{v} \\
 # \end{bmatrix}$$    
 
-# In[61]:
+# In[10]:
 
 
 # adição
@@ -184,7 +184,7 @@ print(sub2)
 # 
 # O produto interno $\langle \vec{u}, \vec{v}\rangle$ é computado com `.dot`:
 
-# In[53]:
+# In[11]:
 
 
 pi = np.dot(u,v)
@@ -198,7 +198,7 @@ print(pi2)
 # 
 # A norma $||\vec{u}||$ de um vetor $\vec{u}$ é calculada como:
 
-# In[55]:
+# In[12]:
 
 
 np.sqrt(np.dot(u,u))
@@ -208,7 +208,7 @@ np.sqrt(np.dot(u,u))
 # 
 # O produto $\bf{A}\bf{B}$ entre matrizes é calculado com `*`:
 
-# In[62]:
+# In[13]:
 
 
 A*B
@@ -218,7 +218,7 @@ A*B
 # 
 # Neste caso, sendo ${\vec{\vec A}}$ (dois símbolos indicam que a matriz é uma grandeza de ordem 2, ao passo que o vetor é de ordem 1 e aqui usamos para consistência de notação) e ${\vec{b}}$ uma matriz $m \times n$ e um vetor $n \times 1$, respectivamente, o produto $\vec{\vec{A}}\vec{b}$ é dado por:
 
-# In[65]:
+# In[14]:
 
 
 b = np.array([3,4,1])
@@ -230,7 +230,7 @@ np.dot(A,b)
 # 
 # Para outras operações, devemos utilizar o submódulo `numpy.linalg`. Para importá-lo com o _alias_ `lin`, fazemos:
 
-# In[66]:
+# In[15]:
 
 
 import numpy.linalg as lin
@@ -240,7 +240,7 @@ import numpy.linalg as lin
 # 
 # O determinante de ${\bf A}$ é dado por $\det({\bf A})$ e pode ser computado pela função `det`.
 
-# In[67]:
+# In[16]:
 
 
 # calculando o determinante da matriz
@@ -253,7 +253,7 @@ print(det)
 # A inversa de uma matriz é dada por ${\bf A}^{-1}$, onde ${\bf A}{\bf A}^{-1}={\bf I}$, e ${\bf I}$ é a matriz identidade.
 # Para usar esta função, devemos fazer:
 
-# In[68]:
+# In[17]:
 
 
 B2 = np.array([[1,2,3],
@@ -277,7 +277,7 @@ print(B)
 # 
 # para $a = -4$, $b = 1$, $c = 1/2$, $d = 3$, $e = 5$ e $f = 10$,  
 
-# In[71]:
+# In[18]:
 
 
 A = np.array([[-4,1],[1/2,3]])
@@ -293,7 +293,7 @@ print(x)
 # 
 # A inversa de uma matriz (faça esta operação apenas para matrizes quadradas de pequena dimensão) pode ser encontrada como:
 
-# In[75]:
+# In[19]:
 
 
 Ainv = lin.inv(A)
@@ -302,7 +302,7 @@ print(Ainv)
 
 # Para realizar uma "prova real" da solução do sistema anterior, poderíamos fazer:
 
-# In[78]:
+# In[20]:
 
 
 x2 = np.dot(lin.inv(A), b)
@@ -311,7 +311,7 @@ print(x2)
 
 # Note, entretanto que:
 
-# In[81]:
+# In[21]:
 
 
 x == x2
@@ -319,7 +319,7 @@ x == x2
 
 # Isto ocorre devido a erros numéricos. Um teste mais adequado deve computar a norma do vetor "erro", dado por ${\bf e} = \bf{b} - \bf{A}\bf{x}$. A norma pode ser calculada diretamente com:
 
-# In[86]:
+# In[22]:
 
 
 e = b - np.dot(A,x)
@@ -338,7 +338,7 @@ lin.norm(e)
 # 
 # Para criar uma matriz nula de ordem _m x n_, usamos `zeros`.
 
-# In[93]:
+# In[23]:
 
 
 m,n = 3,4
@@ -349,7 +349,7 @@ np.zeros((m,n))
 # 
 # Uma matriz identidade (quadrada) de ordem _p_ é criada com `eye`.
 
-# In[92]:
+# In[24]:
 
 
 p = 4
@@ -360,17 +360,17 @@ np.eye(p)
 # 
 # Uma matriz composta apenas de valores 1 de ordem _m x n_ pode ser criada com `ones`:
 
-# In[96]:
+# In[25]:
 
 
 np.ones((3,5))
 
 
-# ### Triangular superior
+# ### Triangular inferior
 # 
-# A matriz triangular superior de uma dada matriz pode ser criada com `tril`. Note que podemos também defini-la explicitamente, linha a linha.
+# A matriz triangular inferior de uma dada matriz pode ser criada com `tril`. Note que podemos também defini-la explicitamente, linha a linha.
 
-# In[104]:
+# In[26]:
 
 
 # os valores correspondentes
@@ -378,11 +378,11 @@ np.ones((3,5))
 np.tril(B)
 
 
-# ### Triangular inferior
+# ### Triangular superior
 # 
-# A matriz triangular inferior de uma dada matriz pode ser criada com `triu`. Note que podemos também defini-la explicitamente, linha a linha.
+# A matriz triangular superior de uma dada matriz pode ser criada com `triu`. Note que podemos também defini-la explicitamente, linha a linha.
 
-# In[105]:
+# In[27]:
 
 
 np.triu(B)
@@ -390,7 +390,7 @@ np.triu(B)
 
 # **Exercício.** Por que há dois valores `False` no teste a seguir? 
 
-# In[108]:
+# In[28]:
 
 
 B == np.tril(B) + np.triu(B)
@@ -404,7 +404,7 @@ B == np.tril(B) + np.triu(B)
 # 
 # O número real $\lambda$ é denominado valor próprio (autovalor) de ${\bf A}$ associado ao vetor próprio (autovetor) ${\bf v}$.
 
-# In[114]:
+# In[29]:
 
 
 A = np.array([[2,1],
