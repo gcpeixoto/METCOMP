@@ -24,14 +24,16 @@
   chapters:
   - file: lista-01
   - file: lista-02
-- part: Distribuição de Pontos
+- part: Aplicações à Engenharia de Produção
+  numbered: True
+  chapters:
+  - file: 06-aplic-otimizacao
+- part: Projeto Final  
   numbered: False
   chapters:
-  - file: log-pontos
-- part: Modelo de Relatório Final
-  numbered: False
-  chapters:
-  - file: template-relatorio
+  - file: 07a-capstone-project
+  - file: 07b-template-relatorio  
+  - file: 07c-log-pontos
 #
 # MODEL: 
 # - file: intro

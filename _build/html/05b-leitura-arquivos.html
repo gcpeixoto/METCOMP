@@ -199,25 +199,35 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Distribuição de Pontos
+  Aplicações à Engenharia de Produção
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="log-pontos.html">
-   Distribuição de pontos das tarefas
+  <a class="reference internal" href="06-aplic-otimizacao.html">
+   1. Aplicações à Engenharia: Otimização
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Modelo de Relatório Final
+  Projeto Final
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="template-relatorio.html">
+  <a class="reference internal" href="07a-capstone-project.html">
+   Projeto Final - Métodos Computacionais - 2020/02 (Real 2021/01)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07b-template-relatorio.html">
    Relátorio de Projeto Final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07c-log-pontos.html">
+   Distribuição de pontos das tarefas
   </a>
  </li>
 </ul>
@@ -836,7 +846,7 @@ Name: modelo, dtype: object
 <p>Encontrando os índices correspondentes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -848,7 +858,7 @@ Name: modelo, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -860,7 +870,7 @@ Name: modelo, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -872,7 +882,7 @@ Name: modelo, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1332,7 +1342,7 @@ Name: M, dtype: int64
 <p>Para exportar nossa nova planilha para um novo arquivo, digamos <code class="docutils literal notranslate"><span class="pre">autos-novo.csv</span></code>, fazemos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;autos-novo.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/autos-novo.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1340,7 +1350,7 @@ Name: M, dtype: int64
 <p>Podemos checar novamente o conteúdo do novo arquivo com:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfnovo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;autos-novo.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfnovo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/autos-novo.csv&#39;</span><span class="p">)</span>
 <span class="n">dfnovo</span>
 </pre></div>
 </div>

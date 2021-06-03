@@ -33,17 +33,15 @@
 # - [Lista de Exercícios 1](lista-01.ipynb)
 # - [Lista de Exercícios 2](lista-02.ipynb)
 # 
+# ## Aplicações à Engenharia de Produção
 # 
-# ## Gestão
+# - [Otimização](06-aplic-otimizacao.ipynb)
 # 
-# - [Tabela de Pontuação](log-pontos.ipynb)
-# - [Modelo de Relatório Final](template-relatorio.ipynb)
-
-# In[ ]:
-
-
-
-
+# ## Relatório Final 
+# 
+# - [Problemas](07a-capstone-project.ipynb)
+# - [Modelo de Relatório Final](07b-template-relatorio.ipynb)
+# - [Tabela de Pontuação](07c-log-pontos.ipynb)
 
 # 
 # ```{toctree}
@@ -89,17 +87,20 @@
 # ```{toctree}
 # :hidden:
 # :titlesonly:
-# :caption: Distribuição de Pontos
+# :numbered: True
+# :caption: Aplicações à Engenharia de Produção
 # 
-# log-pontos
+# 06-aplic-otimizacao
 # ```
 # 
 # 
 # ```{toctree}
 # :hidden:
 # :titlesonly:
-# :caption: Modelo de Relatório Final
+# :caption: Projeto Final
 # 
-# template-relatorio
+# 07a-capstone-project
+# 07b-template-relatorio
+# 07c-log-pontos
 # ```
 # 

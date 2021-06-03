@@ -150,25 +150,25 @@ df['C'].mean()
 # In[15]:
 
 
-df['M'].idxmin()
+np.argmin(df['M'])
 
 
 # In[16]:
 
 
-df['M'].idxmax()
+np.argmax(df['M'])
 
 
 # In[17]:
 
 
-df['C'].idxmin()
+np.argmin(df['C'])
 
 
 # In[18]:
 
 
-df['C'].idxmax()
+np.argmax(df['C'])
 
 
 # ## Acessando dados por índice
@@ -273,7 +273,7 @@ df
 # In[30]:
 
 
-df.to_csv('autos-novo.csv',index=False)
+df.to_csv('data/autos-novo.csv',index=False)
 
 
 # Podemos checar novamente o conteúdo do novo arquivo com:
@@ -281,7 +281,7 @@ df.to_csv('autos-novo.csv',index=False)
 # In[31]:
 
 
-dfnovo = pd.read_csv('autos-novo.csv')
+dfnovo = pd.read_csv('data/autos-novo.csv')
 dfnovo
 
 
@@ -310,28 +310,28 @@ dfnovo.tail()
 
 # ### Medidas de posição
 
-# In[38]:
+# In[34]:
 
 
 # consumo
 c = df['C']
 
 
-# In[39]:
+# In[35]:
 
 
 # média
 c.mean()
 
 
-# In[40]:
+# In[36]:
 
 
 # moda: valores mais frequentes
 c.mode()
 
 
-# In[42]:
+# In[37]:
 
 
 # mediana
@@ -340,28 +340,28 @@ c.median()
 
 # ### Medidas de dispersão
 
-# In[43]:
+# In[38]:
 
 
 # amplitude
 c.max() - c.min()
 
 
-# In[45]:
+# In[39]:
 
 
 # desvio médio
 c.mad()
 
 
-# In[46]:
+# In[40]:
 
 
 # desvio padrão
 c.std()
 
 
-# In[47]:
+# In[41]:
 
 
 # variância

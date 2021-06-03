@@ -37,6 +37,10 @@
 # - $\vec{v} = -2\vec{i} + 4\vec{j}$
 # - $\vec{w} = \vec{i}$
 
+# ```{note}
+# O _NumPy_ possui uma classe especial para se trabalhar com matrizes e vetores em uma ou duas dimensões, a saber o tipo `matrix`, ou `mat`. Com objetos `matrix`, as  operações particulares de multiplicação matriz-matriz ou matriz-vetor comportam-se diferentemente daquelas na classe `ndarray`. Neste texto, abordaremos apenas os tipos `ndarray` porque são aplicáveis também a matrizes multidimensionais.
+# ```
+
 # In[1]:
 
 
@@ -356,7 +360,7 @@ p = 4
 np.eye(p)
 
 
-# ### Unitária 
+# ### Matriz de "uns"
 # 
 # Uma matriz composta apenas de valores 1 de ordem _m x n_ pode ser criada com `ones`:
 
@@ -421,4 +425,137 @@ print(v[:,0])
 
 # autovetor 2
 print(v[:,1])
+
+
+# ## Somas e valores extremos 
+# 
+# Podemos calcular somas de elementos de matrizes e vetores de maneiras diferentes. Para matrizes, em particular, há soma total, por linha, ou por coluna. 
+
+# In[30]:
+
+
+a = np.array([1,-2,-3,10])
+
+# soma de todos os elementos 
+np.sum(a)
+
+
+# In[31]:
+
+
+# modo alternativo
+a.sum() 
+
+
+# In[32]:
+
+
+# soma total de matriz
+O = np.ones((5,3))
+
+np.sum(O)
+
+
+# In[33]:
+
+
+# modo alternativo
+O.sum()
+
+
+# In[34]:
+
+
+# soma por linha 
+np.sum(O,axis=0)
+
+
+# In[35]:
+
+
+# soma por coluna 
+np.sum(O,axis=1)
+
+
+# Valores máximos e mínimos, absolutos ou não, também podem ser computados com funções simples.
+
+# In[36]:
+
+
+# min
+np.min(a)
+
+
+# In[37]:
+
+
+# max
+np.max(a)
+
+
+# In[38]:
+
+
+# modo alternativo
+a.min()
+
+
+# In[39]:
+
+
+a.max()
+
+
+# In[40]:
+
+
+# mínimo absoluto 
+np.abs(a).min()
+
+
+# In[41]:
+
+
+# máximo absoluto
+np.abs(a).max()
+
+
+# In[42]:
+
+
+O2 = np.array([[-4,5],[2,7]])
+
+# min
+np.min(O2)
+
+
+# In[43]:
+
+
+# max 
+np.max(O2)
+
+
+# In[44]:
+
+
+O2.min()
+
+
+# In[45]:
+
+
+O2.max()
+
+
+# In[46]:
+
+
+np.abs(O2).min()
+
+
+# In[47]:
+
+
+np.abs(O2).max()
 
