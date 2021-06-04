@@ -360,6 +360,11 @@
    Problema 3 (Análise de veículos elétricos)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apendice-calculando-integrais-numericamente">
+   APÊNDICE: Calculando integrais numericamente
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -384,7 +389,7 @@
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Perfis do modelo Tesla 3: original e aproximado.</span><a class="headerlink" href="#tesla-3-profiles" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Considere que o perfil aproximado da carcaça do <em>Tesla Model 3</em> corresponde ao plano de corte médio (<span class="math notranslate nohighlight">\(x-z\)</span>) perpendicular ao vetor diretor que determina o eixo normal ao papel <span class="math notranslate nohighlight">\(y\)</span> (largura do veículo). A <a class="reference internal" href="#tesla-3-3d"><span class="std std-numref">Fig. 5</span></a> mostra esboços do perfil aproximado, em destaque, bem como uma visão tridimensional que o replica ao longo da terceira dimensão (largura).</p>
+<p>Considere que o perfil aproximado da carcaça do <em>Tesla Model 3</em> corresponde ao plano de corte médio (<span class="math notranslate nohighlight">\(x\)</span>-<span class="math notranslate nohighlight">\(z\)</span>) perpendicular ao vetor diretor que determina o eixo normal ao papel <span class="math notranslate nohighlight">\(y\)</span> (largura do veículo). A <a class="reference internal" href="#tesla-3-3d"><span class="std std-numref">Fig. 5</span></a> mostra esboços do perfil aproximado, em destaque, bem como uma visão tridimensional que o replica ao longo da terceira dimensão (largura).</p>
 <figure class="align-default" id="tesla-3-3d">
 <a class="reference internal image-reference" href="_images/tesla-3-3d.png"><img alt="_images/tesla-3-3d.png" src="_images/tesla-3-3d.png" style="width: 650px;" /></a>
 <figcaption>
@@ -421,7 +426,7 @@
 \begin{cases}
 f_1(x), &amp; \text{se} \ \ 0 \leq x \leq 1.200 \\
 f_2(x), &amp; \text{se} \ \ 1.200 &lt; x \leq 4.694
-\end{cases},\end{split}\]</div>
+\end{cases}\end{split}\]</div>
 <p>onde</p>
 <div class="math notranslate nohighlight">
 \[f_1(x) = - 0.005332578925
@@ -457,7 +462,7 @@ f_2(x), &amp; \text{se} \ \ 1.200 &lt; x \leq 4.694
 <li><p>Calcule a área líquida C’CEF, ou seja, excluindo-se a área do setor circular traseiro.</p></li>
 <li><p>Calcule o volume usando a hipótese de translação.</p></li>
 </ol>
-<p><strong>Nota:</strong> observe que, para os itens 4 e 5, é necessário calcular integrais. Vide apêndice <em>Calculando integrais numericamente</em>.</p>
+<p><strong>Nota:</strong> observe que, para os itens 4 e 5, é necessário calcular integrais. Veja a seção <em>Calculando integrais numericamente</em>.</p>
 </section>
 <section id="problema-2-movimento-de-goticula">
 <h2>Problema 2 (Movimento de gotícula)<a class="headerlink" href="#problema-2-movimento-de-goticula" title="Permalink to this headline">¶</a></h2>
@@ -473,7 +478,7 @@ f_2(x), &amp; \text{se} \ \ 1.200 &lt; x \leq 4.694
 </section>
 <section id="problema-3-analise-de-veiculos-eletricos">
 <h2>Problema 3 (Análise de veículos elétricos)<a class="headerlink" href="#problema-3-analise-de-veiculos-eletricos" title="Permalink to this headline">¶</a></h2>
-<p>A planilha <span class="xref myst">smart-vehicle-epa-2020.xlsx</span> agrega informações sobre modelos de automóveis movidos a eletricidade e/ou gasolina vendidos nos Estados Unidos e a pontuação deles no âmbito da economia verde (emissão de gases de efeito estufa, poluição do ar etc.)</p>
+<p>A planilha <a href="data/smart-vehicle-epa-2020.xlsx" download="smart-vehicle-epa-2020.xlsx"> smart-vehicle-epa-2020.xlsx </a> agrega informações sobre modelos de automóveis movidos a eletricidade e/ou gasolina vendidos nos Estados Unidos e a pontuação deles no âmbito da economia verde (emissão de gases de efeito estufa, poluição do ar etc.)</p>
 <p>Usando a biblioteca <em>Pandas</em>:</p>
 <ol class="simple">
 <li><p>Leia a planilha em um <em>DataFrame</em>.</p></li>
@@ -486,6 +491,74 @@ f_2(x), &amp; \text{se} \ \ 1.200 &lt; x \leq 4.694
 <li><p><em>Air Pollution Score</em></p></li>
 <li><p><em>Greenhouse Gas Score</em></p></li>
 </ul>
+</section>
+<section id="apendice-calculando-integrais-numericamente">
+<h2>APÊNDICE: Calculando integrais numericamente<a class="headerlink" href="#apendice-calculando-integrais-numericamente" title="Permalink to this headline">¶</a></h2>
+<p>Nesta seção, mostramos como calcular integrais definidas a uma variável numericamente.</p>
+<p>Considere a integral <span class="math notranslate nohighlight">\(\int_a^b f(x) \, dx\)</span>, onde <span class="math notranslate nohighlight">\(f(x)\)</span> é assumida contínua no intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
+<p>Em Python, podemos calcular o valor desta integral apenas aproximadamente. Para isso, precisamos definir a função a ser integrada como uma função usual do Python, determinar o intervalo de integração e importar a função <code class="docutils literal notranslate"><span class="pre">quad</span></code> do submódulo <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>. As funções matemáticas podem ser carregadas a partir do Numpy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importação</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo:</strong> Calcule o valor de <span class="math notranslate nohighlight">\(\int_0^2 x^2 + 4 \, dx\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">2</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span>
+
+<span class="n">I</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O valor da integral é I = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1"> u.a. com erro e = </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O valor da integral é I = 10.667 u.a. com erro e = 1.1842378929335001e-13
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <a class="reference internal" href="#int1"><span class="std std-numref">Fig. 6</span></a> representa esta integral.</p>
+<figure class="align-default" id="int1">
+<a class="reference internal image-reference" href="_images/int1.png"><img alt="_images/int1.png" src="_images/int1.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Área sob o gráfico da função <span class="math notranslate nohighlight">\(\int_0^2 x^2 + 4 \, dx\)</span></span><a class="headerlink" href="#int1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Exemplo:</strong> Calcule o valor de <span class="math notranslate nohighlight">\(\int_{-\pi/2}^{2\pi} \frac{3}{4}\cos(x)e^x - \frac{x^{1/3}}{2x}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">I</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O valor da integral é I = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1"> u.a. com erro e = </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O valor da integral é I = -12.642 u.a. com erro e = 2.013685733235114e-12
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <a class="reference internal" href="#int2"><span class="std std-numref">Fig. 7</span></a> representa esta integral.</p>
+<figure class="align-default" id="int2">
+<a class="reference internal image-reference" href="_images/int2.png"><img alt="_images/int2.png" src="_images/int2.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Área sob o gráfico da função <span class="math notranslate nohighlight">\(\int_{-\pi/2}^{2\pi} \frac{3}{4}\cos(x)e^x - \frac{x^{1/3}}{2x}\)</span></span><a class="headerlink" href="#int2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
