@@ -11,7 +11,7 @@
 
 # ## Motivação 
 # 
-# O arquivo [autos.csv](./data/autos.csv) contém uma planilha relacionando modelos automotivos com sua massa (em kg) e consumo (em km/litro). Usaremos essas informações para realizar algumas análises. 
+# O arquivo <a href="data/autos.csv" download="data/autos.csv"> autos.csv </a> contém uma planilha relacionando modelos automotivos com sua massa (em kg) e consumo (em km/litro). Usaremos essas informações para realizar algumas análises. 
 
 # ## Leitura de arquivos
 # 
