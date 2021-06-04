@@ -90,7 +90,7 @@ consumo
 
 # mapa de renomeação
 n = {'massa (kg)':'M',
-     'C (km/litro)': 'C' }
+     'C (km/litro)':'C' }
 
 # renomeia colunas
 df = df.rename(columns=n)
@@ -249,6 +249,7 @@ plt.ylabel('consumo');
 # In[28]:
 
 
+plt.figure(figsize=(10,4))
 plt.hist(df['M'],color=[0.5,0.5,0.5])
 plt.title('Histograma');
 

@@ -19,7 +19,7 @@
 # Perfis do modelo Tesla 3: original e aproximado.
 # ```
 # 
-# Considere que o perfil aproximado da carcaça do _Tesla Model 3_ corresponde ao plano de corte médio ($x-z$) perpendicular ao vetor diretor que determina o eixo normal ao papel $y$ (largura do veículo). A {numref}`tesla-3-3d` mostra esboços do perfil aproximado, em destaque, bem como uma visão tridimensional que o replica ao longo da terceira dimensão (largura).
+# Considere que o perfil aproximado da carcaça do _Tesla Model 3_ corresponde ao plano de corte médio ($x$-$z$) perpendicular ao vetor diretor que determina o eixo normal ao papel $y$ (largura do veículo). A {numref}`tesla-3-3d` mostra esboços do perfil aproximado, em destaque, bem como uma visão tridimensional que o replica ao longo da terceira dimensão (largura).
 # 
 # ```{figure} ./figs/capstone/tesla-3-3d.png
 # ---
@@ -58,7 +58,7 @@
 # \begin{cases}
 # f_1(x), & \text{se} \ \ 0 \leq x \leq 1.200 \\
 # f_2(x), & \text{se} \ \ 1.200 < x \leq 4.694
-# \end{cases},$$
+# \end{cases}$$
 # onde 
 # 
 # $$f_1(x) = - 0.005332578925
@@ -100,7 +100,7 @@
 # 
 # 6. Calcule o volume usando a hipótese de translação.
 # 
-# **Nota:** observe que, para os itens 4 e 5, é necessário calcular integrais. Vide apêndice _Calculando integrais numericamente_.
+# **Nota:** observe que, para os itens 4 e 5, é necessário calcular integrais. Veja a seção _Calculando integrais numericamente_.
 
 # ## Problema 2 (Movimento de gotícula)
 # 
@@ -117,7 +117,7 @@
 
 # ## Problema 3 (Análise de veículos elétricos) 
 # 
-# A planilha [smart-vehicle-epa-2020.xlsx](data/smart-vehicle-epa-2020.xlsx) agrega informações sobre modelos de automóveis movidos a eletricidade e/ou gasolina vendidos nos Estados Unidos e a pontuação deles no âmbito da economia verde (emissão de gases de efeito estufa, poluição do ar etc.)
+# A planilha <a href="data/smart-vehicle-epa-2020.xlsx" download="smart-vehicle-epa-2020.xlsx"> smart-vehicle-epa-2020.xlsx </a> agrega informações sobre modelos de automóveis movidos a eletricidade e/ou gasolina vendidos nos Estados Unidos e a pontuação deles no âmbito da economia verde (emissão de gases de efeito estufa, poluição do ar etc.)
 # 
 # Usando a biblioteca _Pandas_:
 # 
@@ -131,3 +131,68 @@
 # - _Fuel_
 # - _Air Pollution Score_
 # - _Greenhouse Gas Score_
+
+# ## APÊNDICE: Calculando integrais numericamente
+# 
+# Nesta seção, mostramos como calcular integrais definidas a uma variável numericamente. 
+# 
+# Considere a integral $\int_a^b f(x) \, dx$, onde $f(x)$ é assumida contínua no intervalo $[a,b]$.
+# 
+# Em Python, podemos calcular o valor desta integral apenas aproximadamente. Para isso, precisamos definir a função a ser integrada como uma função usual do Python, determinar o intervalo de integração e importar a função `quad` do submódulo `scipy.integrate`. As funções matemáticas podem ser carregadas a partir do Numpy.
+
+# In[1]:
+
+
+# importação
+import numpy as np
+from scipy.integrate import quad
+
+
+# **Exemplo:** Calcule o valor de $\int_0^2 x^2 + 4 \, dx$
+
+# In[2]:
+
+
+a,b = 0,2
+def f(x):
+    return x**2 + 4
+
+I,e = quad(f,a,b)
+
+print(f'O valor da integral é I = {round(I,3)} u.a. com erro e = {e}')
+
+
+# A {numref}`int1` representa esta integral.
+# 
+# ```{figure} ./figs/capstone/int1.png
+# ---
+# width: 300px
+# name: int1
+# ---
+# Área sob o gráfico da função $\int_0^2 x^2 + 4 \, dx$
+# ```
+
+# **Exemplo:** Calcule o valor de $\int_{-\pi/2}^{2\pi} \frac{3}{4}\cos(x)e^x - \frac{x^{1/3}}{2x}$
+
+# In[3]:
+
+
+a,b = -np.pi/2, 2*np.pi
+
+def f(x):
+    return 3/4*np.cos(x)*np.exp(x-5) - x**1/3/2*x
+
+I,e = quad(f,a,b)
+
+print(f'O valor da integral é I = {round(I,3)} u.a. com erro e = {e}')
+
+
+# A {numref}`int2` representa esta integral.
+# 
+# ```{figure} ./figs/capstone/int2.png
+# ---
+# width: 300px
+# name: int2
+# ---
+# Área sob o gráfico da função $\int_{-\pi/2}^{2\pi} \frac{3}{4}\cos(x)e^x - \frac{x^{1/3}}{2x}$
+# ```
