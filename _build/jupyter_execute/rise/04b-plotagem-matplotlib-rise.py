@@ -534,3 +534,9 @@ plt.plot(x,f1,c='r');
 plt.plot(x,f2,c='k');
 plt.fill_between(x,f1,f2,color='g',alpha=0.2);
 
+
+# In[ ]:
+
+
+
+
