@@ -11,7 +11,7 @@
 # 
 # A {numref}`tesla-3-profiles` mostra perfis laterais do automóvel _Tesla Model 3_ em sua forma original e aproximada.
 # 
-# ```{figure} ../figs/capstone/tesla-3-profiles.png
+# ```{figure} ./figs/capstone/tesla-3-profiles.png
 # ---
 # width: 500px
 # name: tesla-3-profiles
@@ -21,7 +21,7 @@
 # 
 # Considere que o perfil aproximado da carcaça do _Tesla Model 3_ corresponde ao plano de corte médio ($x$-$z$) perpendicular ao vetor diretor que determina o eixo normal ao papel $y$ (largura do veículo). A {numref}`tesla-3-3d` mostra esboços do perfil aproximado, em destaque, bem como uma visão tridimensional que o replica ao longo da terceira dimensão (largura).
 # 
-# ```{figure} ../figs/capstone/tesla-3-3d.png
+# ```{figure} ./figs/capstone/tesla-3-3d.png
 # ---
 # width: 650px
 # name: tesla-3-3d
