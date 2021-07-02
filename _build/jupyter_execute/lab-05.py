@@ -40,7 +40,7 @@
 # 
 # $$B = [\vec{u} \ \ \vec{v}]
 # \\
-# C = [\vec{v} \ \ \vec{w}]^T
+# C = [\vec{v} \ \ \vec{w}]
 # \\
 # D = [\vec{u} \ \ \vec{v} \ \ \vec{w}]
 # \\ 
@@ -57,9 +57,9 @@
 # 
 # b) $2B - C$
 # 
-# c) $B^T - C$
+# c) $B^T - C^T$
 # 
-# d) $BC$ (produto de matrizes)
+# d) $BC^T$ (produto de matrizes)
 # 
 # e) $(B + C)^2$, (note que para uma matriz $A$, $A^2 = AA$)
 # 
@@ -67,9 +67,9 @@
 # 
 # g) $D - EE^T$
 # 
-# h) $D + 2E - F$
+# h) $D + 2EE^T - F$
 # 
-# i) $D\vec{u} + E\vec{v} - F\vec{w}$
+# i) $D\vec{u} - F\vec{w}$
 # 
 # 
 
