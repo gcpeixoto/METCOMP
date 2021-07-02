@@ -63,7 +63,7 @@
 # 
 # e) $(B + C)^2$, (note que para uma matriz $A$, $A^2 = AA$)
 # 
-# f) $B\vec{v}$ (produto matriz vetor)
+# f) $B^T\vec{v}$ (produto matriz vetor)
 # 
 # g) $D - EE^T$
 # 
