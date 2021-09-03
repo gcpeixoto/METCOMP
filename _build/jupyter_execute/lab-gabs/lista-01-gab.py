@@ -166,7 +166,7 @@ x2 = (- b - q)/(2*a)
 print(round(x1,3),round(x2,3))
 
 
-# A fórmula utilizada para determinar o volume de um tronco de pirâmide é dada por $V=\frac{h}{3}(A + \sqrt{Aa} + a)$, onde:
+# **Exercício 9.** A fórmula utilizada para determinar o volume de um tronco de pirâmide é dada por $V=\frac{h}{3}(A + \sqrt{Aa} + a)$, onde:
 # 
 # - $h$: altura do tronco
 # - $A$: área da base maior
@@ -186,7 +186,7 @@ V = int(h/3*(A + sqrt(A*a) + a))
 V
 
 
-# A força de arrasto devido à resistência do ar sobre um objeto pode ser expressa como $F_d = \frac{1}{2}C_d\rho AV^2$ (em newtons), onde $\rho$ é a massa específica do ar, $V$ é a velocidade do objeto, $A$ é a área da seção transversal (normal à direção da velocidade), e $C_d$ é o coeficiente de arrasto, o qual depende da forma do objeto e da rugosidade da superfície.A força gravitacional sobre um objeto de massa $m$ é dada por $F_g = mg$, onde $g = 9.81 \, m/s^2$. 
+# **Exercício 10.** A força de arrasto devido à resistência do ar sobre um objeto pode ser expressa como $F_d = \frac{1}{2}C_d\rho AV^2$ (em newtons), onde $\rho$ é a massa específica do ar, $V$ é a velocidade do objeto, $A$ é a área da seção transversal (normal à direção da velocidade), e $C_d$ é o coeficiente de arrasto, o qual depende da forma do objeto e da rugosidade da superfície.A força gravitacional sobre um objeto de massa $m$ é dada por $F_g = mg$, onde $g = 9.81 \, m/s^2$. 
 # 
 # Podemos usar as fórmulas para $F_d$ e $F_g$ para estudar a importância da resistência do ar versus gravidade ao chutar uma bola de futebol. A massa específica do ar é $\rho = 1.2 \, kg/m^3$. Temos $A = \pi a^2$ para qualquer bola com raio $a$. Para uma bola de futebol, $a = 11 \, cm$, a massa é $m = 0.43 \, kg$ e $C_d = 0.2$.
 # 

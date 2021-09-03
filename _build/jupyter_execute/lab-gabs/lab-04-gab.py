@@ -46,7 +46,7 @@ import matplotlib.pyplot as plt
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[6]:
+# In[2]:
 
 
 lu = np.load('../data/copa2018.npy',allow_pickle=True)
@@ -77,7 +77,7 @@ plt.grid(axis='x',alpha=0.25)
 
 # **Problema 2**: A _Taxa Metabólica Basal_ (TMB) é a quantidade mínima de energia que o ser humano, em repouso, precisa para sobreviver. A *Equação de Mifflin - St. Jeor* para calcular a TMB em kcal/dia (quilocalorias por dia) de pessoas do sexo masculino é dada por: 
 # 
-# $$TMB = 10M + 6.25A + 5I + 5,$$
+# $$TMB = 10M + 6.25A - 5I + 5,$$
 # 
 # onde $M$ é a massa do indivíduo, $A$ sua altura e $I$ sua idade. 
 # 
@@ -92,11 +92,11 @@ plt.grid(axis='x',alpha=0.25)
 # 
 # **Obs:** Note que a idade dos jogadores se altera com o tempo. Isto é, após o quinquênio estarão 5 anos mais velhos e a TMB para cada um será diferente a cada ano.
 
-# In[9]:
+# In[3]:
 
 
 # Eq. Mifflin - St. Jeor
-mifflin = lambda M,A,I: 10*M + 6.25*A + 5*I + 5 # kcal / dia 
+mifflin = lambda M,A,I: 10*M + 6.25*A - 5*I + 5 # kcal / dia 
 
 TMB_jogadores = mifflin(massa,altura,idade)
 
@@ -142,7 +142,7 @@ for i in TMB.keys():
 # 
 # [[Fonte: Physics of Kicking a Soccer Ball]](http://www.mathematicshed.com/uploads/1/2/5/7/12572836/physicsofkickingsoccerball.pdf)
 
-# In[10]:
+# In[4]:
 
 
 # vp: velocidade da perna do jogador (fixa: 20 m/s)
@@ -214,7 +214,7 @@ print(jogador[kicker])
 # - Construa uma matriz numérica $M$ de correlação de distâncias _estritamente triangular inferior_ com base na ordem alfabética do código IATA. Note que uma matriz estritamente triangular inferior é possui zeros em todas as posições $M_{ij}$, exceto quando $i > j$. Logo, não é necessário computar duas vezes um mesmo trajeto, por exemplo, a distância de FRA a DEN será a mesma de DEN a FRA. (Vide exemplo de uma matriz de distâncias [aqui](https://www.researchgate.net/figure/Figura-2-Matriz-de-distancias_fig3_322896495))
 # - Determine $i$ e $j$ tais que $M_{ij}$ é máxima, bem como o valor de $M_{ij}$.
 
-# In[28]:
+# In[5]:
 
 
 IATA = {    
