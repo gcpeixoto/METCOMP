@@ -350,6 +350,10 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left[\log{\left(36 \right)}, \infty\right)\]</div>
+</div>
 </div>
 <p><strong>Problema 2:</strong> Considere os seguintes polinômios:</p>
 <div class="math notranslate nohighlight">
@@ -366,9 +370,14 @@
 <span class="n">P</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">+</span> <span class="n">a1</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">a5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">a13</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">13</span>
 <span class="n">Q</span> <span class="o">=</span> <span class="n">b0</span> <span class="o">+</span> <span class="n">b4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="n">b8</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">8</span> <span class="o">+</span> <span class="n">b22</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">22</span>
 
-<span class="n">R</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="n">Q</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">P</span><span class="o">*</span><span class="n">Q</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">R</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(a_{0} + \pi a_{1} + \pi^{13} a_{13} + \pi^{5} a_{5}\right) \left(b_{0} + \pi^{22} b_{22} + \pi^{4} b_{4} + \pi^{8} b_{8}\right)\]</div>
 </div>
 </div>
 <p><strong>Problema 3:</strong> Considere o polinômio <span class="math notranslate nohighlight">\(R(x)\)</span> obtido no Problema 1. Se <span class="math notranslate nohighlight">\(a_0 = -2\)</span>, <span class="math notranslate nohighlight">\(a_1 = -4\)</span>, <span class="math notranslate nohighlight">\(a_5 = 6\)</span>, <span class="math notranslate nohighlight">\(a_{13} = 8/3\)</span>, <span class="math notranslate nohighlight">\(b_0 = -1\)</span>, <span class="math notranslate nohighlight">\(b_4 = -3/4\)</span>, <span class="math notranslate nohighlight">\(b_8 = 5\)</span> e <span class="math notranslate nohighlight">\(b_{22} = 7\)</span>, determine o valor da soma dos coeficientes do termo <span class="math notranslate nohighlight">\(x^5\)</span>. Considere <span class="math notranslate nohighlight">\(\pi = 3.14\)</span>.</p>
@@ -385,12 +394,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2.0 \pi^{4} x^{13} - 2.66666666666667 x^{13} + 13.3333333333333 \pi^{8} x^{13} + 18.6666666666667 \pi^{22} x^{13} - 4.5 \pi^{4} x^{5} - 6 x^{5} + 30 \pi^{8} x^{5} + 42 \pi^{22} x^{5} - 28 \pi^{22} x - 20 \pi^{8} x + 4 x + 3.0 \pi^{4} x - 14 \pi^{22} - 10 \pi^{8} + 2 + 1.5 \pi^{4}\]</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">30</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">42</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">22</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">3.14</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3634.83\]</div>
 </div>
 </div>
 <p><strong>Problema 4:</strong> Utilizando a mesma substituição de coeficientes apresentada no Problema 2, determine todas as raízes reais do polinômio <span class="math notranslate nohighlight">\(R(x)\)</span> com aproximação de 3 casas decimais.</p>
@@ -399,6 +416,10 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">solveset</span><span class="p">(</span><span class="n">Rn</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">sym</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left\{0.944467145247248\right\}\]</div>
 </div>
 </div>
 <p><strong>Problema 5:</strong> Uma fórmula usada para modelar o crescimento populacional é a função exponencial <span class="math notranslate nohighlight">\(P(t) = Ce^{rt}\)</span>, onde <span class="math notranslate nohighlight">\(C\)</span> é a população inicial, <span class="math notranslate nohighlight">\(r\)</span> a <em>taxa de crescimento</em> e <span class="math notranslate nohighlight">\(t\)</span> o tempo decorrido. De acordo com o <a class="reference external" href="https://cidades.ibge.gov.br/brasil/pb">[IBGE]</a>, a população estimada no estado da Paraíba no último censo em 2010 era de 3.766.528 pessoas. Em 2019, este numéro saltou para 4.018.127 pessoas. Diante disso, crie um modelo simbólico para responder os itens a seguir:</p>
