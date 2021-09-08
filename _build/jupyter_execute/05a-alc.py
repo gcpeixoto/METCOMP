@@ -1,7 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Álgebra Linear Computacional Básica
+# # Álgebra Linear Computacional básica
+
+# ## Objetivos
+# 
+# - Associar conceitos abstratos de Álgebra Linear a estruturas computacionais; 
+# - Realizar operações básicas com vetores e matrizes;
+# - Saber como resolver sistemas lineares de pequeno porte;
+# - Calcular autovalores e autovetores em matrizes reais;
+
+# ## Introdução
 # 
 # Neste capítulo, mostraremos como realizar operações básicas entre matrizes e vetores usando o computador. A manipulação de matrizes e vetores é essencial em muitas ciências, principalmente para resolver sistemas lineares. 
 # 
@@ -210,19 +219,28 @@ np.sqrt(np.dot(u,u))
 
 # ### Produto de matrizes
 # 
-# O produto $\bf{A}\bf{B}$ entre matrizes é calculado com `*`:
+# O produto $\bf{A}\bf{B}$ entre matrizes bidimensionais pode ser calculado com `np.dot`, mas recomenda-se usar `np.matmul`.
 
 # In[13]:
 
 
-A*B
+# não tem o mesmo efeito para 
+# matrizes A e B de tamanhos arbitrários
+np.dot(A,B)
+
+
+# In[14]:
+
+
+# uso recomendado para a operação tradicional
+np.matmul(A,B)
 
 
 # ### Produto entre matriz e vetor
 # 
 # Neste caso, sendo ${\vec{\vec A}}$ (dois símbolos indicam que a matriz é uma grandeza de ordem 2, ao passo que o vetor é de ordem 1 e aqui usamos para consistência de notação) e ${\vec{b}}$ uma matriz $m \times n$ e um vetor $n \times 1$, respectivamente, o produto $\vec{\vec{A}}\vec{b}$ é dado por:
 
-# In[14]:
+# In[15]:
 
 
 b = np.array([3,4,1])
@@ -234,7 +252,7 @@ np.dot(A,b)
 # 
 # Para outras operações, devemos utilizar o submódulo `numpy.linalg`. Para importá-lo com o _alias_ `lin`, fazemos:
 
-# In[15]:
+# In[16]:
 
 
 import numpy.linalg as lin
@@ -244,7 +262,7 @@ import numpy.linalg as lin
 # 
 # O determinante de ${\bf A}$ é dado por $\det({\bf A})$ e pode ser computado pela função `det`.
 
-# In[16]:
+# In[17]:
 
 
 # calculando o determinante da matriz
@@ -257,7 +275,7 @@ print(det)
 # A inversa de uma matriz é dada por ${\bf A}^{-1}$, onde ${\bf A}{\bf A}^{-1}={\bf I}$, e ${\bf I}$ é a matriz identidade.
 # Para usar esta função, devemos fazer:
 
-# In[17]:
+# In[18]:
 
 
 B2 = np.array([[1,2,3],
@@ -281,7 +299,7 @@ print(B)
 # 
 # para $a = -4$, $b = 1$, $c = 1/2$, $d = 3$, $e = 5$ e $f = 10$,  
 
-# In[18]:
+# In[19]:
 
 
 A = np.array([[-4,1],[1/2,3]])
@@ -297,7 +315,7 @@ print(x)
 # 
 # A inversa de uma matriz (faça esta operação apenas para matrizes quadradas de pequena dimensão) pode ser encontrada como:
 
-# In[19]:
+# In[20]:
 
 
 Ainv = lin.inv(A)
@@ -306,7 +324,7 @@ print(Ainv)
 
 # Para realizar uma "prova real" da solução do sistema anterior, poderíamos fazer:
 
-# In[20]:
+# In[21]:
 
 
 x2 = np.dot(lin.inv(A), b)
@@ -315,7 +333,7 @@ print(x2)
 
 # Note, entretanto que:
 
-# In[21]:
+# In[22]:
 
 
 x == x2
@@ -323,7 +341,7 @@ x == x2
 
 # Isto ocorre devido a erros numéricos. Um teste mais adequado deve computar a norma do vetor "erro", dado por ${\bf e} = \bf{b} - \bf{A}\bf{x}$. A norma pode ser calculada diretamente com:
 
-# In[22]:
+# In[23]:
 
 
 e = b - np.dot(A,x)
@@ -342,7 +360,7 @@ lin.norm(e)
 # 
 # Para criar uma matriz nula de ordem _m x n_, usamos `zeros`.
 
-# In[23]:
+# In[24]:
 
 
 m,n = 3,4
@@ -353,7 +371,7 @@ np.zeros((m,n))
 # 
 # Uma matriz identidade (quadrada) de ordem _p_ é criada com `eye`.
 
-# In[24]:
+# In[25]:
 
 
 p = 4
@@ -364,7 +382,7 @@ np.eye(p)
 # 
 # Uma matriz composta apenas de valores 1 de ordem _m x n_ pode ser criada com `ones`:
 
-# In[25]:
+# In[26]:
 
 
 np.ones((3,5))
@@ -374,7 +392,7 @@ np.ones((3,5))
 # 
 # A matriz triangular inferior de uma dada matriz pode ser criada com `tril`. Note que podemos também defini-la explicitamente, linha a linha.
 
-# In[26]:
+# In[27]:
 
 
 # os valores correspondentes
@@ -386,7 +404,7 @@ np.tril(B)
 # 
 # A matriz triangular superior de uma dada matriz pode ser criada com `triu`. Note que podemos também defini-la explicitamente, linha a linha.
 
-# In[27]:
+# In[28]:
 
 
 np.triu(B)
@@ -394,7 +412,7 @@ np.triu(B)
 
 # **Exercício.** Por que há dois valores `False` no teste a seguir? 
 
-# In[28]:
+# In[29]:
 
 
 B == np.tril(B) + np.triu(B)
@@ -408,7 +426,7 @@ B == np.tril(B) + np.triu(B)
 # 
 # O número real $\lambda$ é denominado valor próprio (autovalor) de ${\bf A}$ associado ao vetor próprio (autovetor) ${\bf v}$.
 
-# In[29]:
+# In[30]:
 
 
 A = np.array([[2,1],
@@ -431,7 +449,7 @@ print(v[:,1])
 # 
 # Podemos calcular somas de elementos de matrizes e vetores de maneiras diferentes. Para matrizes, em particular, há soma total, por linha, ou por coluna. 
 
-# In[30]:
+# In[31]:
 
 
 a = np.array([1,-2,-3,10])
@@ -440,14 +458,14 @@ a = np.array([1,-2,-3,10])
 np.sum(a)
 
 
-# In[31]:
+# In[32]:
 
 
 # modo alternativo
 a.sum() 
 
 
-# In[32]:
+# In[33]:
 
 
 # soma total de matriz
@@ -456,21 +474,21 @@ O = np.ones((5,3))
 np.sum(O)
 
 
-# In[33]:
+# In[34]:
 
 
 # modo alternativo
 O.sum()
 
 
-# In[34]:
+# In[35]:
 
 
 # soma por linha 
 np.sum(O,axis=0)
 
 
-# In[35]:
+# In[36]:
 
 
 # soma por coluna 
@@ -479,48 +497,48 @@ np.sum(O,axis=1)
 
 # Valores máximos e mínimos, absolutos ou não, também podem ser computados com funções simples.
 
-# In[36]:
+# In[37]:
 
 
 # min
 np.min(a)
 
 
-# In[37]:
+# In[38]:
 
 
 # max
 np.max(a)
 
 
-# In[38]:
+# In[39]:
 
 
 # modo alternativo
 a.min()
 
 
-# In[39]:
+# In[40]:
 
 
 a.max()
 
 
-# In[40]:
+# In[41]:
 
 
 # mínimo absoluto 
 np.abs(a).min()
 
 
-# In[41]:
+# In[42]:
 
 
 # máximo absoluto
 np.abs(a).max()
 
 
-# In[42]:
+# In[43]:
 
 
 O2 = np.array([[-4,5],[2,7]])
@@ -529,32 +547,32 @@ O2 = np.array([[-4,5],[2,7]])
 np.min(O2)
 
 
-# In[43]:
+# In[44]:
 
 
 # max 
 np.max(O2)
 
 
-# In[44]:
+# In[45]:
 
 
 O2.min()
 
 
-# In[45]:
+# In[46]:
 
 
 O2.max()
 
 
-# In[46]:
+# In[47]:
 
 
 np.abs(O2).min()
 
 
-# In[47]:
+# In[48]:
 
 
 np.abs(O2).max()
