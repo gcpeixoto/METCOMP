@@ -282,8 +282,8 @@ B2 = np.array([[1,2,3],
               [2,3,4],
               [1,2,0]]) 
 
-B2 = lin.inv(B)
-print(B)
+B3 = lin.inv(B2)
+print(np.matmul(B3,B2))
 
 
 # ### Soluções de sistemas lineares
