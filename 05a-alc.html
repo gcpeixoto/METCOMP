@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Álgebra Linear Computacional Básica &#8212; Métodos Computacionais</title>
+    <title>7. Álgebra Linear Computacional básica &#8212; Métodos Computacionais</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -141,7 +141,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Álgebra Linear Computacional Básica
+   7. Álgebra Linear Computacional básica
   </a>
  </li>
  <li class="toctree-l1">
@@ -329,57 +329,67 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivos">
+   7.1. Objetivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducao">
+   7.2. Introdução
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrizes-e-vetores">
-   7.1. Matrizes e vetores
+   7.3. Matrizes e vetores
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#transposicao">
-     7.1.1. Transposição
+     7.3.1. Transposição
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teste-de-igualdade">
-     7.1.2. Teste de igualdade
+     7.3.2. Teste de igualdade
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operacoes-fundamentais">
-   7.2. Operações fundamentais
+   7.4. Operações fundamentais
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adicao-e-subtracao">
-     7.2.1. Adição e subtração
+     7.4.1. Adição e subtração
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#produto-interno">
-     7.2.2. Produto interno
+     7.4.2. Produto interno
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#norma-de-vetor">
-     7.2.3. Norma de vetor
+     7.4.3. Norma de vetor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#produto-de-matrizes">
-     7.2.4. Produto de matrizes
+     7.4.4. Produto de matrizes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#produto-entre-matriz-e-vetor">
-     7.2.5. Produto entre matriz e vetor
+     7.4.5. Produto entre matriz e vetor
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#demais-operacoes-com-numpy-linalg">
-   7.3. Demais operações com
+   7.5. Demais operações com
    <code class="docutils literal notranslate">
     <span class="pre">
      numpy.linalg
@@ -389,66 +399,66 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determinante">
-     7.3.1. Determinante
+     7.5.1. Determinante
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inversa-de-uma-matriz">
-     7.3.2. Inversa de uma matriz
+     7.5.2. Inversa de uma matriz
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solucoes-de-sistemas-lineares">
-     7.3.3. Soluções de sistemas lineares
+     7.5.3. Soluções de sistemas lineares
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inversa-de-matriz">
-     7.3.4. Inversa de matriz
+     7.5.4. Inversa de matriz
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algumas-matrizes-especiais">
-   7.4. Algumas matrizes especiais
+   7.6. Algumas matrizes especiais
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#nula">
-     7.4.1. Nula
+     7.6.1. Nula
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#identidade">
-     7.4.2. Identidade
+     7.6.2. Identidade
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matriz-de-uns">
-     7.4.3. Matriz de “uns”
+     7.6.3. Matriz de “uns”
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#triangular-inferior">
-     7.4.4. Triangular inferior
+     7.6.4. Triangular inferior
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#triangular-superior">
-     7.4.5. Triangular superior
+     7.6.5. Triangular superior
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#autovalores-e-autovetores">
-   7.5. Autovalores e autovetores
+   7.7. Autovalores e autovetores
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#somas-e-valores-extremos">
-   7.6. Somas e valores extremos
+   7.8. Somas e valores extremos
   </a>
  </li>
 </ul>
@@ -463,11 +473,23 @@
               <div>
                 
   <section id="algebra-linear-computacional-basica">
-<h1><span class="section-number">7. </span>Álgebra Linear Computacional Básica<a class="headerlink" href="#algebra-linear-computacional-basica" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>Álgebra Linear Computacional básica<a class="headerlink" href="#algebra-linear-computacional-basica" title="Permalink to this headline">¶</a></h1>
+<section id="objetivos">
+<h2><span class="section-number">7.1. </span>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Associar conceitos abstratos de Álgebra Linear a estruturas computacionais;</p></li>
+<li><p>Realizar operações básicas com vetores e matrizes;</p></li>
+<li><p>Saber como resolver sistemas lineares de pequeno porte;</p></li>
+<li><p>Calcular autovalores e autovetores em matrizes reais;</p></li>
+</ul>
+</section>
+<section id="introducao">
+<h2><span class="section-number">7.2. </span>Introdução<a class="headerlink" href="#introducao" title="Permalink to this headline">¶</a></h2>
 <p>Neste capítulo, mostraremos como realizar operações básicas entre matrizes e vetores usando o computador. A manipulação de matrizes e vetores é essencial em muitas ciências, principalmente para resolver sistemas lineares.</p>
 <p>As matrizes são utilizadas na computação para armazenar informações bidimensionais. Em particular, podem representar translação, rotação, escalonamento e sistemas de equações. O estudo da relação entre algoritmos e métodos computacionais para trabalhar eficientemente com matrizes e vetores é realizado no âmbito da <em>Álgebra Linear Computacional</em>.</p>
+</section>
 <section id="matrizes-e-vetores">
-<h2><span class="section-number">7.1. </span>Matrizes e vetores<a class="headerlink" href="#matrizes-e-vetores" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Matrizes e vetores<a class="headerlink" href="#matrizes-e-vetores" title="Permalink to this headline">¶</a></h2>
 <p>Uma matriz <span class="math notranslate nohighlight">\({\bf A}\)</span> de ordem <span class="math notranslate nohighlight">\(m \times n\)</span> pode ser escrita como:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}{\bf A} = 
@@ -582,7 +604,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 <p>Note que cada lista representa uma linha.</p>
 <section id="transposicao">
-<h3><span class="section-number">7.1.1. </span>Transposição<a class="headerlink" href="#transposicao" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>Transposição<a class="headerlink" href="#transposicao" title="Permalink to this headline">¶</a></h3>
 <p>Matrizes e vetores podem ser transpostos com <code class="docutils literal notranslate"><span class="pre">.T</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,7 +639,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 </section>
 <section id="teste-de-igualdade">
-<h3><span class="section-number">7.1.2. </span>Teste de igualdade<a class="headerlink" href="#teste-de-igualdade" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.2. </span>Teste de igualdade<a class="headerlink" href="#teste-de-igualdade" title="Permalink to this headline">¶</a></h3>
 <p>Podemos verificar a igualdade entre matrizes como</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,9 +673,9 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </section>
 </section>
 <section id="operacoes-fundamentais">
-<h2><span class="section-number">7.2. </span>Operações fundamentais<a class="headerlink" href="#operacoes-fundamentais" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Operações fundamentais<a class="headerlink" href="#operacoes-fundamentais" title="Permalink to this headline">¶</a></h2>
 <section id="adicao-e-subtracao">
-<h3><span class="section-number">7.2.1. </span>Adição e subtração<a class="headerlink" href="#adicao-e-subtracao" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.1. </span>Adição e subtração<a class="headerlink" href="#adicao-e-subtracao" title="Permalink to this headline">¶</a></h3>
 <p>A adição (subtração) de matrizes e vetores pode ser realizada de modo usual com computação vetorizada.</p>
 <p><strong>Exemplo:</strong> <span class="math notranslate nohighlight">\(\vec{u} \pm \vec{v}\)</span></p>
 <div class="cell docutils container">
@@ -708,7 +730,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 </section>
 <section id="produto-interno">
-<h3><span class="section-number">7.2.2. </span>Produto interno<a class="headerlink" href="#produto-interno" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.2. </span>Produto interno<a class="headerlink" href="#produto-interno" title="Permalink to this headline">¶</a></h3>
 <p>O produto interno <span class="math notranslate nohighlight">\(\langle \vec{u}, \vec{v}\rangle\)</span> é computado com <code class="docutils literal notranslate"><span class="pre">.dot</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -729,7 +751,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 </section>
 <section id="norma-de-vetor">
-<h3><span class="section-number">7.2.3. </span>Norma de vetor<a class="headerlink" href="#norma-de-vetor" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.3. </span>Norma de vetor<a class="headerlink" href="#norma-de-vetor" title="Permalink to this headline">¶</a></h3>
 <p>A norma <span class="math notranslate nohighlight">\(||\vec{u}||\)</span> de um vetor <span class="math notranslate nohighlight">\(\vec{u}\)</span> é calculada como:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -745,25 +767,42 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 </section>
 <section id="produto-de-matrizes">
-<h3><span class="section-number">7.2.4. </span>Produto de matrizes<a class="headerlink" href="#produto-de-matrizes" title="Permalink to this headline">¶</a></h3>
-<p>O produto <span class="math notranslate nohighlight">\(\bf{A}\bf{B}\)</span> entre matrizes é calculado com <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
+<h3><span class="section-number">7.4.4. </span>Produto de matrizes<a class="headerlink" href="#produto-de-matrizes" title="Permalink to this headline">¶</a></h3>
+<p>O produto <span class="math notranslate nohighlight">\(\bf{A}\bf{B}\)</span> entre matrizes bidimensionais pode ser calculado com <code class="docutils literal notranslate"><span class="pre">np.dot</span></code>, mas recomenda-se usar <code class="docutils literal notranslate"><span class="pre">np.matmul</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># não tem o mesmo efeito para </span>
+<span class="c1"># matrizes A e B de tamanhos arbitrários</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  9, -12,  -6],
-       [  4, -16,   0],
-       [ 81,   0,   0]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 22,  44, -42],
+       [-14, -28,  60],
+       [ 27,  54, -54]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uso recomendado para a operação tradicional</span>
+<span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 22,  44, -42],
+       [-14, -28,  60],
+       [ 27,  54, -54]])
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="produto-entre-matriz-e-vetor">
-<h3><span class="section-number">7.2.5. </span>Produto entre matriz e vetor<a class="headerlink" href="#produto-entre-matriz-e-vetor" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.5. </span>Produto entre matriz e vetor<a class="headerlink" href="#produto-entre-matriz-e-vetor" title="Permalink to this headline">¶</a></h3>
 <p>Neste caso, sendo <span class="math notranslate nohighlight">\({\vec{\vec A}}\)</span> (dois símbolos indicam que a matriz é uma grandeza de ordem 2, ao passo que o vetor é de ordem 1 e aqui usamos para consistência de notação) e <span class="math notranslate nohighlight">\({\vec{b}}\)</span> uma matriz <span class="math notranslate nohighlight">\(m \times n\)</span> e um vetor <span class="math notranslate nohighlight">\(n \times 1\)</span>, respectivamente, o produto <span class="math notranslate nohighlight">\(\vec{\vec{A}}\vec{b}\)</span> é dado por:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,7 +821,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </section>
 </section>
 <section id="demais-operacoes-com-numpy-linalg">
-<h2><span class="section-number">7.3. </span>Demais operações com <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code><a class="headerlink" href="#demais-operacoes-com-numpy-linalg" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Demais operações com <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code><a class="headerlink" href="#demais-operacoes-com-numpy-linalg" title="Permalink to this headline">¶</a></h2>
 <p>Para outras operações, devemos utilizar o submódulo <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>. Para importá-lo com o <em>alias</em> <code class="docutils literal notranslate"><span class="pre">lin</span></code>, fazemos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -792,7 +831,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 </div>
 <section id="determinante">
-<h3><span class="section-number">7.3.1. </span>Determinante<a class="headerlink" href="#determinante" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.5.1. </span>Determinante<a class="headerlink" href="#determinante" title="Permalink to this headline">¶</a></h3>
 <p>O determinante de <span class="math notranslate nohighlight">\({\bf A}\)</span> é dado por <span class="math notranslate nohighlight">\(\det({\bf A})\)</span> e pode ser computado pela função <code class="docutils literal notranslate"><span class="pre">det</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -810,7 +849,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </div>
 </section>
 <section id="inversa-de-uma-matriz">
-<h3><span class="section-number">7.3.2. </span>Inversa de uma matriz<a class="headerlink" href="#inversa-de-uma-matriz" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.5.2. </span>Inversa de uma matriz<a class="headerlink" href="#inversa-de-uma-matriz" title="Permalink to this headline">¶</a></h3>
 <p>A inversa de uma matriz é dada por <span class="math notranslate nohighlight">\({\bf A}^{-1}\)</span>, onde <span class="math notranslate nohighlight">\({\bf A}{\bf A}^{-1}={\bf I}\)</span>, e <span class="math notranslate nohighlight">\({\bf I}\)</span> é a matriz identidade.
 Para usar esta função, devemos fazer:</p>
 <div class="cell docutils container">
@@ -834,7 +873,7 @@ Para usar esta função, devemos fazer:</p>
 </div>
 </section>
 <section id="solucoes-de-sistemas-lineares">
-<h3><span class="section-number">7.3.3. </span>Soluções de sistemas lineares<a class="headerlink" href="#solucoes-de-sistemas-lineares" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.5.3. </span>Soluções de sistemas lineares<a class="headerlink" href="#solucoes-de-sistemas-lineares" title="Permalink to this headline">¶</a></h3>
 <p>Para resolver sistemas lineares, devemos escrever as equações em forma de matriz, ou seja, <span class="math notranslate nohighlight">\({\vec{\vec A}}\vec{x} = \vec{b}\)</span> e utilizar <code class="docutils literal notranslate"><span class="pre">solve</span></code>.</p>
 <p><strong>Exemplo:</strong> Resolva o sistema linear abaixo:</p>
 <div class="math notranslate nohighlight">
@@ -863,7 +902,7 @@ dx + ey = f
 </div>
 </section>
 <section id="inversa-de-matriz">
-<h3><span class="section-number">7.3.4. </span>Inversa de matriz<a class="headerlink" href="#inversa-de-matriz" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.5.4. </span>Inversa de matriz<a class="headerlink" href="#inversa-de-matriz" title="Permalink to this headline">¶</a></h3>
 <p>A inversa de uma matriz (faça esta operação apenas para matrizes quadradas de pequena dimensão) pode ser encontrada como:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -928,9 +967,9 @@ dx + ey = f
 </section>
 </section>
 <section id="algumas-matrizes-especiais">
-<h2><span class="section-number">7.4. </span>Algumas matrizes especiais<a class="headerlink" href="#algumas-matrizes-especiais" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.6. </span>Algumas matrizes especiais<a class="headerlink" href="#algumas-matrizes-especiais" title="Permalink to this headline">¶</a></h2>
 <section id="nula">
-<h3><span class="section-number">7.4.1. </span>Nula<a class="headerlink" href="#nula" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.6.1. </span>Nula<a class="headerlink" href="#nula" title="Permalink to this headline">¶</a></h3>
 <p>Para criar uma matriz nula de ordem <em>m x n</em>, usamos <code class="docutils literal notranslate"><span class="pre">zeros</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,7 +988,7 @@ dx + ey = f
 </div>
 </section>
 <section id="identidade">
-<h3><span class="section-number">7.4.2. </span>Identidade<a class="headerlink" href="#identidade" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.6.2. </span>Identidade<a class="headerlink" href="#identidade" title="Permalink to this headline">¶</a></h3>
 <p>Uma matriz identidade (quadrada) de ordem <em>p</em> é criada com <code class="docutils literal notranslate"><span class="pre">eye</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -969,7 +1008,7 @@ dx + ey = f
 </div>
 </section>
 <section id="matriz-de-uns">
-<h3><span class="section-number">7.4.3. </span>Matriz de “uns”<a class="headerlink" href="#matriz-de-uns" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.6.3. </span>Matriz de “uns”<a class="headerlink" href="#matriz-de-uns" title="Permalink to this headline">¶</a></h3>
 <p>Uma matriz composta apenas de valores 1 de ordem <em>m x n</em> pode ser criada com <code class="docutils literal notranslate"><span class="pre">ones</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -987,7 +1026,7 @@ dx + ey = f
 </div>
 </section>
 <section id="triangular-inferior">
-<h3><span class="section-number">7.4.4. </span>Triangular inferior<a class="headerlink" href="#triangular-inferior" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.6.4. </span>Triangular inferior<a class="headerlink" href="#triangular-inferior" title="Permalink to this headline">¶</a></h3>
 <p>A matriz triangular inferior de uma dada matriz pode ser criada com <code class="docutils literal notranslate"><span class="pre">tril</span></code>. Note que podemos também defini-la explicitamente, linha a linha.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1007,7 +1046,7 @@ dx + ey = f
 </div>
 </section>
 <section id="triangular-superior">
-<h3><span class="section-number">7.4.5. </span>Triangular superior<a class="headerlink" href="#triangular-superior" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.6.5. </span>Triangular superior<a class="headerlink" href="#triangular-superior" title="Permalink to this headline">¶</a></h3>
 <p>A matriz triangular superior de uma dada matriz pode ser criada com <code class="docutils literal notranslate"><span class="pre">triu</span></code>. Note que podemos também defini-la explicitamente, linha a linha.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1041,7 +1080,7 @@ dx + ey = f
 </section>
 </section>
 <section id="autovalores-e-autovetores">
-<h2><span class="section-number">7.5. </span>Autovalores e autovetores<a class="headerlink" href="#autovalores-e-autovetores" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7. </span>Autovalores e autovetores<a class="headerlink" href="#autovalores-e-autovetores" title="Permalink to this headline">¶</a></h2>
 <p>Um vetor <span class="math notranslate nohighlight">\({\bf v} \in V\)</span>, <span class="math notranslate nohighlight">\({\bf v} \neq {\bf 0}\)</span> é vetor próprio de <span class="math notranslate nohighlight">\({\bf A}\)</span> se existir <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> tal que</p>
 <div class="math notranslate nohighlight">
 \[{\bf Av}=\lambda {\bf v}.\]</div>
@@ -1075,7 +1114,7 @@ dx + ey = f
 </div>
 </section>
 <section id="somas-e-valores-extremos">
-<h2><span class="section-number">7.6. </span>Somas e valores extremos<a class="headerlink" href="#somas-e-valores-extremos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.8. </span>Somas e valores extremos<a class="headerlink" href="#somas-e-valores-extremos" title="Permalink to this headline">¶</a></h2>
 <p>Podemos calcular somas de elementos de matrizes e vetores de maneiras diferentes. Para matrizes, em particular, há soma total, por linha, ou por coluna.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
